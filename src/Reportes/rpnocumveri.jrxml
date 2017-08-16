@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e1f78fd8-e414-4af5-9bf9-32c8cafa8edc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     persona.`nombre_persona` AS persona_nombre_persona,
+     persona.`apellido_paterno` AS persona_apellido_paterno,
+     persona.`apellido_materno` AS persona_apellido_materno,
+     persona.`numero_documento` AS persona_numero_documento,
+     verificacion.`descripcion` AS verificacion_descripcion
+FROM
+     `persona` persona,
+     `verificacion` verificacion
+WHERE
+idpersona=1 and
+cumplimiento="no"]]>
+	</queryString>
+	<field name="persona_nombre_persona" class="java.lang.String"/>
+	<field name="persona_apellido_paterno" class="java.lang.String"/>
+	<field name="persona_apellido_materno" class="java.lang.String"/>
+	<field name="persona_numero_documento" class="java.lang.Integer"/>
+	<field name="verificacion_descripcion" class="java.lang.String"/>
+	<variable name="verificacion_descripcion_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{verificacion_descripcion}]]></variableExpression>
+	</variable>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#CC0000" uuid="909cb5c7-b7a1-4856-a98d-b8fed5a1d561"/>
+				<staticText>
+					<reportElement x="0" y="0" width="353" height="43" forecolor="#FFFFFF" uuid="bc2477b9-0f34-4557-b9a6-e6e93c7c8d84"/>
+					<textElement>
+						<font fontName="Courier New" size="32" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Evaluacion inicial]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="61" width="351" height="20" forecolor="#FFFFFF" uuid="a72e98d2-21a1-4182-ad92-7990e4f8df68"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Verificaciones de los items que la empresa no cumple ]]></text>
+				</staticText>
+				<image>
+					<reportElement x="463" y="0" width="132" height="89" uuid="3f36d365-b628-43b5-a7ae-eb77cf93076e"/>
+					<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\Proyecto Safety-Life\\src\\Imagenes\\logo 132.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="43">
+			<staticText>
+				<reportElement x="0" y="13" width="188" height="20" uuid="24b92924-e6c6-4e03-9992-c04328aabff5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[La Evaluacion fue realizada por:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="188" y="13" width="46" height="20" uuid="5cddd098-fd8d-4941-8d7d-17c072f3e435"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_nombre_persona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="13" width="49" height="20" uuid="cfc403a2-baf6-4a7e-ac3f-4194132d2a5e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_apellido_paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="13" width="43" height="20" uuid="c1976101-741a-4528-8587-0c4c19e81821"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_apellido_materno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="361" y="13" width="30" height="20" uuid="64842b35-d656-4619-97cf-e3dbdc531574"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.C.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="391" y="13" width="100" height="20" uuid="0c3cfe26-d12a-4988-ab88-588a3aae7548"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_numero_documento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="88">
+			<staticText>
+				<reportElement x="0" y="11" width="555" height="38" forecolor="#FF0000" uuid="ae8c590d-3c4a-4778-8fd8-e4f498242ba0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Importante: Recuerde que algunos ítems cuentan con diferentes modos de verificación para poder cumplirse y de no cumplirse al menos uno, el ítem queda como no cumplido.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="49" width="203" height="20" uuid="c779a5d3-0ba7-4cce-9e0d-bbaacdab90e2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Actualmente la empresa no cumple]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="203" y="49" width="22" height="20" uuid="2a80914a-d96a-495d-8f9b-fb1c759ebd6a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{verificacion_descripcion_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="225" y="49" width="257" height="20" uuid="1ca17ad0-3747-46b8-86f9-cb695f0f4280"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[de  91  verificaciones de la Evaluacion Inicial]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="63">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="63" uuid="7d530377-6fb7-4da9-a3ed-2007693eb3eb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{verificacion_descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="8905a9d8-9eca-4de4-8044-5dbecfcb08e3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="c9fca0aa-a01e-4cf7-a560-533da24b3f48"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="42731c14-064c-419c-8419-08abba0ff786"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
