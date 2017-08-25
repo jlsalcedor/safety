@@ -41,8 +41,6 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
         txt_empresa = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txt_codigoEncuesta = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txt_versionEncuesta = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         txt_sucursalEmpresa = new javax.swing.JTextField();
@@ -51,7 +49,7 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        txt_nombreCompletoEncuesta = new javax.swing.JTextField();
+        txt_nombreEncuesta = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txt_CargoEncuesta = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -195,13 +193,6 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
         txt_codigoEncuesta.setEditable(false);
         txt_codigoEncuesta.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Versión");
-
-        txt_versionEncuesta.setEditable(false);
-        txt_versionEncuesta.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Fecha");
@@ -227,26 +218,17 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txt_codigoEncuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel4)
-                        .addGap(38, 38, 38)
-                        .addComponent(txt_versionEncuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txt_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel69)))
+                    .addComponent(txt_empresa, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                    .addComponent(txt_codigoEncuesta))
+                .addGap(82, 82, 82)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(txt_sucursalEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                    .addComponent(jLabel69)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_sucursalEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                    .addComponent(txtFecha))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,14 +241,11 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
                         .addComponent(txt_empresa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel69)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(txt_codigoEncuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4)
-                        .addComponent(txt_versionEncuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txt_codigoEncuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
         );
 
@@ -283,8 +262,8 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Cargo");
 
-        txt_nombreCompletoEncuesta.setEditable(false);
-        txt_nombreCompletoEncuesta.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        txt_nombreEncuesta.setEditable(false);
+        txt_nombreEncuesta.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -323,7 +302,7 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(txt_CargoEncuesta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
-                    .addComponent(txt_nombreCompletoEncuesta, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_nombreEncuesta, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txt_procesoEncuesta))
                 .addGap(401, 401, 401))
         );
@@ -333,7 +312,7 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txt_nombreCompletoEncuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nombreEncuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -1298,7 +1277,6 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -1366,9 +1344,8 @@ public class Encuesta_SocioDemografica extends javax.swing.JFrame {
     public javax.swing.JTextField txt_CargoEncuesta;
     public javax.swing.JTextField txt_codigoEncuesta;
     public javax.swing.JTextField txt_empresa;
-    public javax.swing.JTextField txt_nombreCompletoEncuesta;
+    public javax.swing.JTextField txt_nombreEncuesta;
     public javax.swing.JTextField txt_procesoEncuesta;
     public javax.swing.JTextField txt_sucursalEmpresa;
-    public javax.swing.JTextField txt_versionEncuesta;
     // End of variables declaration//GEN-END:variables
 }

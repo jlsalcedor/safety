@@ -58,7 +58,7 @@ public class IngresoUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 51));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo 132.png"))); // NOI18N
 
@@ -79,6 +79,12 @@ public class IngresoUsuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Usuario ");
+
+        txt_User.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_UserKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -209,6 +215,12 @@ public class IngresoUsuario extends javax.swing.JFrame {
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_IngresarActionPerformed
+
+    private void txt_UserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_UserKeyTyped
+        char c=evt.getKeyChar();
+        if((c<'a' || c>'z') && (c<'A' || c>'Z') &&(c!='ñ' && c!='Ñ' && c!='-' && c!='_')) evt.consume();
+        
+    }//GEN-LAST:event_txt_UserKeyTyped
 
     /**
      * @param args the command line arguments

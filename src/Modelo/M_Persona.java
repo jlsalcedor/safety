@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.io.FileInputStream;
+
 /**
  *
  * @author USUARIO
@@ -16,23 +18,31 @@ public class M_Persona {
     private String segundoApellido;
     private String tipoDoc;
     private int numeroDoc;
+    private String genero;
     private String telefono;
+    private String direccion;
     private int idProceso;
     private String email;
+    private FileInputStream foto;
+    private int longitud;
 
     public M_Persona() {
     }
 
-    public M_Persona(int idPersona, String nombre, String primerApellido, String segundoApellido, String tipoDoc, int numeroDoc, String telefono, int idProceso, String email) {
+    public M_Persona(int idPersona, String nombre, String primerApellido, String segundoApellido, String tipoDoc, int numeroDoc, String genero, String telefono, String direccion, int idProceso, String email, FileInputStream foto, int longitud) {
         this.idPersona = idPersona;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.tipoDoc = tipoDoc;
         this.numeroDoc = numeroDoc;
+        this.genero=genero;
         this.telefono = telefono;
+        this.direccion=direccion;
         this.idProceso = idProceso;
         this.email = email;
+        this.foto=foto;
+        this.longitud=longitud;
     }
 
     public int getIdPersona() {
@@ -83,6 +93,15 @@ public class M_Persona {
         this.numeroDoc = numeroDoc;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    
     public String getTelefono() {
         return telefono;
     }
@@ -90,6 +109,16 @@ public class M_Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    
+    
 
     public int getIdProceso() {
         return idProceso;
@@ -105,6 +134,22 @@ public class M_Persona {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public FileInputStream getFoto() {
+        return foto;
+    }
+
+    public void setFoto(FileInputStream foto) {
+        this.foto = foto;
+    }
+
+    public int getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(int longitud) {
+        this.longitud = longitud;
     }
     
     

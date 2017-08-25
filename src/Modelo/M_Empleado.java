@@ -82,14 +82,13 @@ public class M_Empleado extends M_Persona {
     M_Empleado empleado;
         try {
             Connection accesoBD=conexion.getConexion();
-            CallableStatement cs=accesoBD.prepareCall("{call sp_listEmpleado(?,?)}");
+            CallableStatement cs=accesoBD.prepareCall("{call sp_listaEmpleado(?,?)}");
             cs.setString(1, user);
             cs.setString(2, contraseña);
-         
+ JOptionPane.showMessageDialog(null, contraseña);
             ResultSet rs=cs.executeQuery();
-             
+            
             while(rs.next()){
-               
             empleado=new M_Empleado();
             empleado.setIdPersona(rs.getInt(1));  
             empleado.setNombre(rs.getString(2));
@@ -104,7 +103,9 @@ public class M_Empleado extends M_Persona {
             empleado.setFechaIngreso(rs.getDate(11));
             empleado.setEmail(rs.getString(12));
             empleado.setUser_empleado(rs.getString(13));
+           
             empleado.setContraseña_usuario(rs.getString(14));
+            
             empleado.setEstado_empleado(rs.getString(15));
                
             ingreso_empleado.add(empleado);

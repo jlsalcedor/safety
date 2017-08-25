@@ -27,7 +27,7 @@ public class M_EncuestaSocioDemografica {
     
     //Variable publicas que llaman datos para mostrar en el JFrame de la encuesta
     String nombre;
-    String sucursal;
+    static String sucursal;
     String version;
     int codigo;
 Conexion conexion=new Conexion();
@@ -51,12 +51,12 @@ Conexion conexion=new Conexion();
         this.nombre = nombre;
     }
 
-    public String getSucursal() {
+    public static String getSucursal() {
         return sucursal;
     }
 
     public void setSucursal(String sucursal) {
-        this.sucursal = sucursal;
+        M_EncuestaSocioDemografica.sucursal = sucursal;
     }
 
     public String getVersion() {
@@ -119,6 +119,26 @@ Conexion conexion=new Conexion();
         this.estadoEncuesta = estadoEncuesta;
     }
     
+    public ArrayList empresa(){
+    M_EncuestaSocioDemografica datosEncuesta;
+    ArrayList array=new ArrayList();
+        try {
+            Connection acceso=conexion.getConexion();
+            CallableStatement cs=acceso.prepareCall("{call sp_datosEmpresa()}");
+            ResultSet rs=cs.executeQuery();
+            while(rs.next()){
+            datosEncuesta=new M_EncuestaSocioDemografica();
+           datosEncuesta.setNombre(rs.getString(1));
+            datosEncuesta.setSucursal(rs.getString(2));
+            array.add(datosEncuesta);
+            }
+        } catch (Exception e) {
+        }
+       return array;
+    }
+    
+
+   /* 
     public ArrayList llamarDatos(){
         ArrayList datosEncuestaEmpresa=new ArrayList();
    
@@ -151,6 +171,7 @@ Conexion conexion=new Conexion();
     return datosEncuestaEmpresa;
     
     }
+*/
 }
     
     

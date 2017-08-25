@@ -46,7 +46,7 @@ public class DeshabEncuesta extends javax.swing.JFrame {
         rb_Todos = new javax.swing.JRadioButton();
         rb_Algunos = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 

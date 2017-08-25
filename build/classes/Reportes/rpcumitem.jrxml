@@ -54,8 +54,8 @@ cumple="si" and idpersona=1]]>
 					<text><![CDATA[Evaluacion inicial]]></text>
 				</staticText>
 				<image>
-					<reportElement x="463" y="10" width="132" height="79" uuid="4b57a1ef-394c-4c46-ad8e-c6204fcd0623"/>
-					<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\Proyecto Safety-Life\\src\\Imagenes\\logo 132.png"]]></imageExpression>
+					<reportElement x="482" y="0" width="113" height="88" uuid="3ae606c0-a60c-45b5-9808-694dd7b97a4b"/>
+					<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\Proyecto_Safety-Life\\src\\Imagenes\\logo 132.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>

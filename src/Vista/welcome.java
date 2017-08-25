@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Vista;
 
 import Controlador.C_IngresoSistema;
@@ -12,23 +11,26 @@ import Modelo.M_IngresoSistema;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.UIManager;
 
 /**
  *
  * @author israis007
  */
 public class welcome extends javax.swing.JFrame {
-private int auxiliar = 0;
-private boolean realizado = false;
-hilo ejecutar = new hilo();
+
+    private int auxiliar = 0;
+    private boolean realizado = false;
+    hilo ejecutar = new hilo();
+
     /**
      * Creates new form welcome
      */
     public welcome() {
         initComponents();
-        welcome.this.getRootPane().setOpaque(false);        
-        welcome.this.getContentPane ().setBackground (new Color (0, 0, 0, 0));
-        welcome.this.setBackground (new Color (0, 0, 0, 0)); 
+        welcome.this.getRootPane().setOpaque(false);
+        welcome.this.getContentPane().setBackground(new Color(0, 0, 0, 0));
+        welcome.this.setBackground(new Color(0, 0, 0, 0));
         this.setResizable(false);
         this.setLocationRelativeTo(this);
     }
@@ -57,42 +59,45 @@ hilo ejecutar = new hilo();
         });
 
         text.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        text.setForeground(new java.awt.Color(255, 255, 255));
+        text.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/welcome ds.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/welcome.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(460, 460, 460)
+                .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(490, 490, 490)
                 .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        if(realizado == false){
-        realizado = true;
-        barra.setMaximum(50);
-        barra.setMinimum(0);
-        barra.setStringPainted(true);
-        ejecutar.start();
+        if (realizado == false) {
+            realizado = true;
+            barra.setMaximum(50);
+            barra.setMinimum(0);
+            barra.setStringPainted(true);
+            ejecutar.start();
         }
     }//GEN-LAST:event_formWindowActivated
 
@@ -100,7 +105,8 @@ hilo ejecutar = new hilo();
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        try {
+         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -113,18 +119,19 @@ hilo ejecutar = new hilo();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subir_Archivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subir_Archivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subir_Archivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subir_Archivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
+        } catch (Exception e) {
 
-        /* Create and display the form */
+        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new welcome().setVisible(true);
@@ -132,38 +139,41 @@ hilo ejecutar = new hilo();
         });
     }
 
-    private class hilo extends Thread{
-    @Override
-    public void run(){
-        try {while(true){
-            auxiliar++;
-            barra.setValue(auxiliar);
-            repaint();
-            switch(auxiliar){
-                case 3:
-                    text.setText("Cargando programa...");
-                    break;
-                case 20:
-                    text.setText("Leyendo preferencias");
-                    break;
-                case 50:
-                    text.setText("Carga finalizada");
-                    break;
-                case 60:
-                    
-                    IngresoUsuario vista_ingreso=new IngresoUsuario();
-                 M_IngresoSistema modelo_adminSGSST=new M_IngresoSistema();
-                C_IngresoSistema controlador_Ingreso=new C_IngresoSistema(vista_ingreso, modelo_adminSGSST);
-                    vista_ingreso.setVisible(true);
-                    vista_ingreso.setLocationRelativeTo(welcome.this);
-                    welcome.this.dispose();
-                    break;                    
+    private class hilo extends Thread {
+
+        @Override
+        public void run() {
+            try {
+                while (true) {
+                    auxiliar++;
+                    barra.setValue(auxiliar);
+                    repaint();
+                    switch (auxiliar) {
+                        case 3:
+                            text.setText("Cargando programa...");
+                            break;
+                        case 20:
+                            text.setText("Leyendo preferencias");
+                            break;
+                        case 50:
+                            text.setText("Carga finalizada");
+                            break;
+                        case 60:
+
+                            IngresoUsuario vista_ingreso = new IngresoUsuario();
+                            M_IngresoSistema modelo_adminSGSST = new M_IngresoSistema();
+                            C_IngresoSistema controlador_Ingreso = new C_IngresoSistema(vista_ingreso, modelo_adminSGSST);
+                            vista_ingreso.setVisible(true);
+                            vista_ingreso.setLocationRelativeTo(welcome.this);
+                            welcome.this.dispose();
+                            break;
+                    }
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException ex) {
+                Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Thread.sleep(100);}
-        } catch (InterruptedException ex) {
-            Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar barra;
@@ -171,4 +181,3 @@ hilo ejecutar = new hilo();
     private javax.swing.JLabel text;
     // End of variables declaration//GEN-END:variables
 }
-

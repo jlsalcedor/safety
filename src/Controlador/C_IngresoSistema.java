@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.M_Empleado;
 import Modelo.M_IngresoSistema;
+import Vista.Encuesta_SocioDemografica;
 import Vista.IngresoUsuario;
 import Vista.Principal;
 
@@ -17,6 +18,7 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -26,7 +28,7 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
 
     IngresoUsuario vista_ingreso = new IngresoUsuario();
     M_IngresoSistema modelo_ingreso = new M_IngresoSistema();
-    
+    Encuesta_SocioDemografica encuesta=new Encuesta_SocioDemografica();
     M_Empleado modelo_ingresoEmpleado = new M_Empleado();
     DefaultTableModel modelo = new DefaultTableModel();
 
@@ -34,6 +36,8 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
    public static String user;
    public static String rol;
    public static String contraseñatxt;
+   public static String encriptacion;
+   public static String nombrecompleto;
     public C_IngresoSistema(IngresoUsuario vista_ingreso, M_IngresoSistema modelo_ingreso) {
         this.modelo_ingreso = modelo_ingreso;
         this.vista_ingreso = vista_ingreso;
@@ -71,6 +75,7 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
              user = vista_ingreso.txt_User.getText();
             char[] contraseña = vista_ingreso.txt_Contraseña.getPassword();
             contraseñatxt = new String(contraseña);
+            encriptacion=DigestUtils.md5Hex(contraseñatxt);
 
             if (rol.equals("Administrador SGSST")) {
                 ArrayList<M_IngresoSistema> array = modelo_ingreso.Ingreso_AdminSGSST(user, contraseñatxt);
@@ -107,6 +112,8 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
                             Principal principal = new Principal();
                             principal.label_nombreUser.setText(modelo.getValueAt(0, 1).toString() + " " + modelo.getValueAt(0, 2) + " " + modelo.getValueAt(0, 3));
                             principal.label_rol.setText("Administrado SGSST");
+                            
+                          nombrecompleto=(modelo.getValueAt(0, 1).toString()+" "+modelo.getValueAt(0, 2)+" "+modelo.getValueAt(0, 3));
                             principal.setVisible(true);
                             this.vista_ingreso.dispose();
                         } else {
@@ -116,7 +123,7 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
             }
 
             if (rol.equals("Empleado")) {
-                ArrayList<M_Empleado> array = modelo_ingresoEmpleado.ingreso_empleado(user, contraseñatxt);
+                ArrayList<M_Empleado> array = modelo_ingresoEmpleado.ingreso_empleado(user, encriptacion);
                 int cantidad = array.size();
                 
                 if (cantidad <= 0) {
@@ -151,7 +158,7 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
                                 Principal principal = new Principal();
                                 principal.label_nombreUser.setText(modelo.getValueAt(0, 1).toString() + " " + modelo.getValueAt(0, 2) + " " + modelo.getValueAt(0, 3));
                                 principal.label_rol.setText("Empleado");
-                               principal.jmEvaIni.setVisible(false);
+                               principal.jm_realizarEvaluacion.setVisible(false);
                                // String nombre=modelo.getValueAt(0, 1).toString();
                               //  JOptionPane.showMessageDialog(null, nombre);
                                 principal.setVisible(true);
@@ -256,20 +263,12 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
             //To change body of generated methods, choose Tools | Templates.
 
             @Override
-            public void keyTyped
-            (KeyEvent ke
-            
-            
-            ) {
+     public void keyTyped(KeyEvent ke) {
          //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-            public void keyPressed
-            (KeyEvent ke
-            
-            
-            ) {
+ public void keyPressed(KeyEvent ke) {
         //To change body of generated methods, choose Tools | Templates.
     }
 

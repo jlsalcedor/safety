@@ -11,12 +11,14 @@ import Controlador.C_HabEncuTodos;
 import Controlador.C_IngresoSistema;
 import static Controlador.C_IngresoSistema.user;
 import Controlador.C_RealizarEncuesta;
+import Controlador.C_RegistrarEmpleado;
 import Modelo.ArchivoEncuesta;
 import Modelo.Conexion;
 import Modelo.M_DesHabEncuesta;
 import Modelo.M_EncuestaSocioDemografica;
 import Modelo.M_HabEncuTodos;
 import Modelo.M_IngresoSistema;
+import Modelo.M_RegistrarEmpleado;
 import Modelo.infoEmpEncuesta;
 
 import java.awt.BorderLayout;
@@ -57,7 +59,7 @@ private Connection connection= new Conexion().getConexion();
         this.setExtendedState(MAXIMIZED_BOTH);
         perfil = acerca = ayuda = false;
         
-        ImageIcon fondo=new ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"));
+        ImageIcon fondo=new ImageIcon(getClass().getResource("/imagenes/PRINCIPAL3.jpg"));
         ImageIcon adapFondo=new ImageIcon(fondo.getImage().getScaledInstance(label_fondo.getWidth(), label_fondo.getHeight(), Image.SCALE_DEFAULT));
         label_fondo.setIcon(adapFondo);
        panel_perfil.setVisible(false);
@@ -128,26 +130,25 @@ private Connection connection= new Conexion().getConexion();
         jLabel16 = new javax.swing.JLabel();
         label_rol = new javax.swing.JLabel();
         label_nombreUser = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         label_fondo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        jmEvaIni = new javax.swing.JMenu();
+        jm_realizarEvaIni = new javax.swing.JMenu();
         jm_realizarEvaluacion = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu5 = new javax.swing.JMenu();
         jm_RealizarEncuesta = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jm_HabEncuTodos = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jm_habEncu = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
+        me_registrarEmpleado = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
         deleteMenuItem = new javax.swing.JMenuItem();
@@ -421,28 +422,45 @@ private Connection connection= new Conexion().getConexion();
         );
 
         jPanel1.add(panel_perfil);
-        panel_perfil.setBounds(70, 10, 590, 530);
+        panel_perfil.setBounds(60, 10, 590, 530);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/safety transparente.png"))); // NOI18N
         jPanel1.add(jLabel16);
-        jLabel16.setBounds(670, 30, 520, 120);
+        jLabel16.setBounds(670, 20, 520, 120);
 
         label_rol.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         label_rol.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(label_rol);
-        label_rol.setBounds(1120, 200, 210, 30);
+        label_rol.setBounds(1130, 180, 210, 30);
 
         label_nombreUser.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         label_nombreUser.setForeground(new java.awt.Color(0, 0, 0));
         label_nombreUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_nombreUser.setText("User");
         jPanel1.add(label_nombreUser);
-        label_nombreUser.setBounds(1070, 150, 260, 30);
+        label_nombreUser.setBounds(1080, 150, 260, 30);
 
-        label_fondo.setForeground(new java.awt.Color(0, 153, 153));
-        label_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn primero.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(1030, 200, 200, 200);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn segundo.png"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(600, 190, 200, 210);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn tercero.png"))); // NOI18N
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(190, 190, 220, 200);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn cuarto.png"))); // NOI18N
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(370, 390, 210, 210);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn quinto.png"))); // NOI18N
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(800, 400, 210, 210);
         jPanel1.add(label_fondo);
-        label_fondo.setBounds(-10, -70, 1640, 830);
+        label_fondo.setBounds(0, 0, 1360, 680);
 
         desktopPane.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -450,7 +468,7 @@ private Connection connection= new Conexion().getConexion();
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1348, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -461,10 +479,10 @@ private Connection connection= new Conexion().getConexion();
 
         getContentPane().add(desktopPane, java.awt.BorderLayout.CENTER);
 
-        jmEvaIni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/notebook.png"))); // NOI18N
-        jmEvaIni.setMnemonic('f');
-        jmEvaIni.setText("Evaluacion Inicial");
-        jmEvaIni.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jm_realizarEvaIni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/notebook.png"))); // NOI18N
+        jm_realizarEvaIni.setMnemonic('f');
+        jm_realizarEvaIni.setText("Evaluacion Inicial");
+        jm_realizarEvaIni.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jm_realizarEvaluacion.setMnemonic('o');
         jm_realizarEvaluacion.setText("Realizar Evaluacion Inicial");
@@ -473,27 +491,9 @@ private Connection connection= new Conexion().getConexion();
                 jm_realizarEvaluacionActionPerformed(evt);
             }
         });
-        jmEvaIni.add(jm_realizarEvaluacion);
+        jm_realizarEvaIni.add(jm_realizarEvaluacion);
 
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Save");
-        jmEvaIni.add(saveMenuItem);
-
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Save As ...");
-        saveAsMenuItem.setDisplayedMnemonicIndex(5);
-        jmEvaIni.add(saveAsMenuItem);
-
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Exit");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
-            }
-        });
-        jmEvaIni.add(exitMenuItem);
-
-        menuBar.add(jmEvaIni);
+        menuBar.add(jm_realizarEvaIni);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DIAGRAMA.png"))); // NOI18N
         jMenu3.setText("Perfil Socio-demografico");
@@ -513,33 +513,11 @@ private Connection connection= new Conexion().getConexion();
         });
         jMenu5.add(jm_RealizarEncuesta);
 
-        jMenuItem4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jMenuItem4.setText("Descargar Encuesta");
-        jMenu5.add(jMenuItem4);
-
-        jMenuItem6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jMenuItem6.setText("Subir Encuesta");
-        jMenu5.add(jMenuItem6);
-
         jMenu3.add(jMenu5);
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/archivo 2.png"))); // NOI18N
         jMenu4.setText("Administrar Encuestas");
         jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-
-        jMenu6.setText("Habilitar Encuesta");
-        jMenu6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-
-        jm_HabEncuTodos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jm_HabEncuTodos.setText("Para Todos");
-        jm_HabEncuTodos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jm_HabEncuTodosActionPerformed(evt);
-            }
-        });
-        jMenu6.add(jm_HabEncuTodos);
-
-        jMenu4.add(jMenu6);
 
         jMenuItem9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jMenuItem9.setText("Ver Encuestas Realizadas");
@@ -554,6 +532,15 @@ private Connection connection= new Conexion().getConexion();
         });
         jMenu4.add(jMenuItem2);
 
+        jm_habEncu.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jm_habEncu.setText("Habilitar Encuesta");
+        jm_habEncu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_habEncuActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jm_habEncu);
+
         jMenu3.add(jMenu4);
 
         menuBar.add(jMenu3);
@@ -563,9 +550,14 @@ private Connection connection= new Conexion().getConexion();
         editMenu.setText("Empleados");
         editMenu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
-        editMenu.add(cutMenuItem);
+        me_registrarEmpleado.setMnemonic('t');
+        me_registrarEmpleado.setText("Registrar Empleado");
+        me_registrarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                me_registrarEmpleadoActionPerformed(evt);
+            }
+        });
+        editMenu.add(me_registrarEmpleado);
 
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Copy");
@@ -657,10 +649,6 @@ private Connection connection= new Conexion().getConexion();
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
-
     private void btn_ayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ayudaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ayudaActionPerformed
@@ -715,7 +703,6 @@ private Connection connection= new Conexion().getConexion();
           
        C_RealizarEncuesta controlador_realizarEncuesta=new C_RealizarEncuesta(realizarEncuesta, modelo_encuesta);
         
-        this.dispose();
        realizarEncuesta.setVisible(true);
     }//GEN-LAST:event_jm_RealizarEncuestaActionPerformed
 
@@ -765,19 +752,6 @@ panel_perfil.setVisible(false);
       vista_llamadosAtencion=new Llamados_Atencion();
         vista_llamadosAtencion.setVisible(true);
     }//GEN-LAST:event_jm_realizarLlamadoAtencionMouseClicked
-
-    private void jm_realizarEvaluacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_realizarEvaluacionActionPerformed
-     Evaluacion_Ini vista_evaluacion=new Evaluacion_Ini();
-     vista_evaluacion.toFront();
-     vista_evaluacion.setVisible(true);
-    }//GEN-LAST:event_jm_realizarEvaluacionActionPerformed
-
-    private void jm_HabEncuTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_HabEncuTodosActionPerformed
-        HabEncuestaTodos vista_habEncuTodos=new HabEncuestaTodos();
-        M_HabEncuTodos modelo_habEncuTodos= new M_HabEncuTodos();
-        C_HabEncuTodos controlador_habEncuTodos=new C_HabEncuTodos(vista_habEncuTodos, modelo_habEncuTodos);
-        vista_habEncuTodos.setVisible(true);
-    }//GEN-LAST:event_jm_HabEncuTodosActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         DeshabEncuesta vista=new DeshabEncuesta();
@@ -850,6 +824,27 @@ panel_perfil.setVisible(false);
         }
     }//GEN-LAST:event_mn_criteriosNoCumpleActionPerformed
 
+    private void me_registrarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_me_registrarEmpleadoActionPerformed
+         RegistroEmpleados vista=new RegistroEmpleados();
+                M_RegistrarEmpleado modelo=new M_RegistrarEmpleado();
+                C_RegistrarEmpleado controlador=new C_RegistrarEmpleado(vista,modelo);
+                
+                vista.setVisible(true);
+    }//GEN-LAST:event_me_registrarEmpleadoActionPerformed
+
+    private void jm_realizarEvaluacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_realizarEvaluacionActionPerformed
+        Evaluacion_Ini vista_evaluacion=new Evaluacion_Ini();
+        vista_evaluacion.toFront();
+        vista_evaluacion.setVisible(true);
+    }//GEN-LAST:event_jm_realizarEvaluacionActionPerformed
+
+    private void jm_habEncuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_habEncuActionPerformed
+        HabEncuestaTodos vista_habEncuTodos=new HabEncuestaTodos();
+        M_HabEncuTodos modelo_habEncuTodos= new M_HabEncuTodos();
+        C_HabEncuTodos controlador_habEncuTodos=new C_HabEncuTodos(vista_habEncuTodos, modelo_habEncuTodos);
+             vista_habEncuTodos.setVisible(true);
+    }//GEN-LAST:event_jm_habEncuActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -875,29 +870,29 @@ panel_perfil.setVisible(false);
     private javax.swing.JButton btn_ayuda;
     private javax.swing.JButton btn_perfil;
     private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
-    private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
@@ -910,16 +905,17 @@ panel_perfil.setVisible(false);
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    public javax.swing.JMenu jmEvaIni;
     private javax.swing.JMenu jmSalir;
-    public javax.swing.JMenuItem jm_HabEncuTodos;
     private javax.swing.JMenuItem jm_RealizarEncuesta;
     private javax.swing.JMenu jm_evaluacionIni;
-    private javax.swing.JMenuItem jm_realizarEvaluacion;
+    private javax.swing.JMenuItem jm_habEncu;
+    public javax.swing.JMenu jm_realizarEvaIni;
+    public javax.swing.JMenuItem jm_realizarEvaluacion;
     private javax.swing.JMenu jm_realizarLlamadoAtencion;
     private javax.swing.JLabel label_fondo;
     public javax.swing.JLabel label_nombreUser;
     public javax.swing.JLabel label_rol;
+    private javax.swing.JMenuItem me_registrarEmpleado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem mn_criteriosNoCumple;
     private javax.swing.JMenuItem mn_itemnoCumple;
@@ -928,8 +924,6 @@ panel_perfil.setVisible(false);
     private javax.swing.JMenuItem mn_veriCumple;
     private javax.swing.JPanel panel_perfil;
     private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JLabel txt_Nombres;
     private javax.swing.JLabel txt_PrimerApellido;
     private javax.swing.JLabel txt_nombrePerfil;

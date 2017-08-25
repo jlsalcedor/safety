@@ -15,6 +15,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import java.util.logging.Level;
@@ -34,18 +35,18 @@ public final class C_HabEncuTodos implements ActionListener, KeyListener {
         
         this.modelo_habEncuTodos=modelo_habEncuTodos;
         this.vista_habEncuTodos=vista_habEncuTodos;
-        vista_habEncuTodos.txt_UltimoCodigo.setText(String.valueOf(modelo_habEncuTodos.ultimoCodigoEnc()));
-        vista_habEncuTodos.lbl_textoSeleccione.setVisible(false);
-        vista_habEncuTodos.btn_seleccionarEmpleados.setVisible(false);
+     
        // vista_habEncuTodos.txt_fecha.setText(fecha());
         
-        vista_habEncuTodos.btn_habilitarTodos.addActionListener(this);
-        vista_habEncuTodos.rb_si.addActionListener(this);
-        vista_habEncuTodos.rb_no.addActionListener(this);
+        vista_habEncuTodos.btn_habilitar.addActionListener(this);
+       
         vista_habEncuTodos.rb_algunosEm.addActionListener(this);
         vista_habEncuTodos.rb_todosEm.addActionListener(this);
         vista_habEncuTodos.btn_seleccionarEmpleados.addActionListener(this);
         
+        vista_habEncuTodos.lbl_textoSeleccione.setVisible(false);
+        vista_habEncuTodos.btn_seleccionarEmpleados.setVisible(false);
+        vista_habEncuTodos.txt_fecha.setText(fecha());
     }
     public String fecha(){
         String fechaA;
@@ -73,86 +74,54 @@ public final class C_HabEncuTodos implements ActionListener, KeyListener {
                }  
       JOptionPane.showMessageDialog(null, modelo_habEncuTodos.habilitarEncuesta(Integer.parseInt(vista_habEncuTodos.txt_nuevoCodigo.getText()), fechaDate, "Activa",4));
    }
-   
-   public void guardarEncuestaMismoCodigo(){
-   String estado="Activa";
-   int codigo=Integer.parseInt(vista_habEncuTodos.txt_UltimoCodigo.getText());
-         JOptionPane.showMessageDialog(null, modelo_habEncuTodos.cambiarEstadoEncuesta(estado, codigo));
-   }
   
   
     @Override
     public void actionPerformed(ActionEvent ae) {
-       
-        if(ae.getSource()==vista_habEncuTodos.rb_si){
-         vista_habEncuTodos.txt_fecha.setText(M_HabEncuTodos.getFechaEncUlt().toString());
-        }
-        if(ae.getSource()==vista_habEncuTodos.rb_no){
-        vista_habEncuTodos.txt_fecha.setText(fecha());
-        }
+  
         
          if(ae.getSource()==vista_habEncuTodos.rb_algunosEm){
-             vista_habEncuTodos.lbl_textoSeleccione.setVisible(true);
+             vista_habEncuTodos.lbl_textoSeleccione.setVisible(false);
              vista_habEncuTodos.btn_seleccionarEmpleados.setVisible(true);
+             vista_habEncuTodos.btn_habilitar.setEnabled(false);
         }
          if(ae.getSource()==vista_habEncuTodos.rb_todosEm){
          vista_habEncuTodos.lbl_textoSeleccione.setVisible(false);
              vista_habEncuTodos.btn_seleccionarEmpleados.setVisible(false);
          }
          
-         if(ae.getSource()==vista_habEncuTodos.btn_seleccionarEmpleados){
-             JOptionPane.showMessageDialog(null, "Boton");
-       String tipoEncuesta="Inactiva";
-    
-  
+         if(ae.getSource()==vista_habEncuTodos.btn_seleccionarEmpleados){  
+             int codigo=Integer.parseInt(vista_habEncuTodos.txt_nuevoCodigo.getText());
+           
+             String fechatxt=vista_habEncuTodos.txt_fecha.getText();
+             
                 SeleccionarEmpleados vista=new SeleccionarEmpleados();
                M_SeleccionarEmpleado modelo=new M_SeleccionarEmpleado();
-               C_SelecEmple controlador=new C_SelecEmple(vista, modelo, tipoEncuesta);
+               C_SelecEmple controlador=new C_SelecEmple(vista, modelo, codigo, fechatxt);
                 vista.setVisible(true);
          
          }
       
-        if(ae.getSource()==vista_habEncuTodos.btn_habilitarTodos){
-            if(vista_habEncuTodos.txt_fecha.getText().length()==0){
-            JOptionPane.showMessageDialog(null, "No ha seleccionado una opcion valida, Fecha vacia","ERROR",JOptionPane.ERROR_MESSAGE);
+        if(ae.getSource()==vista_habEncuTodos.btn_habilitar){
+            if(vista_habEncuTodos.txt_nuevoCodigo.getText().length()==0){
+            JOptionPane.showMessageDialog(null, "Debe Ingresar un Codigo","ERROR",JOptionPane.ERROR_MESSAGE);
             
             }else{
-            if(vista_habEncuTodos.rb_no.isSelected()){
-              if(vista_habEncuTodos.txt_nuevoCodigo.getText().length()==0){
-              JOptionPane.showMessageDialog(null, "Debe Ingresar un Nuevo Codigo");
-              }else{
-                  int cantidadActivas=modelo_habEncuTodos.encuestaActiva();
-                  
-                   if(cantidadActivas == -1 || cantidadActivas>0){
-                    JOptionPane.showMessageDialog(null, " Se Ha Encontrado que existe  una Encuesta Activa actualmente \n   Para Realizar una nueva Encuesta DesHabilite la Encuesta Actual","ADvertencia",JOptionPane.WARNING_MESSAGE);
-                       
-                        }else
-                          if(cantidadActivas<=0){
-                            int res=JOptionPane.showConfirmDialog(null, "La Encuesta con codigo "+vista_habEncuTodos.txt_nuevoCodigo.getText()+" Se Habilitara Para Todos Los Empleados");
-                              if(JOptionPane.YES_OPTION==res){
-                          guardarEncuestaCodigoNuevo();
-                          }
-                          }
-                        }
-                   
-                  
-              }else{
-               
-                int cantidadActivas=modelo_habEncuTodos.encuestaActiva();
-                   if(cantidadActivas == -1 || cantidadActivas>0){
-                    JOptionPane.showMessageDialog(null, " Se Ha Encontrado que existe una Encuesta Activa actualmente\n Para Realizar una nueva Encuesta DesHabilite la Encuesta Actual","ADvertencia",JOptionPane.WARNING_MESSAGE);
-                   }else
-                       if(cantidadActivas<=0){
-                             int res= JOptionPane.showConfirmDialog(null, "La Encuesta se guardara con el mismo Codigo de la ultima ves que se habilito");
-                    if(JOptionPane.YES_OPTION==res){
-                    guardarEncuestaMismoCodigo();
-                  } 
-                }
-            }
+              ArrayList id=new ArrayList();
+              M_SeleccionarEmpleado modelo=new M_SeleccionarEmpleado();
+              id=modelo_habEncuTodos.listaId();
+              String estado="Activa";
+              for(int i=0; i<id.size();i++){
+                 int idPersona=Integer.parseInt(String.valueOf(id.get(i)));
+                 modelo.habiEncuesta(vista_habEncuTodos.txt_fecha.getText(), Integer.parseInt(vista_habEncuTodos.txt_nuevoCodigo.getText()), estado, idPersona);
+              }
+              JOptionPane.showMessageDialog(null, "Se Habilito Correctamente la Encuesta para "+id.size()+" Personas");
+              }
+              
         }
         }
         //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public void keyTyped(KeyEvent ke) {
@@ -163,12 +132,12 @@ public final class C_HabEncuTodos implements ActionListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void keyReleased(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   //To change body of generated methods, choose Tools | Templates.
     }
     
     

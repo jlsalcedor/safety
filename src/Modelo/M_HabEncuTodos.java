@@ -9,6 +9,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Date;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -118,6 +119,22 @@ public class M_HabEncuTodos {
         }
     return activas;
     }
+    
+    public ArrayList listaId(){
+        ArrayList lista=new ArrayList();
+        try {
+            Connection acceso=conexion.getConexion();
+            CallableStatement cs=acceso.prepareCall("{call sp_idTodos()}");
+            ResultSet rs=cs.executeQuery();
+            while(rs.next()){
+            lista.add(rs.getInt(1));
+            }
+        } catch (Exception e) {
+        }
+    return lista;
+    }
+    
+   
     
     
 }

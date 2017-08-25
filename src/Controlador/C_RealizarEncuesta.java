@@ -29,24 +29,29 @@ public class C_RealizarEncuesta implements ActionListener, KeyListener{
     M_EncuestaSocioDemografica modelo_encuesta=new M_EncuestaSocioDemografica();
     M_IngresoSistema datosEmpleado=new M_IngresoSistema();
 ArrayList array=new ArrayList();
-ArrayList arrayDatosEmpleado=new ArrayList();
+ArrayList<M_EncuestaSocioDemografica> arrayDatosEmpresa=new ArrayList();
 IngresoUsuario vista_ingreso = new IngresoUsuario();
 infoEmpEncuesta datosEmpEncuesta=new infoEmpEncuesta();
+
     public C_RealizarEncuesta(Encuesta_SocioDemografica vista_realizarEncuesta, M_EncuestaSocioDemografica modelo_encuesta) {
         
         this.modelo_encuesta=modelo_encuesta;
         this.vista_realizarEncuesta=vista_realizarEncuesta;
         
         vista_realizarEncuesta.txt_empresa.addKeyListener(this);
+  
      
-         array=modelo_encuesta.llamarDatos();
-         
-        vista_realizarEncuesta.txt_empresa.setText(modelo_encuesta.getNombre());
-        vista_realizarEncuesta.txt_sucursalEmpresa.setText(modelo_encuesta.getSucursal());
-        vista_realizarEncuesta.txt_versionEncuesta.setText(modelo_encuesta.getVersion());
+        arrayDatosEmpresa=modelo_encuesta.empresa();
+        for(int i=0;i<arrayDatosEmpresa.size(); i++){
+         vista_realizarEncuesta.txt_empresa.setText(String.valueOf(arrayDatosEmpresa.get(i).getNombre())); 
+        }
+       vista_realizarEncuesta.txt_sucursalEmpresa.setText(M_EncuestaSocioDemografica.getSucursal());
+   
+        vista_realizarEncuesta.txt_sucursalEmpresa.setText(M_EncuestaSocioDemografica.getSucursal());
+    vista_realizarEncuesta.txt_nombreEncuesta.setText(C_IngresoSistema.nombrecompleto);
         vista_realizarEncuesta.txt_codigoEncuesta.setText(String.valueOf(modelo_encuesta.getCodigo()));
-         arrayDatosEmpleado=datosEmpEncuesta.datosEmpEncuesta(C_IngresoSistema.user, C_IngresoSistema.contraseñatxt);
-         vista_realizarEncuesta.txt_nombreCompletoEncuesta.setText(infoEmpEncuesta.getNombre() +" "+infoEmpEncuesta.getApellido_paterno() +" "+ infoEmpEncuesta.getApellido_materno());
+     //    arrayDatosEmpleado=datosEmpEncuesta.datosEmpEncuesta(C_IngresoSistema.user, C_IngresoSistema.contraseñatxt);
+         vista_realizarEncuesta.txt_nombreEncuesta.setText(infoEmpEncuesta.getNombre() +" "+infoEmpEncuesta.getApellido_paterno() +" "+ infoEmpEncuesta.getApellido_materno());
          vista_realizarEncuesta.txt_CargoEncuesta.setText(infoEmpEncuesta.getCargo());
          vista_realizarEncuesta.txt_procesoEncuesta.setText(infoEmpEncuesta.getArea());
          vista_realizarEncuesta.txtFecha.setText(fechaActual());
