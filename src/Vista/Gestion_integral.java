@@ -25,8 +25,7 @@ import javax.swing.UIManager;
  */
 public class Gestion_integral extends javax.swing.JFrame {
 
-    Cevaluacion yu = new Cevaluacion();
-    
+      
     /**
      * Creates new form Gestion
      */
@@ -249,7 +248,7 @@ public class Gestion_integral extends javax.swing.JFrame {
     }
 
     Mgestion_integral tr = new Mgestion_integral();
-    
+    Cevaluacion cm= new Cevaluacion();
       public void Validar (){
            Cgestion_integral func = new Cgestion_integral();
            
@@ -345,13 +344,15 @@ public class Gestion_integral extends javax.swing.JFrame {
     
     // configurar botones y llenar el progress bar dinamicamente
        ps.setE2(1);
-       yu.est_E2();
+       
        gh.config();
        int valo=15;
        ps.setBarra(ps.getBarra()+valo);
        this.dispose();
        gh.val=ps.getBarra();
         gh.empezar();
+        
+       cm.est_gestIntegral(ps);
        gh.setVisible(true);
        gh.toFront();
    

@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Cevaluacion;
 import Controlador.Cgestion_peligro;
 import Controlador.Crecursos;
 import Modelo.Mevaluacion;
@@ -251,6 +252,117 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
         
 
     }
+      
+      Cevaluacion cm = new Cevaluacion();
+      
+        public void Validar (){
+         Cgestion_peligro func = new Cgestion_peligro();
+           
+           
+        
+           
+       
+    if(tr.getI411().equals("")){
+        
+        JOptionPane.showMessageDialog(null,"El item 1 del estandar E4.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI421().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 2 del estandar E4.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI431().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 3 del estandar E4.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI441().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 4 del estandar E4.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI451().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E4.2 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI461().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 2 del estandar E4.2 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI471().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 3 del estandar E4.2 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI481().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 4 del estandar E4.2 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI491().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 5 del estandar E4.2 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI501().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 6 del estandar E4.2 no se ha diligenciado correctamente ");
+        
+    }
+        
+    if(!tr.getI411().equals("") && !tr.getI421().equals("") && !tr.getI431().equals("") && !tr.getI441().equals("") && !tr.getI451().equals("") && !tr.getI461().equals("") 
+            && !tr.getI471().equals("") && !tr.getI481().equals("") && !tr.getI491().equals("") && !tr.getI501().equals("")){
+     
+        
+    int dialogButton =JOptionPane.showConfirmDialog(null, "Esta seguro que desea guardar las respuesta diligenciadas en la evaluacion inicial,"
+                                                        + " recuerde que si acepta no podra volver a diligenciar este formulario hasta que comience una nueva E. inicial ");
+           if(dialogButton == JOptionPane.YES_OPTION){     
+          func.insertarItem41(tr);
+        func.insertarItem42(tr);
+        func.insertarItem43(tr);
+        func.insertarItem44(tr);
+        func.insertarItem45(tr);
+        func.insertarItem46(tr);
+        func.insertarItem47(tr);
+        func.insertarItem48(tr);
+        func.insertarItem49(tr);
+       
+        if(func.insertarItem50(tr)){
+            JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
+
+        }  
+
+       ps.setE4(1);
+       gh.config();
+       int valo=30;
+       ps.setBarra(ps.getBarra()+valo);
+       this.dispose();
+       gh.val=ps.getBarra();
+        gh.empezar();
+        
+        
+        cm.est_gestPeligros(ps);
+       gh.setVisible(true);
+       gh.toFront();
+   
+   
+       
+           }
+       
+     }
+        
+        
+    }
+
 
 
     /**
@@ -2809,6 +2921,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
             btnadjnoitem41.setEnabled(false);
             rbjustiitem41.setEnabled(true);
             rbnojustiitem41.setEnabled(true);
+            tr.setI411("");
 
         } else {
             rbsi411.setEnabled(true);
@@ -2827,6 +2940,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem41ActionPerformed
        txtitem41.setEnabled(true);
+       tr.setI411("");
     }//GEN-LAST:event_rbjustiitem41ActionPerformed
 
     private void rbnojustiitem41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem41ActionPerformed
@@ -2857,21 +2971,16 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
             tr.setA411("");
             tr.setA411("No");
             tr.setV411("");
+            tr.setV411("no aplica");
             tr.setV412("");
+            tr.setV412("no aplica");
             tr.setJ411("");
             tr.setJ411(txtitem41.getText());
 
         } else {
             tr.setJ411("");
             tr.setI411("");
-            tr.setI411("No");
-            tr.setA411("");
-            tr.setA411("No");
-            tr.setV411("");
-            tr.setV411("No");
-            tr.setV412("");
-            tr.setV412("No");
-
+            
             lblcum41.setEnabled(false);
             lblnocum41.setEnabled(false);
             btnadjnoitem41.setEnabled(false);
@@ -2994,6 +3103,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
           btnadjnoitem43.setEnabled(false);
          rbjustiitem43.setEnabled(true);
           rbnojustiitem43.setEnabled(true);
+           tr.setI431("");
         
         }else{
           rbsi431.setEnabled(true);
@@ -3017,6 +3127,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem43ActionPerformed
        txtitem43.setEnabled(true);
+        tr.setI431("");
     }//GEN-LAST:event_rbjustiitem43ActionPerformed
 
     private void rbnojustiitem43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem43ActionPerformed
@@ -3051,8 +3162,11 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
        tr.setA431("");
        tr.setA431("No");
        tr.setV431("");
+       tr.setV431("no aplica");
        tr.setV432("");
+       tr.setV432("no aplica");
        tr.setV433("");
+       tr.setV433("no aplica");
        tr.setJ431("");
        tr.setJ431(txtitem43.getText());
        
@@ -3060,16 +3174,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
    }else{
         tr.setJ431("");
             tr.setI431("");
-             tr.setI431("No");
-              tr.setA431("");
-             tr.setA431("No");
-             tr.setV431("");
-        tr.setV431("No");
-        tr.setV432("");
-        tr.setV432("No");
-        tr.setV433("");
-        tr.setV433("No");
-        
+                  
             lblcum43.setEnabled(false);
             lblnocum43.setEnabled(false);
             btnadjnoitem43.setEnabled(false);
@@ -3275,6 +3380,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
         btnadjnoitem44.setEnabled(false);
          rbjustiitem44.setEnabled(true);
           rbnojustiitem44.setEnabled(true);
+          tr.setI441("");
+
         
         }else{
           rbsi441.setEnabled(true);
@@ -3291,6 +3398,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem44ActionPerformed
       txtitem44.setEnabled(true);
+      tr.setI441("");
+
     }//GEN-LAST:event_rbjustiitem44ActionPerformed
 
     private void rbnojustiitem44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem44ActionPerformed
@@ -3317,7 +3426,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
        tr.setA441("");
        tr.setA441("No");
        tr.setV441("");
-       tr.setA441("No");
+       tr.setV441("no aplica");
        tr.setJ441("");
        tr.setJ441(txtitem44.getText());
        
@@ -3325,12 +3434,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
    }else{
         tr.setJ441("");
         tr.setI441("");
-        tr.setI441("No");
-        tr.setA441("");
-        tr.setA441("No");
-        tr.setV441("");
-        tr.setV441("No");
-        
+          
         
             lblcum44.setEnabled(false);
             lblnocum44.setEnabled(false);
@@ -3512,6 +3616,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
             btnadjnoitem42.setEnabled(false);
             rbjustiitem42.setEnabled(true);
             rbnojustiitem42.setEnabled(true);
+            tr.setI421("");
 
         } else {
             rbsi421.setEnabled(true);
@@ -3530,6 +3635,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem42ActionPerformed
       txtitem42.setEnabled(true);
+      tr.setI421("");
 
     }//GEN-LAST:event_rbjustiitem42ActionPerformed
 
@@ -3563,21 +3669,16 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
             tr.setA421("");
             tr.setA421("No");
             tr.setV421("");
+            tr.setV421("no aplica");
             tr.setV422("");
+            tr.setV422("no aplica");
             tr.setJ421("");
             tr.setJ421(txtitem42.getText());
 
         } else {
             tr.setJ421("");
             tr.setI421("");
-            tr.setI421("No");
-            tr.setA421("");
-            tr.setA421("No");
-            tr.setV421("");
-            tr.setV421("No");
-            tr.setV422("");
-            tr.setV422("No");
-
+           
             lblcum42.setEnabled(false);
             lblnocum42.setEnabled(false);
             btnadjnoitem42.setEnabled(false);
@@ -3762,6 +3863,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
           btnadjnoitem45.setEnabled(false);
           rbjustiitem45.setEnabled(true);
           rbnojustiitem45.setEnabled(true);
+          
+           tr.setI451("");
         
         }else{
           rbsi451.setEnabled(true);
@@ -3784,6 +3887,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem45ActionPerformed
        txtitem45.setEnabled(true);
+        tr.setI451("");
     }//GEN-LAST:event_rbjustiitem45ActionPerformed
 
     private void rbnojustiitem45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem45ActionPerformed
@@ -3819,6 +3923,9 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
        tr.setV451("");
        tr.setV452("");
        tr.setV453("");
+       tr.setV451("no aplica");
+       tr.setV452("no aplica");
+       tr.setV453("no aplica");
        tr.setJ451("");
        tr.setJ451(txtitem45.getText());
        
@@ -3826,16 +3933,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
    }else{
         tr.setJ451("");
             tr.setI451("");
-             tr.setI451("No");
-              tr.setA451("");
-             tr.setA451("No");
-             tr.setV451("");
-        tr.setV451("No");
-        tr.setV452("");
-        tr.setV452("No");
-        tr.setV453("");
-        tr.setV453("No");
-        
+                
             lblcum45.setEnabled(false);
             lblnocum45.setEnabled(false);
             btnadjnoitem45.setEnabled(false);
@@ -3955,6 +4053,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
             btnadjnoitem46.setEnabled(false);
              rbjustiitem46.setEnabled(true);
             rbnojustiitem46.setEnabled(true);
+            
+            tr.setI461("");
 
         } else {
             rbsi461.setEnabled(true);
@@ -3973,6 +4073,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem46ActionPerformed
       txtitem46.setEnabled(true);
+      tr.setI461("");
     }//GEN-LAST:event_rbjustiitem46ActionPerformed
 
     private void rbnojustiitem46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem46ActionPerformed
@@ -4005,6 +4106,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
             tr.setA461("No");
             tr.setV461("");
             tr.setV462("");
+            tr.setV461("no aplica");
+            tr.setV462("no aplica");
             tr.setJ461("");
             tr.setJ461(txtitem46.getText());
 
@@ -4195,6 +4298,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
         btnadjnoitem47.setEnabled(false);
          rbjustiitem47.setEnabled(true);
           rbnojustiitem47.setEnabled(true);
+           tr.setI471("");
         
         }else{
           rbsi471.setEnabled(true);
@@ -4211,6 +4315,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem47ActionPerformed
         txtitem47.setEnabled(true);
+         tr.setI471("");
     }//GEN-LAST:event_rbjustiitem47ActionPerformed
 
     private void rbnojustiitem47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem47ActionPerformed
@@ -4237,7 +4342,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
        tr.setA471("");
        tr.setA471("No");
        tr.setV471("");
-       tr.setA471("No");
+       tr.setV471("no aplica");
        tr.setJ471("");
        tr.setJ471(txtitem47.getText());
        
@@ -4245,12 +4350,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
    }else{
         tr.setJ471("");
         tr.setI471("");
-        tr.setI471("No");
-        tr.setA471("");
-        tr.setA471("No");
-        tr.setV471("");
-        tr.setV471("No");
-        
+         
         
             lblcum47.setEnabled(false);
             lblnocum47.setEnabled(false);
@@ -4489,6 +4589,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
         btnadjnoitem48.setEnabled(false);
           rbjustiitem48.setEnabled(true);
           rbnojustiitem48.setEnabled(true);
+           tr.setI481("");
+
         
         }else{
           rbsi481.setEnabled(true);
@@ -4505,6 +4607,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem48ActionPerformed
        txtitem48.setEnabled(true);
+        tr.setI481("");
+
     }//GEN-LAST:event_rbjustiitem48ActionPerformed
 
     private void rbnojustiitem48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem48ActionPerformed
@@ -4531,7 +4635,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
        tr.setA481("");
        tr.setA481("No");
        tr.setV481("");
-       tr.setA481("No");
+       tr.setV481("no aplica");
        tr.setJ481("");
        tr.setJ481(txtitem48.getText());
        
@@ -4539,12 +4643,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
    }else{
         tr.setJ481("");
         tr.setI481("");
-        tr.setI481("No");
-        tr.setA481("");
-        tr.setA481("No");
-        tr.setV481("");
-        tr.setV481("No");
-        
+             
         
             lblcum48.setEnabled(false);
             lblnocum48.setEnabled(false);
@@ -4661,6 +4760,8 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
         btnadjnoitem49.setEnabled(false);
          rbjustiitem49.setEnabled(true);
           rbnojustiitem49.setEnabled(true);
+          
+          tr.setI491("");
         
         }else{
           rbsi491.setEnabled(true);
@@ -4677,6 +4778,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem49ActionPerformed
         txtitem49.setEnabled(true);
+        tr.setI491("");
     }//GEN-LAST:event_rbjustiitem49ActionPerformed
 
     private void rbnojustiitem49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem49ActionPerformed
@@ -4703,7 +4805,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
        tr.setA491("");
        tr.setA491("No");
        tr.setV491("");
-       tr.setA491("No");
+       tr.setV491("no aplica");
        tr.setJ491("");
        tr.setJ491(txtitem49.getText());
        
@@ -4711,12 +4813,6 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
    }else{
         tr.setJ491("");
         tr.setI491("");
-        tr.setI491("No");
-        tr.setA491("");
-        tr.setA491("No");
-        tr.setV491("");
-        tr.setV491("No");
-        
         
             lblcum49.setEnabled(false);
             lblnocum49.setEnabled(false);
@@ -4842,6 +4938,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
           btnadjnoitem50.setEnabled(false);
           rbjustiitem50.setEnabled(true);
           rbnojustiitem50.setEnabled(true);
+          tr.setI501("");
         
         }else{
           rbsi501.setEnabled(true);
@@ -4867,6 +4964,7 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
 
     private void rbjustiitem50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem50ActionPerformed
        txtitem50.setEnabled(true);
+       tr.setI501("");
     }//GEN-LAST:event_rbjustiitem50ActionPerformed
 
     private void rbnojustiitem50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem50ActionPerformed
@@ -4905,25 +5003,18 @@ public class Gestion_peligrosyriesgos extends javax.swing.JFrame {
        tr.setV502("");
        tr.setV503("");
        tr.setV504("");
+       tr.setV501("no aplica");
+       tr.setV502("no aplica");
+       tr.setV503("no aplica");
+       tr.setV504("no aplica");
        tr.setJ501("");
        tr.setJ501(txtitem50.getText());
        
        
    }else{
         tr.setJ501("");
-            tr.setI501("");
-             tr.setI501("No");
-              tr.setA501("");
-             tr.setA501("No");
-             tr.setV501("");
-        tr.setV501("No");
-        tr.setV502("");
-        tr.setV502("No");
-        tr.setV503("");
-        tr.setV503("No");
-         tr.setV504("");
-        tr.setV504("No");
-        
+        tr.setI501("");
+                  
             lblcum50.setEnabled(false);
             lblnocum50.setEnabled(false);
             btnadjnoitem50.setEnabled(false);
@@ -5226,7 +5317,7 @@ gh.toFront();
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-/*
+
         // Item 41
         if(rbsi411.isSelected() && rbsi412.isSelected() ){
             tr.setI411("");
@@ -5236,10 +5327,15 @@ gh.toFront();
 
         }
         if(rbno411.isSelected() || rbno412.isSelected() ){
+           
+           if((!rbno411.isSelected() && !rbsi411.isSelected()) || (!rbno412.isSelected() && !rbsi412.isSelected())){   
+                
+        }else{    
+            
             tr.setI411("");
             tr.setI411("no");
             tr.setA411("");
-            tr.setA411("si");
+            tr.setA411("si");}
 
         }
         // Item 42
@@ -5252,10 +5348,14 @@ gh.toFront();
 
         }
         if(rbno421.isSelected() || rbno422.isSelected() ){
+            
+         if((!rbno421.isSelected() && !rbsi421.isSelected()) || (!rbno422.isSelected() && !rbsi422.isSelected())){   
+                
+        }else{      
             tr.setI421("");
             tr.setI421("no");
             tr.setA421("");
-            tr.setA421("si");
+            tr.setA421("si");   }
 
         }
 
@@ -5268,10 +5368,16 @@ gh.toFront();
 
         }
         if(rbno431.isSelected() || rbno432.isSelected() || rbno433.isSelected() ){
+          
+              if((!rbno431.isSelected() && !rbsi431.isSelected()) || (!rbno432.isSelected() && !rbsi432.isSelected()) || (!rbno433.isSelected() && !rbsi433.isSelected()) 
+       ){   
+                
+        }else{ 
+            
             tr.setI431("");
             tr.setI431("no");
             tr.setA431("");
-            tr.setA431("si");
+            tr.setA431("si"); }
 
         }
 
@@ -5304,10 +5410,16 @@ gh.toFront();
 
         }
         if(rbno451.isSelected() || rbno452.isSelected() || rbno453.isSelected() ){
+            
+           if((!rbno451.isSelected() && !rbsi451.isSelected()) || (!rbno452.isSelected() && !rbsi452.isSelected()) || (!rbno453.isSelected() && !rbsi453.isSelected()) 
+       ){   
+                
+        }else{    
+            
             tr.setI451("");
             tr.setI451("no");
             tr.setA451("");
-            tr.setA451("si");
+            tr.setA451("si");  }
 
         }
 
@@ -5321,10 +5433,15 @@ gh.toFront();
         }
 
         if(rbno461.isSelected() || rbno462.isSelected()){
+            
+       if((!rbno461.isSelected() && !rbsi461.isSelected()) || (!rbno462.isSelected() && !rbsi462.isSelected())){   
+                
+        }else{       
+            
             tr.setI461("");
             tr.setI461("no");
             tr.setA461("");
-            tr.setA461("si");
+            tr.setA461("si");  }
 
         }
 
@@ -5388,41 +5505,23 @@ gh.toFront();
 
         }
         if(rbno501.isSelected() || rbno502.isSelected() || rbno503.isSelected() || rbno504.isSelected() ){
+          if((!rbno501.isSelected() && !rbsi501.isSelected()) || (!rbno502.isSelected() && !rbsi502.isSelected()) || (!rbno503.isSelected() && !rbsi503.isSelected()) 
+         || (!rbno504.isSelected() && !rbsi504.isSelected())){   
+                
+        }else{  
+            
             tr.setI501("");
             tr.setI501("no");
             tr.setA501("");
-            tr.setA501("si");
+            tr.setA501("si");  }
 
         }
 
       
+      Validar();
+        
 
-        Cgestion_peligro func = new Cgestion_peligro();
-
-        func.insertarItem41(tr);
-        func.insertarItem42(tr);
-        func.insertarItem43(tr);
-        func.insertarItem44(tr);
-        func.insertarItem45(tr);
-        func.insertarItem46(tr);
-        func.insertarItem47(tr);
-        func.insertarItem48(tr);
-        func.insertarItem49(tr);
-       
-        if(func.insertarItem50(tr)){
-            JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
-
-        }  */
-
-       ps.setE4(1);
-       gh.config();
-       int valo=30;
-       ps.setBarra(ps.getBarra()+valo);
-       this.dispose();
-       gh.val=ps.getBarra();
-        gh.empezar();
-       gh.setVisible(true);
-       gh.toFront();
+      
 
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -5431,11 +5530,8 @@ gh.toFront();
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        try{
-            UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
-        }catch(Exception e){
-            
-        }
+       
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Gestion_peligrosyriesgos().setVisible(true);

@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Cevaluacion;
 import Controlador.Cgestion_salud;
 import Controlador.Crecursos;
 import Modelo.Mevaluacion;
@@ -209,6 +210,7 @@ public class Gestion_salud extends javax.swing.JFrame {
     }
     Mevaluacion ps= new Mevaluacion();
     Evaluacion_Ini gh= new Evaluacion_Ini();
+    Cevaluacion cm= new Cevaluacion();
     
      public void noVisibles() {
         rbjustiitem23.setEnabled(false);
@@ -359,6 +361,167 @@ public class Gestion_salud extends javax.swing.JFrame {
     }
     
     Mgestion_salud tr = new Mgestion_salud();
+    
+       public void Validar (){
+           Cgestion_salud func = new Cgestion_salud();
+           
+           
+        
+           
+       
+    if(tr.getI231().equals("")){
+        
+        JOptionPane.showMessageDialog(null,"El item 1 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI241().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 2 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI251().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 3 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI261().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 4 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI271().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 5 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI281().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 6 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI291().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 7 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI301().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 8 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI311().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 9 del estandar E3.1 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI321().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E3.2 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI331().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 2 del estandar E3.2 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI341().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 3 del estandar E3.2 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI351().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E3.3 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI361().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 2 del estandar E3.3 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI371().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 3 del estandar E3.3 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI381().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 4 del estandar E3.3 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI391().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 5 del estandar E3.3 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI401().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 6 del estandar E3.3 no se ha diligenciado correctamente ");
+        
+    }
+   
+    
+    if(!tr.getI231().equals("") && !tr.getI241().equals("") && !tr.getI251().equals("") && !tr.getI261().equals("") && !tr.getI271().equals("") && !tr.getI281().equals("") 
+            && !tr.getI291().equals("") && !tr.getI301().equals("") && !tr.getI311().equals("") && !tr.getI321().equals("") && !tr.getI331().equals("")&& !tr.getI341().equals("")
+            && !tr.getI351().equals("")&& !tr.getI361().equals("")&& !tr.getI371().equals("")&& !tr.getI381().equals("")&& !tr.getI391().equals("")&& !tr.getI401().equals("")){
+     
+        
+    int dialogButton =JOptionPane.showConfirmDialog(null, "Esta seguro que desea guardar las respuesta diligenciadas en la evaluacion inicial,"
+                                                        + " recuerde que si acepta no podra volver a diligenciar este formulario hasta que comience una nueva E. inicial ");
+           if(dialogButton == JOptionPane.YES_OPTION){     
+        
+        func.insertarItem23(tr);
+        func.insertarItem24(tr);
+        func.insertarItem25(tr);
+        func.insertarItem26(tr);
+        func.insertarItem27(tr);
+        func.insertarItem28(tr);
+        func.insertarItem29(tr);
+        func.insertarItem30(tr);
+        func.insertarItem31(tr);
+        func.insertarItem32(tr);
+        func.insertarItem33(tr);
+        func.insertarItem34(tr);
+        func.insertarItem35(tr);
+        func.insertarItem36(tr);
+        func.insertarItem37(tr);
+        func.insertarItem38(tr);
+        func.insertarItem39(tr);
+
+        if(func.insertarItem40(tr)){
+            JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
+
+        }
+      ps.setE3(1);
+       gh.config();
+       int valo=20;
+       ps.setBarra(ps.getBarra()+valo);
+       this.dispose();
+       gh.val=ps.getBarra();
+        gh.empezar();
+        
+        cm.est_gestSalud(ps);
+       gh.setVisible(true);
+       gh.toFront();
+   
+       
+           }
+       
+     }
+        
+        
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -4313,7 +4476,7 @@ public class Gestion_salud extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -4329,6 +4492,8 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem23.setEnabled(false);
          rbjustiitem23.setEnabled(true);
           rbnojustiitem23.setEnabled(true);
+          
+          tr.setI231("");
         
         }else{
           rbsi231.setEnabled(true);
@@ -4346,6 +4511,7 @@ public class Gestion_salud extends javax.swing.JFrame {
     private void rbjustiitem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem23ActionPerformed
         
         txtitem23.setEnabled(true);
+        tr.setI231("");
         
     }//GEN-LAST:event_rbjustiitem23ActionPerformed
 
@@ -4373,7 +4539,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA231("");
        tr.setA231("No");
        tr.setV231("");
-       tr.setA231("No");
+       tr.setV231("no aplica");
        tr.setJ231("");
        tr.setJ231(txtitem23.getText());
        
@@ -4381,12 +4547,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ231("");
         tr.setI231("");
-        tr.setI231("No");
-        tr.setA231("");
-        tr.setA231("No");
-        tr.setV231("");
-        tr.setV231("No");
-        
+            
         
             lblcum23.setEnabled(false);
             lblnocum23.setEnabled(false);
@@ -4506,6 +4667,7 @@ public class Gestion_salud extends javax.swing.JFrame {
             btnadjnoitem24.setEnabled(false);
            rbjustiitem24.setEnabled(true);
             rbnojustiitem24.setEnabled(true);
+            tr.setI241("");
 
         } else {
             rbsi241.setEnabled(true);
@@ -4524,6 +4686,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem24ActionPerformed
    txtitem24.setEnabled(true);
+   tr.setI241("");
 
     }//GEN-LAST:event_rbjustiitem24ActionPerformed
 
@@ -4556,20 +4719,16 @@ public class Gestion_salud extends javax.swing.JFrame {
             tr.setA241("");
             tr.setA241("No");
             tr.setV241("");
+            tr.setV241("no aplica");
             tr.setV242("");
+            tr.setV242("no aplica");
             tr.setJ241("");
             tr.setJ241(txtitem24.getText());
 
         } else {
             tr.setJ241("");
             tr.setI241("");
-            tr.setI241("No");
-            tr.setA241("");
-            tr.setA241("No");
-            tr.setV241("");
-            tr.setV241("No");
-            tr.setV242("");
-            tr.setV242("No");
+            
 
             lblcum24.setEnabled(false);
             lblnocum24.setEnabled(false);
@@ -4747,6 +4906,8 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem25.setEnabled(false);
           rbjustiitem25.setEnabled(true);
           rbnojustiitem25.setEnabled(true);
+          
+          tr.setI251("");
         
         }else{
           rbsi251.setEnabled(true);
@@ -4763,6 +4924,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem25ActionPerformed
        txtitem25.setEnabled(true);
+       tr.setI251("");
     }//GEN-LAST:event_rbjustiitem25ActionPerformed
 
     private void rbnojustiitem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem25ActionPerformed
@@ -4789,7 +4951,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA251("");
        tr.setA251("No");
        tr.setV251("");
-       tr.setA251("No");
+       tr.setV251("no aplica");
        tr.setJ251("");
        tr.setJ251(txtitem25.getText());
        
@@ -4797,11 +4959,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ251("");
         tr.setI251("");
-        tr.setI251("No");
-        tr.setA251("");
-        tr.setA251("No");
-        tr.setV251("");
-        tr.setV251("No");
+       
         
         
             lblcum25.setEnabled(false);
@@ -4926,6 +5084,7 @@ public class Gestion_salud extends javax.swing.JFrame {
           btnadjnoitem26.setEnabled(false);
           rbjustiitem26.setEnabled(true);
           rbnojustiitem26.setEnabled(true);
+           tr.setI261("");
         
         }else{
           rbsi261.setEnabled(true);
@@ -4949,6 +5108,7 @@ public class Gestion_salud extends javax.swing.JFrame {
     private void rbjustiitem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem26ActionPerformed
      
          txtitem26.setEnabled(true);
+          tr.setI261("");
 
         
     }//GEN-LAST:event_rbjustiitem26ActionPerformed
@@ -4987,8 +5147,11 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA261("");
        tr.setA261("No");
        tr.setV261("");
+       tr.setV261("no aplica");
        tr.setV262("");
+       tr.setV262("no aplica");
        tr.setV263("");
+       tr.setV263("no aplica");
        tr.setJ261("");
        tr.setJ261(txtitem26.getText());
        
@@ -4996,16 +5159,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ261("");
             tr.setI261("");
-             tr.setI261("No");
-              tr.setA261("");
-             tr.setA261("No");
-             tr.setV261("");
-        tr.setV261("No");
-        tr.setV262("");
-        tr.setV262("No");
-        tr.setV263("");
-        tr.setV263("No");
-        
+                 
             lblcum26.setEnabled(false);
             lblnocum26.setEnabled(false);
             btnadjnoitem26.setEnabled(false);
@@ -5247,7 +5401,7 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem27.setEnabled(false);
          rbjustiitem27.setEnabled(true);
           rbnojustiitem27.setEnabled(true);
-        
+         tr.setI271("");
         }else{
           rbsi271.setEnabled(true);
         rbno271.setEnabled(true);
@@ -5263,6 +5417,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem27ActionPerformed
     txtitem27.setEnabled(true);
+     tr.setI271("");
     }//GEN-LAST:event_rbjustiitem27ActionPerformed
 
     private void rbnojustiitem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem27ActionPerformed
@@ -5290,7 +5445,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA271("");
        tr.setA271("No");
        tr.setV271("");
-       tr.setA271("No");
+       tr.setV271("no aplica");
        tr.setJ271("");
        tr.setJ271(txtitem27.getText());
        
@@ -5298,11 +5453,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ271("");
         tr.setI271("");
-        tr.setI271("No");
-        tr.setA271("");
-        tr.setA271("No");
-        tr.setV271("");
-        tr.setV271("No");
+       
         
         
             lblcum27.setEnabled(false);
@@ -5424,6 +5575,7 @@ public class Gestion_salud extends javax.swing.JFrame {
             btnadjnoitem28.setEnabled(false);
             rbjustiitem28.setEnabled(true);
             rbnojustiitem28.setEnabled(true);
+            tr.setI281("");
 
         } else {
             rbsi281.setEnabled(true);
@@ -5442,6 +5594,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem28ActionPerformed
     txtitem28.setEnabled(true);
+    tr.setI281("");
     }//GEN-LAST:event_rbjustiitem28ActionPerformed
 
     private void rbnojustiitem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem28ActionPerformed
@@ -5472,21 +5625,16 @@ public class Gestion_salud extends javax.swing.JFrame {
             tr.setA281("");
             tr.setA281("No");
             tr.setV281("");
+            tr.setV281("no aplica");
             tr.setV282("");
+            tr.setV282("no aplica");
             tr.setJ281("");
             tr.setJ281(txtitem28.getText());
 
         } else {
             tr.setJ281("");
             tr.setI281("");
-            tr.setI281("No");
-            tr.setA281("");
-            tr.setA281("No");
-            tr.setV281("");
-            tr.setV281("No");
-            tr.setV282("");
-            tr.setV282("No");
-
+            
             lblcum28.setEnabled(false);
             lblnocum28.setEnabled(false);
             btnadjnoitem28.setEnabled(false);
@@ -5666,6 +5814,7 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem29.setEnabled(false);
          rbjustiitem29.setEnabled(true);
           rbnojustiitem29.setEnabled(true);
+          tr.setI291("");
         
         }else{
           rbsi291.setEnabled(true);
@@ -5682,7 +5831,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem29ActionPerformed
       
-        
+tr.setI291("");        
  txtitem29.setEnabled(true);
     }//GEN-LAST:event_rbjustiitem29ActionPerformed
 
@@ -5710,7 +5859,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA291("");
        tr.setA291("No");
        tr.setV291("");
-       tr.setA291("No");
+       tr.setV291("no aplica");
        tr.setJ291("");
        tr.setJ291(txtitem29.getText());
        
@@ -5718,11 +5867,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ291("");
         tr.setI291("");
-        tr.setI291("No");
-        tr.setA291("");
-        tr.setA291("No");
-        tr.setV291("");
-        tr.setV291("No");
+       
         
         
             lblcum29.setEnabled(false);
@@ -5841,6 +5986,7 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem30.setEnabled(false);
         rbjustiitem30.setEnabled(true);
           rbnojustiitem30.setEnabled(true);
+           tr.setI301("");
         
         }else{
           rbsi301.setEnabled(true);
@@ -5857,6 +6003,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem30ActionPerformed
        txtitem30.setEnabled(true);
+        tr.setI301("");
 
     }//GEN-LAST:event_rbjustiitem30ActionPerformed
 
@@ -5884,7 +6031,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA301("");
        tr.setA301("No");
        tr.setV301("");
-       tr.setA301("No");
+       tr.setV301("no aplica");
        tr.setJ301("");
        tr.setJ301(txtitem30.getText());
        
@@ -5892,13 +6039,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ301("");
         tr.setI301("");
-        tr.setI301("No");
-        tr.setA301("");
-        tr.setA301("No");
-        tr.setV301("");
-        tr.setV301("No");
-        
-        
+                
             lblcum30.setEnabled(false);
             lblnocum30.setEnabled(false);
             btnadjnoitem30.setEnabled(false);
@@ -6016,6 +6157,8 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem31.setEnabled(false);
          rbjustiitem31.setEnabled(true);
           rbnojustiitem31.setEnabled(true);
+          tr.setI311("");
+
         
         }else{
           rbsi311.setEnabled(true);
@@ -6032,6 +6175,8 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem31ActionPerformed
     txtitem31.setEnabled(true);
+    tr.setI311("");
+
     }//GEN-LAST:event_rbjustiitem31ActionPerformed
 
     private void rbnojustiitem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem31ActionPerformed
@@ -6059,7 +6204,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA311("");
        tr.setA311("No");
        tr.setV311("");
-       tr.setA311("No");
+       tr.setV311("no aplica");
        tr.setJ311("");
        tr.setJ311(txtitem31.getText());
        
@@ -6067,12 +6212,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ311("");
         tr.setI311("");
-        tr.setI311("No");
-        tr.setA311("");
-        tr.setA311("No");
-        tr.setV311("");
-        tr.setV311("No");
-        
+           
         
             lblcum31.setEnabled(false);
             lblnocum31.setEnabled(false);
@@ -6189,6 +6329,7 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem32.setEnabled(false);
          rbjustiitem32.setEnabled(true);
           rbnojustiitem32.setEnabled(true);
+          tr.setI321("");
         
         }else{
           rbsi321.setEnabled(true);
@@ -6205,6 +6346,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem32ActionPerformed
         txtitem32.setEnabled(true);
+        tr.setI321("");
     }//GEN-LAST:event_rbjustiitem32ActionPerformed
 
     private void rbnojustiitem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem32ActionPerformed
@@ -6231,7 +6373,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA321("");
        tr.setA321("No");
        tr.setV321("");
-       tr.setA321("No");
+       tr.setV321("no aplica");
        tr.setJ321("");
        tr.setJ321(txtitem32.getText());
        
@@ -6239,12 +6381,6 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ321("");
         tr.setI321("");
-        tr.setI321("No");
-        tr.setA321("");
-        tr.setA321("No");
-        tr.setV321("");
-        tr.setV321("No");
-        
         
             lblcum32.setEnabled(false);
             lblnocum32.setEnabled(false);
@@ -6367,6 +6503,7 @@ public class Gestion_salud extends javax.swing.JFrame {
           btnadjnoitem33.setEnabled(false);
           rbjustiitem33.setEnabled(true);
           rbnojustiitem33.setEnabled(true);
+          tr.setI331("");
         
         }else{
           rbsi331.setEnabled(true);
@@ -6389,6 +6526,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem33ActionPerformed
         txtitem33.setEnabled(true);
+        tr.setI331("");
     }//GEN-LAST:event_rbjustiitem33ActionPerformed
 
     private void rbnojustiitem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem33ActionPerformed
@@ -6422,8 +6560,11 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA331("");
        tr.setA331("No");
        tr.setV331("");
+       tr.setV331("no aplica");
        tr.setV332("");
+       tr.setV332("no aplica");
        tr.setV333("");
+       tr.setV333("no aplica");
        tr.setJ331("");
        tr.setJ331(txtitem33.getText());
        
@@ -6431,16 +6572,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ331("");
             tr.setI331("");
-             tr.setI331("No");
-              tr.setA331("");
-             tr.setA331("No");
-             tr.setV331("");
-        tr.setV331("No");
-        tr.setV332("");
-        tr.setV332("No");
-        tr.setV333("");
-        tr.setV333("No");
-        
+                  
             lblcum33.setEnabled(false);
             lblnocum33.setEnabled(false);
             btnadjnoitem33.setEnabled(false);
@@ -6679,6 +6811,7 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem34.setEnabled(false);
          rbjustiitem34.setEnabled(true);
           rbnojustiitem34.setEnabled(true);
+           tr.setI341("");
         
         }else{
           rbsi341.setEnabled(true);
@@ -6695,6 +6828,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem34ActionPerformed
      txtitem34.setEnabled(true);
+      tr.setI341("");
     }//GEN-LAST:event_rbjustiitem34ActionPerformed
 
     private void rbnojustiitem34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem34ActionPerformed
@@ -6722,7 +6856,7 @@ public class Gestion_salud extends javax.swing.JFrame {
        tr.setA341("");
        tr.setA341("No");
        tr.setV341("");
-       tr.setA341("No");
+       tr.setV341("no aplica");
        tr.setJ341("");
        tr.setJ341(txtitem34.getText());
        
@@ -6730,13 +6864,7 @@ public class Gestion_salud extends javax.swing.JFrame {
    }else{
         tr.setJ341("");
         tr.setI341("");
-        tr.setI341("No");
-        tr.setA341("");
-        tr.setA341("No");
-        tr.setV341("");
-        tr.setV341("No");
-        
-        
+       
             lblcum34.setEnabled(false);
             lblnocum34.setEnabled(false);
             btnadjnoitem34.setEnabled(false);
@@ -6854,6 +6982,9 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem35.setEnabled(false);
          rbjustiitem35.setEnabled(true);
           rbnojustiitem35.setEnabled(true);
+          
+          tr.setI351("");
+          
         
         }else{
           rbsi351.setEnabled(true);
@@ -6870,6 +7001,7 @@ public class Gestion_salud extends javax.swing.JFrame {
 
     private void rbjustiitem35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem35ActionPerformed
       txtitem35.setEnabled(true);
+      tr.setI351("");
     }//GEN-LAST:event_rbjustiitem35ActionPerformed
 
     private void rbnojustiitem35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem35ActionPerformed
@@ -6897,7 +7029,7 @@ if(txtitem35.getText().length()>2){
        tr.setA351("");
        tr.setA351("No");
        tr.setV351("");
-       tr.setA351("No");
+       tr.setV351("no aplica");
        tr.setJ351("");
        tr.setJ351(txtitem35.getText());
        
@@ -6905,13 +7037,7 @@ if(txtitem35.getText().length()>2){
    }else{
         tr.setJ351("");
         tr.setI351("");
-        tr.setI351("No");
-        tr.setA351("");
-        tr.setA351("No");
-        tr.setV351("");
-        tr.setV351("No");
-        
-        
+               
             lblcum35.setEnabled(false);
             lblnocum35.setEnabled(false);
             btnadjnoitem35.setEnabled(false);
@@ -7027,7 +7153,7 @@ if(txtitem35.getText().length()>2){
         btnadjnoitem36.setEnabled(false);
          rbjustiitem36.setEnabled(true);
           rbnojustiitem36.setEnabled(true);
-        
+        tr.setI361("");
         }else{
           rbsi361.setEnabled(true);
         rbno361.setEnabled(true);
@@ -7043,6 +7169,7 @@ if(txtitem35.getText().length()>2){
 
     private void rbjustiitem36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem36ActionPerformed
       txtitem36.setEnabled(true);
+      tr.setI361("");
     }//GEN-LAST:event_rbjustiitem36ActionPerformed
 
     private void rbnojustiitem36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem36ActionPerformed
@@ -7069,7 +7196,7 @@ if(txtitem35.getText().length()>2){
        tr.setA361("");
        tr.setA361("No");
        tr.setV361("");
-       tr.setA361("No");
+       tr.setV361("no aplica");
        tr.setJ361("");
        tr.setJ361(txtitem36.getText());
        
@@ -7077,12 +7204,7 @@ if(txtitem35.getText().length()>2){
    }else{
         tr.setJ361("");
         tr.setI361("");
-        tr.setI361("No");
-        tr.setA361("");
-        tr.setA361("No");
-        tr.setV361("");
-        tr.setV361("No");
-        
+                
         
             lblcum36.setEnabled(false);
             lblnocum36.setEnabled(false);
@@ -7201,6 +7323,7 @@ if(txtitem35.getText().length()>2){
         btnadjnoitem37.setEnabled(false);
           rbjustiitem37.setEnabled(true);
           rbnojustiitem37.setEnabled(true);
+           tr.setI371("");
         
         }else{
           rbsi371.setEnabled(true);
@@ -7218,6 +7341,7 @@ if(txtitem35.getText().length()>2){
 
     private void rbjustiitem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem37ActionPerformed
        txtitem37.setEnabled(true);
+        tr.setI371("");
     }//GEN-LAST:event_rbjustiitem37ActionPerformed
 
     private void rbnojustiitem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem37ActionPerformed
@@ -7244,7 +7368,7 @@ if(txtitem35.getText().length()>2){
        tr.setA371("");
        tr.setA371("No");
        tr.setV371("");
-       tr.setA371("No");
+       tr.setV371("no aplica");
        tr.setJ371("");
        tr.setJ371(txtitem37.getText());
        
@@ -7252,13 +7376,7 @@ if(txtitem35.getText().length()>2){
    }else{
         tr.setJ371("");
         tr.setI371("");
-        tr.setI371("No");
-        tr.setA371("");
-        tr.setA371("No");
-        tr.setV371("");
-        tr.setV371("No");
-        
-        
+                
             lblcum37.setEnabled(false);
             lblnocum37.setEnabled(false);
             btnadjnoitem37.setEnabled(false);
@@ -7375,6 +7493,7 @@ if(txtitem35.getText().length()>2){
         btnadjnoitem38.setEnabled(false);
           rbjustiitem38.setEnabled(true);
           rbnojustiitem38.setEnabled(true);
+          tr.setI381("");
         
         }else{
           rbsi381.setEnabled(true);
@@ -7391,6 +7510,7 @@ if(txtitem35.getText().length()>2){
 
     private void rbjustiitem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem38ActionPerformed
        txtitem38.setEnabled(true);
+       tr.setI381("");
     }//GEN-LAST:event_rbjustiitem38ActionPerformed
 
     private void rbnojustiitem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem38ActionPerformed
@@ -7418,7 +7538,7 @@ if(txtitem35.getText().length()>2){
        tr.setA381("");
        tr.setA381("No");
        tr.setV381("");
-       tr.setA381("No");
+       tr.setV381("no aplica");
        tr.setJ381("");
        tr.setJ381(txtitem38.getText());
        
@@ -7426,13 +7546,7 @@ if(txtitem35.getText().length()>2){
    }else{
         tr.setJ381("");
         tr.setI381("");
-        tr.setI381("No");
-        tr.setA381("");
-        tr.setA381("No");
-        tr.setV381("");
-        tr.setV381("No");
-        
-        
+              
             lblcum38.setEnabled(false);
             lblnocum38.setEnabled(false);
             btnadjnoitem38.setEnabled(false);
@@ -7548,6 +7662,7 @@ if(txtitem35.getText().length()>2){
         btnadjnoitem39.setEnabled(false);
          rbjustiitem39.setEnabled(true);
           rbnojustiitem39.setEnabled(true);
+          tr.setI391("");
         
         }else{
           rbsi391.setEnabled(true);
@@ -7564,6 +7679,7 @@ if(txtitem35.getText().length()>2){
 
     private void rbjustiitem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem39ActionPerformed
        txtitem39.setEnabled(true);
+       tr.setI391("");
     }//GEN-LAST:event_rbjustiitem39ActionPerformed
 
     private void rbnojustiitem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem39ActionPerformed
@@ -7590,7 +7706,7 @@ if(txtitem35.getText().length()>2){
        tr.setA391("");
        tr.setA391("No");
        tr.setV391("");
-       tr.setA391("No");
+       tr.setV391("no aplica");
        tr.setJ391("");
        tr.setJ391(txtitem39.getText());
        
@@ -7598,13 +7714,7 @@ if(txtitem35.getText().length()>2){
    }else{
         tr.setJ391("");
         tr.setI391("");
-        tr.setI391("No");
-        tr.setA391("");
-        tr.setA391("No");
-        tr.setV391("");
-        tr.setV391("No");
-        
-        
+              
             lblcum39.setEnabled(false);
             lblnocum39.setEnabled(false);
             btnadjnoitem39.setEnabled(false);
@@ -7720,6 +7830,7 @@ if(txtitem35.getText().length()>2){
         btnadjnoitem40.setEnabled(false);
          rbjustiitem40.setEnabled(true);
           rbnojustiitem40.setEnabled(true);
+          tr.setI401("");
         
         }else{
           rbsi401.setEnabled(true);
@@ -7736,6 +7847,7 @@ if(txtitem35.getText().length()>2){
 
     private void rbjustiitem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem40ActionPerformed
      txtitem40.setEnabled(true);
+     tr.setI401("");
     }//GEN-LAST:event_rbjustiitem40ActionPerformed
 
     private void rbnojustiitem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem40ActionPerformed
@@ -7764,7 +7876,7 @@ if(txtitem35.getText().length()>2){
        tr.setA401("");
        tr.setA401("No");
        tr.setV401("");
-       tr.setA401("No");
+       tr.setV401("no aplica");
        tr.setJ401("");
        tr.setJ401(txtitem40.getText());
        
@@ -7772,13 +7884,7 @@ if(txtitem35.getText().length()>2){
    }else{
         tr.setJ401("");
         tr.setI401("");
-        tr.setI401("No");
-        tr.setA401("");
-        tr.setA401("No");
-        tr.setV401("");
-        tr.setV401("No");
-        
-        
+               
             lblcum40.setEnabled(false);
             lblnocum40.setEnabled(false);
             btnadjnoitem40.setEnabled(false);
@@ -7888,7 +7994,7 @@ if(txtitem35.getText().length()>2){
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-/*
+
         // Item 23
      if(rbsi231.isSelected()){
             tr.setI231("");
@@ -7909,6 +8015,7 @@ if(txtitem35.getText().length()>2){
         // Item 24
 
         if(rbsi241.isSelected() && rbsi242.isSelected()){
+             
             tr.setI241("");
             tr.setI241("si");
             tr.setA241("");
@@ -7917,10 +8024,14 @@ if(txtitem35.getText().length()>2){
         }
 
         if(rbno241.isSelected() || rbno242.isSelected()){
+         if((!rbno241.isSelected() && !rbsi241.isSelected()) || (!rbno242.isSelected() && !rbsi242.isSelected())){   
+                
+        }else{    
+            
             tr.setI241("");
             tr.setI241("no");
             tr.setA241("");
-            tr.setA241("si");
+            tr.setA241("si");   }
 
         }
 
@@ -7951,10 +8062,15 @@ if(txtitem35.getText().length()>2){
 
         }
         if(rbno261.isSelected() || rbno262.isSelected() || rbno263.isSelected()){
+         if((!rbno261.isSelected() && !rbsi261.isSelected()) || (!rbno262.isSelected() && !rbsi262.isSelected()) || (!rbno263.isSelected() && !rbsi263.isSelected()) 
+       ){   
+                
+        }else{   
+            
             tr.setI261("");
             tr.setI261("no");
             tr.setA261("");
-            tr.setA261("si");
+            tr.setA261("si");  }
 
         }
 
@@ -7986,10 +8102,14 @@ if(txtitem35.getText().length()>2){
         }
 
         if(rbno281.isSelected() || rbno282.isSelected()){
+            
+         if((!rbno281.isSelected() && !rbsi281.isSelected()) || (!rbno282.isSelected() && !rbsi282.isSelected())){   
+                
+        }else{       
             tr.setI281("");
             tr.setI281("no");
             tr.setA281("");
-            tr.setA281("si");
+            tr.setA281("si");  }
 
         }
 
@@ -8071,10 +8191,15 @@ if(txtitem35.getText().length()>2){
 
         }
         if(rbno331.isSelected() || rbno332.isSelected() || rbno333.isSelected()){
+            
+              if((!rbno331.isSelected() && !rbsi331.isSelected()) || (!rbno332.isSelected() && !rbsi332.isSelected()) || (!rbno333.isSelected() && !rbsi333.isSelected()) 
+       ){   
+                
+        }else{ 
             tr.setI331("");
             tr.setI331("no");
             tr.setA331("");
-            tr.setA331("si");
+            tr.setA331("si");   }
 
         }
          // Item 34
@@ -8194,40 +8319,12 @@ if(txtitem35.getText().length()>2){
             tr.setA401("si");
 
         }
+        
+        Validar();
 
-        Cgestion_salud func = new Cgestion_salud();
+       
 
-        func.insertarItem23(tr);
-        func.insertarItem24(tr);
-        func.insertarItem25(tr);
-        func.insertarItem26(tr);
-        func.insertarItem27(tr);
-        func.insertarItem28(tr);
-        func.insertarItem29(tr);
-        func.insertarItem30(tr);
-        func.insertarItem31(tr);
-        func.insertarItem32(tr);
-        func.insertarItem33(tr);
-        func.insertarItem34(tr);
-        func.insertarItem35(tr);
-        func.insertarItem36(tr);
-        func.insertarItem37(tr);
-        func.insertarItem38(tr);
-        func.insertarItem39(tr);
-
-        if(func.insertarItem40(tr)){
-            JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
-
-        }*/
-      ps.setE3(1);
-       gh.config();
-       int valo=20;
-       ps.setBarra(ps.getBarra()+valo);
-       this.dispose();
-       gh.val=ps.getBarra();
-        gh.empezar();
-       gh.setVisible(true);
-       gh.toFront();
+      
 
 
     }//GEN-LAST:event_jButton2ActionPerformed

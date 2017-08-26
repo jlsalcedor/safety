@@ -53,7 +53,7 @@ Recursos ps;
             hg.est_E6();
             hg.est_E7();
             hg.est_E8();
-       
+             hg.Barra();
            
            
          // cuando inicie carge el valor de la barra  
@@ -64,20 +64,9 @@ Recursos ps;
        config();
         
           setLocationRelativeTo(null);
-       // this.setExtendedState(MAXIMIZED_BOTH);
-       
-       System.out.print(tr.getE1());
+              
+  //     System.out.print(tr.getE1());
     
-    
-      /*  btnE1.setEnabled(false);
-        btnE2.setEnabled(false);
-        btnE3.setEnabled(false);
-        btnE4.setEnabled(false);
-        btnE5.setEnabled(false);
-        btnE6.setEnabled(false);
-        btnE7.setEnabled(false);
-        btnnuevo.setEnabled(false);*/
-        
        
         
         setLocationRelativeTo(null);
@@ -218,6 +207,7 @@ Recursos ps;
         btnnuevo = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         pgeva = new javax.swing.JProgressBar();
         label_fondo1 = new javax.swing.JLabel();
@@ -340,7 +330,7 @@ Recursos ps;
             }
         });
         getContentPane().add(btnempezar);
-        btnempezar.setBounds(180, 20, 188, 58);
+        btnempezar.setBounds(180, 20, 188, 57);
 
         btnnuevo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/empezar nuevo.png"))); // NOI18N
@@ -361,6 +351,12 @@ Recursos ps;
         getContentPane().add(jLabel1);
         jLabel1.setBounds(330, 40, 510, 107);
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel8.setText("Porcentanje de diligenciamiento de la E. inicial");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(340, 560, 330, 20);
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/personaje1.png"))); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(60, 150, 370, 520);
@@ -380,6 +376,7 @@ Recursos ps;
        
      Gestion_integral ms= new Gestion_integral();
         ms.toFront();
+        this.dispose();
         ms.setVisible(true); 
         
         
@@ -400,6 +397,7 @@ Recursos ps;
     private void btnE4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnE4ActionPerformed
       Gestion_peligrosyriesgos ps= new Gestion_peligrosyriesgos();
      ps.toFront();
+     this.dispose();
      ps.setVisible(true);
         
         
@@ -409,6 +407,7 @@ Recursos ps;
       
     Gestion_amenazas ps= new Gestion_amenazas();
      ps.toFront();
+     this.dispose();
      ps.setVisible(true);
         
     }//GEN-LAST:event_btnE5ActionPerformed
@@ -419,6 +418,7 @@ Recursos ps;
 
      Gestion_salud ps= new Gestion_salud();
      ps.toFront();
+     this.dispose();
      ps.setVisible(true);
         
         
@@ -430,6 +430,7 @@ Recursos ps;
     private void btnE7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnE7ActionPerformed
      Acciones_preventivas ps= new Acciones_preventivas();
      ps.toFront();
+     this.dispose();
      ps.setVisible(true);
         
     }//GEN-LAST:event_btnE7ActionPerformed
@@ -437,6 +438,7 @@ Recursos ps;
     private void btnE6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnE6ActionPerformed
   Gestion_resul ps= new Gestion_resul();
      ps.toFront();
+     this.dispose();
      ps.setVisible(true);
         
     }//GEN-LAST:event_btnE6ActionPerformed
@@ -516,12 +518,7 @@ Recursos ps;
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-          try{
-            UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
-        }catch(Exception e){
-            
-        }
-          
+               
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Evaluacion_Ini().setVisible(true);
@@ -547,6 +544,7 @@ Recursos ps;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel label_fondo1;
     private javax.swing.JProgressBar pgeva;
     // End of variables declaration//GEN-END:variables

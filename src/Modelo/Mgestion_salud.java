@@ -21,7 +21,7 @@ public class Mgestion_salud {
  private FileInputStream fi11121;
  
 // Item 23    
-    private String i231;
+    private String i231="";
     private String a231;
     private String v231;
     private String j231;
@@ -30,7 +30,7 @@ public class Mgestion_salud {
     
                   
 // Item 24    
-    private String i241;
+    private String i241="";
     private String a241;
     private String v241;
     private String v242;
@@ -38,14 +38,14 @@ public class Mgestion_salud {
    
     
 // Item 25
-    private String i251;
+    private String i251="";
      private String a251;
     private String v251;
     private String j251;
 
     
  // Item 26
-    private String i261;
+    private String i261="";
     private String a261;
     private String v261;
     private String v262;
@@ -54,14 +54,14 @@ public class Mgestion_salud {
      
     
    // Item 27
-    private String i271;
+    private String i271="";
     private String a271;
     private String v271;
     private String j271;
    
    
    // Item 28
-    private String i281;
+    private String i281="";
     private String a281;
     private String v281;
     private String v282;
@@ -69,35 +69,35 @@ public class Mgestion_salud {
     
     
      // Item 29
-    private String i291;
+    private String i291="";
     private String a291;
     private String v291;
     private String j291;
     
    
    // Item 30
-    private String i301;
+    private String i301="";
     private String a301;
     private String v301;
     private String j301;
   
     
       // Item 31
-    private String i311;
+    private String i311="";
     private String a311;
     private String v311;
     private String j311;
    
    
    // Item 32
-    private String i321;
+    private String i321="";
      private String a321;
     private String v321;
     private String j321;
  
     
      // Item 33
-    private String i331;
+    private String i331="";
      private String a331;
     private String v331;
     private String v332;
@@ -105,48 +105,48 @@ public class Mgestion_salud {
     private String j331;
     
       // Item 34
-    private String i341;
+    private String i341="";
     private String a341;
     private String v341;
     private String j341;
     
     
      // Item 35
-    private String i351;
+    private String i351="";
     private String a351;
     private String v351;
     private String j351;
     
    
    // Item 36
-    private String i361;
+    private String i361="";
     private String a361;
     private String v361;
     private String j361;
   
     
       // Item 37
-    private String i371;
+    private String i371="";
     private String a371;
     private String v371;
     private String j371;
    
    
    // Item 38
-    private String i381;
+    private String i381="";
      private String a381;
     private String v381;
     private String j381;
  
     
      // Item 39
-    private String i391;
+    private String i391="";
      private String a391;
     private String v391;
     private String j391;
     
      // Item 40
-    private String i401;
+    private String i401="";
      private String a401;
     private String v401;
     private String j401;

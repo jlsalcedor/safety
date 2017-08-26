@@ -30,7 +30,7 @@ import javax.swing.UIManager;
  * @author leandro
  */
 public class Recursos extends javax.swing.JFrame{
-    Cevaluacion yu = new Cevaluacion();
+   
     Mrecursos tr = new Mrecursos();
     Mevaluacion ps = new Mevaluacion();
     Evaluacion_Ini gh = new Evaluacion_Ini();
@@ -273,6 +273,7 @@ public class Recursos extends javax.swing.JFrame{
         
     }
     
+    Cevaluacion cm = new Cevaluacion();
     public void Validar (){
            Crecursos func = new Crecursos();
            
@@ -367,12 +368,13 @@ public class Recursos extends javax.swing.JFrame{
      // configurar botones y llenar el progress bar dinamicamente
        ps.setE1(1);
        gh.config();
-       yu.est_E1();
        int valo=10;
        ps.setBarra(ps.getBarra()+valo);
        this.dispose();
        gh.val=ps.getBarra();
         gh.empezar();
+        
+       cm.est_recursos(ps); 
        gh.setVisible(true);
        gh.toFront();
        
@@ -3634,7 +3636,9 @@ public class Recursos extends javax.swing.JFrame{
     private void txtitem6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtitem6KeyPressed
         if(txtitem6.getText().length()>2){
             tr.setI1161("");
+            tr.setI1161("si");
             tr.setA1161("");
+            tr.setA1161("no");
              tr.setV1161("no aplica");
             tr.setV1162("no aplica");
            

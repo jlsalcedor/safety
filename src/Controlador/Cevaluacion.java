@@ -284,6 +284,26 @@ public class Cevaluacion extends Conexion {
         }
                  
       }
+                  public void Barra() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select barra from est_evalua where nombre='E'");
+            
+            if(rs.next()){    
+                
+                    
+            tr.setBarra(Integer.parseInt(rs.getString("barra")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
            
            
            public void est_emp(Mevaluacion dts){
@@ -329,5 +349,96 @@ public class Cevaluacion extends Conexion {
         }
                        
            }
+           
+              public void est_recursos(Mevaluacion dts){
+         
+         try{
+             
+              PreparedStatement pst = cn.prepareStatement("update est_evalua set estado=? where nombre='E1'");
+              PreparedStatement pst1 = cn.prepareStatement("update est_evalua set barra=? where nombre='E'");
+              
+              pst.setInt(1, dts.getE1());
+              pst1.setInt(1, dts.getBarra());
+              
+               pst.executeUpdate();
+               pst1.executeUpdate();
+              
+         
+           } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+           
+        }
+         
+         
+     }          
+ 
+              public void est_gestIntegral(Mevaluacion dts){
+         
+         try{
+             
+              PreparedStatement pst = cn.prepareStatement("update est_evalua set estado=? where nombre='E2'");
+              PreparedStatement pst1 = cn.prepareStatement("update est_evalua set barra=? where nombre='E'");
+              
+              pst.setInt(1, dts.getE2());
+              pst1.setInt(1, dts.getBarra());
+              
+               pst.executeUpdate();
+               pst1.executeUpdate();
+              
+         
+           } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+           
+        }
+         
+         
+     }    
+              
+              
+              
+     
+      public void est_gestSalud(Mevaluacion dts){
+         
+         try{
+             
+              PreparedStatement pst = cn.prepareStatement("update est_evalua set estado=? where nombre='E3'");
+              PreparedStatement pst1 = cn.prepareStatement("update est_evalua set barra=? where nombre='E'");
+              
+              pst.setInt(1, dts.getE3());
+              pst1.setInt(1, dts.getBarra());
+              
+               pst.executeUpdate();
+               pst1.executeUpdate();
+              
+         
+           } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+           
+        }
+         
+         
+     }
+    
+       public void est_gestPeligros(Mevaluacion dts){
+         
+         try{
+             
+              PreparedStatement pst = cn.prepareStatement("update est_evalua set estado=? where nombre='E4'");
+              PreparedStatement pst1 = cn.prepareStatement("update est_evalua set barra=? where nombre='E'");
+              
+              pst.setInt(1, dts.getE4());
+              pst1.setInt(1, dts.getBarra());
+              
+               pst.executeUpdate();
+               pst1.executeUpdate();
+              
+         
+           } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+           
+        }
+         
+         
+     }
     
 }

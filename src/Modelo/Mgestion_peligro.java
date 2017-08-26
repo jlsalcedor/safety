@@ -21,7 +21,7 @@ public class Mgestion_peligro {
  private FileInputStream fi11121;
  
 // Item 41    
-    private String i411;
+    private String i411="";
     private String a411;
     private String v411;
     private String v412;
@@ -31,7 +31,7 @@ public class Mgestion_peligro {
     
                   
 // Item 42   
-    private String i421;
+    private String i421="";
     private String a421;
     private String v421;
     private String v422;
@@ -39,7 +39,7 @@ public class Mgestion_peligro {
    
     
 // Item 43
-    private String i431;
+    private String i431="";
     private String a431;
     private String v431;
     private String v432;
@@ -48,14 +48,14 @@ public class Mgestion_peligro {
 
     
  // Item 44
-    private String i441;
+    private String i441="";
     private String a441;
     private String v441;
     private String j441;
      
     
    // Item 45
-    private String i451;
+    private String i451="";
     private String a451;
     private String v451;
     private String v452;
@@ -64,7 +64,7 @@ public class Mgestion_peligro {
    
    
    // Item 46
-    private String i461;
+    private String i461="";
     private String a461;
     private String v461;
     private String v462;
@@ -72,28 +72,28 @@ public class Mgestion_peligro {
     
     
      // Item 47
-    private String i471;
+    private String i471="";
     private String a471;
     private String v471;
     private String j471;
     
    
    // Item 48
-    private String i481;
+    private String i481="";
     private String a481;
     private String v481;
     private String j481;
   
     
       // Item 49
-    private String i491;
+    private String i491="";
     private String a491;
     private String v491;
     private String j491;
    
    
    // Item 50
-    private String i501;
+    private String i501="";
     private String a501;
     private String v501;
     private String v502;
