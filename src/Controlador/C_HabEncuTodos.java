@@ -66,6 +66,7 @@ public final class C_HabEncuTodos implements ActionListener, KeyListener {
                 java.util.Date fechaUtil=new java.util.Date();
                  fechaUtil=formatoFecha.parse(fecha);
                  fechaDate=new java.sql.Date(fechaUtil.getTime());
+                 
                      
                                   // fechaEn=formatoFecha.parse(fecha);
                     

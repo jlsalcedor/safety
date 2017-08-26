@@ -8,8 +8,12 @@ package Controlador;
 import Modelo.Conexion;
 import Modelo.Mevaluacion;
 import Modelo.Mgestion_amena;
+import Vista.Evaluacion_Ini;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
@@ -17,15 +21,19 @@ import javax.swing.JOptionPane;
  *
  * @author LENOVO
  */
-public class Cevaluacion {
+public class Cevaluacion extends Conexion {
     private Conexion conexion =new Conexion();
    private Connection cn= conexion.getConexion();
-    Statement st;
-    
+  
+   
+    //Statement st;
     
        private String empItem;
         int con=1;
        private String empVeri;
+       private String empEva;
+       
+       Mevaluacion tr = new Mevaluacion();
     
     
      public boolean empezarItem(Mevaluacion dts) {
@@ -78,5 +86,248 @@ public class Cevaluacion {
      }
     return true;
 }
+      
+      public void est_E0() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE0(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+      
+    public void est_E1() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E1'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE1(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+    
+     public void est_E2() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E2'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE2(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+     
+      public void est_E3() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E3'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE3(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+      
+       public void est_E4() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E4'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE4(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+   
+        public void est_E5() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E5'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE5(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+        
+         public void est_E6() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E6'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE6(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+         
+          public void est_E7() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E7'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE7(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+          
+           public void est_E8() {
+                         
+         try {
+
+            Statement pst = cn.createStatement();
+            ResultSet rs = pst.executeQuery("select estado from est_evalua where nombre='E8'");
+            
+            if(rs.next()){    
+                
+          // Evaluacion_Ini.lbl1.setText(rs.getString("estado"));
+            
+            tr.setE8(Integer.parseInt(rs.getString("estado")));         
+          
+            }
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+                 
+      }
+           
+           
+           public void est_emp(Mevaluacion dts){
+               
+                try {
+
+            PreparedStatement pst = cn.prepareStatement("update est_evalua set estado=? where nombre='E'");
+            PreparedStatement pst1 = cn.prepareStatement("update est_evalua set estado=? where nombre='E1'");
+            PreparedStatement pst2 = cn.prepareStatement("update est_evalua set estado=? where nombre='E2'");
+            PreparedStatement pst3 = cn.prepareStatement("update est_evalua set estado=? where nombre='E3'");
+            PreparedStatement pst4 = cn.prepareStatement("update est_evalua set estado=? where nombre='E4'");
+            PreparedStatement pst5 = cn.prepareStatement("update est_evalua set estado=? where nombre='E5'");
+            PreparedStatement pst6 = cn.prepareStatement("update est_evalua set estado=? where nombre='E6'");
+            PreparedStatement pst7 = cn.prepareStatement("update est_evalua set estado=? where nombre='E7'");
+            PreparedStatement pst8 = cn.prepareStatement("update est_evalua set estado=? where nombre='E8'");
+            
+            pst.setInt(1, dts.getE0());
+            pst1.setInt(1, dts.getE1());
+            pst2.setInt(1, dts.getE2());                                  
+            pst3.setInt(1, dts.getE1());
+            pst4.setInt(1, dts.getE2());
+            pst5.setInt(1, dts.getE1());
+            pst6.setInt(1, dts.getE2());                                  
+            pst7.setInt(1, dts.getE1());
+            pst8.setInt(1, dts.getE2());
+            
+            
+            pst.executeUpdate();
+            pst1.executeUpdate();
+            pst2.executeUpdate();
+            pst3.executeUpdate();
+            pst4.executeUpdate();
+            pst5.executeUpdate();
+            pst6.executeUpdate();
+            pst7.executeUpdate();
+            pst8.executeUpdate();
+            
+           
+                                          
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+           
+        }
+                       
+           }
     
 }

@@ -132,6 +132,11 @@ public class RegistroEmpleados extends javax.swing.JFrame {
                 txt_numDocEmpleadoActionPerformed(evt);
             }
         });
+        txt_numDocEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_numDocEmpleadoKeyTyped(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -190,6 +195,11 @@ public class RegistroEmpleados extends javax.swing.JFrame {
         txt_telefonoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_telefonoEmpleadoActionPerformed(evt);
+            }
+        });
+        txt_telefonoEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_telefonoEmpleadoKeyTyped(evt);
             }
         });
 
@@ -439,12 +449,22 @@ public class RegistroEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_cargoEmpleadoActionPerformed
 
     private void txt_telefonoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telefonoEmpleadoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txt_telefonoEmpleadoActionPerformed
 
     private void btn_guardarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarEmpleadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_guardarEmpleadoActionPerformed
+
+    private void txt_numDocEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_numDocEmpleadoKeyTyped
+         char c=evt.getKeyChar();
+        if((c<'0' || c>'9'))evt.consume();
+    }//GEN-LAST:event_txt_numDocEmpleadoKeyTyped
+
+    private void txt_telefonoEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_telefonoEmpleadoKeyTyped
+        char c=evt.getKeyChar();
+        if((c<'0' || c>'9'))evt.consume();
+    }//GEN-LAST:event_txt_telefonoEmpleadoKeyTyped
 
     /**
      * @param args the command line arguments

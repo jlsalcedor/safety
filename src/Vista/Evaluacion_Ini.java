@@ -6,13 +6,20 @@
 package Vista;
 
 import Controlador.Cevaluacion;
+import Vista.Gestion_salud;
 import Modelo.Mevaluacion;
+import Vista.Acciones_preventivas;
+import Vista.Gestion_amenazas;
 import Vista.Gestion_amenazas;
 import Vista.Gestion_integral;
+import Vista.Gestion_integral;
+import Vista.Gestion_peligrosyriesgos;
 import Vista.Gestion_peligrosyriesgos;
 import Vista.Gestion_resul;
-import Vista.Gestion_salud;
 import Vista.Recursos;
+import Vista.Recursos;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 import javax.swing.UIManager;
@@ -26,28 +33,163 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
     /**
      * Creates new form Evaluacion_Ini
      */
-
+Recursos ps;
     public Evaluacion_Ini() {
          initComponents();
+          this.setExtendedState(MAXIMIZED_BOTH);
          int minimum = 0;
     int maximum = 100;
     JProgressBar progress = new JProgressBar(JProgressBar.VERTICAL, minimum, maximum);
         
-        btnE1.setEnabled(false);
+       
+            /*traer valores de la base de datos*/
+             
+            hg.est_E0();
+            hg.est_E1();
+            hg.est_E2();
+            hg.est_E3();
+            hg.est_E4();
+            hg.est_E5();
+            hg.est_E6();
+            hg.est_E7();
+            hg.est_E8();
+       
+           
+           
+         // cuando inicie carge el valor de la barra  
+           val=tr.getBarra();
+           empezar();
+       
+// metodo para configurar botones 
+       config();
+        
+          setLocationRelativeTo(null);
+       // this.setExtendedState(MAXIMIZED_BOTH);
+       
+       System.out.print(tr.getE1());
+    
+    
+      /*  btnE1.setEnabled(false);
         btnE2.setEnabled(false);
         btnE3.setEnabled(false);
         btnE4.setEnabled(false);
         btnE5.setEnabled(false);
         btnE6.setEnabled(false);
         btnE7.setEnabled(false);
-        btnnuevo.setEnabled(false);
+        btnnuevo.setEnabled(false);*/
         
        
         
         setLocationRelativeTo(null);
-       // this.setExtendedState(MAXIMIZED_BOTH);
+        //this.setExtendedState(MAXIMIZED_BOTH);
+        ImageIcon fondo=new ImageIcon(getClass().getResource("/imagenes/FONDOEVA.jpg"));
+        ImageIcon adapFondo=new ImageIcon(fondo.getImage().getScaledInstance(label_fondo1.getWidth(), label_fondo1.getHeight(), Image.SCALE_DEFAULT));
+        label_fondo1.setIcon(adapFondo);
+       //JFrame.setVisible(false);
     }
+         // variable para el llenado del progress bar
+ public int val;
+ 
+  // metodo para configurar botones
+  public void config(){
+      
+      if(tr.getE0()==1){
+          
+          btnempezar.setEnabled(false);      
+          
+      }else{
+          
+          btnempezar.setEnabled(true);
+      }
+      
+       if(tr.getE1()==1){
+          
+          btnE1.setEnabled(false);      
+          
+      }else{
+           btnE1.setEnabled(true); 
+           
+       }
+       if(tr.getE2()==1){
+          
+          btnE2.setEnabled(false);      
+          
+      }else{
+           
+           btnE2.setEnabled(true);
+           
+           
+       }
+       
+        if(tr.getE3()==1){
+          
+          btnE3.setEnabled(false);      
+          
+      }else{
+            
+           btnE3.setEnabled(true);  
+        }
+      
+       if(tr.getE4()==1){
+          
+          btnE4.setEnabled(false);      
+          
+      }else{
+           
+           btnE4.setEnabled(true);
+           
+       }  
+       
+        if(tr.getE5()==1){
+          
+          btnE5.setEnabled(false);      
+          
+      }else{
+            btnE5.setEnabled(true);
+        }  
+        
+         if(tr.getE6()==1){
+          
+          btnE6.setEnabled(false);      
+          
+      }else{
+            
+             btnE6.setEnabled(true);
+             
+             
+         }
+         
+       if(tr.getE7()==1){
+          
+          btnE7.setEnabled(false);      
+          
+      }else{
+           
+            btnE7.setEnabled(true); 
+       }   
+       
+        if(tr.getE8()==1){
+          
+          btnnuevo.setEnabled(false);      
+          
+      }else{
+            
+            btnnuevo.setEnabled(true);
+            
+        }  
+        
+        
+  }
     
+  // metodo para llenar el progress bar
+    public void empezar(){
+          int valor=val;
+        pgeva.setValue(valor);
+              
+    }
+        
+    
+      
     Cevaluacion hg = new Cevaluacion();
     Mevaluacion tr = new Mevaluacion();
 
@@ -71,27 +213,42 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
         btnE3 = new javax.swing.JButton();
         btnE7 = new javax.swing.JButton();
         btnE6 = new javax.swing.JButton();
+        btn_volver = new javax.swing.JButton();
         btnempezar = new javax.swing.JButton();
         btnnuevo = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        pgeva = new javax.swing.JProgressBar();
+        label_fondo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setSize(new java.awt.Dimension(0, 0));
+        getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Ciclo Hacer (60%)");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(980, 80, 250, 33);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Ciclo Planear (25%)");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(490, 80, 274, 33);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 204, 51));
         jLabel4.setText("Ciclo Actuar (10%)");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(990, 430, 259, 33);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 204, 51));
         jLabel5.setText("Ciclo Verificar (5%)");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(500, 430, 268, 33);
 
         btnE2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnE2.setText("Gestion Integral del Sistema (15%)");
@@ -100,6 +257,8 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
                 btnE2ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnE2);
+        btnE2.setBounds(450, 300, 350, 70);
 
         btnE1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnE1.setText("Recursos (10%)");
@@ -108,6 +267,8 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
                 btnE1ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnE1);
+        btnE1.setBounds(450, 180, 350, 70);
 
         btnE4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnE4.setText("Gestion Peligros y Riesgos (30%)");
@@ -116,6 +277,8 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
                 btnE4ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnE4);
+        btnE4.setBounds(940, 250, 330, 70);
 
         btnE5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnE5.setText("Gestion de Amenazas (10%)");
@@ -124,6 +287,8 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
                 btnE5ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnE5);
+        btnE5.setBounds(941, 335, 330, 70);
 
         btnE3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnE3.setText("Gestion de la Salud (20%)");
@@ -132,6 +297,8 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
                 btnE3ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnE3);
+        btnE3.setBounds(940, 160, 330, 70);
 
         btnE7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnE7.setText("Mejoramiento");
@@ -140,6 +307,8 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
                 btnE7ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnE7);
+        btnE7.setBounds(950, 470, 330, 70);
 
         btnE6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnE6.setText("Verificacion del SG-SST");
@@ -148,106 +317,61 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
                 btnE6ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnE6);
+        btnE6.setBounds(450, 470, 350, 70);
+
+        btn_volver.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
+        btn_volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
+        btn_volver.setText("Volver");
+        btn_volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_volverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_volver);
+        btn_volver.setBounds(0, 20, 170, 60);
 
         btnempezar.setFont(new java.awt.Font("Yu Mincho Light", 1, 24)); // NOI18N
-        btnempezar.setText("Comenzar");
+        btnempezar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/empezar.png"))); // NOI18N
+        btnempezar.setText("Empezar");
         btnempezar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnempezarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnempezar);
+        btnempezar.setBounds(180, 20, 188, 58);
 
         btnnuevo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/empezar nuevo.png"))); // NOI18N
         btnnuevo.setText("Comenzar de Nuevo");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnnuevoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnnuevo);
+        btnnuevo.setBounds(1040, 600, 290, 57);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(btnempezar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(258, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(221, 221, 221))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(175, 175, 175))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnE2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnE6, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnE1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(103, 103, 103)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnE4, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnE3, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnE5, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnE7, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2)
-                                        .addGap(100, 100, 100)))
-                                .addGap(89, 89, 89))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(189, 189, 189))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnE3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnE4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnempezar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
-                        .addComponent(btnE1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(btnE5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnE2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnE7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnE6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/banderin.png"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(810, 40, 510, 107);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/banderin.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(330, 40, 510, 107);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/personaje1.png"))); // NOI18N
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(60, 150, 370, 520);
+
+        pgeva.setStringPainted(true);
+        getContentPane().add(pgeva);
+        pgeva.setBounds(450, 590, 410, 50);
+
+        label_fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FONDOEVA.jpg"))); // NOI18N
+        getContentPane().add(label_fondo1);
+        label_fondo1.setBounds(10, -30, 1400, 750);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,9 +387,11 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
 
     private void btnE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnE1ActionPerformed
     
-     Recursos ps= new Recursos();
+     ps= new Recursos();
      ps.toFront();
+     this.dispose();
      ps.setVisible(true);
+     
      
      
      
@@ -287,10 +413,17 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnE5ActionPerformed
 
+    
+    
     private void btnE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnE3ActionPerformed
- Gestion_salud ps= new Gestion_salud();
+
+     Gestion_salud ps= new Gestion_salud();
      ps.toFront();
      ps.setVisible(true);
+        
+        
+     
+    
         
     }//GEN-LAST:event_btnE3ActionPerformed
 
@@ -311,6 +444,7 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
     private void btnempezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnempezarActionPerformed
  int dialogButton =JOptionPane.showConfirmDialog(null, "Esta seguro que desea comenzar a realizar la Evaluacion Inicial de la empresa Tres fronteras ");
            if(dialogButton == JOptionPane.YES_OPTION){ 
+                 // habilitar e inhabilitar botones
         btnempezar.setEnabled(false);
         btnE1.setEnabled(true);
         btnE2.setEnabled(true);
@@ -320,6 +454,26 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
         btnE6.setEnabled(true);
         btnE7.setEnabled(true);
         btnnuevo.setEnabled(true);}
+           
+             /* inicializar las variables de los botones con sus respectivas activaciones
+        nota: debido a que todavia no se puede refrescar o actualizar el jframe se debe simular esto
+        para ir inhabilitando los botones uno por uno.
+                                                            */        
+        
+        tr.setE0(1);
+       tr.setE1(0);
+       tr.setE2(0);
+       tr.setE3(0);
+       tr.setE4(0);
+       tr.setE5(0);
+       tr.setE6(0);
+       tr.setE7(0);
+       tr.setE8(0);
+       
+       hg.est_emp(tr);  
+           
+           
+           
     }//GEN-LAST:event_btnempezarActionPerformed
 
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
@@ -335,14 +489,28 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
         btnE6.setEnabled(false);
         btnE7.setEnabled(false);
         btnnuevo.setEnabled(false); 
+        
+        tr.setE0(0);
+       tr.setE1(1);
+       tr.setE2(1);
+       tr.setE3(1);
+       tr.setE4(1);
+       tr.setE5(1);
+       tr.setE6(1);
+       tr.setE7(1);
+       tr.setE8(1);
            
             hg.empezarItem(tr);
             hg.empezarVeri(tr);
-               
+           
            
            
            }
     }//GEN-LAST:event_btnnuevoActionPerformed
+
+    private void btn_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_volverActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_btn_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,11 +537,17 @@ public class Evaluacion_Ini extends javax.swing.JFrame {
     private javax.swing.JButton btnE5;
     private javax.swing.JButton btnE6;
     private javax.swing.JButton btnE7;
+    private javax.swing.JButton btn_volver;
     private javax.swing.JButton btnempezar;
     private javax.swing.JButton btnnuevo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel label_fondo1;
+    private javax.swing.JProgressBar pgeva;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,89 +21,89 @@ private static String path;
  private int longitud;
  private String nombre;
 // Item 1    
-    private String i1111;
-    private String a1111;
-    private String v1111;
-    private String v1112;
-    private String v1113;
-    private String v1114;
-    private String j1111;
+    private String i1111="";
+    private String a1111="";
+    private String v1111="";
+    private String v1112="";
+    private String v1113="";
+    private String v1114="";
+    private String j1111="";
     private FileInputStream fi1111;
    
     
                   
 // Item 2    
-    private String i1121;
-     private String a1121;
-    private String v1121;
-    private String j1121;
+    private String i1121="";
+     private String a1121="";
+    private String v1121="";
+    private String j1121="";
     private FileInputStream fi1121;
     
 // Item 3
-    private String i1131;
-     private String a1131;
-    private String v1131;
-    private String j1131;
+    private String i1131="";
+     private String a1131="";
+    private String v1131="";
+    private String j1131="";
     private FileInputStream fi1131;
     
  // Item 4
-    private String i1141;
-     private String a1141;
-    private String v1141;
-    private String v1142;
-    private String j1141;
+    private String i1141="";
+     private String a1141="";
+    private String v1141="";
+    private String v1142="";
+    private String j1141="";
     private FileInputStream fi1141;    
     
    // Item 5
-    private String i1151;
-     private String a1151;
-    private String v1151;
-    private String j1151;
+    private String i1151="";
+     private String a1151="";
+    private String v1151="";
+    private String j1151="";
     private FileInputStream fi1151; 
    
    // Item 6
-    private String i1161;
-     private String a1161;
-    private String v1161;
-    private String v1162;
-    private String j1161;
+    private String i1161="";
+     private String a1161="";
+    private String v1161="";
+    private String v1162="";
+    private String j1161="";
     private FileInputStream fi1161;
     
      // Item 7
-    private String i1171;
-     private String a1171;
-    private String v1171;
-    private String j1171;
+    private String i1171="";
+     private String a1171="";
+    private String v1171="";
+    private String j1171="";
     private FileInputStream fi1171; 
    
    // Item 8
-    private String i1181;
-     private String a1181;
-    private String v1181;
-    private String v1182;
-    private String j1181;
+    private String i1181="";
+     private String a1181="";
+    private String v1181="";
+    private String v1182="";
+    private String j1181="";
     private FileInputStream fi1181;
     
       // Item 9
-    private String i1191;
-     private String a1191;
-    private String v1191;
-    private String v1192;
-    private String j1191;
+    private String i1191="";
+     private String a1191="";
+    private String v1191="";
+    private String v1192="";
+    private String j1191="";
     private FileInputStream fi1191;
    
    // Item 10
-    private String i11101;
-     private String a11101;
-    private String v11101;
-    private String j11101;
+    private String i11101="";
+     private String a11101="";
+    private String v11101="";
+    private String j11101="";
     private FileInputStream fi11101; 
     
      // Item 11
-    private String i11111;
-     private String a11111;
-    private String v11111;
-    private String j11111;
+    private String i11111="";
+     private String a11111="";
+    private String v11111="";
+    private String j11111="";
     private FileInputStream fi11111; 
 
     public Mrecursos(String path, int id, int longitud, String nombre, String i1111, String a1111, String v1111, String v1112, String v1113, String v1114, String j1111, FileInputStream fi1111, String i1121, String a1121, String v1121, String j1121, FileInputStream fi1121, String i1131, String a1131, String v1131, String j1131, FileInputStream fi1131, String i1141, String a1141, String v1141, String v1142, String j1141, FileInputStream fi1141, String i1151, String a1151, String v1151, String j1151, FileInputStream fi1151, String i1161, String a1161, String v1161, String v1162, String j1161, FileInputStream fi1161, String i1171, String a1171, String v1171, String j1171, FileInputStream fi1171, String i1181, String a1181, String v1181, String v1182, String j1181, FileInputStream fi1181, String i1191, String a1191, String v1191, String v1192, String j1191, FileInputStream fi1191, String i11101, String a11101, String v11101, String j11101, FileInputStream fi11101, String i11111, String a11111, String v11111, String j11111, FileInputStream fi11111) {

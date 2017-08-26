@@ -4,58 +4,115 @@
  * and open the template in the editor.
  */
 package Modelo;
+import Controlador.C_RegistroEmpresa;
+import java.io.FileInputStream;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
-
+import java.sql.*;
+import javax.swing.JOptionPane; 
 /**
  *
  * @author YOREL
  */
 public class M_RegistroEmpresa {
-    private int nitEmpresa;
+    
+    private static String ant2;
+    private String nitEmpresa;
     private String nomEmpresa;
+    private int cantEmpl;
+    private String Tamaño;
     private String ciudad;
     private String departamento;
     private String sucursal;
     private int telefono;
     private String razonSocial;
-    private String actEconomica;
+    private int actEconomica;
     private String nivelRiesgo;
-Conexion conexion=new Conexion();
-    public M_RegistroEmpresa() {
-    }
-    
-    public M_RegistroEmpresa(int nitEmpresa, String nomEmpresa, String ciudad, String departamento, String sucursal, int telefono, String razonSocial, String actEconomica, String nivelRiesgo) {
+    private String estado;
+
+    public M_RegistroEmpresa(String nitEmpresa, String nomEmpresa, int cantEmpl, String Tamaño, String ciudad, String departamento, String sucursal, int telefono, String razonSocial, int actEconomica, String nivelRiesgo, String estado) {
         this.nitEmpresa = nitEmpresa;
         this.nomEmpresa = nomEmpresa;
+        this.cantEmpl = cantEmpl;
+        this.Tamaño = Tamaño;
         this.ciudad = ciudad;
         this.departamento = departamento;
         this.sucursal = sucursal;
         this.telefono = telefono;
-        this.razonSocial = razonSocial;        
+        this.razonSocial = razonSocial;
         this.actEconomica = actEconomica;
         this.nivelRiesgo = nivelRiesgo;
-        
-        
+        this.estado = estado;
     }
 
-    public int getNitempresa() {
+    public M_RegistroEmpresa() {
+    }
+
+    public static String getAnt2() {
+        return ant2;
+    }
+
+    public static void setAnt2(String ant2) {
+        M_RegistroEmpresa.ant2 = ant2;
+    }
+
+    public String getNitEmpresa() {
         return nitEmpresa;
     }
 
-    public void setNitempresa(int nitem) {
+    public void setNitEmpresa(String nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
     }
 
-    public String getNombempresa() {
+    public String getNomEmpresa() {
         return nomEmpresa;
     }
 
-    public void setNombempresa(String nombem) {
+    public void setNomEmpresa(String nomEmpresa) {
         this.nomEmpresa = nomEmpresa;
+    }
+
+    public int getCantEmpl() {
+        return cantEmpl;
+    }
+
+    public void setCantEmpl(int cantEmpl) {
+        this.cantEmpl = cantEmpl;
+    }
+
+    public String getTamaño() {
+        return Tamaño;
+    }
+
+    public void setTamaño(String Tamaño) {
+        this.Tamaño = Tamaño;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(String sucursal) {
+        this.sucursal = sucursal;
     }
 
     public int getTelefono() {
@@ -66,53 +123,44 @@ Conexion conexion=new Conexion();
         this.telefono = telefono;
     }
 
-    public String getRazonsocial() {
+    public String getRazonSocial() {
         return razonSocial;
     }
 
-    public void setRazonsocial(String razonScocial) {
+    public void setRazonSocial(String razonSocial) {
         this.razonSocial = razonSocial;
     }
 
-    public String getActEconomica() {
+    public int getActEconomica() {
         return actEconomica;
     }
 
-    public void setActeconomica(String actEconomica) {
+    public void setActEconomica(int actEconomica) {
         this.actEconomica = actEconomica;
     }
 
-
-    public String getCiudad(String ciudad) {
-        return ciudad;
+    public String getNivelRiesgo() {
+        return nivelRiesgo;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public String getDepartamento(String departamento) {
-        return departamento;
-    }
-
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
-    }
-
-    public String getSucursal(String departamento) {
-        return sucursal;
-    }
-
-    public void setSucursal(String sucursal) {
-        this.sucursal = sucursal;
-    }
-    public String getNivelRegistro(String nivelRiesgo) {
-    return nivelRiesgo;
-    }
-    
-    public void setNivelriesgo(String nivelRiesgo){
+    public void setNivelRiesgo(String nivelRiesgo) {
         this.nivelRiesgo = nivelRiesgo;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+   
+   
+    
+    
+    
+  
 }
 
 

@@ -105,7 +105,7 @@ JOptionPane.showMessageDialog(null,"El archivo se descargo correctamente");
 }
 // inStream.close();
 output.close();
-} catch (Exception ioe) {
+}catch (Exception ioe) {
 throw new IOException(ioe.getMessage());
 }
 }
@@ -114,7 +114,7 @@ throw new IOException(ioe.getMessage());
     
       public boolean insertarArchivosVeri(Mrecursos dts) {
         
-        Archivo = "insert into anexoverificacion (anexo_veri, idverificacion, nombre) values (?,?,?)";
+        Archivo = "update anexoverificacion set anexo_veri=?, nombre=? where idverificacion="+rt.getId();
        
         
         
@@ -123,9 +123,8 @@ throw new IOException(ioe.getMessage());
             PreparedStatement pst = cn.prepareStatement(Archivo);
             
             
-            pst.setBlob(1, dts.getFi1111(), dts.getLongitud());
-            pst.setInt(2, dts.getId());
-            pst.setString(3, dts.getNombre());
+            pst.setBinaryStream(1, dts.getFi1111(), dts.getLongitud());
+            pst.setString(2, dts.getNombre());
                   
            
             
@@ -186,7 +185,7 @@ throw new IOException(ioe.getMessage());
     
       public boolean insertarArchivos(Mrecursos dts) {
         
-        Archivo = "insert into anexoitem (anexo_justi, iditem, nombre) values (?,?,?)";
+        Archivo = "update anexoitem set anexo_justi=?, nombre=?  where idItem="+rt.getId();
        
         
         
@@ -195,15 +194,14 @@ throw new IOException(ioe.getMessage());
             PreparedStatement pst = cn.prepareStatement(Archivo);
             
             
-            pst.setBlob(1, dts.getFi1111(), dts.getLongitud());
-            pst.setInt(2, dts.getId());
-            pst.setString(3, dts.getNombre());
+            pst.setBinaryStream(1, dts.getFi1111(), dts.getLongitud());
+            pst.setString(2, dts.getNombre());
                   
            
             
                        
            int n = pst.executeUpdate();
-
+         
             if (n != 0) {
                 return true;
             } else {
@@ -264,7 +262,7 @@ throw new IOException(ioe.getMessage());
 
                 if (n4 != 0) {
                    int n5 = pst5.executeUpdate();
-
+                  
                 if(n5 != 0) {
                     return true;
 
@@ -744,7 +742,7 @@ public boolean insertarItem4(Mrecursos dts) {
 
             if (n != 0) {
                 int n2 = pst2.executeUpdate();
-
+                        
                 if (n2 != 0) {
                   return true;  
 

@@ -21,39 +21,39 @@ public class Mgestion_integral {
  private FileInputStream fi11121;
  
 // Item 12    
-    private String i121;
-    private String a121;
-    private String v121;
-    private String v122;
-    private String v123;
-    private String j121;
+    private String i121="";
+    private String a121="";
+    private String v121="";
+    private String v122="";
+    private String v123="";
+    private String j121="";
    
    
     
                   
 // Item 13    
-    private String i131;
-    private String a131;
-    private String v131;
-    private String j131;
+    private String i131="";
+    private String a131="";
+    private String v131="";
+    private String j131="";
    
     
 // Item 14
-    private String i141;
+    private String i141="";
      private String a141;
     private String v141;
     private String j141;
 
     
  // Item 15
-    private String i151;
+    private String i151="";
     private String a151;
     private String v151;
     private String j151;
      
     
    // Item 16
-    private String i161;
+    private String i161="";
     private String a161;
     private String v161;
     private String v162;
@@ -61,7 +61,7 @@ public class Mgestion_integral {
    
    
    // Item 17
-    private String i171;
+    private String i171="";
     private String a171;
     private String v171;
     private String v172;
@@ -70,7 +70,7 @@ public class Mgestion_integral {
     
     
      // Item 18
-    private String i181;
+    private String i181="";
     private String a181;
     private String v181;
     private String v182;
@@ -78,14 +78,14 @@ public class Mgestion_integral {
     
    
    // Item 19
-    private String i191;
+    private String i191="";
     private String a191;
     private String v191;
     private String j191;
   
     
       // Item 20
-    private String i201;
+    private String i201="";
     private String a201;
     private String v201;
     private String v202;
@@ -93,14 +93,14 @@ public class Mgestion_integral {
    
    
    // Item 21
-    private String i211;
+    private String i211="";
      private String a211;
     private String v211;
     private String j211;
  
     
      // Item 22
-    private String i221;
+    private String i221="";
      private String a221;
     private String v221;
     private String j221;

@@ -65,10 +65,6 @@ public class C_DesHabEncu implements ActionListener, KeyListener {
    tipoEncuesta="Activa";
     
   
-    SeleccionarEmpleados vista=new SeleccionarEmpleados();
-               M_SeleccionarEmpleado modelo=new M_SeleccionarEmpleado();
-               C_SelecEmple controlador=new C_SelecEmple(vista, modelo, tipoEncuesta);
-                vista.setVisible(true);
      }
     }
     

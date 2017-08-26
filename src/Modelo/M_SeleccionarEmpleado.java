@@ -134,7 +134,7 @@ public class M_SeleccionarEmpleado {
            empleados.setNombreProceso(rs.getString(7));
            empleados.setCargo(rs.getString(8));
            listarEmpleados.add(empleados);
-           
+             
            }
        } catch (SQLException e) {
        }
@@ -203,7 +203,9 @@ public class M_SeleccionarEmpleado {
        try {
            Connection accesoBD=conexion.getConexion();
            CallableStatement cs=accesoBD.prepareCall("{call sp_listaAdminSGSST()}");
+            JOptionPane.showMessageDialog(null, "Prueba");
            ResultSet rs=cs.executeQuery();
+          
            while(rs.next()){
            adminsgsst= new M_SeleccionarEmpleado();
            adminsgsst.setIdEmpleado(rs.getInt(1));
@@ -216,6 +218,7 @@ public class M_SeleccionarEmpleado {
            adminsgsst.setCargo("Admin SGSST");
            listarAdminSGSST.add(adminsgsst);           
            }
+          
        } catch (SQLException e) {
        }
    return listarAdminSGSST;

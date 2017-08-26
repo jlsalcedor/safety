@@ -6,9 +6,10 @@
 package Vista;
 
 
+import Controlador.Cevaluacion;
 import Controlador.Crecursos;
+import Modelo.Mevaluacion;
 import Modelo.Mrecursos;
-import java.awt.Color;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,15 +22,18 @@ import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 import javax.swing.UIManager;
 
 /**
  *
  * @author leandro
  */
-public class Recursos extends javax.swing.JFrame {
-    
+public class Recursos extends javax.swing.JFrame{
+    Cevaluacion yu = new Cevaluacion();
     Mrecursos tr = new Mrecursos();
+    Mevaluacion ps = new Mevaluacion();
+    Evaluacion_Ini gh = new Evaluacion_Ini();
     
 
     /**
@@ -37,8 +41,10 @@ public class Recursos extends javax.swing.JFrame {
      */
     public Recursos() {
         initComponents();
-       
-        setLocationRelativeTo(null);
+        
+         // inhabilitar botones minimizar, cerrar y maximizar
+         getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+         setLocationRelativeTo(null);
        // this.setExtendedState(MAXIMIZED_BOTH);
           ButtonGroup rbnitem1= new ButtonGroup();
         rbnitem1.add(rbjustiitem1);
@@ -158,6 +164,7 @@ public class Recursos extends javax.swing.JFrame {
         
         NoVisibles();
     }
+  
     
     public void NoVisibles(){
         // Item 1
@@ -165,11 +172,6 @@ public class Recursos extends javax.swing.JFrame {
         rbnojustiitem1.setEnabled(false);
         btnadjnoitem1.setEnabled(false);
         txtitem1.setEnabled(false);
-        btnd11.setEnabled(false);
-        btnd12.setEnabled(false);
-        btnd13.setEnabled(false);
-        btnd14.setEnabled(false);
-        btnditem1.setEnabled(false);
         btnmv11.setEnabled(false);
         btnmv12.setEnabled(false);
         btnmv13.setEnabled(false);
@@ -183,16 +185,12 @@ public class Recursos extends javax.swing.JFrame {
         rbnojustiitem2.setEnabled(false);
         txtitem2.setEnabled(false);
         btnadjnoitem2.setEnabled(false);
-        btnditem2.setEnabled(false);
         btnmv21.setEnabled(false);
-        btnd21.setEnabled(false);
-        // Item 3 
+         // Item 3 
         rbjustiitem3.setEnabled(false);
         rbnojustiitem3.setEnabled(false);
         btnadjnoitem3.setEnabled(false);
         txtitem3.setEnabled(false);
-        btnd31.setEnabled(false);
-        btnditem3.setEnabled(false);
         btnmv31.setEnabled(false);
         lblnocum3.setEnabled(false);
         lblcum3.setEnabled(false);
@@ -203,19 +201,14 @@ public class Recursos extends javax.swing.JFrame {
         rbnojustiitem4.setEnabled(false);
         txtitem4.setEnabled(false);
         btnadjnoitem4.setEnabled(false);
-        btnditem4.setEnabled(false);
         btnmv41.setEnabled(false);
-        btnd41.setEnabled(false);
         btnmv42.setEnabled(false);
-        btnd42.setEnabled(false);
-        // Item 5
+         // Item 5
         rbjustiitem5.setEnabled(false);
         rbnojustiitem5.setEnabled(false);
         btnadjnoitem5.setEnabled(false);
         txtitem5.setEnabled(false);
-        btnd51.setEnabled(false);
-        btnditem5.setEnabled(false);
-        btnmv51.setEnabled(false);
+         btnmv51.setEnabled(false);
         lblnocum5.setEnabled(false);
         lblcum5.setEnabled(false);
         // Item 6        
@@ -225,18 +218,13 @@ public class Recursos extends javax.swing.JFrame {
         rbnojustiitem6.setEnabled(false);
         txtitem6.setEnabled(false);
         btnadjnoitem6.setEnabled(false);
-        btnditem6.setEnabled(false);
         btnmv61.setEnabled(false);
-        btnd61.setEnabled(false);
         btnmv62.setEnabled(false);
-        btnd62.setEnabled(false);
-        // Item 7
+         // Item 7
         rbjustiitem7.setEnabled(false);
         rbnojustiitem7.setEnabled(false);
         btnadjnoitem7.setEnabled(false);
         txtitem7.setEnabled(false);
-        btnd71.setEnabled(false);
-        btnditem7.setEnabled(false);
         btnmv71.setEnabled(false);
         lblnocum7.setEnabled(false);
         lblcum7.setEnabled(false);
@@ -247,33 +235,27 @@ public class Recursos extends javax.swing.JFrame {
         rbnojustiitem8.setEnabled(false);
         txtitem8.setEnabled(false);
         btnadjnoitem8.setEnabled(false);
-        btnditem8.setEnabled(false);
         btnmv81.setEnabled(false);
-        btnd81.setEnabled(false);
         btnmv82.setEnabled(false);
-        btnd82.setEnabled(false);
+       
         // Item 9
          rbjustiitem9.setEnabled(false);
         rbnojustiitem9.setEnabled(false);
         btnadjnoitem9.setEnabled(false);
         txtitem9.setEnabled(false);
-        btnd91.setEnabled(false);
-        btnditem9.setEnabled(false);
         btnmv91.setEnabled(false);
          lblnocum9.setEnabled(false);
         lblcum9.setEnabled(false);
          btnmv92.setEnabled(false);
-        btnd92.setEnabled(false);
-        // Item 10
+          // Item 10
          lblnocum10.setEnabled(false);
         lblcum10.setEnabled(false);
         rbjustiitem10.setEnabled(false);
         rbnojustiitem10.setEnabled(false);
         txtitem10.setEnabled(false);
         btnadjnoitem10.setEnabled(false);
-        btnditem10.setEnabled(false);
         btnmv101.setEnabled(false);
-        btnd101.setEnabled(false);
+       
         // Item 11
          lblnocum11.setEnabled(false);
         lblcum11.setEnabled(false);
@@ -281,9 +263,8 @@ public class Recursos extends javax.swing.JFrame {
         rbnojustiitem11.setEnabled(false);
         txtitem11.setEnabled(false);
         btnadjnoitem11.setEnabled(false);
-        btnditem11.setEnabled(false);
         btnmv111.setEnabled(false);
-        btnd111.setEnabled(false);
+       
         
         
       
@@ -291,6 +272,118 @@ public class Recursos extends javax.swing.JFrame {
         
         
     }
+    
+    public void Validar (){
+           Crecursos func = new Crecursos();
+           
+           
+        
+           
+       
+    if(tr.getI1111().equals("")){
+        
+        JOptionPane.showMessageDialog(null,"El item 1 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI1121().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 2 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI1131().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 3 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI1141().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 4 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI1151().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 5 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI1161().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 6 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI1171().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 7 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI1181().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 8 del estandar E1.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI1191().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E1.2 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI11101().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 2 del estandar E1.2 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI11111().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 3 del estandar E1.2 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(!tr.getI1111().equals("") && !tr.getI1121().equals("") && !tr.getI1131().equals("") && !tr.getI1141().equals("") && !tr.getI1151().equals("") && !tr.getI1161().equals("") 
+            && !tr.getI1171().equals("") && !tr.getI1181().equals("") && !tr.getI1191().equals("") && !tr.getI11101().equals("") && !tr.getI11111().equals("")){
+     
+        
+    int dialogButton =JOptionPane.showConfirmDialog(null, "Esta seguro que desea guardar las respuesta diligenciadas en la evaluacion inicial,"
+                                                        + " recuerde que si acepta no podra volver a diligenciar este formulario hasta que comience una nueva E. inicial ");
+           if(dialogButton == JOptionPane.YES_OPTION){     
+        
+       func.insertarItem1(tr);
+       func.insertarItem2(tr);
+       func.insertarItem3(tr);
+       func.insertarItem4(tr);
+       func.insertarItem5(tr);
+       func.insertarItem6(tr);
+       func.insertarItem7(tr);
+       func.insertarItem8(tr);
+       func.insertarItem9(tr);
+       func.insertarItem10(tr);
+       if(func.insertarItem11(tr)){
+          JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
+       } 
+  
+     // configurar botones y llenar el progress bar dinamicamente
+       ps.setE1(1);
+       gh.config();
+       yu.est_E1();
+       int valo=10;
+       ps.setBarra(ps.getBarra()+valo);
+       this.dispose();
+       gh.val=ps.getBarra();
+        gh.empezar();
+       gh.setVisible(true);
+       gh.toFront();
+       
+           }
+       
+     }
+        
+        
+    }
+          
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -314,18 +407,15 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtitem1 = new javax.swing.JTextArea();
         btnadjnoitem1 = new javax.swing.JButton();
-        btnditem1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         rbsi111 = new javax.swing.JRadioButton();
         rbno111 = new javax.swing.JRadioButton();
         btnmv11 = new javax.swing.JButton();
-        btnd11 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         rbsi112 = new javax.swing.JRadioButton();
         rbno112 = new javax.swing.JRadioButton();
         btnmv12 = new javax.swing.JButton();
-        btnd12 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -333,11 +423,10 @@ public class Recursos extends javax.swing.JFrame {
         rbsi113 = new javax.swing.JRadioButton();
         rbno113 = new javax.swing.JRadioButton();
         btnmv13 = new javax.swing.JButton();
-        btnd13 = new javax.swing.JButton();
         rbsi114 = new javax.swing.JRadioButton();
         rbno114 = new javax.swing.JRadioButton();
         btnmv14 = new javax.swing.JButton();
-        btnd14 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         lblnocum2 = new javax.swing.JLabel();
         lblcum2 = new javax.swing.JLabel();
@@ -348,13 +437,12 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         txtitem2 = new javax.swing.JTextArea();
         btnadjnoitem2 = new javax.swing.JButton();
-        btnditem2 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         rbsi121 = new javax.swing.JRadioButton();
         rbno121 = new javax.swing.JRadioButton();
         btnmv21 = new javax.swing.JButton();
-        btnd21 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -366,14 +454,13 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txtitem3 = new javax.swing.JTextArea();
         btnadjnoitem3 = new javax.swing.JButton();
-        btnditem3 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         rbsi131 = new javax.swing.JRadioButton();
         rbno131 = new javax.swing.JRadioButton();
         btnmv31 = new javax.swing.JButton();
-        btnd31 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         lblnocum4 = new javax.swing.JLabel();
         lblcum4 = new javax.swing.JLabel();
@@ -384,24 +471,22 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         txtitem4 = new javax.swing.JTextArea();
         btnadjnoitem4 = new javax.swing.JButton();
-        btnditem4 = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         rbsi141 = new javax.swing.JRadioButton();
         rbno141 = new javax.swing.JRadioButton();
         btnmv41 = new javax.swing.JButton();
-        btnd41 = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         rbsi142 = new javax.swing.JRadioButton();
         rbno142 = new javax.swing.JRadioButton();
         btnmv42 = new javax.swing.JButton();
-        btnd42 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
@@ -413,13 +498,12 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane15 = new javax.swing.JScrollPane();
         txtitem5 = new javax.swing.JTextArea();
         btnadjnoitem5 = new javax.swing.JButton();
-        btnditem5 = new javax.swing.JButton();
         jLabel62 = new javax.swing.JLabel();
         rbsi151 = new javax.swing.JRadioButton();
         rbno151 = new javax.swing.JRadioButton();
         btnmv51 = new javax.swing.JButton();
-        btnd51 = new javax.swing.JButton();
         jLabel63 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
         lblnocum6 = new javax.swing.JLabel();
         lblcum6 = new javax.swing.JLabel();
@@ -430,22 +514,20 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane16 = new javax.swing.JScrollPane();
         txtitem6 = new javax.swing.JTextArea();
         btnadjnoitem6 = new javax.swing.JButton();
-        btnditem6 = new javax.swing.JButton();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         rbsi161 = new javax.swing.JRadioButton();
         rbno161 = new javax.swing.JRadioButton();
         btnmv61 = new javax.swing.JButton();
-        btnd61 = new javax.swing.JButton();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         rbsi162 = new javax.swing.JRadioButton();
         rbno162 = new javax.swing.JRadioButton();
         btnmv62 = new javax.swing.JButton();
-        btnd62 = new javax.swing.JButton();
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
@@ -457,13 +539,12 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane17 = new javax.swing.JScrollPane();
         txtitem7 = new javax.swing.JTextArea();
         btnadjnoitem7 = new javax.swing.JButton();
-        btnditem7 = new javax.swing.JButton();
         jLabel74 = new javax.swing.JLabel();
         rbsi171 = new javax.swing.JRadioButton();
         rbno171 = new javax.swing.JRadioButton();
         btnmv71 = new javax.swing.JButton();
-        btnd71 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         lblnocum8 = new javax.swing.JLabel();
         lblcum8 = new javax.swing.JLabel();
@@ -474,20 +555,18 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         txtitem8 = new javax.swing.JTextArea();
         btnadjnoitem8 = new javax.swing.JButton();
-        btnditem8 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         rbsi181 = new javax.swing.JRadioButton();
         rbno181 = new javax.swing.JRadioButton();
         btnmv81 = new javax.swing.JButton();
-        btnd81 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         rbsi182 = new javax.swing.JRadioButton();
         rbno182 = new javax.swing.JRadioButton();
         btnmv82 = new javax.swing.JButton();
-        btnd82 = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
@@ -500,19 +579,17 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         txtitem9 = new javax.swing.JTextArea();
         btnadjnoitem9 = new javax.swing.JButton();
-        btnditem9 = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
         rbsi191 = new javax.swing.JRadioButton();
         rbno191 = new javax.swing.JRadioButton();
         btnmv91 = new javax.swing.JButton();
-        btnd91 = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         rbsi192 = new javax.swing.JRadioButton();
         rbno192 = new javax.swing.JRadioButton();
         btnmv92 = new javax.swing.JButton();
-        btnd92 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         lblnocum10 = new javax.swing.JLabel();
         lblcum10 = new javax.swing.JLabel();
@@ -523,19 +600,18 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane11 = new javax.swing.JScrollPane();
         txtitem10 = new javax.swing.JTextArea();
         btnadjnoitem10 = new javax.swing.JButton();
-        btnditem10 = new javax.swing.JButton();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         rbsi1101 = new javax.swing.JRadioButton();
         rbno1101 = new javax.swing.JRadioButton();
         btnmv101 = new javax.swing.JButton();
-        btnd101 = new javax.swing.JButton();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         lblnocum11 = new javax.swing.JLabel();
         lblcum11 = new javax.swing.JLabel();
@@ -546,29 +622,23 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtitem11 = new javax.swing.JTextArea();
         btnadjnoitem11 = new javax.swing.JButton();
-        btnditem11 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         rbsi1111 = new javax.swing.JRadioButton();
         rbno1111 = new javax.swing.JRadioButton();
         btnmv111 = new javax.swing.JButton();
-        btnd111 = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
-
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "E1.1\tRecursos financieros y técnico humanos y de otra índole requeridos para coordinar y desarrollar el sistema de gestión.(4%)", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 18))); // NOI18N
         jPanel2.setToolTipText("");
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ítem 1:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -621,13 +691,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnditem1.setText("Descargar");
-        btnditem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem1ActionPerformed(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel3.setText("1. Documento que consta la designación del responsable del sistema de gestión  SST, con la respectiva asignación de responsabilidades.");
 
@@ -651,13 +714,6 @@ public class Recursos extends javax.swing.JFrame {
         btnmv11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv11ActionPerformed(evt);
-            }
-        });
-
-        btnd11.setText("Descargar");
-        btnd11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd11ActionPerformed(evt);
             }
         });
 
@@ -687,13 +743,6 @@ public class Recursos extends javax.swing.JFrame {
         btnmv12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv12ActionPerformed(evt);
-            }
-        });
-
-        btnd12.setText("Descargar");
-        btnd12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd12ActionPerformed(evt);
             }
         });
 
@@ -732,13 +781,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnd13.setText("Descargar");
-        btnd13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd13ActionPerformed(evt);
-            }
-        });
-
         rbsi114.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         rbsi114.setText("Cumple");
         rbsi114.addActionListener(new java.awt.event.ActionListener() {
@@ -762,12 +804,7 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnd14.setText("Descargar");
-        btnd14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd14ActionPerformed(evt);
-            }
-        });
+        jButton3.setText("Criterio");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -778,27 +815,32 @@ public class Recursos extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(lblnocum1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblcum1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jButton3))
                                 .addGap(18, 18, 18)
                                 .addComponent(noaplicaitem1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(rbjustiitem1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbnojustiitem1))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbsi114)
+                                    .addComponent(rbnojustiitem1)
+                                    .addComponent(rbsi113)
+                                    .addComponent(rbsi112)
+                                    .addComponent(rbsi111))))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnadjnoitem1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -822,38 +864,25 @@ public class Recursos extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(rbsi113)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rbno113)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd13))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(rbsi111)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rbno111)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd11))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(rbsi112)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rbno112)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd12))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(rbsi114)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(rbno114)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd14)))))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnmv14))
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                            .addComponent(rbno113)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnmv13))
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(rbno112)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnmv12))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                                .addGap(124, 124, 124)
+                                                .addComponent(rbno111)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnmv11)))))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -864,28 +893,25 @@ public class Recursos extends javax.swing.JFrame {
                         .addComponent(rbjustiitem1)
                         .addComponent(rbnojustiitem1)
                         .addComponent(noaplicaitem1))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem1))
+                    .addComponent(btnadjnoitem1)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
                                 .addComponent(lblnocum1)
                                 .addComponent(lblcum1))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1))
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(rbsi111)
-                    .addComponent(rbno111)
-                    .addComponent(btnmv11)
-                    .addComponent(btnd11))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton3))))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(btnmv11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -893,10 +919,13 @@ public class Recursos extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbno111)
+                            .addComponent(rbsi111))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi112)
                             .addComponent(rbno112)
-                            .addComponent(btnmv12)
-                            .addComponent(btnd12))))
+                            .addComponent(btnmv12))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -904,7 +933,6 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(rbsi113)
                     .addComponent(rbno113)
                     .addComponent(btnmv13)
-                    .addComponent(btnd13)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -915,8 +943,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi114)
                         .addComponent(rbno114)
-                        .addComponent(btnmv14)
-                        .addComponent(btnd14)))
+                        .addComponent(btnmv14)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -969,13 +996,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnditem2.setText("Descargar");
-        btnditem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem2ActionPerformed(evt);
-            }
-        });
-
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel11.setText("Modo de Verificación ");
 
@@ -1005,12 +1025,7 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnd21.setText("Descargar");
-        btnd21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd21ActionPerformed(evt);
-            }
-        });
+        jButton4.setText("Criterio");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1023,21 +1038,21 @@ public class Recursos extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel12)
-                        .addGap(86, 86, 86)
+                        .addGap(96, 96, 96)
                         .addComponent(rbsi121)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(rbno121)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(27, 27, 27)
                         .addComponent(btnmv21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd21)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(lblcum2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel10)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jButton4))
                                 .addGap(18, 18, 18)
                                 .addComponent(noaplicaitem2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1050,10 +1065,8 @@ public class Recursos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(240, 240, 240))))
+                        .addComponent(btnadjnoitem2)
+                        .addGap(253, 253, 253))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1061,24 +1074,25 @@ public class Recursos extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(rbjustiitem2)
-                                .addComponent(rbnojustiitem2)
-                                .addComponent(noaplicaitem2))
-                            .addGap(65, 65, 65))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel10)
                                 .addComponent(lblnocum2)
                                 .addComponent(lblcum2))
-                            .addGap(60, 60, 60)))
+                            .addGap(60, 60, 60))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(rbjustiitem2)
+                                    .addComponent(rbnojustiitem2)
+                                    .addComponent(noaplicaitem2))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jButton4)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(btnadjnoitem2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnditem2))
+                            .addComponent(btnadjnoitem2)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(22, 22, 22)))
@@ -1086,8 +1100,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(rbsi121)
                     .addComponent(rbno121)
-                    .addComponent(btnmv21)
-                    .addComponent(btnd21))
+                    .addComponent(btnmv21))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -1143,13 +1156,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnditem3.setText("Descargar");
-        btnditem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem3ActionPerformed(evt);
-            }
-        });
-
         jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel17.setText("1. Evidencias físicas y/o  documentales que demuestren la definición y asignación de los recursos humanos, financieros y tecnicos y de otra indole ");
 
@@ -1176,61 +1182,59 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnd31.setText("Descargar");
-
         jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel18.setText("  para la implementación, mantenimiento y continuidad del SG-SST.");
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel19.setText("SG-SST (0.5%).");
 
+        jButton5.setText("Criterio");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi131)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbno131)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnmv31)
+                        .addGap(82, 82, 82))))
+            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(lblnocum3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblcum3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel19))
-                                .addGap(18, 18, 18)
-                                .addComponent(noaplicaitem3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbjustiitem3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbnojustiitem3))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(lblnocum3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblcum3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
+                            .addComponent(jLabel16)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rbsi131)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno131)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd31)))))
-                .addGap(22, 22, 22))
+                                .addComponent(jLabel19)
+                                .addGap(8, 8, 8)
+                                .addComponent(jButton5)))
+                        .addGap(18, 18, 18)
+                        .addComponent(noaplicaitem3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbjustiitem3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbnojustiitem3))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnadjnoitem3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1241,17 +1245,16 @@ public class Recursos extends javax.swing.JFrame {
                         .addComponent(rbjustiitem3)
                         .addComponent(rbnojustiitem3)
                         .addComponent(noaplicaitem3))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem3))
+                    .addComponent(btnadjnoitem3)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel6Layout.createSequentialGroup()
                                     .addComponent(jLabel16)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel19))
+                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel19)
+                                        .addComponent(jButton5)))
                                 .addComponent(lblnocum3)
                                 .addComponent(lblcum3))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1266,8 +1269,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi131)
                         .addComponent(rbno131)
-                        .addComponent(btnmv31)
-                        .addComponent(btnd31)))
+                        .addComponent(btnmv31)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -1314,8 +1316,11 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane6.setViewportView(txtitem4);
 
         btnadjnoitem4.setText("Adjuntar Doc");
-
-        btnditem4.setText("Descargar");
+        btnadjnoitem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnadjnoitem4ActionPerformed(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel21.setText("Modo de Verificación ");
@@ -1340,8 +1345,11 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv41.setText("Adjuntar Doc");
-
-        btnd41.setText("Descargar");
+        btnmv41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv41ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel23.setText("de los cuatro meses anteriores a la fecha de verificación (Ver nota 1).");
@@ -1369,8 +1377,11 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv42.setText("Adjuntar Doc");
-
-        btnd42.setText("Descargar");
+        btnmv42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv42ActionPerformed(evt);
+            }
+        });
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel26.setText("Nota 1: Empresas de 1 a 10 trabajadores verificar 100%, entre 11 y 50 el 20%, entre 51 y 200 el 10% y mayores a 200 verificar el registro de 30 trabajadores. También de la muestra");
@@ -1383,6 +1394,8 @@ public class Recursos extends javax.swing.JFrame {
 
         jLabel29.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel29.setText("(listado pagina Web).");
+
+        jButton6.setText("Criterio");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1402,7 +1415,9 @@ public class Recursos extends javax.swing.JFrame {
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(lblcum4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel20)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jButton6))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(noaplicaitem4)
                                 .addGap(30, 30, 30)
@@ -1412,9 +1427,7 @@ public class Recursos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnadjnoitem4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(81, 81, 81))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1428,23 +1441,19 @@ public class Recursos extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(rbno141)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv41)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd41))
+                                        .addComponent(btnmv41))
                                     .addGroup(jPanel7Layout.createSequentialGroup()
                                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel22)
                                             .addComponent(jLabel24)
                                             .addComponent(jLabel25))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(rbsi142)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(rbno142)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv42)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd42)))
-                                .addGap(14, 14, 14))
+                                        .addComponent(btnmv42)))
+                                .addGap(105, 105, 105))
                             .addComponent(jLabel28)
                             .addComponent(jLabel26)
                             .addComponent(jLabel27))
@@ -1460,16 +1469,17 @@ public class Recursos extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
                             .addComponent(lblnocum4)
-                            .addComponent(lblcum4))
-                        .addGap(38, 38, 38)
+                            .addComponent(lblcum4)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton6)))
+                        .addGap(22, 22, 22)
                         .addComponent(jLabel21))
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel7Layout.createSequentialGroup()
                             .addComponent(btnadjnoitem4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem4)
                             .addGap(1, 1, 1))
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1485,8 +1495,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi141)
                         .addComponent(rbno141)
-                        .addComponent(btnmv41)
-                        .addComponent(btnd41)))
+                        .addComponent(btnmv41)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel24)
                 .addGap(4, 4, 4)
@@ -1494,8 +1503,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel25)
                     .addComponent(rbsi142)
                     .addComponent(rbno142)
-                    .addComponent(btnmv42)
-                    .addComponent(btnd42))
+                    .addComponent(btnmv42))
                 .addGap(31, 31, 31)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1553,8 +1561,11 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane15.setViewportView(txtitem5);
 
         btnadjnoitem5.setText("Adjuntar Doc");
-
-        btnditem5.setText("Descargar");
+        btnadjnoitem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnadjnoitem5ActionPerformed(evt);
+            }
+        });
 
         jLabel62.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel62.setText("1. Se tienen identificados los trabajadores que se dedican en forma permanente al ejercicio de las actividades de alto riesgo que trata ");
@@ -1576,11 +1587,16 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv51.setText("Adjuntar Doc");
-
-        btnd51.setText("Descargar");
+        btnmv51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv51ActionPerformed(evt);
+            }
+        });
 
         jLabel63.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel63.setText("el decreto 2090 de 2003.");
+
+        jButton7.setText("Criterio");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1591,14 +1607,12 @@ public class Recursos extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel62)
                     .addComponent(jLabel63))
-                .addGap(30, 30, 30)
+                .addGap(36, 36, 36)
                 .addComponent(rbsi151)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rbno151)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnmv51)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd51)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1608,7 +1622,9 @@ public class Recursos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel61))
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel61)
+                            .addComponent(jButton7)))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1621,9 +1637,7 @@ public class Recursos extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
         jPanel15Layout.setVerticalGroup(
@@ -1632,21 +1646,24 @@ public class Recursos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel61)
-                            .addComponent(lblnocum5)
-                            .addComponent(lblcum5))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum5)
+                                    .addComponent(lblcum5))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel61)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton7)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel60))
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbjustiitem5)
                             .addComponent(rbnojustiitem5)
                             .addComponent(noaplicaitem5))
-                        .addGroup(jPanel15Layout.createSequentialGroup()
-                            .addComponent(btnadjnoitem5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem5))
+                        .addComponent(btnadjnoitem5)
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
@@ -1659,8 +1676,7 @@ public class Recursos extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi151)
                             .addComponent(rbno151)
-                            .addComponent(btnmv51)
-                            .addComponent(btnd51))))
+                            .addComponent(btnmv51))))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -1713,8 +1729,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnditem6.setText("Descargar");
-
         jLabel65.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel65.setText("Modo de Verificación ");
 
@@ -1738,8 +1752,11 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv61.setText("Adjuntar Doc");
-
-        btnd61.setText("Descargar");
+        btnmv61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv61ActionPerformed(evt);
+            }
+        });
 
         jLabel67.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel67.setText("elección, conformación del comité paritario SST y el acta de constitución (Para el caso del comité paritario constatar si es");
@@ -1767,14 +1784,19 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv62.setText("Adjuntar Doc");
-
-        btnd62.setText("Descargar");
+        btnmv62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv62ActionPerformed(evt);
+            }
+        });
 
         jLabel70.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel70.setText("Nota: Las empresas de menos de 10 trabajadores deben contar con un vigía en seguridad y salud en el trabajo, y de 10 o más trabajadores con un comité paritario SST.");
 
         jLabel71.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel71.setText("SST y verificar el cumplimiento de sus funciones.");
+
+        jButton8.setText("Criterio");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -1796,7 +1818,9 @@ public class Recursos extends javax.swing.JFrame {
                                     .addGroup(jPanel16Layout.createSequentialGroup()
                                         .addComponent(lblcum6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel64)
+                                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel64)
+                                            .addComponent(jButton8))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(noaplicaitem6)
                                         .addGap(30, 30, 30)
@@ -1806,9 +1830,7 @@ public class Recursos extends javax.swing.JFrame {
                                         .addGap(47, 47, 47)))
                                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
-                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnadjnoitem6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnditem6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnadjnoitem6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel66)
@@ -1820,24 +1842,20 @@ public class Recursos extends javax.swing.JFrame {
                             .addComponent(jLabel68)
                             .addComponent(jLabel69)
                             .addComponent(jLabel71))
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel16Layout.createSequentialGroup()
-                                .addComponent(rbsi161)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno161)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv61)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd61))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addComponent(rbsi162)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno162)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv62)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd62)))
+                                .addGap(18, 18, 18)
+                                .addComponent(rbno162))
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addComponent(rbsi161)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbno161)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnmv61)
+                            .addComponent(btnmv62))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -1851,16 +1869,17 @@ public class Recursos extends javax.swing.JFrame {
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel64)
                             .addComponent(lblnocum6)
-                            .addComponent(lblcum6))
-                        .addGap(38, 38, 38)
+                            .addComponent(lblcum6)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addComponent(jLabel64)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton8)))
+                        .addGap(22, 22, 22)
                         .addComponent(jLabel65))
                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel16Layout.createSequentialGroup()
                             .addComponent(btnadjnoitem6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem6)
                             .addGap(1, 1, 1))
                         .addComponent(jScrollPane16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1876,16 +1895,14 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel68)
                     .addComponent(rbsi161)
                     .addComponent(rbno161)
-                    .addComponent(btnmv61)
-                    .addComponent(btnd61))
+                    .addComponent(btnmv61))
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi162)
                             .addComponent(rbno162)
-                            .addComponent(btnmv62)
-                            .addComponent(btnd62)))
+                            .addComponent(btnmv62)))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel69)
@@ -1942,8 +1959,11 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane17.setViewportView(txtitem7);
 
         btnadjnoitem7.setText("Adjuntar Doc");
-
-        btnditem7.setText("Descargar");
+        btnadjnoitem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnadjnoitem7ActionPerformed(evt);
+            }
+        });
 
         jLabel74.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel74.setText("1. Registros que constaten la capacitación y evaluación tanto para el vigía SST o para los miembros del comité paritario SST según aplique ");
@@ -1965,54 +1985,59 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv71.setText("Adjuntar Doc");
-
-        btnd71.setText("Descargar");
+        btnmv71.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv71ActionPerformed(evt);
+            }
+        });
 
         jLabel75.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel75.setText("que estén vigentes.");
+
+        jButton9.setText("Criterio");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel74)
-                    .addComponent(jLabel75))
-                .addGap(30, 30, 30)
-                .addComponent(rbsi171)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rbno171)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmv71)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd71)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel17Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblnocum7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblcum7)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblnocum7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblcum7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel73)
+                                    .addComponent(jButton9)))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(noaplicaitem7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel73))
+                        .addComponent(rbjustiitem7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbnojustiitem7)
+                        .addGap(35, 35, 35)
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(noaplicaitem7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbjustiitem7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbnojustiitem7)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                        .addContainerGap()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel74)
+                            .addComponent(jLabel75))
+                        .addGap(30, 30, 30)
+                        .addComponent(rbsi171)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbno171)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnmv71)
+                    .addComponent(btnadjnoitem7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68))
         );
         jPanel17Layout.setVerticalGroup(
@@ -2022,20 +2047,20 @@ public class Recursos extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel73)
                             .addComponent(lblnocum7)
-                            .addComponent(lblcum7))
-                        .addGap(34, 34, 34)
+                            .addComponent(lblcum7)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addComponent(jLabel73)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton9)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel72))
                     .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbjustiitem7)
                             .addComponent(rbnojustiitem7)
                             .addComponent(noaplicaitem7))
-                        .addGroup(jPanel17Layout.createSequentialGroup()
-                            .addComponent(btnadjnoitem7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem7))
+                        .addComponent(btnadjnoitem7)
                         .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
@@ -2048,8 +2073,7 @@ public class Recursos extends javax.swing.JFrame {
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi171)
                             .addComponent(rbno171)
-                            .addComponent(btnmv71)
-                            .addComponent(btnd71))))
+                            .addComponent(btnmv71))))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -2102,8 +2126,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnditem8.setText("Descargar");
-
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel14.setText("Modo de Verificación ");
 
@@ -2127,8 +2149,11 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv81.setText("Adjuntar Doc");
-
-        btnd81.setText("Descargar");
+        btnmv81.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv81ActionPerformed(evt);
+            }
+        });
 
         jLabel31.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel31.setText("y que su periodo de conformación se encuentre vigente.");
@@ -2153,11 +2178,16 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv82.setText("Adjuntar Doc");
-
-        btnd82.setText("Descargar");
+        btnmv82.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv82ActionPerformed(evt);
+            }
+        });
 
         jLabel33.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel33.setText("vencia laboral, verificando el desarrollo de sus funciones. ");
+
+        jButton10.setText("Criterio");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -2179,7 +2209,9 @@ public class Recursos extends javax.swing.JFrame {
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(lblcum8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel13)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel13)
+                                            .addComponent(jButton10))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(noaplicaitem8)
                                         .addGap(30, 30, 30)
@@ -2189,23 +2221,24 @@ public class Recursos extends javax.swing.JFrame {
                                         .addGap(47, 47, 47)))
                                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnadjnoitem8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnditem8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnadjnoitem8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel31)
-                                    .addComponent(jLabel32)
-                                    .addComponent(jLabel33))
-                                .addGap(77, 77, 77)
-                                .addComponent(rbsi182)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno182)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv82)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd82)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jLabel31)
+                                        .addGap(673, 673, 673)
+                                        .addComponent(btnmv81))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel30)
+                                            .addComponent(jLabel32)
+                                            .addComponent(jLabel33))
+                                        .addGap(77, 77, 77)
+                                        .addComponent(rbsi182)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(rbno182)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnmv82)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(54, 54, 54))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
@@ -2213,10 +2246,6 @@ public class Recursos extends javax.swing.JFrame {
                         .addComponent(rbsi181)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbno181)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv81)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd81)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
@@ -2226,16 +2255,17 @@ public class Recursos extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
                             .addComponent(lblnocum8)
-                            .addComponent(lblcum8))
-                        .addGap(38, 38, 38)
+                            .addComponent(lblcum8)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton10)))
+                        .addGap(22, 22, 22)
                         .addComponent(jLabel14))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel5Layout.createSequentialGroup()
                             .addComponent(btnadjnoitem8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem8)
                             .addGap(1, 1, 1))
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2249,8 +2279,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(rbsi181)
                     .addComponent(rbno181)
-                    .addComponent(btnmv81)
-                    .addComponent(btnd81))
+                    .addComponent(btnmv81))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2258,12 +2287,10 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel33)
                     .addComponent(rbsi182)
                     .addComponent(rbno182)
-                    .addComponent(btnmv82)
-                    .addComponent(btnd82))
+                    .addComponent(btnmv82))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        jPanel11.setBackground(new java.awt.Color(102, 255, 51));
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "E1.2Capacitación en el Sistema de Gestión de Seguridad y Salud en el Trabajo (6%)", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 3, 18))); // NOI18N
         jPanel11.setToolTipText("");
 
@@ -2313,8 +2340,11 @@ public class Recursos extends javax.swing.JFrame {
         jScrollPane10.setViewportView(txtitem9);
 
         btnadjnoitem9.setText("Adjuntar Doc");
-
-        btnditem9.setText("Descargar");
+        btnadjnoitem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnadjnoitem9ActionPerformed(evt);
+            }
+        });
 
         jLabel51.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel51.setText("1. programa de capacitación anual y la matriz de identificación de peligros y verificar  que el mismo este dirigido a los peligros ya ");
@@ -2336,8 +2366,11 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv91.setText("Adjuntar Doc");
-
-        btnd91.setText("Descargar");
+        btnmv91.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv91ActionPerformed(evt);
+            }
+        });
 
         jLabel52.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel52.setText("identificados, con la evaluación y control del riesgo, y/o necesidades en Seguridad y Salud en el Trabajo, y verificar las evidencias ");
@@ -2365,8 +2398,13 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv92.setText("Adjuntar Doc");
+        btnmv92.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv92ActionPerformed(evt);
+            }
+        });
 
-        btnd92.setText("Descargar");
+        jButton12.setText("Criterio");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -2380,7 +2418,9 @@ public class Recursos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel50))
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel50)
+                            .addComponent(jButton12)))
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2393,9 +2433,7 @@ public class Recursos extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem9, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem9, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem9, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
@@ -2404,32 +2442,27 @@ public class Recursos extends javax.swing.JFrame {
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel51)
                             .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addComponent(jLabel52)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbsi191)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno191)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel52)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(rbsi191))
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel54)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(rbsi192)))
+                                .addGap(35, 35, 35)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbno192, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(rbno191, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv91)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd91)))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnmv92)
+                                    .addComponent(btnmv91))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addComponent(jLabel53)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addComponent(jLabel54)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rbsi192)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno192)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv92)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd92)))
-                        .addGap(105, 105, 105))))
+                        .addComponent(jLabel53)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2437,21 +2470,24 @@ public class Recursos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel50)
-                            .addComponent(lblnocum9)
-                            .addComponent(lblcum9))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum9)
+                                    .addComponent(lblcum9))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(jLabel50)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton12)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel49))
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbjustiitem9)
                             .addComponent(rbnojustiitem9)
                             .addComponent(noaplicaitem9))
-                        .addGroup(jPanel12Layout.createSequentialGroup()
-                            .addComponent(btnadjnoitem9)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem9))
+                        .addComponent(btnadjnoitem9)
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel51)
@@ -2460,8 +2496,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel52)
                     .addComponent(rbsi191)
                     .addComponent(rbno191)
-                    .addComponent(btnmv91)
-                    .addComponent(btnd91))
+                    .addComponent(btnmv91))
                 .addGap(1, 1, 1)
                 .addComponent(jLabel53)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2469,8 +2504,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel54)
                     .addComponent(rbsi192)
                     .addComponent(rbno192)
-                    .addComponent(btnmv92)
-                    .addComponent(btnd92))
+                    .addComponent(btnmv92))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -2523,8 +2557,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnditem10.setText("Descargar");
-
         jLabel56.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel56.setText("Modo de Verificación ");
 
@@ -2548,8 +2580,11 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv101.setText("Adjuntar Doc");
-
-        btnd101.setText("Descargar");
+        btnmv101.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv101ActionPerformed(evt);
+            }
+        });
 
         jLabel58.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel58.setText("soportes documentales que den cuenta de la capacitación y de su evaluación, de la inducción y reinducción de confor-");
@@ -2568,6 +2603,8 @@ public class Recursos extends javax.swing.JFrame {
 
         jLabel79.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel79.setText("Nota : Para la verificacion, empresas de 1 a 10 trabajadores verificar 100%, entre 11 y 50 el 20%, entre 51 y 200 el 10% y mayores a 200 verificar el registro de 30 trabajadores. ");
+
+        jButton11.setText("Criterio");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -2593,8 +2630,11 @@ public class Recursos extends javax.swing.JFrame {
                                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel55)
                                             .addComponent(jLabel77)
-                                            .addComponent(jLabel78))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                                .addComponent(jLabel78)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jButton11)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                                         .addComponent(noaplicaitem10)
                                         .addGap(30, 30, 30)
                                         .addComponent(rbjustiitem10)
@@ -2603,25 +2643,24 @@ public class Recursos extends javax.swing.JFrame {
                                         .addGap(47, 47, 47)))
                                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnadjnoitem10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnditem10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnadjnoitem10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addComponent(rbsi1101)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rbno1101)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv101)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd101))
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel13Layout.createSequentialGroup()
+                                            .addComponent(rbsi1101)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(rbno1101)
+                                            .addGap(192, 192, 192))
+                                        .addGroup(jPanel13Layout.createSequentialGroup()
                                             .addComponent(jLabel57)
-                                            .addComponent(jLabel58))
-                                        .addGap(461, 461, 461)))))
+                                            .addGap(461, 461, 461)))
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addComponent(jLabel58)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnmv101)
+                                        .addGap(70, 70, 70)))))
                         .addGap(54, 54, 54))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2637,8 +2676,6 @@ public class Recursos extends javax.swing.JFrame {
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel13Layout.createSequentialGroup()
                             .addComponent(btnadjnoitem10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem10)
                             .addGap(1, 1, 1))
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2654,8 +2691,10 @@ public class Recursos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel77)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel78)
-                        .addGap(13, 13, 13)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel78)
+                            .addComponent(jButton11))
+                        .addGap(9, 9, 9)
                         .addComponent(jLabel56)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel57)
@@ -2664,8 +2703,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel58)
                     .addComponent(rbsi1101)
                     .addComponent(rbno1101)
-                    .addComponent(btnmv101)
-                    .addComponent(btnd101))
+                    .addComponent(btnmv101))
                 .addGap(4, 4, 4)
                 .addComponent(jLabel59)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2724,8 +2762,6 @@ public class Recursos extends javax.swing.JFrame {
             }
         });
 
-        btnditem11.setText("Descargar");
-
         jLabel35.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel35.setText("Modo de Verificación ");
 
@@ -2749,8 +2785,11 @@ public class Recursos extends javax.swing.JFrame {
         });
 
         btnmv111.setText("Adjuntar Doc");
-
-        btnd111.setText("Descargar");
+        btnmv111.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmv111ActionPerformed(evt);
+            }
+        });
 
         jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel37.setText("de Trabajo, expedido a nombre del responsable del Sistema de Gestión de Seguridad y Salud en el Trabajo.");
@@ -2766,6 +2805,11 @@ public class Recursos extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/save(1).png"))); // NOI18N
         jButton2.setText("Guardar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -2777,6 +2821,8 @@ public class Recursos extends javax.swing.JFrame {
 
         jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel39.setText("y Prevención Pyp. (2%)");
+
+        jButton13.setText("Criterio");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -2799,7 +2845,10 @@ public class Recursos extends javax.swing.JFrame {
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel34)
                                     .addComponent(jLabel38)
-                                    .addComponent(jLabel39))
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(jLabel39)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton13)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(noaplicaitem11)
                                 .addGap(30, 30, 30)
@@ -2809,9 +2858,7 @@ public class Recursos extends javax.swing.JFrame {
                                 .addGap(47, 47, 47)))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem11, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem11, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnadjnoitem11, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2821,8 +2868,7 @@ public class Recursos extends javax.swing.JFrame {
                                 .addComponent(rbno1111)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnmv111)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd111))
+                                .addGap(91, 91, 91))
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel36)
@@ -2844,8 +2890,6 @@ public class Recursos extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel8Layout.createSequentialGroup()
                             .addComponent(btnadjnoitem11)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnditem11)
                             .addGap(1, 1, 1))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2861,8 +2905,10 @@ public class Recursos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel38)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel39)
-                        .addGap(13, 13, 13)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel39)
+                            .addComponent(jButton13))
+                        .addGap(9, 9, 9)
                         .addComponent(jLabel35)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36)
@@ -2871,8 +2917,7 @@ public class Recursos extends javax.swing.JFrame {
                     .addComponent(jLabel37)
                     .addComponent(rbsi1111)
                     .addComponent(rbno1111)
-                    .addComponent(btnmv111)
-                    .addComponent(btnd111))
+                    .addComponent(btnmv111))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2885,14 +2930,11 @@ public class Recursos extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(25, Short.MAX_VALUE))
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 1252, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2910,17 +2952,17 @@ public class Recursos extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1283, Short.MAX_VALUE)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2950,11 +2992,13 @@ public class Recursos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1301, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 3242, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
         );
 
         pack();
@@ -2977,15 +3021,14 @@ public class Recursos extends javax.swing.JFrame {
             btnmv12.setEnabled(false);
             btnmv13.setEnabled(false);
             btnmv14.setEnabled(false);
-            btnd11.setEnabled(false);
-            btnd12.setEnabled(false);
-            btnd13.setEnabled(false);
-            btnd14.setEnabled(false);
+          
             txtitem1.setEnabled(false);
             btnadjnoitem1.setEnabled(false);
-            btnditem1.setEnabled(false);
             lblcum1.setEnabled(false);
             lblnocum1.setEnabled(false);
+            
+             tr.setI1111("");
+             
 
         }else{
             lblcum1.setEnabled(false);
@@ -3009,6 +3052,8 @@ public class Recursos extends javax.swing.JFrame {
     private void rbjustiitem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem1ActionPerformed
 
         txtitem1.setEnabled(true);
+         tr.setI1111("");
+        
         
         
     }//GEN-LAST:event_rbjustiitem1ActionPerformed
@@ -3036,19 +3081,23 @@ public class Recursos extends javax.swing.JFrame {
              tr.setI1111("si");
              tr.setA1111("");
              tr.setA1111("no");
+             tr.setJ1111("");
              tr.setJ1111(txtitem1.getText());
+             tr.setV1111("no aplica");
+             tr.setV1112("no aplica");
+             tr.setV1113("no aplica");
+             tr.setV1114("no aplica");
              
             
             lblcum1.setEnabled(true);
             lblnocum1.setEnabled(false);
             btnadjnoitem1.setEnabled(true);
         }else{
-            tr.setJ1111("");
+           
             tr.setI1111("");
-             tr.setI1111("no");
-              tr.setA1111("");
-             tr.setA1111("si");
-        
+            tr.setA1111("");
+             
+             
             lblcum1.setEnabled(false);
             lblnocum1.setEnabled(false);
             btnadjnoitem1.setEnabled(false);
@@ -3155,6 +3204,8 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem2.setEnabled(false);
             lblcum2.setEnabled(false);
             lblnocum2.setEnabled(false);
+            
+            tr.setI1121("");
         }else{
             rbsi121.setEnabled(true);
             rbno121.setEnabled(true);
@@ -3171,6 +3222,7 @@ public class Recursos extends javax.swing.JFrame {
 
     private void rbjustiitem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem2ActionPerformed
         txtitem2.setEnabled(true);
+        tr.setI1121("");
     }//GEN-LAST:event_rbjustiitem2ActionPerformed
 
     private void rbnojustiitem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem2ActionPerformed
@@ -3178,6 +3230,8 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1121("no");
          tr.setA1121("");
          tr.setA1121("si");
+         tr.setV1121("no");
+         
         txtitem2.setEnabled(false);
         lblcum2.setEnabled(false);
         lblnocum2.setEnabled(true);
@@ -3189,15 +3243,14 @@ public class Recursos extends javax.swing.JFrame {
              tr.setI1121("si");
              tr.setA1121("");
              tr.setA1121("no");
+             tr.setV1121("no aplica");
           tr.setJ1121(txtitem2.getText());
             lblcum2.setEnabled(true);
             lblnocum2.setEnabled(false);
             btnadjnoitem2.setEnabled(true);
         }else{
             tr.setI1121("");
-             tr.setI1121("no");
-             tr.setA1121("");
-             tr.setA1121("si");
+            tr.setA1121("");
             lblcum2.setEnabled(false);
             lblnocum2.setEnabled(false);
             btnadjnoitem2.setEnabled(false);
@@ -3227,19 +3280,14 @@ public class Recursos extends javax.swing.JFrame {
             rbjustiitem3.setEnabled(true);
             rbnojustiitem3.setEnabled(true);
             rbsi131.setEnabled(false);
-
             rbno131.setEnabled(false);
-
             btnmv31.setEnabled(false);
-
-            btnd31.setEnabled(false);
-
             txtitem3.setEnabled(false);
             btnadjnoitem3.setEnabled(false);
-            btnditem3.setEnabled(false);
             lblcum3.setEnabled(false);
             lblnocum3.setEnabled(false);
-
+            
+             tr.setI1131("");
         }else{
             lblcum3.setEnabled(false);
             lblnocum3.setEnabled(false);
@@ -3257,6 +3305,8 @@ public class Recursos extends javax.swing.JFrame {
     private void rbjustiitem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem3ActionPerformed
 
         txtitem3.setEnabled(true);
+        
+        tr.setI1131("");
     }//GEN-LAST:event_rbjustiitem3ActionPerformed
 
     private void rbnojustiitem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem3ActionPerformed
@@ -3264,6 +3314,7 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1131("no");
          tr.setA1131("");
          tr.setA1131("si");
+         tr.setV1131("no");
          btnadjnoitem3.setEnabled(false);
         txtitem3.setEnabled(false);
         lblnocum3.setEnabled(true);
@@ -3277,6 +3328,7 @@ public class Recursos extends javax.swing.JFrame {
              tr.setI1131("si");
              tr.setA1131("");
              tr.setA1131("no");
+             tr.setV1131("no aplica");
              tr.setJ1131(txtitem3.getText());
             
             lblcum3.setEnabled(true);
@@ -3284,9 +3336,7 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem3.setEnabled(true);
         }else{
              tr.setI1131("");
-         tr.setI1131("no");
-         tr.setA1131("");
-         tr.setA1131("si");
+             tr.setA1131("");
             lblcum3.setEnabled(false);
             lblnocum3.setEnabled(false);
             btnadjnoitem3.setEnabled(false);
@@ -3329,6 +3379,8 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem4.setEnabled(false);
             lblcum4.setEnabled(false);
             lblnocum4.setEnabled(false);
+            
+             tr.setI1141("");
         }else{
             rbsi142.setEnabled(true);
             rbno142.setEnabled(true);
@@ -3347,6 +3399,7 @@ public class Recursos extends javax.swing.JFrame {
 
     private void rbjustiitem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem4ActionPerformed
         txtitem4.setEnabled(true);
+         tr.setI1141("");
     }//GEN-LAST:event_rbjustiitem4ActionPerformed
 
     private void rbnojustiitem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem4ActionPerformed
@@ -3354,6 +3407,8 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1141("no");
          tr.setA1141("");
          tr.setA1141("si");
+         tr.setV1141("no");
+         tr.setV1142("no");
         txtitem4.setEnabled(false);
         lblcum4.setEnabled(false);
         lblnocum4.setEnabled(true);
@@ -3365,15 +3420,17 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1141("si");
          tr.setA1141("");
          tr.setA1141("no");
+         tr.setV1141("no aplica");
+         tr.setV1142("no aplica");
+         
          tr.setJ1141(txtitem4.getText());
             lblcum4.setEnabled(true);
             lblnocum4.setEnabled(false);
             btnadjnoitem4.setEnabled(true);
         }else{
              tr.setI1141("");
-         tr.setI1141("no");
-         tr.setA1141("");
-         tr.setA1141("si");
+             tr.setA1141("");
+        
             lblcum4.setEnabled(false);
             lblnocum4.setEnabled(false);
             btnadjnoitem4.setEnabled(false);
@@ -3434,13 +3491,15 @@ public class Recursos extends javax.swing.JFrame {
 
             btnmv51.setEnabled(false);
 
-            btnd51.setEnabled(false);
+            
 
             txtitem5.setEnabled(false);
             btnadjnoitem5.setEnabled(false);
-            btnditem5.setEnabled(false);
+            
             lblcum5.setEnabled(false);
             lblnocum5.setEnabled(false);
+            
+            tr.setI1151("");
 
         }else{
             lblcum5.setEnabled(false);
@@ -3457,7 +3516,7 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_noaplicaitem5ActionPerformed
 
     private void rbjustiitem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem5ActionPerformed
-
+         tr.setI1151("");
         txtitem5.setEnabled(true);
     }//GEN-LAST:event_rbjustiitem5ActionPerformed
 
@@ -3467,6 +3526,7 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1151("no");
          tr.setA1151("");
          tr.setA1151("si");
+         tr.setV1151("no");
 
         btnadjnoitem5.setEnabled(false);
         txtitem5.setEnabled(false);
@@ -3481,15 +3541,16 @@ public class Recursos extends javax.swing.JFrame {
              tr.setI1151("si");
              tr.setA1151("");
              tr.setA1151("no");
+              tr.setV1151("no aplica");
+             
              tr.setJ1151(txtitem5.getText());
             lblcum5.setEnabled(true);
             lblnocum5.setEnabled(false);
             btnadjnoitem5.setEnabled(true);
         }else{
              tr.setI1151("");
-             tr.setI1151("no");
              tr.setA1151("");
-             tr.setA1151("si");
+             
             lblcum5.setEnabled(false);
             lblnocum5.setEnabled(false);
             btnadjnoitem5.setEnabled(false);
@@ -3534,6 +3595,9 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem6.setEnabled(false);
             lblcum6.setEnabled(false);
             lblnocum6.setEnabled(false);
+            
+            tr.setI1161("");
+            
         }else{
             rbsi162.setEnabled(true);
             rbno162.setEnabled(true);
@@ -3552,6 +3616,7 @@ public class Recursos extends javax.swing.JFrame {
 
     private void rbjustiitem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem6ActionPerformed
         txtitem6.setEnabled(true);
+        tr.setI1161("");
     }//GEN-LAST:event_rbjustiitem6ActionPerformed
 
     private void rbnojustiitem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem6ActionPerformed
@@ -3560,6 +3625,8 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1161("no");
          tr.setA1161("");
          tr.setA1161("si");
+         tr.setV1161("no");
+         tr.setV1162("no");
         lblcum6.setEnabled(false);
         lblnocum6.setEnabled(true);
     }//GEN-LAST:event_rbnojustiitem6ActionPerformed
@@ -3567,9 +3634,10 @@ public class Recursos extends javax.swing.JFrame {
     private void txtitem6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtitem6KeyPressed
         if(txtitem6.getText().length()>2){
             tr.setI1161("");
-            tr.setI1161("si");
             tr.setA1161("");
-            tr.setA1161("no");
+             tr.setV1161("no aplica");
+            tr.setV1162("no aplica");
+           
             tr.setJ1161(txtitem6.getText());
             
             lblcum6.setEnabled(true);
@@ -3577,9 +3645,8 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem6.setEnabled(true);
         }else{
             tr.setI1161("");
-            tr.setI1161("no");
             tr.setA1161("");
-            tr.setA1161("si");
+            
             lblcum6.setEnabled(false);
             lblnocum6.setEnabled(false);
             btnadjnoitem6.setEnabled(false);
@@ -3588,7 +3655,45 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem6KeyPressed
 
     private void btnadjnoitem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem6ActionPerformed
-        // TODO add your handling code here:
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(6);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
     }//GEN-LAST:event_btnadjnoitem6ActionPerformed
 
     private void rbsi161ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi161ActionPerformed
@@ -3643,13 +3748,15 @@ public class Recursos extends javax.swing.JFrame {
 
             btnmv71.setEnabled(false);
 
-            btnd71.setEnabled(false);
+           
 
             txtitem7.setEnabled(false);
             btnadjnoitem7.setEnabled(false);
-            btnditem7.setEnabled(false);
+           
             lblcum7.setEnabled(false);
             lblnocum7.setEnabled(false);
+            
+             tr.setI1171("");
 
         }else{
             lblcum7.setEnabled(false);
@@ -3666,7 +3773,7 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_noaplicaitem7ActionPerformed
 
     private void rbjustiitem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem7ActionPerformed
-
+          tr.setI1171("");
         txtitem7.setEnabled(true);
     }//GEN-LAST:event_rbjustiitem7ActionPerformed
 
@@ -3675,6 +3782,7 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1171("no");
          tr.setA1171("");
          tr.setA1171("si");
+          tr.setV1171("no");
         
         btnadjnoitem7.setEnabled(false);
         txtitem7.setEnabled(false);
@@ -3689,6 +3797,7 @@ public class Recursos extends javax.swing.JFrame {
              tr.setI1171("si");
              tr.setA1171("");
              tr.setA1171("no");
+              tr.setV1171("no aplica");
              tr.setJ1171(txtitem7.getText());
              
             
@@ -3697,9 +3806,8 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem7.setEnabled(true);
         }else{
              tr.setI1171("");
-             tr.setI1171("no");
              tr.setA1171("");
-             tr.setA1171("si");
+            
             
             
             lblcum7.setEnabled(false);
@@ -3744,6 +3852,8 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem8.setEnabled(false);
             lblcum8.setEnabled(false);
             lblnocum8.setEnabled(false);
+            
+             tr.setI1181("");
         }else{
             rbsi182.setEnabled(true);
             rbno182.setEnabled(true);
@@ -3761,6 +3871,7 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_noaplicaitem8ActionPerformed
 
     private void rbjustiitem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem8ActionPerformed
+         tr.setI1181("");
         txtitem8.setEnabled(true);
     }//GEN-LAST:event_rbjustiitem8ActionPerformed
 
@@ -3770,6 +3881,9 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1181("no");
          tr.setA1181("");
          tr.setA1181("si");
+          tr.setV1181("no");
+          tr.setV1182("no");
+         
         txtitem8.setEnabled(false);
         lblcum8.setEnabled(false);
         lblnocum8.setEnabled(true);
@@ -3782,14 +3896,14 @@ public class Recursos extends javax.swing.JFrame {
          tr.setA1181("");
          tr.setA1181("no");
          tr.setJ1181(txtitem8.getText());
+         tr.setV1181("no aplica");
+         tr.setV1182("no aplica");
             lblcum8.setEnabled(true);
             lblnocum8.setEnabled(false);
             btnadjnoitem8.setEnabled(true);
         }else{
             tr.setI1181("");
-         tr.setI1181("no");
-         tr.setA1181("");
-         tr.setA1181("si");
+           tr.setA1181("");
             lblcum8.setEnabled(false);
             lblnocum8.setEnabled(false);
             btnadjnoitem8.setEnabled(false);
@@ -3798,7 +3912,45 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem8KeyPressed
 
     private void btnadjnoitem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem8ActionPerformed
-        // TODO add your handling code here:
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(8);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
     }//GEN-LAST:event_btnadjnoitem8ActionPerformed
 
     private void rbsi181ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi181ActionPerformed
@@ -3852,15 +4004,14 @@ public class Recursos extends javax.swing.JFrame {
             rbno192.setEnabled(false);
             rbsi192.setEnabled(false);
             btnmv92.setEnabled(false);
-            btnd92.setEnabled(false);
             rbno191.setEnabled(false);
             btnmv91.setEnabled(false);
-            btnd91.setEnabled(false);
             txtitem9.setEnabled(false);
             btnadjnoitem9.setEnabled(false);
-            btnditem9.setEnabled(false);
             lblcum9.setEnabled(false);
             lblnocum9.setEnabled(false);
+            tr.setI1191("");
+            
             
         }else{
               lblcum9.setEnabled(false);
@@ -3882,6 +4033,7 @@ public class Recursos extends javax.swing.JFrame {
 
     private void rbjustiitem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem9ActionPerformed
  txtitem9.setEnabled(true);
+ tr.setI1191("");
     }//GEN-LAST:event_rbjustiitem9ActionPerformed
 
     private void rbnojustiitem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem9ActionPerformed
@@ -3890,6 +4042,8 @@ public class Recursos extends javax.swing.JFrame {
          tr.setI1191("no");
          tr.setA1191("");
          tr.setA1191("si");
+         tr.setV1191("no");
+         tr.setV1192("no");
         btnadjnoitem9.setEnabled(false);
         txtitem9.setEnabled(false);
         lblnocum9.setEnabled(true);
@@ -3904,14 +4058,15 @@ public class Recursos extends javax.swing.JFrame {
          tr.setA1191("");
          tr.setA1191("no");
          tr.setJ1191(txtitem9.getText());
+         tr.setV1191("no aplica");
+         tr.setV1192("no aplica");
             lblcum9.setEnabled(true);
             lblnocum9.setEnabled(false);
              btnadjnoitem9.setEnabled(true);
                 }else{
          tr.setI1191("");
-         tr.setI1191("no");
          tr.setA1191("");
-         tr.setA1191("si");
+         
              lblcum9.setEnabled(false);
             lblnocum9.setEnabled(false);
              btnadjnoitem9.setEnabled(false);
@@ -3979,6 +4134,7 @@ public class Recursos extends javax.swing.JFrame {
            btnadjnoitem10.setEnabled(false);
            lblcum10.setEnabled(false);
            lblnocum10.setEnabled(false);
+            tr.setI11101("");
        }else{
            rbsi1101.setEnabled(true);
            rbno1101.setEnabled(true);
@@ -3995,6 +4151,7 @@ public class Recursos extends javax.swing.JFrame {
 
     private void rbjustiitem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem10ActionPerformed
  txtitem10.setEnabled(true);
+  tr.setI11101("");
     }//GEN-LAST:event_rbjustiitem10ActionPerformed
 
     private void rbnojustiitem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem10ActionPerformed
@@ -4002,6 +4159,7 @@ public class Recursos extends javax.swing.JFrame {
       tr.setI11101("no");
       tr.setA11101("");
       tr.setA11101("si");
+      tr.setV11101("no");
         
         txtitem10.setEnabled(false);
        lblcum10.setEnabled(false);
@@ -4015,15 +4173,15 @@ public class Recursos extends javax.swing.JFrame {
          tr.setA11101("");
          tr.setA11101("no");
          tr.setJ11101(txtitem10.getText());
+         tr.setV11101("no aplica");
        
           lblcum10.setEnabled(true);
           lblnocum10.setEnabled(false);
           btnadjnoitem10.setEnabled(true);
            }else{
          tr.setI11101("");
-         tr.setI11101("no");
          tr.setA11101("");
-         tr.setA11101("si");
+         
           lblcum10.setEnabled(false);
           lblnocum10.setEnabled(false);
           btnadjnoitem10.setEnabled(false);
@@ -4032,7 +4190,45 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem10KeyPressed
 
     private void btnadjnoitem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem10ActionPerformed
-        // TODO add your handling code here:
+          // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(10);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
     }//GEN-LAST:event_btnadjnoitem10ActionPerformed
 
     private void rbsi1101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi1101ActionPerformed
@@ -4068,6 +4264,7 @@ public class Recursos extends javax.swing.JFrame {
             btnadjnoitem11.setEnabled(false);
             lblcum11.setEnabled(false);
             lblnocum11.setEnabled(false);
+             tr.setI11111("");
         }else{
 
             rbsi1111.setEnabled(true);
@@ -4085,6 +4282,7 @@ public class Recursos extends javax.swing.JFrame {
 
     private void rbjustiitem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem11ActionPerformed
         txtitem11.setEnabled(true);
+         tr.setI11111("");
     }//GEN-LAST:event_rbjustiitem11ActionPerformed
 
     private void rbnojustiitem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem11ActionPerformed
@@ -4092,6 +4290,8 @@ public class Recursos extends javax.swing.JFrame {
        tr.setI11111("no");
        tr.setA11111("");
        tr.setA11111("si");
+        tr.setV11111("no");
+       
 
         txtitem11.setEnabled(false);
         lblcum11.setEnabled(false);
@@ -4105,14 +4305,13 @@ public class Recursos extends javax.swing.JFrame {
              tr.setA11111("");
              tr.setA11111("no");
               tr.setJ11111(txtitem11.getText());
+              tr.setV11111("no aplica"); 
             lblcum11.setEnabled(true);
             lblnocum11.setEnabled(false);
             btnadjnoitem11.setEnabled(true);
         }else{
              tr.setI11111("");
-             tr.setI11111("no");
              tr.setA11111("");
-             tr.setA11111("si");
             lblcum11.setEnabled(false);
             lblnocum11.setEnabled(false);
             btnadjnoitem11.setEnabled(false);
@@ -4121,7 +4320,45 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem11KeyPressed
 
     private void btnadjnoitem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem11ActionPerformed
-        // TODO add your handling code here:
+           // objeto para llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(11);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
     }//GEN-LAST:event_btnadjnoitem11ActionPerformed
 
     private void rbsi1111ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi1111ActionPerformed
@@ -4147,13 +4384,18 @@ public class Recursos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-          dispose();
+this.dispose();
+gh.setVisible(true);
+gh.toFront();
        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Item 1
+
+                
+// Item 1
+
        if(rbsi111.isSelected() && rbsi112.isSelected() && rbsi113.isSelected() && rbsi114.isSelected() ){
      tr.setI1111("");
      tr.setI1111("si");
@@ -4161,14 +4403,24 @@ public class Recursos extends javax.swing.JFrame {
      tr.setA1111("si");
      
           }
+       
      if(rbno111.isSelected() || rbno112.isSelected() || rbno113.isSelected() || rbno114.isSelected()){
-             tr.setI1111("");
-             tr.setI1111("no");
-             tr.setA1111("");
-             tr.setA1111("si");
-
+     
+ if((!rbno111.isSelected() && !rbsi111.isSelected()) || (!rbno112.isSelected() && !rbsi112.isSelected()) || (!rbno113.isSelected() && !rbsi113.isSelected()) 
+         || (!rbno114.isSelected() && !rbsi114.isSelected())){   
+                
+        }else{
+     
+      tr.setI1111("");
+      tr.setI1111("no");
+      tr.setA1111("");
+      tr.setA1111("si");
+     
+ }
+              
         }   
-       // Item 2
+     
+         // Item 2
        
        if(rbsi121.isSelected()){
            tr.setI1121("");
@@ -4215,10 +4467,16 @@ public class Recursos extends javax.swing.JFrame {
        }
        
        if(rbno141.isSelected() || rbno142.isSelected()){
+           
+          if((!rbno141.isSelected() && !rbsi141.isSelected()) || (!rbno142.isSelected() && !rbsi142.isSelected())){   
+                
+        }else{  
+           
+           
            tr.setI1141("");
            tr.setI1141("no");
            tr.setA1141("");
-           tr.setA1141("si");
+           tr.setA1141("si");}
            
        }       
        
@@ -4252,11 +4510,16 @@ public class Recursos extends javax.swing.JFrame {
        }
        
        if(rbno161.isSelected() || rbno162.isSelected()){
+                  
+        if((!rbno161.isSelected() && !rbsi161.isSelected()) || (!rbno162.isSelected() && !rbsi162.isSelected())){   
+                
+        }else{     
+           
            tr.setI1161("");
            tr.setI1161("no");
            tr.setA1161("");
            tr.setA1161("si");
-           
+        }    
        }      
 
        
@@ -4288,11 +4551,15 @@ public class Recursos extends javax.swing.JFrame {
        }
        
        if(rbno181.isSelected() || rbno182.isSelected()){
+         if((!rbno181.isSelected() && !rbsi181.isSelected()) || (!rbno182.isSelected() && !rbsi182.isSelected())){   
+                
+        }else{   
+           
            tr.setI1181("");
            tr.setI1181("no");
            tr.setA1181("");
            tr.setA1181("si");
-           
+         }
        }      
        
        
@@ -4308,11 +4575,15 @@ public class Recursos extends javax.swing.JFrame {
        }
        
        if(rbno191.isSelected() || rbno192.isSelected()){
+           
+          if((!rbno191.isSelected() && !rbsi191.isSelected()) || (!rbno192.isSelected() && !rbsi192.isSelected())){   
+                
+        }else{   
            tr.setI1191("");
            tr.setI1191("no");
            tr.setA1191("");
            tr.setA1191("si");
-           
+          }
        }       
        
        
@@ -4349,29 +4620,10 @@ public class Recursos extends javax.swing.JFrame {
            tr.setA11111("");
            tr.setA11111("si");
            
-       }     
+       }  
        
-       Crecursos func = new Crecursos();
+        Validar();
        
-       func.insertarItem1(tr);
-       func.insertarItem2(tr);
-       func.insertarItem3(tr);
-       func.insertarItem4(tr);
-       func.insertarItem5(tr);
-       func.insertarItem6(tr);
-       func.insertarItem7(tr);
-       func.insertarItem8(tr);
-       func.insertarItem9(tr);
-       func.insertarItem10(tr);
-       
-      if(func.insertarItem11(tr)){
-          JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
-        
-    }
-       
-       
-        
-        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnadjnoitem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem1ActionPerformed
@@ -4399,8 +4651,7 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivos(tr)){
-               btnadjnoitem1.setEnabled(false);    
-               btnditem1.setEnabled(true);
+                         
                JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
@@ -4419,37 +4670,6 @@ public class Recursos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnadjnoitem1ActionPerformed
-
-    private void btnditem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem1ActionPerformed
-        // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(1);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-                
-                // llama metodo
-                func.descargarArchivo();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-        
-        
-        
-    }//GEN-LAST:event_btnditem1ActionPerformed
 
     private void btnmv11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv11ActionPerformed
         // objeto para guardar la informacion de las variables (MVC)
@@ -4476,9 +4696,7 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivosVeri(tr)){
-               btnmv11.setEnabled(false);    
-               btnd11.setEnabled(true);
-               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+                  JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
            }catch(Exception e){
@@ -4491,36 +4709,6 @@ public class Recursos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnmv11ActionPerformed
     
        
-    private void btnd11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd11ActionPerformed
-        // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(1);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-                
-                // llama metodo
-                func.descargarArchivoVeri();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-        
-        
-    }//GEN-LAST:event_btnd11ActionPerformed
-
     private void btnmv12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv12ActionPerformed
       // objeto para guardar la informacion de las variables (MVC)
         Crecursos func= new Crecursos();
@@ -4546,8 +4734,7 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivosVeri(tr)){
-               btnmv12.setEnabled(false);    
-               btnd12.setEnabled(true);
+              
                JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
@@ -4562,39 +4749,6 @@ public class Recursos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnmv12ActionPerformed
-
-    private void btnd12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd12ActionPerformed
-     
-                // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(2);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-                
-                // llama metodo
-                func.descargarArchivoVeri();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-
-        
-        
-        
-    }//GEN-LAST:event_btnd12ActionPerformed
 
     private void btnmv13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv13ActionPerformed
     
@@ -4623,9 +4777,8 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivosVeri(tr)){
-               btnmv13.setEnabled(false);    
-               btnd13.setEnabled(true);
-               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+              
+              JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
            }catch(Exception e){
@@ -4640,43 +4793,6 @@ public class Recursos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnmv13ActionPerformed
-
-    private void btnd13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd13ActionPerformed
-     
-           // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode
-(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(3);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath
-());
-                
-                // llama metodo
-                func.descargarArchivoVeri();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-
-
-
-        
-        
-        
-    }//GEN-LAST:event_btnd13ActionPerformed
 
     private void btnmv14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv14ActionPerformed
     
@@ -4704,9 +4820,7 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivosVeri(tr)){
-               btnmv14.setEnabled(false);    
-               btnd14.setEnabled(true);
-               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+                JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
            }catch(Exception e){
@@ -4721,42 +4835,9 @@ public class Recursos extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnmv14ActionPerformed
 
-    private void btnd14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd14ActionPerformed
-   
-         // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(4);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-                
-                // llama metodo
-                func.descargarArchivoVeri();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-
-
-       
-        
-    }//GEN-LAST:event_btnd14ActionPerformed
-
     private void btnadjnoitem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem2ActionPerformed
   
-        // objeto para guardar la informacion de las variables (MVC)
+        // objeto para llamar los metodos de insertar datos (MVC)
         Crecursos func= new Crecursos();
         // ventanilla de carga
         JFileChooser se = new JFileChooser();
@@ -4780,9 +4861,8 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivos(tr)){
-               btnadjnoitem2.setEnabled(false);    
-               btnditem2.setEnabled(true);
-               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+                
+              JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
            }catch(Exception e){
@@ -4796,41 +4876,6 @@ public class Recursos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnadjnoitem2ActionPerformed
-
-    private void btnditem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem2ActionPerformed
-      
-      // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(2);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-                
-                // llama metodo
-                func.descargarArchivo();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-
-   
-        
-        
-        
-        
-    }//GEN-LAST:event_btnditem2ActionPerformed
 
     private void btnmv21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv21ActionPerformed
    
@@ -4858,9 +4903,8 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivosVeri(tr)){
-               btnmv21.setEnabled(false);    
-               btnd21.setEnabled(true);
-               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
            }catch(Exception e){
@@ -4872,40 +4916,6 @@ public class Recursos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnmv21ActionPerformed
-
-    private void btnd21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd21ActionPerformed
- 
-           // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(5);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-                
-                // llama metodo
-                func.descargarArchivoVeri();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-
-
-    
-        
-        
-    }//GEN-LAST:event_btnd21ActionPerformed
 
     private void btnadjnoitem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem3ActionPerformed
      
@@ -4933,9 +4943,8 @@ public class Recursos extends javax.swing.JFrame {
                
                //llama el metodo
                if(func.insertarArchivos(tr)){
-               btnadjnoitem3.setEnabled(false);    
-               btnditem3.setEnabled(true);
-               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+              
+             JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
            }
                               
            }catch(Exception e){
@@ -4950,42 +4959,672 @@ public class Recursos extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnadjnoitem3ActionPerformed
 
-    private void btnditem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem3ActionPerformed
-    
-          // objetos para el metodo 
-        Crecursos func= new Crecursos();       
-              JFileChooser elegirCarpeta = new JFileChooser();
-              
-              // para elegir solamente rutas de directorio
-            elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            // ventanilla para guardar
-            int estado= elegirCarpeta.showSaveDialog(null);
-            // si aprueba
-            if(estado == JFileChooser.APPROVE_OPTION){
-                
-                try{
-                // envia datos a las variables
-                tr.setId(3);    
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-                
-                // llama metodo
-                func.descargarArchivo();
-                
-            
-                }catch(Exception ex) {
-           
-        }
-            
-            } 
-
-        
-        
-    }//GEN-LAST:event_btnditem3ActionPerformed
-
     private void btnmv31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv31ActionPerformed
 
-        // TODO add your handling code here:
+     
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(6);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv31ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+       
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void btnadjnoitem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem4ActionPerformed
+         // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(4);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
+    }//GEN-LAST:event_btnadjnoitem4ActionPerformed
+
+    private void btnadjnoitem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem5ActionPerformed
+          // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(5);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
+    }//GEN-LAST:event_btnadjnoitem5ActionPerformed
+
+    private void btnadjnoitem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem7ActionPerformed
+         // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(7);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
+    }//GEN-LAST:event_btnadjnoitem7ActionPerformed
+
+    private void btnadjnoitem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem9ActionPerformed
+          // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(9);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
+    }//GEN-LAST:event_btnadjnoitem9ActionPerformed
+
+    private void btnmv41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv41ActionPerformed
+     
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(7);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv41ActionPerformed
+
+    private void btnmv42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv42ActionPerformed
+       
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(8);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv42ActionPerformed
+
+    private void btnmv51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv51ActionPerformed
+       
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(9);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv51ActionPerformed
+
+    private void btnmv61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv61ActionPerformed
+       
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(10);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv61ActionPerformed
+
+    private void btnmv62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv62ActionPerformed
+      
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(11);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv62ActionPerformed
+
+    private void btnmv71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv71ActionPerformed
+      
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(12);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv71ActionPerformed
+
+    private void btnmv81ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv81ActionPerformed
+       
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(13);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv81ActionPerformed
+
+    private void btnmv82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv82ActionPerformed
+      
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(14);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv82ActionPerformed
+
+    private void btnmv91ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv91ActionPerformed
+       
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(15);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv91ActionPerformed
+
+    private void btnmv92ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv92ActionPerformed
+     
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(16);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv92ActionPerformed
+
+    private void btnmv101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv101ActionPerformed
+      
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(17);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv101ActionPerformed
+
+    private void btnmv111ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv111ActionPerformed
+     
+           // objeto para guardar la informacion de las variables (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(18);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
+    }//GEN-LAST:event_btnmv111ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -5016,35 +5655,6 @@ public class Recursos extends javax.swing.JFrame {
     private javax.swing.JButton btnadjnoitem7;
     private javax.swing.JButton btnadjnoitem8;
     private javax.swing.JButton btnadjnoitem9;
-    private javax.swing.JButton btnd101;
-    private javax.swing.JButton btnd11;
-    private javax.swing.JButton btnd111;
-    private javax.swing.JButton btnd12;
-    private javax.swing.JButton btnd13;
-    private javax.swing.JButton btnd14;
-    private javax.swing.JButton btnd21;
-    private javax.swing.JButton btnd31;
-    private javax.swing.JButton btnd41;
-    private javax.swing.JButton btnd42;
-    private javax.swing.JButton btnd51;
-    private javax.swing.JButton btnd61;
-    private javax.swing.JButton btnd62;
-    private javax.swing.JButton btnd71;
-    private javax.swing.JButton btnd81;
-    private javax.swing.JButton btnd82;
-    private javax.swing.JButton btnd91;
-    private javax.swing.JButton btnd92;
-    private javax.swing.JButton btnditem1;
-    private javax.swing.JButton btnditem10;
-    private javax.swing.JButton btnditem11;
-    private javax.swing.JButton btnditem2;
-    private javax.swing.JButton btnditem3;
-    private javax.swing.JButton btnditem4;
-    private javax.swing.JButton btnditem5;
-    private javax.swing.JButton btnditem6;
-    private javax.swing.JButton btnditem7;
-    private javax.swing.JButton btnditem8;
-    private javax.swing.JButton btnditem9;
     private javax.swing.JButton btnmv101;
     private javax.swing.JButton btnmv11;
     private javax.swing.JButton btnmv111;
@@ -5064,7 +5674,18 @@ public class Recursos extends javax.swing.JFrame {
     private javax.swing.JButton btnmv91;
     private javax.swing.JButton btnmv92;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

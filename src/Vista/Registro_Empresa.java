@@ -5,21 +5,66 @@
  */
 package Vista;
 
+import Modelo.M_RegistroEmpresa;
+import Controlador.C_RegistroEmpresa;
+import java.sql.Date;
+
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author YOREL
  */
 public class Registro_Empresa extends javax.swing.JFrame {
+DefaultTableModel modelo;
 
-    /**
-     * Creates new form Empresa
+M_RegistroEmpresa tr = new M_RegistroEmpresa();
+C_RegistroEmpresa func = new C_RegistroEmpresa();
+
+public String Tamaño;
+    /**     * Creates new form Empresa
      */
     public Registro_Empresa() {
         initComponents();
-        
+        setTitle("Formulario para el registro de la empresa");
+         mostrar("");
         this.setLocationRelativeTo(null);
+        btn_eliminar.setEnabled(false);
+        btneditar.setEnabled(false);
+         
         
     }
+    
+     public void mostrar(String buscar) {
+        try {
+
+             modelo = func.mostrar(buscar);
+             jtdatos.setModel(modelo);
+            
+
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(rootPane, "Hola");
+        }
+
+    }
+    
+     public void limpiar(){
+         
+         
+         txtnit.setText("");
+       txtnomem.setText("");
+       txtcantidad.setText("");
+       txtciudad.setText("");
+       txtdepartamento.setText("");
+       txtsucursal.setText("");
+       txttelefono.setText("");
+       txtactividad.setText("");
+       cbrazon.setSelectedItem(null);
+       cbnivel.setSelectedItem(null);
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,7 +75,6 @@ public class Registro_Empresa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -46,38 +90,45 @@ public class Registro_Empresa extends javax.swing.JFrame {
         txtsucursal = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txttelefono = new javax.swing.JTextField();
-        txtrazon = new javax.swing.JTextField();
         txtactividad = new javax.swing.JTextField();
         btnregistrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtdatos = new javax.swing.JTable();
-        btnlistar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         btneditar = new javax.swing.JButton();
-        txtnivel = new javax.swing.JTextField();
-        btnlimpiar = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
+        btn_eliminar = new javax.swing.JButton();
+        cbnivel = new javax.swing.JComboBox<>();
+        cbrazon = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        txtcantidad = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("registro");
         setBackground(new java.awt.Color(255, 102, 102));
 
-        jLabel1.setText("Registro Empresa");
-
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Nit Empresa");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Nombre de la Empresa");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Telefono");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Razon Social ");
 
-        jLabel6.setText("Actividad Economica ");
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setText("No Actividad Economica ");
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Ciudad");
 
-        jLabel8.setText("Deparatamento");
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setText("Departamento");
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Sucursal");
 
         txtnit.addActionListener(new java.awt.event.ActionListener() {
@@ -85,9 +136,56 @@ public class Registro_Empresa extends javax.swing.JFrame {
                 txtnitActionPerformed(evt);
             }
         });
+        txtnit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnitKeyTyped(evt);
+            }
+        });
 
-        jLabel10.setText("datos de la empresa");
+        txtnomem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnomemActionPerformed(evt);
+            }
+        });
+        txtnomem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnomemKeyTyped(evt);
+            }
+        });
 
+        txtciudad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtciudadKeyTyped(evt);
+            }
+        });
+
+        txtdepartamento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtdepartamentoKeyTyped(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel10.setText("Datos de la empresa");
+
+        txttelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txttelefonoKeyTyped(evt);
+            }
+        });
+
+        txtactividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtactividadActionPerformed(evt);
+            }
+        });
+        txtactividad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtactividadKeyTyped(evt);
+            }
+        });
+
+        btnregistrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnregistrar.setText("Registrar");
         btnregistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,26 +195,24 @@ public class Registro_Empresa extends javax.swing.JFrame {
 
         jtdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Nit", "Nombre de la Empresa", "ciudad", "Departamento", "Sucursal", "Telefono", "Razon", "Actividad Econaomic", "Nivel de Riesgo"
+
             }
         ));
-        jScrollPane1.setViewportView(jtdatos);
-
-        btnlistar.setText("Listar");
-        btnlistar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnlistarActionPerformed(evt);
+        jtdatos.getTableHeader().setReorderingAllowed(false);
+        jtdatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtdatosMouseClicked(evt);
             }
         });
+        jScrollPane1.setViewportView(jtdatos);
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Nivel de Riesgo ");
 
+        btneditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btneditar.setText("Editar");
         btneditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,124 +220,144 @@ public class Registro_Empresa extends javax.swing.JFrame {
             }
         });
 
-        btnlimpiar.setText("Limpiar");
-
+        btnsalir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnsalir.setText("Salir");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
+
+        btn_eliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_eliminar.setText("Eliminar");
+        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarActionPerformed(evt);
+            }
+        });
+
+        cbnivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1", "2", "3", "4", "5", "" }));
+        cbnivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbnivelActionPerformed(evt);
+            }
+        });
+
+        cbrazon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "LTDA", "SAS", "S ENC", "SA" }));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setText("Cantidad de Empleados");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(352, 352, 352))
             .addGroup(layout.createSequentialGroup()
-                .addGap(247, 247, 247)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(txtdepartamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(246, 246, 246)
+                .addComponent(btnregistrar)
+                .addGap(153, 153, 153)
+                .addComponent(btneditar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_eliminar)
+                .addGap(121, 121, 121)
+                .addComponent(btnsalir)
+                .addGap(206, 206, 206))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel8)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel12)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel9)))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtsucursal)
-                            .addComponent(txtnit)
-                            .addComponent(txtnomem)
-                            .addComponent(txtciudad)
-                            .addComponent(txttelefono)
-                            .addComponent(txtrazon)
-                            .addComponent(txtactividad, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                            .addComponent(txtnivel))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
-                        .addComponent(btnlistar)
-                        .addGap(80, 80, 80)
-                        .addComponent(btnlimpiar)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(btnregistrar)
-                        .addGap(66, 66, 66)
-                        .addComponent(btneditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnsalir)
-                        .addGap(35, 35, 35))))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel12))
+                        .addGap(1, 1, 1)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtnit, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtnomem, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtsucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtdepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbrazon, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtactividad, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbnivel, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 941, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtnit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnregistrar)
-                    .addComponent(btneditar)
-                    .addComponent(btnsalir))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnlistar)
-                            .addComponent(btnlimpiar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(91, Short.MAX_VALUE))
+                            .addComponent(btnregistrar)
+                            .addComponent(btneditar)
+                            .addComponent(btnsalir)
+                            .addComponent(btn_eliminar))
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel10)
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtnit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(txtnomem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(txtdepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(txtciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(txtsucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8)
+                            .addComponent(txtdepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel9))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtsucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
-                        .addGap(13, 13, 13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtrazon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtactividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel5)
+                            .addComponent(cbrazon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtnivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addGap(92, 92, 92))))
+                            .addComponent(jLabel6)
+                            .addComponent(txtactividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(cbnivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,46 +368,226 @@ public class Registro_Empresa extends javax.swing.JFrame {
     }//GEN-LAST:event_txtnitActionPerformed
 
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
-        // TODO add your handling code here:
+      
+               
+        
+        int valor= Integer.parseInt(txtcantidad.getText());
+        
+       if( valor > 0 && valor < 10){
+           
+           Tamaño="Microempresa";
+           
+                   
+       }else if(valor < 50){
+           Tamaño="Pequeña empresa";
+           
+       }else{
+           
+           Tamaño="Grande empresa";
+       }
+        
+       tr.setNitEmpresa(txtnit.getText());
+        tr.setNomEmpresa(txtnomem.getText());
+        tr.setCantEmpl(Integer.parseInt(txtcantidad.getText()));
+        tr.setTamaño(Tamaño);
+        tr.setCiudad(txtciudad.getText());
+        tr.setDepartamento(txtdepartamento.getText());
+        tr.setSucursal(txtsucursal.getText());
+        tr.setTelefono(Integer.parseInt(txttelefono.getText()));
+        tr.setRazonSocial(cbrazon.getSelectedItem().toString());
+        tr.setActEconomica(Integer.parseInt(txtactividad.getText()));
+        tr.setNivelRiesgo(cbnivel.getSelectedItem().toString());
+        tr.setEstado("activo");
+        
+    int opcionSalir = JOptionPane.showConfirmDialog(null,"Verifique que los datos esten correctos en el formulario, recuerde que el nit no se puede editar.");
+        if (JOptionPane.YES_OPTION == opcionSalir){    
+           
+     if(func.inserEmp(tr)){
+         
+         JOptionPane.showMessageDialog(null,"La empresa se ha registrado exitosamente.");
+         mostrar("");
+     }
+                   
+       limpiar();
+        }
+      
     }//GEN-LAST:event_btnregistrarActionPerformed
-
-    private void btnlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistarActionPerformed
-         // TODO add your handling code here:
-    }//GEN-LAST:event_btnlistarActionPerformed
 
     private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
         // TODO add your handling code here:
+        int valor= Integer.parseInt(txtcantidad.getText());
+        
+       if( valor > 0 && valor < 10){
+           
+           Tamaño="Microempresa";
+           
+                   
+       }else if(valor < 50){
+           Tamaño="Pequeña empresa";
+           
+       }else{
+           
+           Tamaño="Grande empresa";
+       }
+         tr.setNitEmpresa(txtnit.getText());
+        tr.setNomEmpresa(txtnomem.getText());
+        tr.setCantEmpl(Integer.parseInt(txtcantidad.getText()));
+        tr.setTamaño(Tamaño);
+        tr.setCiudad(txtciudad.getText());
+        tr.setDepartamento(txtdepartamento.getText());
+        tr.setSucursal(txtsucursal.getText());
+        tr.setTelefono(Integer.parseInt(txttelefono.getText()));
+        tr.setRazonSocial(cbrazon.getSelectedItem().toString());
+        tr.setActEconomica(Integer.parseInt(txtactividad.getText()));
+        tr.setNivelRiesgo(cbnivel.getSelectedItem().toString());
+        
+     if(func.editar(tr)){
+         
+         JOptionPane.showMessageDialog(null,"El registro de la empresa se ha editado exitosamente.");
+         mostrar("");
+         limpiar();
+          btnregistrar.setEnabled(true);
+          btn_eliminar.setEnabled(false);
+          btneditar.setEnabled(false);
+          txtnit.setEnabled(true);
+         
+     }        
+        
+           
+            
     }//GEN-LAST:event_btneditarActionPerformed
 
+    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
+        
+       tr.setEstado("Inactivo");
+       int opcionSalir = JOptionPane.showConfirmDialog(null,"¿ Esta seguro que desea eliminar este registro ?");
+        if (JOptionPane.YES_OPTION == opcionSalir){
+          if(func.eliminar(tr)){
+              
+              JOptionPane.showMessageDialog(null,"El registro se ha eliminado exitosamente.");
+              mostrar("");
+              limpiar();
+              txtnit.setEnabled(true);
+              btnregistrar.setEnabled(true);
+          btn_eliminar.setEnabled(false);
+          btneditar.setEnabled(false);
+          }
+          
+        }
+       
+       
+        
+        
+        
+    }//GEN-LAST:event_btn_eliminarActionPerformed
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        int opcionSalir = JOptionPane.showConfirmDialog(null,"Esta seguro que desea salir.");
+        if (JOptionPane.YES_OPTION == opcionSalir){
+           dispose(); 
+        }
+    }//GEN-LAST:event_btnsalirActionPerformed
+
+    private void txtnitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnitKeyTyped
+     
+        char c = evt.getKeyChar ();
+        
+        if(c<'0' || c>'9')evt.consume();
+        
+    }//GEN-LAST:event_txtnitKeyTyped
+
+    
+    
+    
+    
+    
+    private void cbnivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbnivelActionPerformed
+
+    }//GEN-LAST:event_cbnivelActionPerformed
+
+    private void txtnomemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnomemActionPerformed
+
+    private void txtnomemKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnomemKeyTyped
+        
+        char c = evt.getKeyChar();
+        if((c<'a' || c>'z' ) && (c<'A')| c>'Z') evt.consume();
+        
+    }//GEN-LAST:event_txtnomemKeyTyped
+
+    private void txtciudadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtciudadKeyTyped
+        char c = evt.getKeyChar();
+        if((c<'a' || c>'z' ) && (c<'A')| c>'Z') evt.consume();
+    }//GEN-LAST:event_txtciudadKeyTyped
+
+    private void txtdepartamentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdepartamentoKeyTyped
+         char c = evt.getKeyChar();
+        if((c<'a' || c>'z' ) && (c<'A')| c>'Z') evt.consume();
+    }//GEN-LAST:event_txtdepartamentoKeyTyped
+
+    private void txtactividadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtactividadKeyTyped
+         char c = evt.getKeyChar ();
+        
+        if(c<'0' || c>'9')evt.consume();
+    }//GEN-LAST:event_txtactividadKeyTyped
+
+    private void txttelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttelefonoKeyTyped
+        
+        char c = evt.getKeyChar ();
+        
+        if(c<'0' || c>'9')evt.consume();
+    }//GEN-LAST:event_txttelefonoKeyTyped
+
+    private void txtactividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtactividadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtactividadActionPerformed
+
+    private void jtdatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtdatosMouseClicked
+         
+    btn_eliminar.setEnabled(true);
+        btneditar.setEnabled(true);
+        txtnit.setEnabled(false);
+/* variables para elminar y editar*/  
+        
+        int fila1 = jtdatos.rowAtPoint(evt.getPoint());        
+           tr.setAnt2(jtdatos.getValueAt(fila1, 0).toString());
+          
+        
+        int fila = jtdatos.rowAtPoint(evt.getPoint());
+         
+        txtnit.setText(jtdatos.getValueAt(fila, 0).toString());
+        txtnomem.setText(jtdatos.getValueAt(fila, 1).toString());
+         txtcantidad.setText(jtdatos.getValueAt(fila, 2).toString());
+          txtciudad.setText(jtdatos.getValueAt(fila, 3).toString());
+           txtdepartamento.setText(jtdatos.getValueAt(fila, 4).toString());
+            txtsucursal.setText(jtdatos.getValueAt(fila, 5).toString());
+             txttelefono.setText(jtdatos.getValueAt(fila, 6).toString());
+             
+        cbrazon.setSelectedItem(jtdatos.getValueAt(fila, 7).toString());
+         txtactividad.setText(jtdatos.getValueAt(fila, 8).toString());
+        cbnivel.setSelectedItem(jtdatos.getValueAt(fila, 9).toString());
+       
+         
+       
+        
+    }//GEN-LAST:event_jtdatosMouseClicked
+
+    public void Variables(){
+       
+        
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro_Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro_Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro_Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro_Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+         try{
+            UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+        }catch(Exception e){
+            
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -302,13 +598,14 @@ public class Registro_Empresa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btneditar;
-    private javax.swing.JButton btnlimpiar;
-    public javax.swing.JButton btnlistar;
     public javax.swing.JButton btnregistrar;
     private javax.swing.JButton btnsalir;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> cbnivel;
+    private javax.swing.JComboBox<String> cbrazon;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -321,12 +618,11 @@ public class Registro_Empresa extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtdatos;
     public javax.swing.JTextField txtactividad;
+    public static javax.swing.JTextField txtcantidad;
     public javax.swing.JTextField txtciudad;
     public javax.swing.JTextField txtdepartamento;
     public javax.swing.JTextField txtnit;
-    private javax.swing.JTextField txtnivel;
     public javax.swing.JTextField txtnomem;
-    public javax.swing.JTextField txtrazon;
     public javax.swing.JTextField txtsucursal;
     public javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables

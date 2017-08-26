@@ -159,6 +159,14 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
                                 principal.label_nombreUser.setText(modelo.getValueAt(0, 1).toString() + " " + modelo.getValueAt(0, 2) + " " + modelo.getValueAt(0, 3));
                                 principal.label_rol.setText("Empleado");
                                principal.jm_realizarEvaluacion.setVisible(false);
+                               principal.jm_registrarEmpresa.setVisible(false);
+                               principal.jm_HabEncuTodos.setVisible(false);
+                               principal.me_registrarEmpleado.setVisible(false);
+                               principal.btn_evaluacion.setVisible(false);
+                               principal.btn_evaluacion.setEnabled(false);
+                               principal.btn_primero.setEnabled(false);
+                               
+                               principal.txt_nombrePri.setText(modelo.getValueAt(0, 1).toString());
                                // String nombre=modelo.getValueAt(0, 1).toString();
                               //  JOptionPane.showMessageDialog(null, nombre);
                                 principal.setVisible(true);

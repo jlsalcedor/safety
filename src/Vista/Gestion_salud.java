@@ -6,9 +6,15 @@
 package Vista;
 
 import Controlador.Cgestion_salud;
+import Controlador.Crecursos;
+import Modelo.Mevaluacion;
 import Modelo.Mgestion_salud;
+import Modelo.Mrecursos;
+import java.io.FileInputStream;
 import javax.swing.ButtonGroup;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 import javax.swing.UIManager;
 
 /**
@@ -22,6 +28,10 @@ public class Gestion_salud extends javax.swing.JFrame {
      */
     public Gestion_salud() {
         initComponents();
+        // inhabilitar botones minimizar, cerrar y maximizar
+         getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+        this.setLocationRelativeTo(null);
+        
          ButtonGroup rbnitem1 = new ButtonGroup();
         rbnitem1.add(rbjustiitem23);
         rbnitem1.add(rbnojustiitem23);
@@ -197,6 +207,8 @@ public class Gestion_salud extends javax.swing.JFrame {
         
         noVisibles();
     }
+    Mevaluacion ps= new Mevaluacion();
+    Evaluacion_Ini gh= new Evaluacion_Ini();
     
      public void noVisibles() {
         rbjustiitem23.setEnabled(false);
@@ -275,49 +287,7 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnadjnoitem39.setEnabled(false);
         btnadjnoitem40.setEnabled(false);
 
-        btnditem23.setEnabled(false);
-        btnditem24.setEnabled(false);
-        btnditem25.setEnabled(false);
-        btnditem26.setEnabled(false);
-        btnditem27.setEnabled(false);
-        btnditem28.setEnabled(false);
-        btnditem29.setEnabled(false);
-        btnditem30.setEnabled(false);
-        btnditem31.setEnabled(false);
-        btnditem32.setEnabled(false);
-        btnditem33.setEnabled(false);
-        btnditem34.setEnabled(false);
-        btnditem35.setEnabled(false);
-        btnditem36.setEnabled(false);
-        btnditem37.setEnabled(false);
-        btnditem38.setEnabled(false);
-        btnditem38.setEnabled(false);
-        btnditem40.setEnabled(false);
-
-       btnd231.setEnabled(false);
-        btnd241.setEnabled(false);
-        btnd242.setEnabled(false);
-        btnd251.setEnabled(false);
-        btnd261.setEnabled(false);
-        btnd262.setEnabled(false);
-        btnd263.setEnabled(false);
-        btnd271.setEnabled(false);
-        btnd281.setEnabled(false);
-        btnd282.setEnabled(false);
-        btnd291.setEnabled(false);
-        btnd301.setEnabled(false);
-        btnd311.setEnabled(false);
-        btnd321.setEnabled(false);
-        btnd331.setEnabled(false);
-        btnd332.setEnabled(false);
-        btnd333.setEnabled(false);
-        btnd341.setEnabled(false);
-        btnd351.setEnabled(false);
-        btnd361.setEnabled(false);
-        btnd371.setEnabled(false);
-        btnd381.setEnabled(false);
-        btnd391.setEnabled(false);
-        btnd401.setEnabled(false);
+      
         
 
         btnmv231.setEnabled(false);
@@ -412,13 +382,12 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         txtitem23 = new javax.swing.JTextArea();
         btnadjnoitem23 = new javax.swing.JButton();
-        btnditem23 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         rbsi231 = new javax.swing.JRadioButton();
         rbno231 = new javax.swing.JRadioButton();
         btnmv231 = new javax.swing.JButton();
-        btnd231 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
@@ -430,20 +399,18 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         txtitem24 = new javax.swing.JTextArea();
         btnadjnoitem24 = new javax.swing.JButton();
-        btnditem24 = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
         rbsi241 = new javax.swing.JRadioButton();
         rbno241 = new javax.swing.JRadioButton();
         btnmv241 = new javax.swing.JButton();
-        btnd241 = new javax.swing.JButton();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         rbsi242 = new javax.swing.JRadioButton();
         rbno242 = new javax.swing.JRadioButton();
         btnmv242 = new javax.swing.JButton();
-        btnd242 = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -455,14 +422,13 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txtitem25 = new javax.swing.JTextArea();
         btnadjnoitem25 = new javax.swing.JButton();
-        btnditem25 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         rbsi251 = new javax.swing.JRadioButton();
         rbno251 = new javax.swing.JRadioButton();
         btnmv251 = new javax.swing.JButton();
-        btnd251 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
@@ -474,24 +440,21 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         txtitem26 = new javax.swing.JTextArea();
         btnadjnoitem26 = new javax.swing.JButton();
-        btnditem26 = new javax.swing.JButton();
         jLabel50 = new javax.swing.JLabel();
         rbsi261 = new javax.swing.JRadioButton();
         rbno261 = new javax.swing.JRadioButton();
         btnmv261 = new javax.swing.JButton();
-        btnd261 = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         rbsi262 = new javax.swing.JRadioButton();
         rbno262 = new javax.swing.JRadioButton();
         btnmv262 = new javax.swing.JButton();
-        btnd262 = new javax.swing.JButton();
         rbsi263 = new javax.swing.JRadioButton();
         rbno263 = new javax.swing.JRadioButton();
         btnmv263 = new javax.swing.JButton();
-        btnd263 = new javax.swing.JButton();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -503,14 +466,13 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         txtitem27 = new javax.swing.JTextArea();
         btnadjnoitem27 = new javax.swing.JButton();
-        btnditem27 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         rbsi271 = new javax.swing.JRadioButton();
         rbno271 = new javax.swing.JRadioButton();
         btnmv271 = new javax.swing.JButton();
-        btnd271 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
@@ -522,20 +484,18 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         txtitem28 = new javax.swing.JTextArea();
         btnadjnoitem28 = new javax.swing.JButton();
-        btnditem28 = new javax.swing.JButton();
         jLabel57 = new javax.swing.JLabel();
         rbsi281 = new javax.swing.JRadioButton();
         rbno281 = new javax.swing.JRadioButton();
         btnmv281 = new javax.swing.JButton();
-        btnd281 = new javax.swing.JButton();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         rbsi282 = new javax.swing.JRadioButton();
         rbno282 = new javax.swing.JRadioButton();
         btnmv282 = new javax.swing.JButton();
-        btnd282 = new javax.swing.JButton();
         jLabel61 = new javax.swing.JLabel();
+        jButton18 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -547,14 +507,13 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane11 = new javax.swing.JScrollPane();
         txtitem29 = new javax.swing.JTextArea();
         btnadjnoitem29 = new javax.swing.JButton();
-        btnditem29 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         rbsi291 = new javax.swing.JRadioButton();
         rbno291 = new javax.swing.JRadioButton();
         btnmv291 = new javax.swing.JButton();
-        btnd291 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jButton19 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -566,13 +525,12 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane12 = new javax.swing.JScrollPane();
         txtitem30 = new javax.swing.JTextArea();
         btnadjnoitem30 = new javax.swing.JButton();
-        btnditem30 = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         rbsi301 = new javax.swing.JRadioButton();
         rbno301 = new javax.swing.JRadioButton();
         btnmv301 = new javax.swing.JButton();
-        btnd301 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
+        jButton20 = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -584,14 +542,13 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane13 = new javax.swing.JScrollPane();
         txtitem31 = new javax.swing.JTextArea();
         btnadjnoitem31 = new javax.swing.JButton();
-        btnditem31 = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         rbsi311 = new javax.swing.JRadioButton();
         rbno311 = new javax.swing.JRadioButton();
         btnmv311 = new javax.swing.JButton();
-        btnd311 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jButton21 = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
@@ -604,18 +561,17 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane14 = new javax.swing.JScrollPane();
         txtitem32 = new javax.swing.JTextArea();
         btnadjnoitem32 = new javax.swing.JButton();
-        btnditem32 = new javax.swing.JButton();
         jLabel64 = new javax.swing.JLabel();
         rbsi321 = new javax.swing.JRadioButton();
         rbno321 = new javax.swing.JRadioButton();
         btnmv321 = new javax.swing.JButton();
-        btnd321 = new javax.swing.JButton();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
+        jButton22 = new javax.swing.JButton();
         jPanel19 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
@@ -627,27 +583,24 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane15 = new javax.swing.JScrollPane();
         txtitem33 = new javax.swing.JTextArea();
         btnadjnoitem33 = new javax.swing.JButton();
-        btnditem33 = new javax.swing.JButton();
         jLabel74 = new javax.swing.JLabel();
         rbsi331 = new javax.swing.JRadioButton();
         rbno331 = new javax.swing.JRadioButton();
         btnmv331 = new javax.swing.JButton();
-        btnd331 = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         rbsi333 = new javax.swing.JRadioButton();
         rbno333 = new javax.swing.JRadioButton();
         btnmv333 = new javax.swing.JButton();
-        btnd333 = new javax.swing.JButton();
         rbsi332 = new javax.swing.JRadioButton();
         rbno332 = new javax.swing.JRadioButton();
         btnmv332 = new javax.swing.JButton();
-        btnd332 = new javax.swing.JButton();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
+        jButton23 = new javax.swing.JButton();
         jPanel20 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
@@ -659,15 +612,14 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane16 = new javax.swing.JScrollPane();
         txtitem34 = new javax.swing.JTextArea();
         btnadjnoitem34 = new javax.swing.JButton();
-        btnditem34 = new javax.swing.JButton();
         jLabel83 = new javax.swing.JLabel();
         rbsi341 = new javax.swing.JRadioButton();
         rbno341 = new javax.swing.JRadioButton();
         btnmv341 = new javax.swing.JButton();
-        btnd341 = new javax.swing.JButton();
         jLabel84 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
+        jButton24 = new javax.swing.JButton();
         jPanel23 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
         jLabel114 = new javax.swing.JLabel();
@@ -680,14 +632,13 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane20 = new javax.swing.JScrollPane();
         txtitem35 = new javax.swing.JTextArea();
         btnadjnoitem35 = new javax.swing.JButton();
-        btnditem35 = new javax.swing.JButton();
         jLabel116 = new javax.swing.JLabel();
         rbsi351 = new javax.swing.JRadioButton();
         rbno351 = new javax.swing.JRadioButton();
         btnmv351 = new javax.swing.JButton();
-        btnd351 = new javax.swing.JButton();
         jLabel117 = new javax.swing.JLabel();
         jLabel118 = new javax.swing.JLabel();
+        jButton25 = new javax.swing.JButton();
         jPanel27 = new javax.swing.JPanel();
         jLabel120 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
@@ -699,14 +650,13 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane21 = new javax.swing.JScrollPane();
         txtitem36 = new javax.swing.JTextArea();
         btnadjnoitem36 = new javax.swing.JButton();
-        btnditem36 = new javax.swing.JButton();
         jLabel122 = new javax.swing.JLabel();
         rbsi361 = new javax.swing.JRadioButton();
         rbno361 = new javax.swing.JRadioButton();
         btnmv361 = new javax.swing.JButton();
-        btnd361 = new javax.swing.JButton();
         jLabel123 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
+        jButton26 = new javax.swing.JButton();
         jPanel28 = new javax.swing.JPanel();
         jLabel126 = new javax.swing.JLabel();
         jLabel127 = new javax.swing.JLabel();
@@ -718,14 +668,13 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane22 = new javax.swing.JScrollPane();
         txtitem37 = new javax.swing.JTextArea();
         btnadjnoitem37 = new javax.swing.JButton();
-        btnditem37 = new javax.swing.JButton();
         jLabel128 = new javax.swing.JLabel();
         rbsi371 = new javax.swing.JRadioButton();
         rbno371 = new javax.swing.JRadioButton();
         btnmv371 = new javax.swing.JButton();
-        btnd371 = new javax.swing.JButton();
         jLabel129 = new javax.swing.JLabel();
         jLabel130 = new javax.swing.JLabel();
+        jButton27 = new javax.swing.JButton();
         jPanel29 = new javax.swing.JPanel();
         jLabel132 = new javax.swing.JLabel();
         jLabel133 = new javax.swing.JLabel();
@@ -737,15 +686,14 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane23 = new javax.swing.JScrollPane();
         txtitem38 = new javax.swing.JTextArea();
         btnadjnoitem38 = new javax.swing.JButton();
-        btnditem38 = new javax.swing.JButton();
         jLabel134 = new javax.swing.JLabel();
         rbsi381 = new javax.swing.JRadioButton();
         rbno381 = new javax.swing.JRadioButton();
         btnmv381 = new javax.swing.JButton();
-        btnd381 = new javax.swing.JButton();
         jLabel135 = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
         jLabel137 = new javax.swing.JLabel();
+        jButton28 = new javax.swing.JButton();
         jPanel30 = new javax.swing.JPanel();
         jLabel138 = new javax.swing.JLabel();
         jLabel139 = new javax.swing.JLabel();
@@ -757,15 +705,14 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane24 = new javax.swing.JScrollPane();
         txtitem39 = new javax.swing.JTextArea();
         btnadjnoitem39 = new javax.swing.JButton();
-        btnditem39 = new javax.swing.JButton();
         jLabel140 = new javax.swing.JLabel();
         rbsi391 = new javax.swing.JRadioButton();
         rbno391 = new javax.swing.JRadioButton();
         btnmv391 = new javax.swing.JButton();
-        btnd391 = new javax.swing.JButton();
         jLabel141 = new javax.swing.JLabel();
         jLabel142 = new javax.swing.JLabel();
         jLabel143 = new javax.swing.JLabel();
+        jButton29 = new javax.swing.JButton();
         jPanel31 = new javax.swing.JPanel();
         jLabel144 = new javax.swing.JLabel();
         jLabel145 = new javax.swing.JLabel();
@@ -777,17 +724,16 @@ public class Gestion_salud extends javax.swing.JFrame {
         jScrollPane25 = new javax.swing.JScrollPane();
         txtitem40 = new javax.swing.JTextArea();
         btnadjnoitem40 = new javax.swing.JButton();
-        btnditem40 = new javax.swing.JButton();
         jLabel146 = new javax.swing.JLabel();
         rbsi401 = new javax.swing.JRadioButton();
         rbno401 = new javax.swing.JRadioButton();
         btnmv401 = new javax.swing.JButton();
-        btnd401 = new javax.swing.JButton();
         jLabel147 = new javax.swing.JLabel();
         jLabel148 = new javax.swing.JLabel();
         jLabel149 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -846,13 +792,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem23.setText("Descargar");
-        btnditem23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem23ActionPerformed(evt);
-            }
-        });
-
         jLabel28.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel28.setText("1. Solicitar el documento consolidado que evidencie el cumplimiento de lo requerido en el criterio.");
 
@@ -879,91 +818,88 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd231.setText("Descargar");
-        btnd231.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd231ActionPerformed(evt);
-            }
-        });
-
         jLabel29.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        jButton13.setText("Criterio");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lblnocum23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblcum23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27)
+                    .addComponent(jButton13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(noaplicaitem23)
+                .addGap(96, 96, 96)
+                .addComponent(rbjustiitem23)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(rbsi231)
+                        .addGap(28, 28, 28)
+                        .addComponent(rbno231)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnmv231))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(rbnojustiitem23)
+                        .addGap(65, 65, 65)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(btnadjnoitem23, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(251, Short.MAX_VALUE))
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel29))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
-                        .addComponent(rbsi231)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno231)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv231)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd231)))
-                .addGap(18, 18, 18))
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblnocum23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblcum23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel27))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(noaplicaitem23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbjustiitem23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbnojustiitem23)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem23, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem23, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
+                .addContainerGap(771, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27)
-                            .addComponent(lblnocum23)
-                            .addComponent(lblcum23))
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbjustiitem23)
-                        .addComponent(rbnojustiitem23)
-                        .addComponent(noaplicaitem23))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem23))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum23)
+                                    .addComponent(lblcum23)
+                                    .addComponent(btnadjnoitem23)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton13)))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel9))
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(rbjustiitem23)
+                                .addComponent(rbnojustiitem23)
+                                .addComponent(noaplicaitem23))))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbsi231)
-                        .addComponent(rbno231)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(rbno231)
+                            .addComponent(rbsi231))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnmv231)
-                        .addComponent(btnd231)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(21, 21, 21)))
                 .addComponent(jLabel29)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1020,13 +956,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem24.setText("Descargar");
-        btnditem24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem24ActionPerformed(evt);
-            }
-        });
-
         jLabel43.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel43.setText("1. Solicitar las evidencias que constaten la definición y ejecución de las actividades de medicina del trabajo, promoción y prevención");
 
@@ -1050,13 +979,6 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv241.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv241ActionPerformed(evt);
-            }
-        });
-
-        btnd241.setText("Descargar");
-        btnd241.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd241ActionPerformed(evt);
             }
         });
 
@@ -1091,15 +1013,10 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd242.setText("Descargar");
-        btnd242.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd242ActionPerformed(evt);
-            }
-        });
-
         jLabel49.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel49.setText("y peligros/riesgos de intervención prioritarios.");
+
+        jButton14.setText("Criterio");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1108,64 +1025,56 @@ public class Gestion_salud extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rbsi241)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno241)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv241)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd241))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(842, 842, 842)
-                        .addComponent(jLabel44)))
-                .addGap(18, 18, 18))
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(lblnocum24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel42))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(noaplicaitem24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbjustiitem24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbnojustiitem24)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel42)
+                            .addComponent(jButton14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rbsi242)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno242)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv242)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd242)
-                        .addGap(18, 18, 18))
+                        .addComponent(noaplicaitem24)
+                        .addGap(69, 69, 69)
+                        .addComponent(rbjustiitem24)
+                        .addGap(41, 41, 41)
+                        .addComponent(rbnojustiitem24)
+                        .addGap(31, 31, 31)))
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnadjnoitem24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(114, 114, 114))
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel43)
-                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(842, 842, 842)
+                        .addComponent(jLabel44))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel43)
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(86, 86, 86)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbsi241)
+                            .addComponent(rbsi242))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbno241)
+                            .addComponent(rbno242))
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnmv242)
+                            .addComponent(btnmv241))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1173,45 +1082,46 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblnocum24)
-                            .addComponent(lblcum24)
-                            .addComponent(jLabel42))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum24)
+                                    .addComponent(lblcum24))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel42)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton14)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel41))
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem24)
                         .addComponent(rbnojustiitem24)
                         .addComponent(noaplicaitem24))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem24))
+                    .addComponent(btnadjnoitem24)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbsi241)
-                            .addComponent(rbno241)
-                            .addComponent(btnmv241)
-                            .addComponent(btnd241)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel43)))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(rbsi241)
+                    .addComponent(rbno241)
+                    .addComponent(btnmv241))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel45)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel49)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbsi242)
-                        .addComponent(rbno242)
-                        .addComponent(btnmv242)
-                        .addComponent(btnd242))
-                    .addComponent(jLabel46))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel46)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbsi242)
+                            .addComponent(rbno242)
+                            .addComponent(btnmv242))
+                        .addGap(24, 24, 24)))
                 .addComponent(jLabel44)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1268,13 +1178,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem25.setText("Descargar");
-        btnditem25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem25ActionPerformed(evt);
-            }
-        });
-
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel7.setText("1. Verificar que al médico que realiza las evaluaciones ocupacionales, se le remitieron los soportes documentales respecto de los ");
 
@@ -1301,17 +1204,12 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd251.setText("Descargar");
-        btnd251.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd251ActionPerformed(evt);
-            }
-        });
-
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel25.setText("perfiles del cargo, descripción de las tareas y el medio en el cual desarrollaran la labor  de los trabajadores.");
+
+        jButton15.setText("Criterio");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1320,80 +1218,80 @@ public class Gestion_salud extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lblnocum25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblcum25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jButton15)))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rbsi251)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno251)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv251)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd251)))
-                .addGap(18, 18, 18))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblnocum25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblcum25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel6))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(noaplicaitem25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbjustiitem25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbnojustiitem25)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem25, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem25, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(219, 219, 219)
+                                .addComponent(rbsi251)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbno251)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnmv251))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(noaplicaitem25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rbjustiitem25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rbnojustiitem25)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnadjnoitem25, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(231, 231, 231))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblnocum25)
+                    .addComponent(lblcum25)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(lblnocum25)
-                            .addComponent(lblcum25))
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel5))
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton15)))
+                .addGap(13, 13, 13)
+                .addComponent(jLabel5)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem25)
                         .addComponent(rbnojustiitem25)
                         .addComponent(noaplicaitem25))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem25))
+                    .addComponent(btnadjnoitem25)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel25))
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbsi251)
-                        .addComponent(rbno251)
-                        .addComponent(btnmv251)
-                        .addComponent(btnd251)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jLabel8)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbsi251)
+                    .addComponent(rbno251)
+                    .addComponent(btnmv251))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1449,13 +1347,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem26.setText("Descargar");
-        btnditem26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem26ActionPerformed(evt);
-            }
-        });
-
         jLabel50.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel50.setText("1. Solicitar los conceptos de aptitud que demuestran la realización de las evaluaciones médicas.");
 
@@ -1479,13 +1370,6 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv261.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv261ActionPerformed(evt);
-            }
-        });
-
-        btnd261.setText("Descargar");
-        btnd261.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd261ActionPerformed(evt);
             }
         });
 
@@ -1517,13 +1401,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd262.setText("Descargar");
-        btnd262.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd262ActionPerformed(evt);
-            }
-        });
-
         rbsi263.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         rbsi263.setText("Cumple");
         rbsi263.addActionListener(new java.awt.event.ActionListener() {
@@ -1547,18 +1424,13 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd263.setText("Descargar");
-        btnd263.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd263ActionPerformed(evt);
-            }
-        });
-
         jLabel54.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel54.setText("3. Solicitar el documento que evidencie la comunicación por escrito al trabajador de los resultados de las evaluaciones médicas ");
 
         jLabel55.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel55.setText("ocupacionales.");
+
+        jButton16.setText("Criterio");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -1575,8 +1447,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addComponent(rbno261)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnmv261)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd261))
+                        .addGap(91, 91, 91))
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGap(842, 842, 842)
                         .addComponent(jLabel51))
@@ -1593,7 +1464,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblcum26)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel48))
+                                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel48)
+                                            .addComponent(jButton16)))
                                     .addGroup(jPanel14Layout.createSequentialGroup()
                                         .addGap(31, 31, 31)
                                         .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1608,9 +1481,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnadjnoitem26, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnditem26, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnadjnoitem26, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addGap(118, 118, 118)
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1619,17 +1490,14 @@ public class Gestion_salud extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(rbno263)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv263)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd263))
+                                        .addComponent(btnmv263))
                                     .addGroup(jPanel14Layout.createSequentialGroup()
                                         .addComponent(rbsi262)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(rbno262)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv262)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd262)))))))
+                                        .addComponent(btnmv262)))))
+                        .addGap(16, 16, 16)))
                 .addGap(18, 18, 18))
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
@@ -1638,7 +1506,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addComponent(jLabel55)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 867, Short.MAX_VALUE)
                         .addGap(482, 482, 482))))
         );
         jPanel14Layout.setVerticalGroup(
@@ -1647,20 +1515,23 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblnocum26)
-                            .addComponent(lblcum26)
-                            .addComponent(jLabel48))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum26)
+                                    .addComponent(lblcum26))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jLabel48)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton16)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel47))
                     .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem26)
                         .addComponent(rbnojustiitem26)
                         .addComponent(noaplicaitem26))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem26))
+                    .addComponent(btnadjnoitem26)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
@@ -1668,8 +1539,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi261)
                             .addComponent(rbno261)
-                            .addComponent(btnmv261)
-                            .addComponent(btnd261)))
+                            .addComponent(btnmv261)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel50)))
@@ -1679,16 +1549,14 @@ public class Gestion_salud extends javax.swing.JFrame {
                     .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi262)
                         .addComponent(rbno262)
-                        .addComponent(btnmv262)
-                        .addComponent(btnd262)))
+                        .addComponent(btnmv262)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel54)
                     .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi263)
                         .addComponent(rbno263)
-                        .addComponent(btnmv263)
-                        .addComponent(btnd263)))
+                        .addComponent(btnmv263)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel55)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1748,13 +1616,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem27.setText("Descargar");
-        btnditem27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem27ActionPerformed(evt);
-            }
-        });
-
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel12.setText("1. Evidenciar los soportes que demuestren que la custodia de las historias clínicas este a cargo de una institución prestadora de servicios ");
 
@@ -1781,17 +1642,12 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd271.setText("Descargar");
-        btnd271.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd271ActionPerformed(evt);
-            }
-        });
-
         jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel26.setText("en Seguridad y Salud en el Trabajo o del médico que practica los exámenes laborales en la empresa.");
+
+        jButton17.setText("Criterio");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1807,7 +1663,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblcum27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11))
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jButton17)))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGap(31, 31, 31)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1829,17 +1687,13 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbno271)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv271)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd271))
+                        .addComponent(btnmv271))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(rbnojustiitem27)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem27, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem27, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnadjnoitem27, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(52, 52, 52))
         );
         jPanel10Layout.setVerticalGroup(
@@ -1849,27 +1703,26 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
                             .addComponent(lblnocum27)
-                            .addComponent(lblcum27))
-                        .addGap(34, 34, 34)
+                            .addComponent(lblcum27)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton17)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel10))
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem27)
                         .addComponent(rbnojustiitem27)
                         .addComponent(noaplicaitem27))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem27))
+                    .addComponent(btnadjnoitem27)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi271)
                         .addComponent(rbno271)
-                        .addComponent(btnmv271)
-                        .addComponent(btnd271))
+                        .addComponent(btnmv271))
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel26)
@@ -1929,13 +1782,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem28.setText("Descargar");
-        btnditem28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem28ActionPerformed(evt);
-            }
-        });
-
         jLabel57.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel57.setText("1. Solicitar documento de recomendaciones y restricciones a trabajadores y revisar  que la empresa ja acatado todas las recomendaciones ");
 
@@ -1959,13 +1805,6 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv281.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv281ActionPerformed(evt);
-            }
-        });
-
-        btnd281.setText("Descargar");
-        btnd281.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd281ActionPerformed(evt);
             }
         });
 
@@ -2000,15 +1839,10 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd282.setText("Descargar");
-        btnd282.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd282ActionPerformed(evt);
-            }
-        });
-
         jLabel61.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel61.setText("de reubicación o readaptación. ");
+
+        jButton18.setText("Criterio");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -2026,7 +1860,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel56))
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel56)
+                            .addComponent(jButton18)))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2036,13 +1872,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addComponent(rbjustiitem28)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbnojustiitem28)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem28, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem28, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(254, 254, 254))
+                .addGap(544, 544, 544))
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2053,46 +1883,50 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(rbsi281)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno281)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv281)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd281))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(rbsi282)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbno282)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv282)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd282)))
-                .addGap(113, 113, 113))
+                        .addGap(84, 84, 84)
+                        .addComponent(btnmv282))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(rbsi281)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbno281))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnadjnoitem28, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnmv281))))
+                .addGap(109, 109, 109))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblnocum28)
-                                    .addComponent(lblcum28)
-                                    .addComponent(jLabel56))
-                                .addGap(34, 34, 34)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblnocum28)
+                                            .addComponent(lblcum28))
+                                        .addGap(34, 34, 34))
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addComponent(jLabel56)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton18)
+                                        .addGap(18, 18, 18)))
                                 .addComponent(jLabel52))
                             .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(rbjustiitem28)
                                 .addComponent(rbnojustiitem28)
-                                .addComponent(noaplicaitem28))
-                            .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(btnadjnoitem28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnditem28))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(noaplicaitem28)))
                         .addGap(34, 34, 34)
                         .addComponent(jLabel57)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2102,17 +1936,22 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(jLabel60))
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbsi281)
-                            .addComponent(rbno281)
-                            .addComponent(btnmv281)
-                            .addComponent(btnd281))
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(btnadjnoitem28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(rbsi281)
+                                    .addComponent(rbno281)
+                                    .addComponent(btnmv281)))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(66, 66, 66)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi282)
                             .addComponent(rbno282)
-                            .addComponent(btnmv282)
-                            .addComponent(btnd282))))
+                            .addComponent(btnmv282))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel58))
         );
@@ -2169,13 +2008,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem29.setText("Descargar");
-        btnditem29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem29ActionPerformed(evt);
-            }
-        });
-
         jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel16.setText("1. Solicitar el programa respectivo y los documentos y registros que evidencien el cumplimiento del mismo. ");
 
@@ -2202,17 +2034,12 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd291.setText("Descargar");
-        btnd291.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd291ActionPerformed(evt);
-            }
-        });
-
         jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel18.setText("dependencia y otros) (1%)");
+
+        jButton19.setText("Criterio");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -2229,9 +2056,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbno291)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv291)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd291)))
+                        .addComponent(btnmv291)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2243,7 +2068,10 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
-                            .addComponent(jLabel18)))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton19))))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2256,9 +2084,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem29, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem29, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem29, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -2273,25 +2099,23 @@ public class Gestion_salud extends javax.swing.JFrame {
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel18)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jButton19))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel14))
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem29)
                         .addComponent(rbnojustiitem29)
                         .addComponent(noaplicaitem29))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem29))
+                    .addComponent(btnadjnoitem29)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi291)
                         .addComponent(rbno291)
-                        .addComponent(btnmv291)
-                        .addComponent(btnd291))
+                        .addComponent(btnmv291))
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jLabel17))
@@ -2349,13 +2173,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem30.setText("Descargar");
-        btnditem30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem30ActionPerformed(evt);
-            }
-        });
-
         jLabel21.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel21.setText("1. Mediante observación directa, verificar si se cumple lo que se exige en el criterio. Dejando prueba fotográfica o fílmica al respecto.");
 
@@ -2382,14 +2199,9 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd301.setText("Descargar");
-        btnd301.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd301ActionPerformed(evt);
-            }
-        });
-
         jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        jButton20.setText("Criterio");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -2408,10 +2220,8 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbno301)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv301)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd301)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnmv301)))
+                        .addContainerGap(237, Short.MAX_VALUE))
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel12Layout.createSequentialGroup()
@@ -2420,7 +2230,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblcum30)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel20))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jButton20)))
                             .addGroup(jPanel12Layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2433,9 +2245,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem30, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem30, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnadjnoitem30, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel12Layout.setVerticalGroup(
@@ -2445,27 +2255,26 @@ public class Gestion_salud extends javax.swing.JFrame {
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
                             .addComponent(lblnocum30)
-                            .addComponent(lblcum30))
-                        .addGap(34, 34, 34)
+                            .addComponent(lblcum30)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton20)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel19))
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem30)
                         .addComponent(rbnojustiitem30)
                         .addComponent(noaplicaitem30))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem30))
+                    .addComponent(btnadjnoitem30)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(rbsi301)
                     .addComponent(rbno301)
-                    .addComponent(btnmv301)
-                    .addComponent(btnd301))
+                    .addComponent(btnmv301))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jLabel22))
         );
@@ -2522,13 +2331,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem31.setText("Descargar");
-        btnditem31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem31ActionPerformed(evt);
-            }
-        });
-
         jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel30.setText("1. Mediante observación directa, constatar las evidencias donde se dé cuenta de los procesos de eliminación de residuos conforme ");
 
@@ -2555,17 +2357,12 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd311.setText("Descargar");
-        btnd311.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd311ActionPerformed(evt);
-            }
-        });
-
         jLabel31.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel32.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel32.setText("al criterio y solicitar contrato de empresas que elimina y dispone de los residuos peligrosos.");
+
+        jButton21.setText("Criterio");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -2581,13 +2378,11 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addComponent(jLabel30)
                                 .addGap(38, 38, 38)
                                 .addComponent(rbsi311)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(rbno311)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv311)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd311)))
-                        .addContainerGap(93, Short.MAX_VALUE))
+                                .addGap(55, 55, 55)
+                                .addComponent(btnmv311)))
+                        .addContainerGap(190, Short.MAX_VALUE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createSequentialGroup()
@@ -2596,7 +2391,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblcum31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel24))
+                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jButton21)))
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2608,10 +2405,8 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addComponent(rbnojustiitem31)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem31, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem31, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(54, 54, 54)
+                        .addComponent(btnadjnoitem31, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel32)
@@ -2623,28 +2418,30 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(lblnocum31)
-                            .addComponent(lblcum31))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum31)
+                                    .addComponent(lblcum31))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton21)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel23))
                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem31)
                         .addComponent(rbnojustiitem31)
                         .addComponent(noaplicaitem31))
-                    .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem31))
+                    .addComponent(btnadjnoitem31)
                     .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(rbsi311)
                     .addComponent(rbno311)
-                    .addComponent(btnmv311)
-                    .addComponent(btnd311))
+                    .addComponent(btnmv311))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
@@ -2706,13 +2503,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem32.setText("Descargar");
-        btnditem32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem32ActionPerformed(evt);
-            }
-        });
-
         jLabel64.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel64.setText("1. Indagar con los trabajadores, si se han presentado accidentes de trabajo o enfermedades laborales o (en caso afirmativo, tomar los");
 
@@ -2739,13 +2529,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd321.setText("Descargar");
-        btnd321.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd321ActionPerformed(evt);
-            }
-        });
-
         jLabel65.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel66.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -2763,25 +2546,20 @@ public class Gestion_salud extends javax.swing.JFrame {
         jLabel71.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel71.setText("evento o recibo del diagnóstico de la enfermedad.");
 
+        jButton22.setText("Criterio");
+
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGap(842, 842, 842)
-                        .addComponent(jLabel65))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addContainerGap(919, Short.MAX_VALUE)
-                        .addComponent(rbsi321)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno321)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv321)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd321)))
-                .addGap(18, 18, 18))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rbsi321)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbno321)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnmv321)
+                .addGap(109, 109, 109))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel18Layout.createSequentialGroup()
@@ -2792,7 +2570,10 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel63)
-                            .addComponent(jLabel68)))
+                            .addGroup(jPanel18Layout.createSequentialGroup()
+                                .addComponent(jLabel68)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton22))))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2805,17 +2586,19 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem32, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem32, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem32, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel64, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(842, 842, 842)
+                        .addComponent(jLabel65))
+                    .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel64, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
@@ -2830,25 +2613,23 @@ public class Gestion_salud extends javax.swing.JFrame {
                             .addGroup(jPanel18Layout.createSequentialGroup()
                                 .addComponent(jLabel63)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel68)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel68)
+                                    .addComponent(jButton22))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel62))
                     .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem32)
                         .addComponent(rbnojustiitem32)
                         .addComponent(noaplicaitem32))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem32))
+                    .addComponent(btnadjnoitem32)
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi321)
                         .addComponent(rbno321)
-                        .addComponent(btnmv321)
-                        .addComponent(btnd321))
+                        .addComponent(btnmv321))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addComponent(jLabel64)
                         .addGap(1, 1, 1)
@@ -2916,13 +2697,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem33.setText("Descargar");
-        btnditem33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem33ActionPerformed(evt);
-            }
-        });
-
         jLabel74.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel74.setText("1. Verificar por medio de un muestreo si se investigan los accidentes e incidentes  de trabajo y las enfermedades laborales y si se definieron");
 
@@ -2946,13 +2720,6 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv331.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv331ActionPerformed(evt);
-            }
-        });
-
-        btnd331.setText("Descargar");
-        btnd331.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd331ActionPerformed(evt);
             }
         });
 
@@ -2984,13 +2751,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd333.setText("Descargar");
-        btnd333.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd333ActionPerformed(evt);
-            }
-        });
-
         rbsi332.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         rbsi332.setText("Cumple");
         rbsi332.addActionListener(new java.awt.event.ActionListener() {
@@ -3014,13 +2774,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd332.setText("Descargar");
-        btnd332.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd332ActionPerformed(evt);
-            }
-        });
-
         jLabel77.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel77.setText("2. Constatar que la investigación se haya realizado dentro de los quince (15) días siguientes a su ocurrencia a través del equipo investigador");
 
@@ -3036,6 +2789,8 @@ public class Gestion_salud extends javax.swing.JFrame {
         jLabel81.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel81.setText("salud en el trabajo.");
 
+        jButton23.setText("Criterio");
+
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
@@ -3048,7 +2803,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel73))
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel73)
+                            .addComponent(jButton23)))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3064,9 +2821,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
@@ -3082,7 +2837,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addComponent(jLabel75)
                         .addGap(372, 372, 372))
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, 841, Short.MAX_VALUE)
                         .addGap(482, 482, 482))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3096,26 +2851,20 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbno332)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv332)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd332))
+                                .addComponent(btnmv332))
                             .addGroup(jPanel19Layout.createSequentialGroup()
                                 .addComponent(rbsi331)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbno331)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv331)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd331))
+                                .addComponent(btnmv331))
                             .addGroup(jPanel19Layout.createSequentialGroup()
                                 .addComponent(rbsi333)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbno333)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv333)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd333)))
-                        .addGap(52, 52, 52))))
+                                .addComponent(btnmv333)))
+                        .addGap(143, 143, 143))))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3126,17 +2875,17 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblnocum33)
                             .addComponent(lblcum33)
-                            .addComponent(jLabel73))
-                        .addGap(34, 34, 34)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jLabel73)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton23)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel72))
                     .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem33)
                         .addComponent(rbnojustiitem33)
                         .addComponent(noaplicaitem33))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem33))
+                    .addComponent(btnadjnoitem33)
                     .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
@@ -3160,20 +2909,17 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi331)
                             .addComponent(rbno331)
-                            .addComponent(btnmv331)
-                            .addComponent(btnd331))
+                            .addComponent(btnmv331))
                         .addGap(49, 49, 49)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi332)
                             .addComponent(rbno332)
-                            .addComponent(btnmv332)
-                            .addComponent(btnd332))
+                            .addComponent(btnmv332))
                         .addGap(43, 43, 43)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi333)
                             .addComponent(rbno333)
-                            .addComponent(btnmv333)
-                            .addComponent(btnd333))
+                            .addComponent(btnmv333))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel75)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -3231,13 +2977,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem34.setText("Descargar");
-        btnditem34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem34ActionPerformed(evt);
-            }
-        });
-
         jLabel83.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel83.setText("1. Solicitar el registro estadístico actualizando de lo corrido del año y el año inmediatamente anterior al de la visita, asi como la evidencia ");
 
@@ -3264,13 +3003,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd341.setText("Descargar");
-        btnd341.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd341ActionPerformed(evt);
-            }
-        });
-
         jLabel84.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel85.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -3279,25 +3011,20 @@ public class Gestion_salud extends javax.swing.JFrame {
         jLabel87.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel87.setText("y Enfermedad Laboral (1%)");
 
+        jButton24.setText("Criterio");
+
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGap(842, 842, 842)
-                        .addComponent(jLabel84))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addContainerGap(919, Short.MAX_VALUE)
-                        .addComponent(rbsi341)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno341)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv341)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd341)))
-                .addGap(18, 18, 18))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rbsi341)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbno341)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnmv341)
+                .addGap(109, 109, 109))
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel20Layout.createSequentialGroup()
@@ -3308,7 +3035,10 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel82)
-                            .addComponent(jLabel87)))
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addComponent(jLabel87)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton24))))
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -3321,15 +3051,18 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem34, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem34, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem34, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel83))
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGap(842, 842, 842)
+                        .addComponent(jLabel84))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel83))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
@@ -3344,17 +3077,16 @@ public class Gestion_salud extends javax.swing.JFrame {
                             .addGroup(jPanel20Layout.createSequentialGroup()
                                 .addComponent(jLabel82)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel87)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel87)
+                                    .addComponent(jButton24))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel70))
                     .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem34)
                         .addComponent(rbnojustiitem34)
                         .addComponent(noaplicaitem34))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem34))
+                    .addComponent(btnadjnoitem34)
                     .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel20Layout.createSequentialGroup()
@@ -3362,8 +3094,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi341)
                             .addComponent(rbno341)
-                            .addComponent(btnmv341)
-                            .addComponent(btnd341)))
+                            .addComponent(btnmv341)))
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel83)
@@ -3380,10 +3111,10 @@ public class Gestion_salud extends javax.swing.JFrame {
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1303, Short.MAX_VALUE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3450,13 +3181,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem35.setText("Descargar");
-        btnditem35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem35ActionPerformed(evt);
-            }
-        });
-
         jLabel116.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel116.setText("1. Solicitar los resultados de la medición para lo ocurrido y/o el año inmediatamente anterior y constatar el comportamiento de la");
 
@@ -3483,17 +3207,12 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd351.setText("Descargar");
-        btnd351.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd351ActionPerformed(evt);
-            }
-        });
-
         jLabel117.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel118.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel118.setText("severidad y la relación del evento con los peligros/riesgos.");
+
+        jButton25.setText("Criterio");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -3507,7 +3226,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel115))
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel115)
+                            .addComponent(jButton25)))
                     .addGroup(jPanel26Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel114, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -3520,31 +3241,26 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem35, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem35, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem35, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addComponent(jLabel116)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi351)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbno351)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnmv351)
+                        .addGap(109, 109, 109))
+                    .addGroup(jPanel26Layout.createSequentialGroup()
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGap(822, 822, 822)
                                 .addComponent(jLabel117))
-                            .addGroup(jPanel26Layout.createSequentialGroup()
-                                .addComponent(jLabel116)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rbsi351)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno351)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv351)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd351)))
-                        .addGap(18, 18, 18))
-                    .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addComponent(jLabel118, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel118, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel26Layout.setVerticalGroup(
@@ -3553,20 +3269,23 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblnocum35)
-                            .addComponent(lblcum35)
-                            .addComponent(jLabel115))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel26Layout.createSequentialGroup()
+                                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum35)
+                                    .addComponent(lblcum35))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel26Layout.createSequentialGroup()
+                                .addComponent(jLabel115)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton25)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel114))
                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem35)
                         .addComponent(rbnojustiitem35)
                         .addComponent(noaplicaitem35))
-                    .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem35))
+                    .addComponent(btnadjnoitem35)
                     .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
@@ -3574,8 +3293,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi351)
                             .addComponent(rbno351)
-                            .addComponent(btnmv351)
-                            .addComponent(btnd351)))
+                            .addComponent(btnmv351)))
                     .addGroup(jPanel26Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel116)
@@ -3638,13 +3356,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem36.setText("Descargar");
-        btnditem36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem36ActionPerformed(evt);
-            }
-        });
-
         jLabel122.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel122.setText("1. Solicitar los resultados de la medición para lo corrido del año in mediatamente anterior y constatar el comportamiento de la frecuencia");
 
@@ -3671,17 +3382,12 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd361.setText("Descargar");
-        btnd361.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd361ActionPerformed(evt);
-            }
-        });
-
         jLabel123.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel124.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel124.setText("de los accidentes y la relación del evento con los peligros/riesgos.");
+
+        jButton26.setText("Criterio");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -3695,7 +3401,9 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel121))
+                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel121)
+                            .addComponent(jButton26)))
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel120, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -3708,31 +3416,26 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem36, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem36, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem36, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel27Layout.createSequentialGroup()
+                        .addComponent(jLabel124, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi361)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbno361)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnmv361)
+                        .addGap(109, 109, 109))
+                    .addGroup(jPanel27Layout.createSequentialGroup()
                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel27Layout.createSequentialGroup()
                                 .addGap(819, 819, 819)
                                 .addComponent(jLabel123))
-                            .addGroup(jPanel27Layout.createSequentialGroup()
-                                .addComponent(jLabel124, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rbsi361)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno361)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv361)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd361)))
-                        .addGap(18, 18, 18))
-                    .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addComponent(jLabel122)
+                            .addComponent(jLabel122))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel27Layout.setVerticalGroup(
@@ -3744,17 +3447,17 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblnocum36)
                             .addComponent(lblcum36)
-                            .addComponent(jLabel121))
-                        .addGap(34, 34, 34)
+                            .addGroup(jPanel27Layout.createSequentialGroup()
+                                .addComponent(jLabel121)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton26)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel120))
                     .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem36)
                         .addComponent(rbnojustiitem36)
                         .addComponent(noaplicaitem36))
-                    .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem36))
+                    .addComponent(btnadjnoitem36)
                     .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel27Layout.createSequentialGroup()
@@ -3762,8 +3465,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi361)
                             .addComponent(rbno361)
-                            .addComponent(btnmv361)
-                            .addComponent(btnd361)))
+                            .addComponent(btnmv361)))
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel122)
@@ -3826,13 +3528,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem37.setText("Descargar");
-        btnditem37.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem37ActionPerformed(evt);
-            }
-        });
-
         jLabel128.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel128.setText("1. Solicitar los resultados de la medición para lo corrido del año y/o el año inmediatamente anterior y constatar el comportamiento de la");
 
@@ -3859,17 +3554,12 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd371.setText("Descargar");
-        btnd371.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd371ActionPerformed(evt);
-            }
-        });
-
         jLabel129.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel130.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel130.setText("mortalidad y la relación del evento con los peligros/riesgos.");
+
+        jButton27.setText("Criterio");
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -3883,11 +3573,13 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum37)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel127))
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel127)
+                            .addComponent(jButton27)))
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel126, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(noaplicaitem37)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbjustiitem37)
@@ -3896,32 +3588,27 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem37, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem37, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem37, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel28Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel28Layout.createSequentialGroup()
-                        .addComponent(jLabel130)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel128)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi371)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbno371)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnmv371)
+                        .addGap(109, 109, 109))
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel130)
                             .addGroup(jPanel28Layout.createSequentialGroup()
                                 .addGap(822, 822, 822)
-                                .addComponent(jLabel129))
-                            .addGroup(jPanel28Layout.createSequentialGroup()
-                                .addComponent(jLabel128)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rbsi371)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno371)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv371)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd371)))
-                        .addGap(18, 18, 18))))
+                                .addComponent(jLabel129)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3932,17 +3619,17 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblnocum37)
                             .addComponent(lblcum37)
-                            .addComponent(jLabel127))
-                        .addGap(34, 34, 34)
+                            .addGroup(jPanel28Layout.createSequentialGroup()
+                                .addComponent(jLabel127)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton27)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel126))
                     .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem37)
                         .addComponent(rbnojustiitem37)
                         .addComponent(noaplicaitem37))
-                    .addGroup(jPanel28Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem37)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem37))
+                    .addComponent(btnadjnoitem37)
                     .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel28Layout.createSequentialGroup()
@@ -3950,8 +3637,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi371)
                             .addComponent(rbno371)
-                            .addComponent(btnmv371)
-                            .addComponent(btnd371)))
+                            .addComponent(btnmv371)))
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel128)
@@ -4014,13 +3700,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem38.setText("Descargar");
-        btnditem38.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem38ActionPerformed(evt);
-            }
-        });
-
         jLabel134.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel134.setText("1. Solicitar los resultados de la medición para lo corrido del año y/o el año inmediatamente anterior y constatar el comportamiento de la  ");
 
@@ -4047,13 +3726,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd381.setText("Descargar");
-        btnd381.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd381ActionPerformed(evt);
-            }
-        });
-
         jLabel135.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel136.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -4061,6 +3733,8 @@ public class Gestion_salud extends javax.swing.JFrame {
 
         jLabel137.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel137.setText("Laboral (1%)");
+
+        jButton28.setText("Criterio");
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -4076,7 +3750,10 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel133)
-                            .addComponent(jLabel137)))
+                            .addGroup(jPanel29Layout.createSequentialGroup()
+                                .addComponent(jLabel137)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton28))))
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel132, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -4089,31 +3766,26 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem38, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem38, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem38, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel29Layout.createSequentialGroup()
+                        .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi381)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbno381)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnmv381)
+                        .addGap(109, 109, 109))
+                    .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel29Layout.createSequentialGroup()
                                 .addGap(821, 821, 821)
                                 .addComponent(jLabel135))
-                            .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rbsi381)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno381)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv381)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd381)))
-                        .addGap(18, 18, 18))
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addComponent(jLabel134)
+                            .addComponent(jLabel134))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel29Layout.setVerticalGroup(
@@ -4128,17 +3800,16 @@ public class Gestion_salud extends javax.swing.JFrame {
                             .addGroup(jPanel29Layout.createSequentialGroup()
                                 .addComponent(jLabel133)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel137)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel137)
+                                    .addComponent(jButton28))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel132))
                     .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem38)
                         .addComponent(rbnojustiitem38)
                         .addComponent(noaplicaitem38))
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem38)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem38))
+                    .addComponent(btnadjnoitem38)
                     .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel29Layout.createSequentialGroup()
@@ -4146,8 +3817,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi381)
                             .addComponent(rbno381)
-                            .addComponent(btnmv381)
-                            .addComponent(btnd381)))
+                            .addComponent(btnmv381)))
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel134)
@@ -4210,13 +3880,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem39.setText("Descargar");
-        btnditem39.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem39ActionPerformed(evt);
-            }
-        });
-
         jLabel140.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel140.setText("1. Solicitar los resultados de la medición para lo ocurrido del año y/o el año inmediatamente anterior y constatar el comportamiento de la incidencia ");
 
@@ -4243,13 +3906,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnd391.setText("Descargar");
-        btnd391.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd391ActionPerformed(evt);
-            }
-        });
-
         jLabel141.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel142.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -4257,6 +3913,8 @@ public class Gestion_salud extends javax.swing.JFrame {
 
         jLabel143.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel143.setText("Laboral (1%)");
+
+        jButton29.setText("Criterio");
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -4274,7 +3932,10 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel139)
-                                    .addComponent(jLabel143)))
+                                    .addGroup(jPanel30Layout.createSequentialGroup()
+                                        .addComponent(jLabel143)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton29))))
                             .addGroup(jPanel30Layout.createSequentialGroup()
                                 .addGap(31, 31, 31)
                                 .addComponent(jLabel138, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -4287,9 +3948,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem39, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem39, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnadjnoitem39, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4304,9 +3963,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbno391)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv391)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd391)))))
+                                .addComponent(btnmv391)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
@@ -4321,17 +3978,16 @@ public class Gestion_salud extends javax.swing.JFrame {
                             .addGroup(jPanel30Layout.createSequentialGroup()
                                 .addComponent(jLabel139)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel143)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel143)
+                                    .addComponent(jButton29))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel138))
                     .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem39)
                         .addComponent(rbnojustiitem39)
                         .addComponent(noaplicaitem39))
-                    .addGroup(jPanel30Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem39)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem39))
+                    .addComponent(btnadjnoitem39)
                     .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel30Layout.createSequentialGroup()
@@ -4344,8 +4000,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                             .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(rbsi391)
                                 .addComponent(rbno391)
-                                .addComponent(btnmv391)
-                                .addComponent(btnd391))
+                                .addComponent(btnmv391))
                             .addComponent(jLabel140))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addComponent(jLabel142)
@@ -4404,13 +4059,6 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
-        btnditem40.setText("Descargar");
-        btnditem40.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem40ActionPerformed(evt);
-            }
-        });
-
         jLabel146.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel146.setText("1. Solicitar los resultados de la medición para lo ocurrido del año y/o el año anteriormente anterior y constatar el comportamiento  del ausentismo ");
 
@@ -4434,13 +4082,6 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv401.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv401ActionPerformed(evt);
-            }
-        });
-
-        btnd401.setText("Descargar");
-        btnd401.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd401ActionPerformed(evt);
             }
         });
 
@@ -4469,10 +4110,20 @@ public class Gestion_salud extends javax.swing.JFrame {
             }
         });
 
+        jButton30.setText("Criterio");
+
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rbsi401)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbno401)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnmv401)
+                .addGap(109, 109, 109))
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
@@ -4483,18 +4134,6 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jLabel147))
                     .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rbsi401)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno401)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv401)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd401)))
-                .addGap(18, 18, 18))
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel31Layout.createSequentialGroup()
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
@@ -4504,7 +4143,10 @@ public class Gestion_salud extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel145)
-                                    .addComponent(jLabel149)))
+                                    .addGroup(jPanel31Layout.createSequentialGroup()
+                                        .addComponent(jLabel149)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton30))))
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addGap(31, 31, 31)
                                 .addComponent(jLabel144, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -4517,15 +4159,13 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem40, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem40, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnadjnoitem40, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel31Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel148)
                             .addComponent(jLabel146))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4539,17 +4179,16 @@ public class Gestion_salud extends javax.swing.JFrame {
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addComponent(jLabel145)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel149)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel149)
+                                    .addComponent(jButton30))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel144))
                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem40)
                         .addComponent(rbnojustiitem40)
                         .addComponent(noaplicaitem40))
-                    .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem40))
+                    .addComponent(btnadjnoitem40)
                     .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
@@ -4557,8 +4196,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi401)
                             .addComponent(rbno401)
-                            .addComponent(btnmv401)
-                            .addComponent(btnd401)))
+                            .addComponent(btnmv401)))
                     .addGroup(jPanel31Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel146)
@@ -4581,14 +4219,18 @@ public class Gestion_salud extends javax.swing.JFrame {
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addComponent(jPanel31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4611,25 +4253,25 @@ public class Gestion_salud extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1371, Short.MAX_VALUE)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1371, Short.MAX_VALUE)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -4654,7 +4296,7 @@ public class Gestion_salud extends javax.swing.JFrame {
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -4683,22 +4325,18 @@ public class Gestion_salud extends javax.swing.JFrame {
         rbsi231.setEnabled(false);
         rbno231.setEnabled(false);
         btnmv231.setEnabled(false);
-        btnd231.setEnabled(false);
         txtitem23.setEnabled(false);
         btnadjnoitem23.setEnabled(false);
-          btnditem23.setEnabled(false);
-          rbjustiitem23.setEnabled(true);
+         rbjustiitem23.setEnabled(true);
           rbnojustiitem23.setEnabled(true);
         
         }else{
           rbsi231.setEnabled(true);
         rbno231.setEnabled(true);
         btnmv231.setEnabled(false);
-        btnd231.setEnabled(false);
         txtitem23.setEnabled(false);
         btnadjnoitem23.setEnabled(false);
-          btnditem23.setEnabled(false);
-          rbjustiitem23.setEnabled(false);
+         rbjustiitem23.setEnabled(false);
           rbnojustiitem23.setEnabled(false);
             
             
@@ -4757,12 +4395,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem23KeyPressed
 
     private void btnadjnoitem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem23ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(23);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem23ActionPerformed
-
-    private void btnditem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem23ActionPerformed
 
     private void rbsi231ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi231ActionPerformed
       tr.setV231("");
@@ -4787,19 +4456,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno231ActionPerformed
 
     private void btnmv231ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv231ActionPerformed
-      tr.setV231("");
-        tr.setV231("No");
-        btnmv231.setEnabled(false);
-        
-        if(rbno231.isSelected()){
-            lblcum23.setEnabled(false);
-            lblnocum23.setEnabled(true);
-        }
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(36);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv231ActionPerformed
-
-    private void btnd231ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd231ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd231ActionPerformed
 
     private void noaplicaitem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem24ActionPerformed
    if (noaplicaitem24.isSelected()) {
@@ -4809,12 +4502,9 @@ public class Gestion_salud extends javax.swing.JFrame {
             rbno242.setEnabled(false);
             btnmv241.setEnabled(false);
             btnmv242.setEnabled(false);
-            btnd241.setEnabled(false);
-            btnd242.setEnabled(false);
             txtitem24.setEnabled(false);
             btnadjnoitem24.setEnabled(false);
-            btnditem24.setEnabled(false);
-            rbjustiitem24.setEnabled(true);
+           rbjustiitem24.setEnabled(true);
             rbnojustiitem24.setEnabled(true);
 
         } else {
@@ -4824,11 +4514,8 @@ public class Gestion_salud extends javax.swing.JFrame {
             rbno242.setEnabled(true);
             btnmv241.setEnabled(false);
             btnmv242.setEnabled(false);
-            btnd241.setEnabled(false);
-            btnd242.setEnabled(false);
             txtitem24.setEnabled(false);
             btnadjnoitem24.setEnabled(false);
-            btnditem24.setEnabled(false);
             rbjustiitem24.setEnabled(false);
             rbnojustiitem24.setEnabled(false);
 
@@ -4891,12 +4578,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem24KeyPressed
 
     private void btnadjnoitem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem24ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(24);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem24ActionPerformed
-
-    private void btnditem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem24ActionPerformed
 
     private void rbsi241ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi241ActionPerformed
      tr.setV241("");
@@ -4921,12 +4639,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno241ActionPerformed
 
     private void btnmv241ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv241ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(37);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv241ActionPerformed
-
-    private void btnd241ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd241ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd241ActionPerformed
 
     private void rbsi242ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi242ActionPerformed
       tr.setV242("");
@@ -4951,22 +4700,51 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno242ActionPerformed
 
     private void btnmv242ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv242ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(38);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv242ActionPerformed
-
-    private void btnd242ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd242ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd242ActionPerformed
 
     private void noaplicaitem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem25ActionPerformed
       if(noaplicaitem25.isSelected()){
         rbsi251.setEnabled(false);
         rbno251.setEnabled(false);
         btnmv251.setEnabled(false);
-        btnd251.setEnabled(false);
         txtitem25.setEnabled(false);
         btnadjnoitem25.setEnabled(false);
-          btnditem25.setEnabled(false);
           rbjustiitem25.setEnabled(true);
           rbnojustiitem25.setEnabled(true);
         
@@ -4974,11 +4752,9 @@ public class Gestion_salud extends javax.swing.JFrame {
           rbsi251.setEnabled(true);
         rbno251.setEnabled(true);
         btnmv251.setEnabled(false);
-        btnd251.setEnabled(false);
         txtitem25.setEnabled(false);
         btnadjnoitem25.setEnabled(false);
-          btnditem25.setEnabled(false);
-          rbjustiitem25.setEnabled(false);
+        rbjustiitem25.setEnabled(false);
           rbnojustiitem25.setEnabled(false);
             
             
@@ -5035,12 +4811,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem25KeyPressed
 
     private void btnadjnoitem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem25ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(25);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem25ActionPerformed
-
-    private void btnditem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem25ActionPerformed
 
     private void rbsi251ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi251ActionPerformed
    tr.setV251("");
@@ -5066,12 +4873,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno251ActionPerformed
 
     private void btnmv251ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv251ActionPerformed
-        // TODO add your handling code here:
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(39);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv251ActionPerformed
-
-    private void btnd251ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd251ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd251ActionPerformed
 
     private void noaplicaitem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem26ActionPerformed
     if(noaplicaitem26.isSelected()){
@@ -5084,12 +4922,8 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv261.setEnabled(false);
         btnmv262.setEnabled(false);
         btnmv263.setEnabled(false);
-        btnd261.setEnabled(false);
-         btnd262.setEnabled(false);
-          btnd263.setEnabled(false);
-          txtitem26.setEnabled(false);
+        txtitem26.setEnabled(false);
           btnadjnoitem26.setEnabled(false);
-          btnditem26.setEnabled(false);
           rbjustiitem26.setEnabled(true);
           rbnojustiitem26.setEnabled(true);
         
@@ -5103,13 +4937,9 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv261.setEnabled(false);
         btnmv262.setEnabled(false);
         btnmv263.setEnabled(false);
-        btnd261.setEnabled(false);
-         btnd262.setEnabled(false);
-          btnd263.setEnabled(false);
-          txtitem26.setEnabled(false);
+         txtitem26.setEnabled(false);
           btnadjnoitem26.setEnabled(false);
-          btnditem26.setEnabled(false);
-          rbjustiitem26.setEnabled(false);
+         rbjustiitem26.setEnabled(false);
           rbnojustiitem26.setEnabled(false);  
             
             
@@ -5183,12 +5013,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem26KeyPressed
 
     private void btnadjnoitem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem26ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(26);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem26ActionPerformed
-
-    private void btnditem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem26ActionPerformed
 
     private void rbsi261ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi261ActionPerformed
        tr.setV261("");
@@ -5215,12 +5076,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno261ActionPerformed
 
     private void btnmv261ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv261ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(40);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv261ActionPerformed
-
-    private void btnd261ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd261ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd261ActionPerformed
 
     private void rbsi262ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi262ActionPerformed
         tr.setV262("");
@@ -5246,12 +5138,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno262ActionPerformed
 
     private void btnmv262ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv262ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(41);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv262ActionPerformed
-
-    private void btnd262ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd262ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd262ActionPerformed
 
     private void rbsi263ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi263ActionPerformed
       tr.setV263("");
@@ -5277,34 +5200,61 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno263ActionPerformed
 
     private void btnmv263ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv263ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(42);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv263ActionPerformed
-
-    private void btnd263ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd263ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd263ActionPerformed
 
     private void noaplicaitem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem27ActionPerformed
         if(noaplicaitem27.isSelected()){
         rbsi271.setEnabled(false);
         rbno271.setEnabled(false);
         btnmv271.setEnabled(false);
-        btnd271.setEnabled(false);
-        txtitem27.setEnabled(false);
+       txtitem27.setEnabled(false);
         btnadjnoitem27.setEnabled(false);
-          btnditem27.setEnabled(false);
-          rbjustiitem27.setEnabled(true);
+         rbjustiitem27.setEnabled(true);
           rbnojustiitem27.setEnabled(true);
         
         }else{
           rbsi271.setEnabled(true);
         rbno271.setEnabled(true);
         btnmv271.setEnabled(false);
-        btnd271.setEnabled(false);
         txtitem27.setEnabled(false);
         btnadjnoitem27.setEnabled(false);
-          btnditem27.setEnabled(false);
-          rbjustiitem27.setEnabled(false);
+         rbjustiitem27.setEnabled(false);
           rbnojustiitem27.setEnabled(false);
             
             
@@ -5362,12 +5312,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem27KeyPressed
 
     private void btnadjnoitem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem27ActionPerformed
-        // TODO add your handling code here:
+         // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(27);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem27ActionPerformed
-
-    private void btnditem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem27ActionPerformed
 
     private void rbsi271ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi271ActionPerformed
     tr.setV271("");
@@ -5393,12 +5374,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno271ActionPerformed
 
     private void btnmv271ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv271ActionPerformed
-        // TODO add your handling code here:
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(43);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv271ActionPerformed
-
-    private void btnd271ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd271ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd271ActionPerformed
 
     private void noaplicaitem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem28ActionPerformed
       if (noaplicaitem28.isSelected()) {
@@ -5408,11 +5420,8 @@ public class Gestion_salud extends javax.swing.JFrame {
             rbno282.setEnabled(false);
             btnmv281.setEnabled(false);
             btnmv282.setEnabled(false);
-            btnd281.setEnabled(false);
-            btnd282.setEnabled(false);
             txtitem28.setEnabled(false);
             btnadjnoitem28.setEnabled(false);
-            btnditem28.setEnabled(false);
             rbjustiitem28.setEnabled(true);
             rbnojustiitem28.setEnabled(true);
 
@@ -5423,11 +5432,8 @@ public class Gestion_salud extends javax.swing.JFrame {
             rbno282.setEnabled(true);
             btnmv281.setEnabled(false);
             btnmv282.setEnabled(false);
-            btnd281.setEnabled(false);
-            btnd282.setEnabled(false);
             txtitem28.setEnabled(false);
             btnadjnoitem28.setEnabled(false);
-            btnditem28.setEnabled(false);
             rbjustiitem28.setEnabled(false);
             rbnojustiitem28.setEnabled(false);
 
@@ -5489,12 +5495,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem28KeyPressed
 
     private void btnadjnoitem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem28ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(28);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem28ActionPerformed
-
-    private void btnditem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem28ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem28ActionPerformed
 
     private void rbsi281ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi281ActionPerformed
        tr.setV281("");
@@ -5520,12 +5557,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno281ActionPerformed
 
     private void btnmv281ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv281ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(44);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv281ActionPerformed
-
-    private void btnd281ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd281ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd281ActionPerformed
 
     private void rbsi282ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi282ActionPerformed
        tr.setV282("");
@@ -5551,34 +5619,61 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno282ActionPerformed
 
     private void btnmv282ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv282ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(45);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv282ActionPerformed
-
-    private void btnd282ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd282ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd282ActionPerformed
 
     private void noaplicaitem29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem29ActionPerformed
      if(noaplicaitem29.isSelected()){
         rbsi291.setEnabled(false);
         rbno291.setEnabled(false);
         btnmv291.setEnabled(false);
-        btnd291.setEnabled(false);
         txtitem29.setEnabled(false);
         btnadjnoitem29.setEnabled(false);
-          btnditem29.setEnabled(false);
-          rbjustiitem29.setEnabled(true);
+         rbjustiitem29.setEnabled(true);
           rbnojustiitem29.setEnabled(true);
         
         }else{
           rbsi291.setEnabled(true);
         rbno291.setEnabled(true);
         btnmv291.setEnabled(false);
-        btnd291.setEnabled(false);
         txtitem29.setEnabled(false);
         btnadjnoitem29.setEnabled(false);
-          btnditem29.setEnabled(false);
-          rbjustiitem29.setEnabled(false);
+         rbjustiitem29.setEnabled(false);
           rbnojustiitem29.setEnabled(false);
             
             
@@ -5637,12 +5732,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem29KeyPressed
 
     private void btnadjnoitem29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem29ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(29);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem29ActionPerformed
-
-    private void btnditem29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem29ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem29ActionPerformed
 
     private void rbsi291ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi291ActionPerformed
     tr.setV291("");
@@ -5668,34 +5794,61 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno291ActionPerformed
 
     private void btnmv291ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv291ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(46);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv291ActionPerformed
-
-    private void btnd291ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd291ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd291ActionPerformed
 
     private void noaplicaitem30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem30ActionPerformed
     if(noaplicaitem30.isSelected()){
         rbsi301.setEnabled(false);
         rbno301.setEnabled(false);
         btnmv301.setEnabled(false);
-        btnd301.setEnabled(false);
-        txtitem30.setEnabled(false);
+       txtitem30.setEnabled(false);
         btnadjnoitem30.setEnabled(false);
-          btnditem30.setEnabled(false);
-          rbjustiitem30.setEnabled(true);
+        rbjustiitem30.setEnabled(true);
           rbnojustiitem30.setEnabled(true);
         
         }else{
           rbsi301.setEnabled(true);
         rbno301.setEnabled(true);
         btnmv301.setEnabled(false);
-        btnd301.setEnabled(false);
         txtitem30.setEnabled(false);
         btnadjnoitem30.setEnabled(false);
-          btnditem30.setEnabled(false);
-          rbjustiitem30.setEnabled(false);
+         rbjustiitem30.setEnabled(false);
           rbnojustiitem30.setEnabled(false);
             
             
@@ -5753,12 +5906,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem30KeyPressed
 
     private void btnadjnoitem30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem30ActionPerformed
-        // TODO add your handling code here:
+      // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(30);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem30ActionPerformed
-
-    private void btnditem30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem30ActionPerformed
 
     private void rbsi301ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi301ActionPerformed
        tr.setV301("");
@@ -5785,34 +5969,61 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno301ActionPerformed
 
     private void btnmv301ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv301ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(47);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv301ActionPerformed
-
-    private void btnd301ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd301ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd301ActionPerformed
 
     private void noaplicaitem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem31ActionPerformed
      if(noaplicaitem31.isSelected()){
         rbsi311.setEnabled(false);
         rbno311.setEnabled(false);
         btnmv311.setEnabled(false);
-        btnd311.setEnabled(false);
         txtitem31.setEnabled(false);
         btnadjnoitem31.setEnabled(false);
-          btnditem31.setEnabled(false);
-          rbjustiitem31.setEnabled(true);
+         rbjustiitem31.setEnabled(true);
           rbnojustiitem31.setEnabled(true);
         
         }else{
           rbsi311.setEnabled(true);
         rbno311.setEnabled(true);
         btnmv311.setEnabled(false);
-        btnd311.setEnabled(false);
         txtitem31.setEnabled(false);
         btnadjnoitem31.setEnabled(false);
-          btnditem31.setEnabled(false);
-          rbjustiitem31.setEnabled(false);
+         rbjustiitem31.setEnabled(false);
           rbnojustiitem31.setEnabled(false);
             
             
@@ -5870,12 +6081,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem31KeyPressed
 
     private void btnadjnoitem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem31ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(31);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem31ActionPerformed
-
-    private void btnditem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem31ActionPerformed
 
     private void rbsi311ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi311ActionPerformed
      tr.setV311("");
@@ -5900,34 +6142,61 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno311ActionPerformed
 
     private void btnmv311ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv311ActionPerformed
-        // TODO add your handling code here:
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(48);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv311ActionPerformed
-
-    private void btnd311ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd311ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd311ActionPerformed
 
     private void noaplicaitem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem32ActionPerformed
    if(noaplicaitem32.isSelected()){
         rbsi321.setEnabled(false);
         rbno321.setEnabled(false);
         btnmv321.setEnabled(false);
-        btnd321.setEnabled(false);
         txtitem32.setEnabled(false);
         btnadjnoitem32.setEnabled(false);
-          btnditem32.setEnabled(false);
-          rbjustiitem32.setEnabled(true);
+         rbjustiitem32.setEnabled(true);
           rbnojustiitem32.setEnabled(true);
         
         }else{
           rbsi321.setEnabled(true);
         rbno321.setEnabled(true);
         btnmv321.setEnabled(false);
-        btnd321.setEnabled(false);
         txtitem32.setEnabled(false);
         btnadjnoitem32.setEnabled(false);
-          btnditem32.setEnabled(false);
-          rbjustiitem32.setEnabled(false);
+        rbjustiitem32.setEnabled(false);
           rbnojustiitem32.setEnabled(false);
             
             
@@ -5984,12 +6253,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem32KeyPressed
 
     private void btnadjnoitem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem32ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(32);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem32ActionPerformed
-
-    private void btnditem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem32ActionPerformed
 
     private void rbsi321ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi321ActionPerformed
       tr.setV321("");
@@ -6014,12 +6314,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno321ActionPerformed
 
     private void btnmv321ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv321ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(49);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv321ActionPerformed
-
-    private void btnd321ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd321ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd321ActionPerformed
 
     private void noaplicaitem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem33ActionPerformed
        if(noaplicaitem33.isSelected()){
@@ -6032,12 +6363,8 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv331.setEnabled(false);
         btnmv332.setEnabled(false);
         btnmv333.setEnabled(false);
-        btnd331.setEnabled(false);
-         btnd332.setEnabled(false);
-          btnd333.setEnabled(false);
-          txtitem33.setEnabled(false);
+        txtitem33.setEnabled(false);
           btnadjnoitem33.setEnabled(false);
-          btnditem33.setEnabled(false);
           rbjustiitem33.setEnabled(true);
           rbnojustiitem33.setEnabled(true);
         
@@ -6051,13 +6378,9 @@ public class Gestion_salud extends javax.swing.JFrame {
         btnmv331.setEnabled(false);
         btnmv332.setEnabled(false);
         btnmv333.setEnabled(false);
-        btnd331.setEnabled(false);
-         btnd332.setEnabled(false);
-          btnd333.setEnabled(false);
-          txtitem33.setEnabled(false);
+        txtitem33.setEnabled(false);
           btnadjnoitem33.setEnabled(false);
-          btnditem33.setEnabled(false);
-          rbjustiitem33.setEnabled(false);
+         rbjustiitem33.setEnabled(false);
           rbnojustiitem33.setEnabled(false);  
             
             
@@ -6126,12 +6449,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem33KeyPressed
 
     private void btnadjnoitem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem33ActionPerformed
-        // TODO add your handling code here:
+         // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(33);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem33ActionPerformed
-
-    private void btnditem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem33ActionPerformed
 
     private void rbsi331ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi331ActionPerformed
       tr.setV331("");
@@ -6156,12 +6510,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno331ActionPerformed
 
     private void btnmv331ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv331ActionPerformed
-        // TODO add your handling code here:
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(50);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv331ActionPerformed
-
-    private void btnd331ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd331ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd331ActionPerformed
 
     private void rbsi333ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi333ActionPerformed
        tr.setV333("");
@@ -6186,12 +6571,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno333ActionPerformed
 
     private void btnmv333ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv333ActionPerformed
-        // TODO add your handling code here:
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(52);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv333ActionPerformed
-
-    private void btnd333ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd333ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd333ActionPerformed
 
     private void rbsi332ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi332ActionPerformed
           tr.setV332("");
@@ -6216,34 +6632,61 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno332ActionPerformed
 
     private void btnmv332ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv332ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(51);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv332ActionPerformed
-
-    private void btnd332ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd332ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd332ActionPerformed
 
     private void noaplicaitem34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem34ActionPerformed
       if(noaplicaitem34.isSelected()){
         rbsi341.setEnabled(false);
         rbno341.setEnabled(false);
         btnmv341.setEnabled(false);
-        btnd341.setEnabled(false);
         txtitem34.setEnabled(false);
         btnadjnoitem34.setEnabled(false);
-          btnditem34.setEnabled(false);
-          rbjustiitem34.setEnabled(true);
+         rbjustiitem34.setEnabled(true);
           rbnojustiitem34.setEnabled(true);
         
         }else{
           rbsi341.setEnabled(true);
         rbno341.setEnabled(true);
         btnmv341.setEnabled(false);
-        btnd341.setEnabled(false);
         txtitem34.setEnabled(false);
         btnadjnoitem34.setEnabled(false);
-          btnditem34.setEnabled(false);
-          rbjustiitem34.setEnabled(false);
+         rbjustiitem34.setEnabled(false);
           rbnojustiitem34.setEnabled(false);
             
             
@@ -6301,12 +6744,43 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem34KeyPressed
 
     private void btnadjnoitem34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem34ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(34);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem34ActionPerformed
-
-    private void btnditem34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem34ActionPerformed
 
     private void rbsi341ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi341ActionPerformed
         tr.setV341("");
@@ -6333,34 +6807,61 @@ public class Gestion_salud extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno341ActionPerformed
 
     private void btnmv341ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv341ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(53);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv341ActionPerformed
-
-    private void btnd341ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd341ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd341ActionPerformed
 
     private void noaplicaitem35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem35ActionPerformed
        if(noaplicaitem35.isSelected()){
         rbsi351.setEnabled(false);
         rbno351.setEnabled(false);
         btnmv351.setEnabled(false);
-        btnd351.setEnabled(false);
         txtitem35.setEnabled(false);
         btnadjnoitem35.setEnabled(false);
-          btnditem35.setEnabled(false);
-          rbjustiitem35.setEnabled(true);
+         rbjustiitem35.setEnabled(true);
           rbnojustiitem35.setEnabled(true);
         
         }else{
           rbsi351.setEnabled(true);
         rbno351.setEnabled(true);
         btnmv351.setEnabled(false);
-        btnd351.setEnabled(false);
         txtitem35.setEnabled(false);
         btnadjnoitem35.setEnabled(false);
-          btnditem35.setEnabled(false);
-          rbjustiitem35.setEnabled(false);
+         rbjustiitem35.setEnabled(false);
           rbnojustiitem35.setEnabled(false);
             
             
@@ -6418,12 +6919,43 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_txtitem35KeyPressed
 
     private void btnadjnoitem35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem35ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(35);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem35ActionPerformed
-
-    private void btnditem35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem35ActionPerformed
 
     private void rbsi351ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi351ActionPerformed
      tr.setV351("");
@@ -6448,34 +6980,61 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_rbno351ActionPerformed
 
     private void btnmv351ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv351ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(54);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv351ActionPerformed
-
-    private void btnd351ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd351ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd351ActionPerformed
 
     private void noaplicaitem36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem36ActionPerformed
        if(noaplicaitem36.isSelected()){
         rbsi361.setEnabled(false);
         rbno361.setEnabled(false);
         btnmv361.setEnabled(false);
-        btnd361.setEnabled(false);
         txtitem36.setEnabled(false);
         btnadjnoitem36.setEnabled(false);
-          btnditem36.setEnabled(false);
-          rbjustiitem36.setEnabled(true);
+         rbjustiitem36.setEnabled(true);
           rbnojustiitem36.setEnabled(true);
         
         }else{
           rbsi361.setEnabled(true);
         rbno361.setEnabled(true);
         btnmv361.setEnabled(false);
-        btnd361.setEnabled(false);
         txtitem36.setEnabled(false);
         btnadjnoitem36.setEnabled(false);
-          btnditem36.setEnabled(false);
-          rbjustiitem36.setEnabled(false);
+        rbjustiitem36.setEnabled(false);
           rbnojustiitem36.setEnabled(false);
             
             
@@ -6533,12 +7092,43 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_txtitem36KeyPressed
 
     private void btnadjnoitem36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem36ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(36);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem36ActionPerformed
-
-    private void btnditem36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem36ActionPerformed
 
     private void rbsi361ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi361ActionPerformed
      tr.setV361("");
@@ -6564,22 +7154,51 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_rbno361ActionPerformed
 
     private void btnmv361ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv361ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(55);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv361ActionPerformed
-
-    private void btnd361ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd361ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd361ActionPerformed
 
     private void noaplicaitem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem37ActionPerformed
      if(noaplicaitem37.isSelected()){
         rbsi371.setEnabled(false);
         rbno371.setEnabled(false);
         btnmv371.setEnabled(false);
-        btnd371.setEnabled(false);
         txtitem37.setEnabled(false);
         btnadjnoitem37.setEnabled(false);
-          btnditem37.setEnabled(false);
           rbjustiitem37.setEnabled(true);
           rbnojustiitem37.setEnabled(true);
         
@@ -6587,10 +7206,8 @@ if(txtitem35.getText().length()>2){
           rbsi371.setEnabled(true);
         rbno371.setEnabled(true);
         btnmv371.setEnabled(false);
-        btnd371.setEnabled(false);
         txtitem37.setEnabled(false);
         btnadjnoitem37.setEnabled(false);
-          btnditem37.setEnabled(false);
           rbjustiitem37.setEnabled(false);
           rbnojustiitem37.setEnabled(false);
             
@@ -6649,12 +7266,43 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_txtitem37KeyPressed
 
     private void btnadjnoitem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem37ActionPerformed
-        // TODO add your handling code here:
+      // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(37);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem37ActionPerformed
-
-    private void btnditem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem37ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem37ActionPerformed
 
     private void rbsi371ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi371ActionPerformed
        tr.setV371("");
@@ -6680,22 +7328,51 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_rbno371ActionPerformed
 
     private void btnmv371ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv371ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(56);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv371ActionPerformed
-
-    private void btnd371ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd371ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd371ActionPerformed
 
     private void noaplicaitem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem38ActionPerformed
       if(noaplicaitem38.isSelected()){
         rbsi381.setEnabled(false);
         rbno381.setEnabled(false);
         btnmv381.setEnabled(false);
-        btnd381.setEnabled(false);
         txtitem38.setEnabled(false);
         btnadjnoitem38.setEnabled(false);
-          btnditem38.setEnabled(false);
           rbjustiitem38.setEnabled(true);
           rbnojustiitem38.setEnabled(true);
         
@@ -6703,11 +7380,9 @@ if(txtitem35.getText().length()>2){
           rbsi381.setEnabled(true);
         rbno381.setEnabled(true);
         btnmv381.setEnabled(false);
-        btnd381.setEnabled(false);
         txtitem38.setEnabled(false);
         btnadjnoitem38.setEnabled(false);
-          btnditem38.setEnabled(false);
-          rbjustiitem38.setEnabled(false);
+         rbjustiitem38.setEnabled(false);
           rbnojustiitem38.setEnabled(false);
             
             
@@ -6765,12 +7440,43 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_txtitem38KeyPressed
 
     private void btnadjnoitem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem38ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(38);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem38ActionPerformed
-
-    private void btnditem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem38ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem38ActionPerformed
 
     private void rbsi381ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi381ActionPerformed
      tr.setV381("");
@@ -6795,33 +7501,60 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_rbno381ActionPerformed
 
     private void btnmv381ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv381ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(57);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv381ActionPerformed
-
-    private void btnd381ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd381ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd381ActionPerformed
 
     private void noaplicaitem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem39ActionPerformed
      if(noaplicaitem39.isSelected()){
         rbsi391.setEnabled(false);
         rbno391.setEnabled(false);
         btnmv391.setEnabled(false);
-        btnd391.setEnabled(false);
         txtitem39.setEnabled(false);
         btnadjnoitem39.setEnabled(false);
-          btnditem39.setEnabled(false);
-          rbjustiitem39.setEnabled(true);
+         rbjustiitem39.setEnabled(true);
           rbnojustiitem39.setEnabled(true);
         
         }else{
           rbsi391.setEnabled(true);
         rbno391.setEnabled(true);
         btnmv391.setEnabled(false);
-        btnd391.setEnabled(false);
         txtitem39.setEnabled(false);
         btnadjnoitem39.setEnabled(false);
-          btnditem39.setEnabled(false);
           rbjustiitem39.setEnabled(false);
           rbnojustiitem39.setEnabled(false);
             
@@ -6879,12 +7612,43 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_txtitem39KeyPressed
 
     private void btnadjnoitem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem39ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(39);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem39ActionPerformed
-
-    private void btnditem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem39ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem39ActionPerformed
 
     private void rbsi391ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi391ActionPerformed
         tr.setV391("");
@@ -6909,34 +7673,61 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_rbno391ActionPerformed
 
     private void btnmv391ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv391ActionPerformed
-        // TODO add your handling code here:
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(58);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv391ActionPerformed
-
-    private void btnd391ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd391ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd391ActionPerformed
 
     private void noaplicaitem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem40ActionPerformed
    if(noaplicaitem40.isSelected()){
         rbsi401.setEnabled(false);
         rbno401.setEnabled(false);
         btnmv401.setEnabled(false);
-        btnd401.setEnabled(false);
         txtitem40.setEnabled(false);
         btnadjnoitem40.setEnabled(false);
-          btnditem40.setEnabled(false);
-          rbjustiitem40.setEnabled(true);
+         rbjustiitem40.setEnabled(true);
           rbnojustiitem40.setEnabled(true);
         
         }else{
           rbsi401.setEnabled(true);
         rbno401.setEnabled(true);
         btnmv401.setEnabled(false);
-        btnd401.setEnabled(false);
-        txtitem40.setEnabled(false);
+       txtitem40.setEnabled(false);
         btnadjnoitem40.setEnabled(false);
-          btnditem40.setEnabled(false);
-          rbjustiitem40.setEnabled(false);
+         rbjustiitem40.setEnabled(false);
           rbnojustiitem40.setEnabled(false);
             
             
@@ -6995,12 +7786,43 @@ if(txtitem35.getText().length()>2){
     }//GEN-LAST:event_txtitem40KeyPressed
 
     private void btnadjnoitem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem40ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(40);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem40ActionPerformed
-
-    private void btnditem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem40ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem40ActionPerformed
 
     private void rbsi401ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi401ActionPerformed
       tr.setV401("");
@@ -7025,15 +7847,48 @@ if(txtitem35.getText().length()>2){
         }
     }//GEN-LAST:event_rbno401ActionPerformed
 
-    private void btnd401ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd401ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd401ActionPerformed
-
     private void btnmv401ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv401ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(59);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv401ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+/*
         // Item 23
      if(rbsi231.isSelected()){
             tr.setI231("");
@@ -7363,12 +8218,24 @@ if(txtitem35.getText().length()>2){
         if(func.insertarItem40(tr)){
             JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
 
-        }
+        }*/
+      ps.setE3(1);
+       gh.config();
+       int valo=20;
+       ps.setBarra(ps.getBarra()+valo);
+       this.dispose();
+       gh.val=ps.getBarra();
+        gh.empezar();
+       gh.setVisible(true);
+       gh.toFront();
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        dispose();
+this.dispose();
+gh.setVisible(true);
+gh.toFront();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -7406,48 +8273,6 @@ if(txtitem35.getText().length()>2){
     private javax.swing.JButton btnadjnoitem38;
     private javax.swing.JButton btnadjnoitem39;
     private javax.swing.JButton btnadjnoitem40;
-    private javax.swing.JButton btnd231;
-    private javax.swing.JButton btnd241;
-    private javax.swing.JButton btnd242;
-    private javax.swing.JButton btnd251;
-    private javax.swing.JButton btnd261;
-    private javax.swing.JButton btnd262;
-    private javax.swing.JButton btnd263;
-    private javax.swing.JButton btnd271;
-    private javax.swing.JButton btnd281;
-    private javax.swing.JButton btnd282;
-    private javax.swing.JButton btnd291;
-    private javax.swing.JButton btnd301;
-    private javax.swing.JButton btnd311;
-    private javax.swing.JButton btnd321;
-    private javax.swing.JButton btnd331;
-    private javax.swing.JButton btnd332;
-    private javax.swing.JButton btnd333;
-    private javax.swing.JButton btnd341;
-    private javax.swing.JButton btnd351;
-    private javax.swing.JButton btnd361;
-    private javax.swing.JButton btnd371;
-    private javax.swing.JButton btnd381;
-    private javax.swing.JButton btnd391;
-    private javax.swing.JButton btnd401;
-    private javax.swing.JButton btnditem23;
-    private javax.swing.JButton btnditem24;
-    private javax.swing.JButton btnditem25;
-    private javax.swing.JButton btnditem26;
-    private javax.swing.JButton btnditem27;
-    private javax.swing.JButton btnditem28;
-    private javax.swing.JButton btnditem29;
-    private javax.swing.JButton btnditem30;
-    private javax.swing.JButton btnditem31;
-    private javax.swing.JButton btnditem32;
-    private javax.swing.JButton btnditem33;
-    private javax.swing.JButton btnditem34;
-    private javax.swing.JButton btnditem35;
-    private javax.swing.JButton btnditem36;
-    private javax.swing.JButton btnditem37;
-    private javax.swing.JButton btnditem38;
-    private javax.swing.JButton btnditem39;
-    private javax.swing.JButton btnditem40;
     private javax.swing.JButton btnmv231;
     private javax.swing.JButton btnmv241;
     private javax.swing.JButton btnmv242;
@@ -7473,7 +8298,25 @@ if(txtitem35.getText().length()>2){
     private javax.swing.JButton btnmv391;
     private javax.swing.JButton btnmv401;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton30;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel114;

@@ -6,10 +6,17 @@
 package Vista;
 
 
+import Controlador.Cevaluacion;
 import Controlador.Cgestion_integral;
+import Controlador.Crecursos;
+import Modelo.Mevaluacion;
 import Modelo.Mgestion_integral;
+import Modelo.Mrecursos;
+import java.io.FileInputStream;
 import javax.swing.ButtonGroup;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 import javax.swing.UIManager;
 
 /**
@@ -18,12 +25,18 @@ import javax.swing.UIManager;
  */
 public class Gestion_integral extends javax.swing.JFrame {
 
+    Cevaluacion yu = new Cevaluacion();
+    
     /**
      * Creates new form Gestion
      */
     public Gestion_integral() {
 
         initComponents();
+         // inhabilitar botones minimizar, cerrar y maximizar
+         getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+         this.setLocationRelativeTo(null);        
+        
         /* Agrupacion de botones*/
         ButtonGroup rbnitem1 = new ButtonGroup();
         rbnitem1.add(rbjustiitem12);
@@ -140,6 +153,8 @@ public class Gestion_integral extends javax.swing.JFrame {
         /* Metodo para inhanilitar botones y labeles*/
         noVisibles();
     }
+    Mevaluacion ps = new Mevaluacion();
+    Evaluacion_Ini gh= new Evaluacion_Ini();
 
     public void noVisibles() {
         rbjustiitem12.setEnabled(false);
@@ -190,36 +205,6 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnadjnoitem21.setEnabled(false);
         btnadjnoitem22.setEnabled(false);
 
-        btnditem12.setEnabled(false);
-        btnditem13.setEnabled(false);
-        btnditem14.setEnabled(false);
-        btnditem15.setEnabled(false);
-        btnditem16.setEnabled(false);
-        btnditem17.setEnabled(false);
-        btnditem18.setEnabled(false);
-        btnditem19.setEnabled(false);
-        btnditem20.setEnabled(false);
-        btnditem21.setEnabled(false);
-        btnditem22.setEnabled(false);
-
-        btnd121.setEnabled(false);
-        btnd122.setEnabled(false);
-        btnd123.setEnabled(false);
-        btnd131.setEnabled(false);
-        btnd141.setEnabled(false);
-        btnd151.setEnabled(false);
-        btnd161.setEnabled(false);
-        btnd162.setEnabled(false);
-        btnd171.setEnabled(false);
-        btnd172.setEnabled(false);
-        btnd173.setEnabled(false);
-        btnd181.setEnabled(false);
-        btnd191.setEnabled(false);
-        btnd201.setEnabled(false);
-        btnd202.setEnabled(false);
-        btnd211.setEnabled(false);
-        btnd221.setEnabled(false);
-
         btnmv121.setEnabled(false);
         btnmv122.setEnabled(false);
         btnmv123.setEnabled(false);
@@ -264,6 +249,119 @@ public class Gestion_integral extends javax.swing.JFrame {
     }
 
     Mgestion_integral tr = new Mgestion_integral();
+    
+      public void Validar (){
+           Cgestion_integral func = new Cgestion_integral();
+           
+           
+        
+           
+       
+    if(tr.getI121().equals("")){
+        
+        JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.1 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI131().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.2 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI141().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.3 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI151().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.4 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI161().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.5 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI171().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.6 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI181().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.7 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI191().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.8 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(tr.getI201().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.9 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI211().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.10 no se ha diligenciado correctamente ");
+        
+    }
+    if(tr.getI221().equals("")){
+        
+         JOptionPane.showMessageDialog(null,"El item 1 del estandar E2.11 no se ha diligenciado correctamente ");
+        
+    }
+    
+    if(!tr.getI121().equals("") && !tr.getI131().equals("") && !tr.getI141().equals("") && !tr.getI151().equals("") && !tr.getI161().equals("") && !tr.getI171().equals("") 
+            && !tr.getI181().equals("") && !tr.getI191().equals("") && !tr.getI201().equals("") && !tr.getI211().equals("") && !tr.getI221().equals("")){
+     
+        
+    int dialogButton =JOptionPane.showConfirmDialog(null, "Esta seguro que desea guardar las respuesta diligenciadas en la evaluacion inicial,"
+                                                        + " recuerde que si acepta no podra volver a diligenciar este formulario hasta que comience una nueva E. inicial ");
+           if(dialogButton == JOptionPane.YES_OPTION){     
+        
+   func.insertarItem12(tr);
+        func.insertarItem13(tr);
+        func.insertarItem14(tr);
+        func.insertarItem15(tr);
+        func.insertarItem16(tr);
+        func.insertarItem17(tr);
+        func.insertarItem18(tr);
+        func.insertarItem19(tr);
+        func.insertarItem20(tr);
+        func.insertarItem21(tr);
+
+        if (func.insertarItem22(tr)) {
+            JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
+
+        } 
+    
+    // configurar botones y llenar el progress bar dinamicamente
+       ps.setE2(1);
+       yu.est_E2();
+       gh.config();
+       int valo=15;
+       ps.setBarra(ps.getBarra()+valo);
+       this.dispose();
+       gh.val=ps.getBarra();
+        gh.empezar();
+       gh.setVisible(true);
+       gh.toFront();
+   
+       
+           }
+       
+     }
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -287,18 +385,15 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         txtitem12 = new javax.swing.JTextArea();
         btnadjnoitem12 = new javax.swing.JButton();
-        btnditem12 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         rbsi121 = new javax.swing.JRadioButton();
         rbno121 = new javax.swing.JRadioButton();
         btnmv121 = new javax.swing.JButton();
-        btnd121 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         rbsi122 = new javax.swing.JRadioButton();
         rbno122 = new javax.swing.JRadioButton();
         btnmv122 = new javax.swing.JButton();
-        btnd122 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -306,10 +401,10 @@ public class Gestion_integral extends javax.swing.JFrame {
         rbsi123 = new javax.swing.JRadioButton();
         rbno123 = new javax.swing.JRadioButton();
         btnmv123 = new javax.swing.JButton();
-        btnd123 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -322,15 +417,14 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txtitem13 = new javax.swing.JTextArea();
         btnadjnoitem13 = new javax.swing.JButton();
-        btnditem13 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         rbsi13 = new javax.swing.JRadioButton();
         rbno131 = new javax.swing.JRadioButton();
         btnmv131 = new javax.swing.JButton();
-        btnd131 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -343,15 +437,14 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         txtitem14 = new javax.swing.JTextArea();
         btnadjnoitem14 = new javax.swing.JButton();
-        btnditem14 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         rbsi141 = new javax.swing.JRadioButton();
         rbno141 = new javax.swing.JRadioButton();
         btnmv141 = new javax.swing.JButton();
-        btnd141 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -364,17 +457,16 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         txtitem15 = new javax.swing.JTextArea();
         btnadjnoitem15 = new javax.swing.JButton();
-        btnditem15 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         rbsi151 = new javax.swing.JRadioButton();
         rbno151 = new javax.swing.JRadioButton();
         btnmv151 = new javax.swing.JButton();
-        btnd151 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
@@ -387,12 +479,10 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         txtitem16 = new javax.swing.JTextArea();
         btnadjnoitem16 = new javax.swing.JButton();
-        btnditem16 = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
         rbsi161 = new javax.swing.JRadioButton();
         rbno161 = new javax.swing.JRadioButton();
         btnmv161 = new javax.swing.JButton();
-        btnd161 = new javax.swing.JButton();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
@@ -401,7 +491,7 @@ public class Gestion_integral extends javax.swing.JFrame {
         rbsi162 = new javax.swing.JRadioButton();
         rbno162 = new javax.swing.JRadioButton();
         btnmv162 = new javax.swing.JButton();
-        btnd162 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -414,12 +504,10 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtitem17 = new javax.swing.JTextArea();
         btnadjnoitem17 = new javax.swing.JButton();
-        btnditem17 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         rbsi171 = new javax.swing.JRadioButton();
         rbno171 = new javax.swing.JRadioButton();
         btnmv171 = new javax.swing.JButton();
-        btnd171 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -427,12 +515,11 @@ public class Gestion_integral extends javax.swing.JFrame {
         rbsi173 = new javax.swing.JRadioButton();
         rbno173 = new javax.swing.JRadioButton();
         btnmv173 = new javax.swing.JButton();
-        btnd173 = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
         rbsi172 = new javax.swing.JRadioButton();
         rbno172 = new javax.swing.JRadioButton();
         btnmv172 = new javax.swing.JButton();
-        btnd172 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
@@ -445,16 +532,15 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane11 = new javax.swing.JScrollPane();
         txtitem18 = new javax.swing.JTextArea();
         btnadjnoitem18 = new javax.swing.JButton();
-        btnditem18 = new javax.swing.JButton();
         jLabel65 = new javax.swing.JLabel();
         rbsi181 = new javax.swing.JRadioButton();
         rbno181 = new javax.swing.JRadioButton();
         btnmv181 = new javax.swing.JButton();
-        btnd181 = new javax.swing.JButton();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
+        jButton19 = new javax.swing.JButton();
         jPanel20 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
@@ -467,15 +553,14 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane12 = new javax.swing.JScrollPane();
         txtitem19 = new javax.swing.JTextArea();
         btnadjnoitem19 = new javax.swing.JButton();
-        btnditem19 = new javax.swing.JButton();
         jLabel72 = new javax.swing.JLabel();
         rbsi191 = new javax.swing.JRadioButton();
         rbno191 = new javax.swing.JRadioButton();
         btnmv191 = new javax.swing.JButton();
-        btnd191 = new javax.swing.JButton();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
+        jButton20 = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         jLabel76 = new javax.swing.JLabel();
@@ -488,12 +573,10 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane13 = new javax.swing.JScrollPane();
         txtitem20 = new javax.swing.JTextArea();
         btnadjnoitem20 = new javax.swing.JButton();
-        btnditem20 = new javax.swing.JButton();
         jLabel78 = new javax.swing.JLabel();
         rbsi201 = new javax.swing.JRadioButton();
         rbno201 = new javax.swing.JRadioButton();
         btnmv201 = new javax.swing.JButton();
-        btnd201 = new javax.swing.JButton();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
@@ -501,7 +584,7 @@ public class Gestion_integral extends javax.swing.JFrame {
         rbsi202 = new javax.swing.JRadioButton();
         rbno202 = new javax.swing.JRadioButton();
         btnmv202 = new javax.swing.JButton();
-        btnd202 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
         jPanel24 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         jLabel83 = new javax.swing.JLabel();
@@ -514,15 +597,14 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane14 = new javax.swing.JScrollPane();
         txtitem21 = new javax.swing.JTextArea();
         btnadjnoitem21 = new javax.swing.JButton();
-        btnditem21 = new javax.swing.JButton();
         jLabel85 = new javax.swing.JLabel();
         rbsi211 = new javax.swing.JRadioButton();
         rbno211 = new javax.swing.JRadioButton();
         btnmv211 = new javax.swing.JButton();
-        btnd211 = new javax.swing.JButton();
         jLabel86 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
+        jButton22 = new javax.swing.JButton();
         jPanel26 = new javax.swing.JPanel();
         jPanel27 = new javax.swing.JPanel();
         jLabel89 = new javax.swing.JLabel();
@@ -535,17 +617,16 @@ public class Gestion_integral extends javax.swing.JFrame {
         jScrollPane15 = new javax.swing.JScrollPane();
         txtitem22 = new javax.swing.JTextArea();
         btnadjnoitem22 = new javax.swing.JButton();
-        btnditem22 = new javax.swing.JButton();
         jLabel91 = new javax.swing.JLabel();
         rbsi221 = new javax.swing.JRadioButton();
         rbno221 = new javax.swing.JRadioButton();
         btnmv221 = new javax.swing.JButton();
-        btnd221 = new javax.swing.JButton();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
         jLabel94 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -604,13 +685,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem12.setText("Descargar");
-        btnditem12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem12ActionPerformed(evt);
-            }
-        });
-
         jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel15.setText("1. Solicitar la política del Sistema de Gestión y Seguridad y Salud en el Trabajo (SG-SST),  de la empresa y confirmar  y solicitar que ");
 
@@ -634,13 +708,6 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv121.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv121ActionPerformed(evt);
-            }
-        });
-
-        btnd121.setText("Descargar");
-        btnd121.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd121ActionPerformed(evt);
             }
         });
 
@@ -670,13 +737,6 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv122.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv122ActionPerformed(evt);
-            }
-        });
-
-        btnd122.setText("Descargar");
-        btnd122.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd122ActionPerformed(evt);
             }
         });
 
@@ -715,13 +775,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd123.setText("Descargar");
-        btnd123.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd123ActionPerformed(evt);
-            }
-        });
-
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel22.setText("firmada, fechada y comunicada al COPASST/Vigía. (1%)");
 
@@ -731,84 +784,81 @@ public class Gestion_integral extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel24.setText("- Si la empresa aplica la normativa legal vigente en materia de riesgos laborales.");
 
+        jButton13.setText("Criterio");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel16)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(lblnocum12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblcum12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(10, 10, 10)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jLabel22))
-                                .addGap(18, 18, 18)
-                                .addComponent(noaplicaitem12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbjustiitem12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbnojustiitem12))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem12, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem12, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel16)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addGap(8, 8, 8)
-                                                .addComponent(jLabel17))
-                                            .addComponent(jLabel23)))
-                                    .addComponent(jLabel18))
-                                .addGap(31, 31, 31)
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel17))
+                                    .addComponent(jLabel23)))
+                            .addComponent(jLabel18))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(rbsi123)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbno123)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                        .addComponent(rbsi123)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rbno123)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv123)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd123))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(rbsi121)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rbno121)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv121)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd121))
+                                        .addComponent(rbno121))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(rbsi122)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rbno122)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnmv122)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnd122))))
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel24))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                                        .addComponent(rbno122)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel24)))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblnocum12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblcum12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addGap(7, 7, 7)
+                                .addComponent(jButton13)))
+                        .addGap(18, 18, 18)
+                        .addComponent(noaplicaitem12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbjustiitem12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbnojustiitem12))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnmv121)
+                    .addComponent(btnadjnoitem12, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnmv122)
+                    .addComponent(btnmv123))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -819,17 +869,16 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addComponent(rbjustiitem12)
                         .addComponent(rbnojustiitem12)
                         .addComponent(noaplicaitem12))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem12))
+                    .addComponent(btnadjnoitem12)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel5Layout.createSequentialGroup()
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel5Layout.createSequentialGroup()
                                     .addComponent(jLabel14)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel22))
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel22)
+                                        .addComponent(jButton13)))
                                 .addComponent(lblnocum12)
                                 .addComponent(lblcum12))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -840,8 +889,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(rbsi121)
                     .addComponent(rbno121)
-                    .addComponent(btnmv121)
-                    .addComponent(btnd121))
+                    .addComponent(btnmv121))
                 .addGap(3, 3, 3)
                 .addComponent(jLabel23)
                 .addGap(18, 18, 18)
@@ -849,7 +897,6 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addComponent(rbsi122)
                     .addComponent(rbno122)
                     .addComponent(btnmv122)
-                    .addComponent(btnd122)
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
@@ -858,7 +905,6 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addComponent(rbsi123)
                     .addComponent(rbno123)
                     .addComponent(btnmv123)
-                    .addComponent(btnd123)
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel19)
@@ -926,13 +972,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem13.setText("Descargar");
-        btnditem13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem13ActionPerformed(evt);
-            }
-        });
-
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel7.setText("1. Revisar si los objetivos se encuentran definidos, cumplen con las condiciones mencionadas en el criterio y existen evidencias del proceso ");
 
@@ -959,13 +998,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd131.setText("Descargar");
-        btnd131.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd131ActionPerformed(evt);
-            }
-        });
-
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -974,55 +1006,55 @@ public class Gestion_integral extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel25.setText("de difusión.");
 
+        jButton14.setText("Criterio");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addComponent(rbsi13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbno131)
+                        .addGap(192, 192, 192))))
+            .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(lblnocum13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblcum13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel12))
-                                .addGap(18, 18, 18)
-                                .addComponent(noaplicaitem13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbjustiitem13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbnojustiitem13))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(lblnocum13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblcum13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnadjnoitem13, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnditem13, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
+                            .addComponent(jLabel6)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                                .addComponent(rbsi13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbno131)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv131)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnd131)))))
-                .addGap(18, 18, 18))
+                                .addComponent(jLabel12)
+                                .addGap(7, 7, 7)
+                                .addComponent(jButton14)))
+                        .addGap(18, 18, 18)
+                        .addComponent(noaplicaitem13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbjustiitem13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbnojustiitem13))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnmv131)
+                    .addComponent(btnadjnoitem13, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1035,22 +1067,21 @@ public class Gestion_integral extends javax.swing.JFrame {
                                 .addComponent(rbjustiitem13)
                                 .addComponent(rbnojustiitem13)
                                 .addComponent(noaplicaitem13))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(btnadjnoitem13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnditem13))
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel7Layout.createSequentialGroup()
                                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel7Layout.createSequentialGroup()
                                             .addComponent(jLabel6)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel12))
+                                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel12)
+                                                .addComponent(jButton14)))
                                         .addComponent(lblnocum13)
                                         .addComponent(lblcum13))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel5))
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnadjnoitem13, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1060,8 +1091,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbsi13)
                             .addComponent(rbno131)
-                            .addComponent(btnmv131)
-                            .addComponent(btnd131))
+                            .addComponent(btnmv131))
                         .addGap(14, 14, 14)))
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1122,13 +1152,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem14.setText("Descargar");
-        btnditem14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem14ActionPerformed(evt);
-            }
-        });
-
         jLabel28.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel28.setText("1. Solicitar la evaluación inicial del Sistema de Gestión de Salud y Salud en el Trabajo. Mediante la matriz de peligros, identificación de ");
 
@@ -1155,13 +1178,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd141.setText("Descargar");
-        btnd141.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd141ActionPerformed(evt);
-            }
-        });
-
         jLabel29.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -1170,28 +1186,29 @@ public class Gestion_integral extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel31.setText("médicos iniciales y periódicos y seguimiento de indicadores entre otros.");
 
+        jButton15.setText("Criterio");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel29))
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel28)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addComponent(rbsi141)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno141)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv141)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd141)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addComponent(rbsi141)))
+                .addGap(2, 2, 2)
+                .addComponent(rbno141)
+                .addGap(18, 18, 18)
+                .addComponent(btnmv141)
+                .addGap(83, 83, 83))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29)
                 .addGap(18, 18, 18))
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1201,7 +1218,9 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel27))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(jButton15)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1214,9 +1233,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem14, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem14, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem14, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
         jPanel9Layout.setVerticalGroup(
@@ -1225,20 +1242,23 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27)
-                            .addComponent(lblnocum14)
-                            .addComponent(lblcum14))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum14)
+                                    .addComponent(lblcum14))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton15)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel9))
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem14)
                         .addComponent(rbnojustiitem14)
                         .addComponent(noaplicaitem14))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem14))
+                    .addComponent(btnadjnoitem14)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1249,8 +1269,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi141)
                         .addComponent(rbno141)
-                        .addComponent(btnmv141)
-                        .addComponent(btnd141)))
+                        .addComponent(btnmv141)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel31)
                 .addGap(18, 18, 18)
@@ -1341,13 +1360,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem15.setText("Descargar");
-        btnditem15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem15ActionPerformed(evt);
-            }
-        });
-
         jLabel35.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel35.setText("1. Solicitar el plan de trabajo anual para alcanzar los objetivos propuestos en el Sistema de Gestión de Seguridad y Salud en el Trabajo,");
 
@@ -1374,13 +1386,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd151.setText("Descargar");
-        btnd151.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd151ActionPerformed(evt);
-            }
-        });
-
         jLabel36.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -1395,30 +1400,29 @@ public class Gestion_integral extends javax.swing.JFrame {
         jLabel40.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel40.setText("cumplimiento, solicitar los planes de mejora para el logro del plan inicial.");
 
+        jButton16.setText("Criterio");
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel36))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(rbsi151)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno151)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv151)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd151)))
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(rbsi151)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbno151)
+                .addGap(18, 18, 18)
+                .addComponent(btnmv151, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(2, 2, 2)
+                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel36)
                 .addGap(18, 18, 18))
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1430,7 +1434,10 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel34)
-                            .addComponent(jLabel39)))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton16))))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1443,9 +1450,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem15, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem15, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem15, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
         jPanel11Layout.setVerticalGroup(
@@ -1460,17 +1465,16 @@ public class Gestion_integral extends javax.swing.JFrame {
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel39)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jButton16))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel33))
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem15)
                         .addComponent(rbnojustiitem15)
                         .addComponent(noaplicaitem15))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem15))
+                    .addComponent(btnadjnoitem15)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1481,8 +1485,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi151)
                         .addComponent(rbno151)
-                        .addComponent(btnmv151)
-                        .addComponent(btnd151)))
+                        .addComponent(btnmv151)))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(18, 18, Short.MAX_VALUE)
@@ -1568,13 +1571,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem16.setText("Descargar");
-        btnditem16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem16ActionPerformed(evt);
-            }
-        });
-
         jLabel43.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel43.setText("1. Constatar la existencia de un sistema de archivo o retención documental, para los registros y documentos que soportan el Sistema ");
 
@@ -1598,13 +1594,6 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv161.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv161ActionPerformed(evt);
-            }
-        });
-
-        btnd161.setText("Descargar");
-        btnd161.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd161ActionPerformed(evt);
             }
         });
 
@@ -1645,12 +1634,7 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd162.setText("Descargar");
-        btnd162.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd162ActionPerformed(evt);
-            }
-        });
+        jButton17.setText("Criterio");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1658,23 +1642,20 @@ public class Gestion_integral extends javax.swing.JFrame {
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel44))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel43)
-                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                        .addComponent(rbsi161)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbno161)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmv161)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd161)))
+                    .addComponent(jLabel43)
+                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(rbsi161)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbno161)
+                .addGap(18, 18, 18)
+                .addComponent(btnmv161)
+                .addGap(97, 97, 97))
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(2, 2, 2)
+                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel44)
                 .addGap(18, 18, 18))
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1686,7 +1667,10 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel42)
-                            .addComponent(jLabel47)))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel47)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton17))))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1699,9 +1683,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem16, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem16, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem16, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1709,11 +1691,9 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addComponent(rbsi162)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbno162)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnmv162)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd162)
-                .addGap(18, 18, 18))
+                .addGap(97, 97, 97))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1727,17 +1707,16 @@ public class Gestion_integral extends javax.swing.JFrame {
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addComponent(jLabel42)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel47)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel47)
+                                    .addComponent(jButton17))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel41))
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem16)
                         .addComponent(rbnojustiitem16)
                         .addComponent(noaplicaitem16))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem16))
+                    .addComponent(btnadjnoitem16)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1748,15 +1727,13 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi161)
                         .addComponent(rbno161)
-                        .addComponent(btnmv161)
-                        .addComponent(btnd161)))
+                        .addComponent(btnmv161)))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
                     .addComponent(rbsi162)
                     .addComponent(rbno162)
-                    .addComponent(btnmv162)
-                    .addComponent(btnd162))
+                    .addComponent(btnmv162))
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1823,13 +1800,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem17.setText("Descargar");
-        btnditem17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem17ActionPerformed(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel3.setText("1. Solicitar los registros documentales que evidencien la rendición de cuentas anual, al interior de la empresa. ");
 
@@ -1853,13 +1823,6 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv171.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv171ActionPerformed(evt);
-            }
-        });
-
-        btnd171.setText("Descargar");
-        btnd171.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd171ActionPerformed(evt);
             }
         });
 
@@ -1897,13 +1860,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd173.setText("Descargar");
-        btnd173.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd173ActionPerformed(evt);
-            }
-        });
-
         jLabel49.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel49.setText("los criterios del requisito.");
 
@@ -1930,30 +1886,12 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd172.setText("Descargar");
-        btnd172.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd172ActionPerformed(evt);
-            }
-        });
+        jButton18.setText("Criterio");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rbsi171)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rbno171)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmv171)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd171)
-                .addGap(18, 18, 18))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1962,52 +1900,57 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jButton18)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(noaplicaitem17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(4, 4, 4)
                 .addComponent(rbjustiitem17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbnojustiitem17)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem17, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem17, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem17, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(852, 852, 852)
-                        .addComponent(jLabel4))
-                    .addComponent(jLabel49)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(273, 273, 273)
-                        .addComponent(btnd173))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(852, 852, 852)
+                                .addComponent(jLabel4))
+                            .addComponent(jLabel49)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(rbsi173)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbno173)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                                 .addComponent(btnmv173))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(rbsi172)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rbno172)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmv172)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnd172)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnmv172))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi171)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbno171)
+                        .addGap(37, 37, 37)
+                        .addComponent(btnmv171)))
+                .addGap(78, 78, 78))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2018,26 +1961,24 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblnocum17)
                             .addComponent(lblcum17)
-                            .addComponent(jLabel2))
-                        .addGap(34, 34, 34)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton18)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel1))
+                    .addComponent(btnadjnoitem17)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem17)
                         .addComponent(rbnojustiitem17)
-                        .addComponent(noaplicaitem17))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem17))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(noaplicaitem17)))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbsi171)
-                        .addComponent(rbno171)
-                        .addComponent(btnmv171)
-                        .addComponent(btnd171)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbsi171)
+                    .addComponent(rbno171)
+                    .addComponent(btnmv171)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2052,8 +1993,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(rbsi172)
                                 .addComponent(rbno172)
-                                .addComponent(btnmv172)
-                                .addComponent(btnd172)))
+                                .addComponent(btnmv172)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -2063,8 +2003,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                                 .addComponent(rbsi173)
                                 .addComponent(rbno173)
                                 .addComponent(btnmv173)
-                                .addComponent(jLabel32)
-                                .addComponent(btnd173)))
+                                .addComponent(jLabel32)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -2157,13 +2096,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem18.setText("Descargar");
-        btnditem18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem18ActionPerformed(evt);
-            }
-        });
-
         jLabel65.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel65.setText("1. Solicitar la matriz legal en la cual se contemple la legislación nacional vigente en materia de riesgos laborales.");
 
@@ -2190,13 +2122,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd181.setText("Descargar");
-        btnd181.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd181ActionPerformed(evt);
-            }
-        });
-
         jLabel66.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel67.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -2207,6 +2132,8 @@ public class Gestion_integral extends javax.swing.JFrame {
 
         jLabel69.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel69.setText("- Normas técnicas de cumplimiento de acuerdo con los peligros / riesgos identificados en la empresa.");
+
+        jButton19.setText("Criterio");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -2222,9 +2149,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addComponent(rbno181)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnmv181)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd181)
-                .addGap(18, 18, 18))
+                .addGap(109, 109, 109))
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
@@ -2233,7 +2158,9 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel64))
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel64)
+                            .addComponent(jButton19)))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2246,9 +2173,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem18, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem18, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem18, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2268,17 +2193,17 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblnocum18)
                             .addComponent(lblcum18)
-                            .addComponent(jLabel64))
-                        .addGap(34, 34, 34)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jLabel64)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton19)))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel63))
                     .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem18)
                         .addComponent(rbnojustiitem18)
                         .addComponent(noaplicaitem18))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem18))
+                    .addComponent(btnadjnoitem18)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2286,8 +2211,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi181)
                         .addComponent(rbno181)
-                        .addComponent(btnmv181)
-                        .addComponent(btnd181)))
+                        .addComponent(btnmv181)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel67)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2358,13 +2282,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem19.setText("Descargar");
-        btnditem19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem19ActionPerformed(evt);
-            }
-        });
-
         jLabel72.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel72.setText("1. Consultar la existencia de mecanismos de comunicación interna y externa que tiene la empresa en materia de Salud y Seguridad ");
 
@@ -2391,13 +2308,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd191.setText("Descargar");
-        btnd191.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd191ActionPerformed(evt);
-            }
-        });
-
         jLabel73.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel74.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -2405,6 +2315,8 @@ public class Gestion_integral extends javax.swing.JFrame {
 
         jLabel75.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel75.setText("y Salud en el Trabajo SG-SST (1%)");
+
+        jButton20.setText("Criterio");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -2416,13 +2328,11 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rbsi191)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rbno191)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
                 .addComponent(btnmv191)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd191)
-                .addGap(18, 18, 18))
+                .addGap(55, 55, 55))
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
@@ -2433,7 +2343,10 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel71)
-                            .addComponent(jLabel75)))
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addComponent(jLabel75)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton20))))
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2446,9 +2359,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem19, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem19, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem19, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGap(852, 852, 852)
@@ -2467,17 +2378,16 @@ public class Gestion_integral extends javax.swing.JFrame {
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addComponent(jLabel71)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel75)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel75)
+                                    .addComponent(jButton20))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel70))
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem19)
                         .addComponent(rbnojustiitem19)
                         .addComponent(noaplicaitem19))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem19))
+                    .addComponent(btnadjnoitem19)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2485,8 +2395,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi191)
                         .addComponent(rbno191)
-                        .addComponent(btnmv191)
-                        .addComponent(btnd191)))
+                        .addComponent(btnmv191)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel74)
                 .addGap(31, 31, 31)
@@ -2549,13 +2458,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem20.setText("Descargar");
-        btnditem20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem20ActionPerformed(evt);
-            }
-        });
-
         jLabel78.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel78.setText("1. Verificar el cumplimiento del procedimiento para la identificación y evaluación de las especificaciones en Seguridad y Salud ");
 
@@ -2579,13 +2481,6 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv201.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv201ActionPerformed(evt);
-            }
-        });
-
-        btnd201.setText("Descargar");
-        btnd201.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd201ActionPerformed(evt);
             }
         });
 
@@ -2623,30 +2518,12 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd202.setText("Descargar");
-        btnd202.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd202ActionPerformed(evt);
-            }
-        });
+        jButton21.setText("Criterio");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rbsi201)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rbno201)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmv201)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd201)
-                .addGap(18, 18, 18))
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel23Layout.createSequentialGroup()
@@ -2657,7 +2534,10 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel77)
-                            .addComponent(jLabel81)))
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(jLabel81)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton21))))
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2670,23 +2550,31 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem20, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem20, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem20, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(394, 394, 394)
-                .addComponent(jLabel79)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rbsi202)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rbno202)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmv202)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd202)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(394, 394, 394)
+                        .addComponent(jLabel79)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi202)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbno202)
+                        .addGap(28, 28, 28)
+                        .addComponent(btnmv202))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rbsi201)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbno201)
+                        .addGap(36, 36, 36)
+                        .addComponent(btnmv201)))
+                .addGap(79, 79, 79))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2700,17 +2588,16 @@ public class Gestion_integral extends javax.swing.JFrame {
                             .addGroup(jPanel23Layout.createSequentialGroup()
                                 .addComponent(jLabel77)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel81)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel81)
+                                    .addComponent(jButton21))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel76))
                     .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem20)
                         .addComponent(rbnojustiitem20)
                         .addComponent(noaplicaitem20))
-                    .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem20))
+                    .addComponent(btnadjnoitem20)
                     .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2718,8 +2605,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi201)
                         .addComponent(rbno201)
-                        .addComponent(btnmv201)
-                        .addComponent(btnd201)))
+                        .addComponent(btnmv201)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel80)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2733,8 +2619,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                             .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(rbsi202)
                                 .addComponent(rbno202)
-                                .addComponent(btnmv202)
-                                .addComponent(btnd202))
+                                .addComponent(btnmv202))
                             .addComponent(jLabel82))
                         .addGap(21, 21, 21))))
         );
@@ -2807,13 +2692,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem21.setText("Descargar");
-        btnditem21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem21ActionPerformed(evt);
-            }
-        });
-
         jLabel85.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel85.setText("1. Constatar que para la selección y evaluación  de proveedores y/o contratistas, se valida que dichos proveedores o contratistas tienen");
 
@@ -2840,13 +2718,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnd211.setText("Descargar");
-        btnd211.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd211ActionPerformed(evt);
-            }
-        });
-
         jLabel86.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel87.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -2854,6 +2725,8 @@ public class Gestion_integral extends javax.swing.JFrame {
 
         jLabel88.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel88.setText("de controlarlos a la hora de ejecutar a realizar el servicio en la empresa donde prestan el servicio.");
+
+        jButton22.setText("Criterio");
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -2867,11 +2740,9 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addComponent(rbsi211)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbno211)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(39, 39, 39)
                 .addComponent(btnmv211)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd211)
-                .addGap(18, 18, 18))
+                .addGap(76, 76, 76))
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel25Layout.createSequentialGroup()
@@ -2880,7 +2751,9 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblcum21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel84))
+                        .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel84)
+                            .addComponent(jButton22)))
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2893,9 +2766,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem21, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem21, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem21, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2911,20 +2782,23 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblnocum21)
-                            .addComponent(lblcum21)
-                            .addComponent(jLabel84))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblnocum21)
+                                    .addComponent(lblcum21))
+                                .addGap(34, 34, 34))
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addComponent(jLabel84)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton22)
+                                .addGap(18, 18, 18)))
                         .addComponent(jLabel83))
                     .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem21)
                         .addComponent(rbnojustiitem21)
                         .addComponent(noaplicaitem21))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem21))
+                    .addComponent(btnadjnoitem21)
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2932,8 +2806,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi211)
                         .addComponent(rbno211)
-                        .addComponent(btnmv211)
-                        .addComponent(btnd211)))
+                        .addComponent(btnmv211)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel87)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -3011,13 +2884,6 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
-        btnditem22.setText("Descargar");
-        btnditem22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnditem22ActionPerformed(evt);
-            }
-        });
-
         jLabel91.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel91.setText("1. Solicitar el documento para evaluar el impacto sobre la Seguridad y Salud en el Trabajo  en cambios internos y externos que se presenten ");
 
@@ -3041,13 +2907,6 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv221.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmv221ActionPerformed(evt);
-            }
-        });
-
-        btnd221.setText("Descargar");
-        btnd221.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnd221ActionPerformed(evt);
             }
         });
 
@@ -3076,6 +2935,8 @@ public class Gestion_integral extends javax.swing.JFrame {
             }
         });
 
+        jButton23.setText("Criterio");
+
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
@@ -3086,11 +2947,9 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addComponent(rbsi221)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbno221)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addComponent(btnmv221)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnd221)
-                .addGap(18, 18, 18))
+                .addGap(79, 79, 79))
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel27Layout.createSequentialGroup()
@@ -3101,7 +2960,10 @@ public class Gestion_integral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel90)
-                            .addComponent(jLabel94)))
+                            .addGroup(jPanel27Layout.createSequentialGroup()
+                                .addComponent(jLabel94)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton23))))
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -3114,9 +2976,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnadjnoitem22, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnditem22, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnadjnoitem22, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3146,17 +3006,16 @@ public class Gestion_integral extends javax.swing.JFrame {
                             .addGroup(jPanel27Layout.createSequentialGroup()
                                 .addComponent(jLabel90)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel94)))
-                        .addGap(22, 22, 22)
+                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel94)
+                                    .addComponent(jButton23))))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel89))
                     .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbjustiitem22)
                         .addComponent(rbnojustiitem22)
                         .addComponent(noaplicaitem22))
-                    .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addComponent(btnadjnoitem22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnditem22))
+                    .addComponent(btnadjnoitem22)
                     .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3164,8 +3023,7 @@ public class Gestion_integral extends javax.swing.JFrame {
                     .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbsi221)
                         .addComponent(rbno221)
-                        .addComponent(btnmv221)
-                        .addComponent(btnd221)))
+                        .addComponent(btnmv221)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel93)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3287,14 +3145,11 @@ public class Gestion_integral extends javax.swing.JFrame {
             btnmv121.setEnabled(false);
             btnmv122.setEnabled(false);
             btnmv123.setEnabled(false);
-            btnd121.setEnabled(false);
-            btnd122.setEnabled(false);
-            btnd123.setEnabled(false);
             txtitem12.setEnabled(false);
             btnadjnoitem12.setEnabled(false);
-            btnditem12.setEnabled(false);
             rbjustiitem12.setEnabled(true);
             rbnojustiitem12.setEnabled(true);
+            tr.setI121("");
 
         } else {
             rbsi121.setEnabled(true);
@@ -3306,12 +3161,8 @@ public class Gestion_integral extends javax.swing.JFrame {
             btnmv121.setEnabled(false);
             btnmv122.setEnabled(false);
             btnmv123.setEnabled(false);
-            btnd121.setEnabled(false);
-            btnd122.setEnabled(false);
-            btnd123.setEnabled(false);
             txtitem12.setEnabled(false);
             btnadjnoitem12.setEnabled(false);
-            btnditem12.setEnabled(false);
             rbjustiitem12.setEnabled(false);
             rbnojustiitem12.setEnabled(false);
 
@@ -3323,6 +3174,7 @@ public class Gestion_integral extends javax.swing.JFrame {
     private void rbjustiitem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem12ActionPerformed
 
         txtitem12.setEnabled(true);
+        tr.setI121("");
 
     }//GEN-LAST:event_rbjustiitem12ActionPerformed
 
@@ -3357,24 +3209,16 @@ public class Gestion_integral extends javax.swing.JFrame {
             tr.setI121("Si");
             tr.setA121("");
             tr.setA121("No");
-            tr.setV121("");
-            tr.setV122("");
-            tr.setV123("");
+            tr.setV121("no aplica");
+            tr.setV122("no aplica");
+            tr.setV123("no aplica");
             tr.setJ121("");
             tr.setJ121(txtitem12.getText());
 
         } else {
             tr.setJ121("");
             tr.setI121("");
-            tr.setI121("no");
-            tr.setA121("");
-            tr.setA121("si");
-            tr.setV121("");
-            tr.setV121("No");
-            tr.setV122("");
-            tr.setV122("No");
-            tr.setV123("");
-            tr.setV123("No");
+            
 
             lblcum12.setEnabled(false);
             lblnocum12.setEnabled(false);
@@ -3385,12 +3229,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem12KeyPressed
 
     private void btnadjnoitem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem12ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(12);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem12ActionPerformed
-
-    private void btnditem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem12ActionPerformed
 
     private void rbsi121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi121ActionPerformed
         tr.setV121("");
@@ -3417,12 +3292,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno121ActionPerformed
 
     private void btnmv121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv121ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(19);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv121ActionPerformed
-
-    private void btnd121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd121ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd121ActionPerformed
 
     private void rbsi122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi122ActionPerformed
         tr.setV122("");
@@ -3449,12 +3355,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno122ActionPerformed
 
     private void btnmv122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv122ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(20);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv122ActionPerformed
-
-    private void btnd122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd122ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd122ActionPerformed
 
     private void rbsi123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi123ActionPerformed
         tr.setV123("");
@@ -3480,33 +3417,61 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno123ActionPerformed
 
     private void btnmv123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv123ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(21);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv123ActionPerformed
-
-    private void btnd123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd123ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd123ActionPerformed
 
     private void noaplicaitem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem13ActionPerformed
         if (noaplicaitem13.isSelected()) {
             rbsi13.setEnabled(false);
             rbno131.setEnabled(false);
             btnmv131.setEnabled(false);
-            btnd131.setEnabled(false);
             txtitem13.setEnabled(false);
             btnadjnoitem13.setEnabled(false);
-            btnditem13.setEnabled(false);
             rbjustiitem13.setEnabled(true);
             rbnojustiitem13.setEnabled(true);
+             tr.setI131("");
 
         } else {
             rbsi13.setEnabled(true);
             rbno131.setEnabled(true);
             btnmv131.setEnabled(false);
-            btnd131.setEnabled(false);
             txtitem13.setEnabled(false);
             btnadjnoitem13.setEnabled(false);
-            btnditem13.setEnabled(false);
             rbjustiitem13.setEnabled(false);
             rbnojustiitem13.setEnabled(false);
 
@@ -3517,6 +3482,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem13ActionPerformed
         txtitem13.setEnabled(true);
+         tr.setI131("");
     }//GEN-LAST:event_rbjustiitem13ActionPerformed
 
     private void rbnojustiitem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem13ActionPerformed
@@ -3546,6 +3512,7 @@ public class Gestion_integral extends javax.swing.JFrame {
             tr.setA131("");
             tr.setA131("No");
             tr.setV131("");
+            tr.setV131("no aplica");
             tr.setA131("No");
             tr.setJ131("");
             tr.setJ131(txtitem13.getText());
@@ -3553,12 +3520,7 @@ public class Gestion_integral extends javax.swing.JFrame {
         } else {
             tr.setJ131("");
             tr.setI131("");
-            tr.setI131("No");
-            tr.setA131("");
-            tr.setA131("No");
-            tr.setV131("");
-            tr.setV131("No");
-
+            
             lblcum13.setEnabled(false);
             lblnocum13.setEnabled(false);
             btnadjnoitem13.setEnabled(false);
@@ -3568,12 +3530,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem13KeyPressed
 
     private void btnadjnoitem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem13ActionPerformed
-        // TODO add your handling code here:
+         // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(13);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem13ActionPerformed
-
-    private void btnditem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem13ActionPerformed
 
     private void rbsi13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi13ActionPerformed
         tr.setV131("");
@@ -3599,13 +3592,44 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno131ActionPerformed
 
     private void btnmv131ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv131ActionPerformed
-
+  // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(22);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
 
     }//GEN-LAST:event_btnmv131ActionPerformed
-
-    private void btnd131ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd131ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd131ActionPerformed
 
     private void noaplicaitem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem14ActionPerformed
 
@@ -3613,21 +3637,18 @@ public class Gestion_integral extends javax.swing.JFrame {
             rbsi141.setEnabled(false);
             rbno141.setEnabled(false);
             btnmv141.setEnabled(false);
-            btnd141.setEnabled(false);
             txtitem14.setEnabled(false);
             btnadjnoitem14.setEnabled(false);
-            btnditem14.setEnabled(false);
             rbjustiitem14.setEnabled(true);
             rbnojustiitem14.setEnabled(true);
+             tr.setI141("");
 
         } else {
             rbsi141.setEnabled(true);
             rbno141.setEnabled(true);
             btnmv141.setEnabled(false);
-            btnd141.setEnabled(false);
             txtitem14.setEnabled(false);
             btnadjnoitem14.setEnabled(false);
-            btnditem14.setEnabled(false);
             rbjustiitem14.setEnabled(false);
             rbnojustiitem14.setEnabled(false);
 
@@ -3637,6 +3658,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem14ActionPerformed
         txtitem14.setEnabled(true);
+         tr.setI141("");
     }//GEN-LAST:event_rbjustiitem14ActionPerformed
 
     private void rbnojustiitem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem14ActionPerformed
@@ -3666,6 +3688,7 @@ public class Gestion_integral extends javax.swing.JFrame {
             tr.setA141("");
             tr.setA141("No");
             tr.setV141("");
+            tr.setV141("no aplica");
             tr.setA141("No");
             tr.setJ141("");
             tr.setJ141(txtitem14.getText());
@@ -3673,12 +3696,7 @@ public class Gestion_integral extends javax.swing.JFrame {
         } else {
             tr.setJ141("");
             tr.setI141("");
-            tr.setI141("No");
-            tr.setA141("");
-            tr.setA141("No");
-            tr.setV141("");
-            tr.setV141("No");
-
+            
             lblcum14.setEnabled(false);
             lblnocum14.setEnabled(false);
             btnadjnoitem14.setEnabled(false);
@@ -3687,12 +3705,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem14KeyPressed
 
     private void btnadjnoitem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem14ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(14);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem14ActionPerformed
-
-    private void btnditem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem14ActionPerformed
 
     private void rbsi141ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi141ActionPerformed
         tr.setV141("");
@@ -3718,33 +3767,61 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno141ActionPerformed
 
     private void btnmv141ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv141ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(23);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv141ActionPerformed
-
-    private void btnd141ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd141ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd141ActionPerformed
 
     private void noaplicaitem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem15ActionPerformed
         if (noaplicaitem15.isSelected()) {
             rbsi151.setEnabled(false);
             rbno151.setEnabled(false);
             btnmv151.setEnabled(false);
-            btnd151.setEnabled(false);
             txtitem15.setEnabled(false);
             btnadjnoitem15.setEnabled(false);
-            btnditem15.setEnabled(false);
             rbjustiitem15.setEnabled(true);
             rbnojustiitem15.setEnabled(true);
+            tr.setI151("");
 
         } else {
             rbsi151.setEnabled(true);
             rbno151.setEnabled(true);
             btnmv151.setEnabled(false);
-            btnd151.setEnabled(false);
             txtitem15.setEnabled(false);
             btnadjnoitem15.setEnabled(false);
-            btnditem15.setEnabled(false);
             rbjustiitem15.setEnabled(false);
             rbnojustiitem15.setEnabled(false);
 
@@ -3753,6 +3830,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem15ActionPerformed
         txtitem15.setEnabled(true);
+        tr.setI151("");
     }//GEN-LAST:event_rbjustiitem15ActionPerformed
 
     private void rbnojustiitem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem15ActionPerformed
@@ -3780,6 +3858,7 @@ public class Gestion_integral extends javax.swing.JFrame {
             tr.setA151("");
             tr.setA151("No");
             tr.setV151("");
+            tr.setV151("no aplica");
             tr.setA151("No");
             tr.setJ151("");
             tr.setJ151(txtitem15.getText());
@@ -3787,12 +3866,7 @@ public class Gestion_integral extends javax.swing.JFrame {
         } else {
             tr.setJ151("");
             tr.setI151("");
-            tr.setI151("No");
-            tr.setA151("");
-            tr.setA151("No");
-            tr.setV151("");
-            tr.setV151("No");
-
+            
             lblcum15.setEnabled(false);
             lblnocum15.setEnabled(false);
             btnadjnoitem15.setEnabled(false);
@@ -3800,12 +3874,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem15KeyPressed
 
     private void btnadjnoitem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem15ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(15);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem15ActionPerformed
-
-    private void btnditem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem15ActionPerformed
 
     private void rbsi151ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi151ActionPerformed
         tr.setV151("");
@@ -3830,12 +3935,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno151ActionPerformed
 
     private void btnmv151ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv151ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(24);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv151ActionPerformed
-
-    private void btnd151ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd151ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd151ActionPerformed
 
     private void noaplicaitem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem16ActionPerformed
         if (noaplicaitem16.isSelected()) {
@@ -3845,13 +3981,11 @@ public class Gestion_integral extends javax.swing.JFrame {
             rbno162.setEnabled(false);
             btnmv161.setEnabled(false);
             btnmv162.setEnabled(false);
-            btnd161.setEnabled(false);
-            btnd162.setEnabled(false);
             txtitem16.setEnabled(false);
             btnadjnoitem16.setEnabled(false);
-            btnditem16.setEnabled(false);
             rbjustiitem16.setEnabled(true);
             rbnojustiitem16.setEnabled(true);
+            tr.setI161("");
 
         } else {
             rbsi161.setEnabled(true);
@@ -3860,11 +3994,8 @@ public class Gestion_integral extends javax.swing.JFrame {
             rbno162.setEnabled(true);
             btnmv161.setEnabled(false);
             btnmv162.setEnabled(false);
-            btnd161.setEnabled(false);
-            btnd162.setEnabled(false);
             txtitem16.setEnabled(false);
             btnadjnoitem16.setEnabled(false);
-            btnditem16.setEnabled(false);
             rbjustiitem16.setEnabled(false);
             rbnojustiitem16.setEnabled(false);
 
@@ -3873,6 +4004,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem16ActionPerformed
         txtitem16.setEnabled(true);
+        tr.setI161("");
     }//GEN-LAST:event_rbjustiitem16ActionPerformed
 
     private void rbnojustiitem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem16ActionPerformed
@@ -3903,21 +4035,16 @@ public class Gestion_integral extends javax.swing.JFrame {
             tr.setA161("");
             tr.setA161("No");
             tr.setV161("");
+            tr.setV161("no aplica");
             tr.setV162("");
+            tr.setV162("no aplica");
             tr.setJ161("");
             tr.setJ161(txtitem16.getText());
 
         } else {
             tr.setJ161("");
             tr.setI161("");
-            tr.setI161("No");
-            tr.setA161("");
-            tr.setA161("No");
-            tr.setV161("");
-            tr.setV161("No");
-            tr.setV162("");
-            tr.setV162("No");
-
+           
             lblcum16.setEnabled(false);
             lblnocum16.setEnabled(false);
             btnadjnoitem16.setEnabled(false);
@@ -3927,12 +4054,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem16KeyPressed
 
     private void btnadjnoitem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem16ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(16);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem16ActionPerformed
-
-    private void btnditem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem16ActionPerformed
 
     private void rbsi161ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi161ActionPerformed
      tr.setV161("");
@@ -3957,12 +4115,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno161ActionPerformed
 
     private void btnmv161ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv161ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(25);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv161ActionPerformed
-
-    private void btnd161ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd161ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd161ActionPerformed
 
     private void rbsi162ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi162ActionPerformed
     tr.setV162("");
@@ -3987,12 +4176,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno162ActionPerformed
 
     private void btnmv162ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv162ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(26);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv162ActionPerformed
-
-    private void btnd162ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd162ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd162ActionPerformed
 
     private void noaplicaitem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem17ActionPerformed
 
@@ -4006,14 +4226,12 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv171.setEnabled(false);
         btnmv172.setEnabled(false);
         btnmv173.setEnabled(false);
-        btnd171.setEnabled(false);
-         btnd172.setEnabled(false);
-          btnd173.setEnabled(false);
-          txtitem17.setEnabled(false);
+        txtitem17.setEnabled(false);
           btnadjnoitem17.setEnabled(false);
-          btnditem17.setEnabled(false);
           rbjustiitem17.setEnabled(true);
           rbnojustiitem17.setEnabled(true);
+          
+          tr.setI171("");
         
         }else{
           rbsi171.setEnabled(true);
@@ -4025,12 +4243,8 @@ public class Gestion_integral extends javax.swing.JFrame {
         btnmv171.setEnabled(false);
         btnmv172.setEnabled(false);
         btnmv173.setEnabled(false);
-        btnd171.setEnabled(false);
-         btnd172.setEnabled(false);
-          btnd173.setEnabled(false);
-          txtitem17.setEnabled(false);
+        txtitem17.setEnabled(false);
           btnadjnoitem17.setEnabled(false);
-          btnditem17.setEnabled(false);
           rbjustiitem17.setEnabled(false);
           rbnojustiitem17.setEnabled(false);  
             
@@ -4042,6 +4256,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem17ActionPerformed
 
+        tr.setI171("");
        txtitem17.setEnabled(true);
     }//GEN-LAST:event_rbjustiitem17ActionPerformed
 
@@ -4078,8 +4293,11 @@ public class Gestion_integral extends javax.swing.JFrame {
        tr.setA171("");
        tr.setA171("No");
        tr.setV171("");
+       tr.setV171("no aplica");
        tr.setV172("");
+       tr.setV172("no aplica");
        tr.setV173("");
+       tr.setV173("no aplica");
        tr.setJ171("");
        tr.setJ171(txtitem17.getText());
        
@@ -4087,16 +4305,7 @@ public class Gestion_integral extends javax.swing.JFrame {
    }else{
         tr.setJ171("");
             tr.setI171("");
-             tr.setI171("No");
-              tr.setA171("");
-             tr.setA171("No");
-             tr.setV171("");
-        tr.setV171("No");
-        tr.setV172("");
-        tr.setV172("No");
-        tr.setV173("");
-        tr.setV173("No");
-        
+               
             lblcum17.setEnabled(false);
             lblnocum17.setEnabled(false);
             btnadjnoitem17.setEnabled(false);
@@ -4104,66 +4313,45 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem17KeyPressed
 
     private void btnadjnoitem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem17ActionPerformed
-/*        // objeto para guardar la informacion de las variables (MVC)
-        Lrecursos func = new Lrecursos();
+  // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
         // ventanilla de carga
         JFileChooser se = new JFileChooser();
         //para que solo acepte archivos
-        se.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        // cuadro dialogo abrir
-        int estado = se.showOpenDialog(null);
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(17);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
 
-        // Si aprueba el archivo
-        if (estado == JFileChooser.APPROVE_OPTION) {
 
-            try {
-
-                // mando los datos a las variables
-                tr.setFi1111(new FileInputStream(se.getSelectedFile()));
-                tr.setLongitud((int) se.getSelectedFile().length());
-                tr.setId(1);
-                tr.setNombre("\\" + (se.getSelectedFile().getName()));
-
-                //llama el metodo
-                if (func.insertarArchivos(tr)) {
-                    btnadjnoitem17.setEnabled(false);
-                    btnditem17.setEnabled(true);
-                    JOptionPane.showMessageDialog(null, "El archivo ha sido guardado exitosamente");
-                }
-
-            } catch (Exception e) {
-
-            }
-
-        }*/
     }//GEN-LAST:event_btnadjnoitem17ActionPerformed
-
-    private void btnditem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem17ActionPerformed
-    /*    // objetos para el metodo
-        Lrecursos func = new Lrecursos();
-        JFileChooser elegirCarpeta = new JFileChooser();
-
-        // para elegir solamente rutas de directorio
-        elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        // ventanilla para guardar
-        int estado = elegirCarpeta.showSaveDialog(null);
-        // si aprueba
-        if (estado == JFileChooser.APPROVE_OPTION) {
-
-            try {
-                // envia datos a las variables
-                tr.setId(1);
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-
-                // llama metodo
-                func.descargarArchivo();
-
-            } catch (Exception ex) {
-
-            }
-
-        }*/
-    }//GEN-LAST:event_btnditem17ActionPerformed
 
     private void rbsi171ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi171ActionPerformed
        tr.setV171("");
@@ -4188,66 +4376,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno171ActionPerformed
 
     private void btnmv171ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv171ActionPerformed
-    /*    // objeto para guardar la informacion de las variables (MVC)
-        Lrecursos func = new Lrecursos();
+      // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
         // ventanilla de carga
         JFileChooser se = new JFileChooser();
         //para que solo acepte archivos
-        se.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        // cuadro dialogo abrir
-        int estado = se.showOpenDialog(null);
-
-        // Si aprueba el archivo
-        if (estado == JFileChooser.APPROVE_OPTION) {
-
-            try {
-
-                // mando los datos a las variables
-                tr.setFi1111(new FileInputStream(se.getSelectedFile()));
-                tr.setLongitud((int) se.getSelectedFile().length());
-                tr.setId(1);
-                tr.setNombre("\\" + (se.getSelectedFile().getName()));
-
-                //llama el metodo
-                if (func.insertarArchivosVeri(tr)) {
-                    btnmv171.setEnabled(false);
-                    btnd171.setEnabled(true);
-                    JOptionPane.showMessageDialog(null, "El archivo ha sido guardado exitosamente");
-                }
-
-            } catch (Exception e) {
-
-            }
-
-        }*/
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(27);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv171ActionPerformed
-
-    private void btnd171ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd171ActionPerformed
-   /*     // objetos para el metodo
-        Lrecursos func = new Lrecursos();
-        JFileChooser elegirCarpeta = new JFileChooser();
-
-        // para elegir solamente rutas de directorio
-        elegirCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        // ventanilla para guardar
-        int estado = elegirCarpeta.showSaveDialog(null);
-        // si aprueba
-        if (estado == JFileChooser.APPROVE_OPTION) {
-
-            try {
-                // envia datos a las variables
-                tr.setId(1);
-                tr.setPath(elegirCarpeta.getSelectedFile().getAbsolutePath());
-
-                // llama metodo
-                func.descargarArchivoVeri();
-
-            } catch (Exception ex) {
-
-            }
-
-        }*/
-    }//GEN-LAST:event_btnd171ActionPerformed
 
     private void rbsi173ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi173ActionPerformed
      tr.setV173("");
@@ -4272,12 +4437,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno173ActionPerformed
 
     private void btnmv173ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv173ActionPerformed
-        // TODO add your handling code here:
+       // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(29);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv173ActionPerformed
-
-    private void btnd173ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd173ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd173ActionPerformed
 
     private void rbsi172ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi172ActionPerformed
         tr.setV172("");
@@ -4303,33 +4499,61 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno172ActionPerformed
 
     private void btnmv172ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv172ActionPerformed
-        // TODO add your handling code here:
+  // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(28);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv172ActionPerformed
-
-    private void btnd172ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd172ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd172ActionPerformed
 
     private void noaplicaitem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem18ActionPerformed
       if(noaplicaitem18.isSelected()){
         rbsi181.setEnabled(false);
         rbno181.setEnabled(false);
         btnmv181.setEnabled(false);
-        btnd181.setEnabled(false);
         txtitem18.setEnabled(false);
         btnadjnoitem18.setEnabled(false);
-          btnditem18.setEnabled(false);
-          rbjustiitem18.setEnabled(true);
+         rbjustiitem18.setEnabled(true);
           rbnojustiitem18.setEnabled(true);
+          tr.setI181("");
         
         }else{
           rbsi181.setEnabled(true);
         rbno181.setEnabled(true);
         btnmv181.setEnabled(false);
-        btnd181.setEnabled(false);
         txtitem18.setEnabled(false);
         btnadjnoitem18.setEnabled(false);
-          btnditem18.setEnabled(false);
           rbjustiitem18.setEnabled(false);
           rbnojustiitem18.setEnabled(false);
             
@@ -4338,7 +4562,7 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_noaplicaitem18ActionPerformed
 
     private void rbjustiitem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem18ActionPerformed
-      
+       tr.setI181("");
         txtitem18.setEnabled(true);
         
         
@@ -4369,6 +4593,7 @@ public class Gestion_integral extends javax.swing.JFrame {
        tr.setA181("");
        tr.setA181("No");
        tr.setV181("");
+       tr.setV181("no aplica");
        tr.setA181("No");
        tr.setJ181("");
        tr.setJ181(txtitem18.getText());
@@ -4377,12 +4602,7 @@ public class Gestion_integral extends javax.swing.JFrame {
    }else{
         tr.setJ181("");
         tr.setI181("");
-        tr.setI181("No");
-        tr.setA181("");
-        tr.setA181("No");
-        tr.setV181("");
-        tr.setV181("No");
-        
+               
         
             lblcum18.setEnabled(false);
             lblnocum18.setEnabled(false);
@@ -4391,12 +4611,47 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem18KeyPressed
 
     private void btnadjnoitem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem18ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(18);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
+        
+        
+        
+        
     }//GEN-LAST:event_btnadjnoitem18ActionPerformed
-
-    private void btnditem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem18ActionPerformed
 
     private void rbsi181ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi181ActionPerformed
       tr.setV181("");
@@ -4421,34 +4676,62 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno181ActionPerformed
 
     private void btnmv181ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv181ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(30);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv181ActionPerformed
-
-    private void btnd181ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd181ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd181ActionPerformed
 
     private void noaplicaitem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem19ActionPerformed
  if(noaplicaitem19.isSelected()){
         rbsi191.setEnabled(false);
         rbno191.setEnabled(false);
         btnmv191.setEnabled(false);
-        btnd191.setEnabled(false);
-        txtitem19.setEnabled(false);
+       txtitem19.setEnabled(false);
         btnadjnoitem19.setEnabled(false);
-          btnditem19.setEnabled(false);
-          rbjustiitem19.setEnabled(true);
+         rbjustiitem19.setEnabled(true);
           rbnojustiitem19.setEnabled(true);
+           tr.setI191("");
         
         }else{
           rbsi191.setEnabled(true);
         rbno191.setEnabled(true);
         btnmv191.setEnabled(false);
-        btnd191.setEnabled(false);
         txtitem19.setEnabled(false);
         btnadjnoitem19.setEnabled(false);
-          btnditem19.setEnabled(false);
-          rbjustiitem19.setEnabled(false);
+         rbjustiitem19.setEnabled(false);
           rbnojustiitem19.setEnabled(false);
             
             
@@ -4458,6 +4741,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem19ActionPerformed
       txtitem19.setEnabled(true);
+       tr.setI191("");
     }//GEN-LAST:event_rbjustiitem19ActionPerformed
 
     private void rbnojustiitem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem19ActionPerformed
@@ -4484,6 +4768,7 @@ public class Gestion_integral extends javax.swing.JFrame {
        tr.setA191("");
        tr.setA191("No");
        tr.setV191("");
+       tr.setV191("no aplica");
        tr.setA191("No");
        tr.setJ191("");
        tr.setJ191(txtitem19.getText());
@@ -4492,12 +4777,7 @@ public class Gestion_integral extends javax.swing.JFrame {
    }else{
         tr.setJ191("");
         tr.setI191("");
-        tr.setI191("No");
-        tr.setA191("");
-        tr.setA191("No");
-        tr.setV191("");
-        tr.setV191("No");
-        
+              
         
             lblcum19.setEnabled(false);
             lblnocum19.setEnabled(false);
@@ -4508,12 +4788,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem19KeyPressed
 
     private void btnadjnoitem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem19ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(19);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem19ActionPerformed
-
-    private void btnditem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem19ActionPerformed
 
     private void rbsi191ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi191ActionPerformed
      tr.setV191("");
@@ -4538,12 +4849,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno191ActionPerformed
 
     private void btnmv191ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv191ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(31);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv191ActionPerformed
-
-    private void btnd191ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd191ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd191ActionPerformed
 
     private void noaplicaitem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem20ActionPerformed
      if (noaplicaitem20.isSelected()) {
@@ -4553,13 +4895,11 @@ public class Gestion_integral extends javax.swing.JFrame {
             rbno202.setEnabled(false);
             btnmv201.setEnabled(false);
             btnmv202.setEnabled(false);
-            btnd201.setEnabled(false);
-            btnd202.setEnabled(false);
             txtitem20.setEnabled(false);
             btnadjnoitem20.setEnabled(false);
-            btnditem20.setEnabled(false);
             rbjustiitem20.setEnabled(true);
             rbnojustiitem20.setEnabled(true);
+            tr.setI201("");
 
         } else {
             rbsi201.setEnabled(true);
@@ -4568,11 +4908,8 @@ public class Gestion_integral extends javax.swing.JFrame {
             rbno202.setEnabled(true);
             btnmv201.setEnabled(false);
             btnmv202.setEnabled(false);
-            btnd201.setEnabled(false);
-            btnd202.setEnabled(false);
             txtitem20.setEnabled(false);
             btnadjnoitem20.setEnabled(false);
-            btnditem20.setEnabled(false);
             rbjustiitem20.setEnabled(false);
             rbnojustiitem20.setEnabled(false);
 
@@ -4581,6 +4918,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem20ActionPerformed
         txtitem20.setEnabled(true);
+        tr.setI201("");
     }//GEN-LAST:event_rbjustiitem20ActionPerformed
 
     private void rbnojustiitem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem20ActionPerformed
@@ -4611,21 +4949,16 @@ public class Gestion_integral extends javax.swing.JFrame {
             tr.setA201("");
             tr.setA201("No");
             tr.setV201("");
+            tr.setV201("no aplica");
             tr.setV202("");
+            tr.setV202("no aplica");
             tr.setJ201("");
             tr.setJ201(txtitem20.getText());
 
         } else {
             tr.setJ201("");
             tr.setI201("");
-            tr.setI201("No");
-            tr.setA201("");
-            tr.setA201("No");
-            tr.setV201("");
-            tr.setV201("No");
-            tr.setV202("");
-            tr.setV202("No");
-
+           
             lblcum20.setEnabled(false);
             lblnocum20.setEnabled(false);
             btnadjnoitem20.setEnabled(false);
@@ -4633,12 +4966,44 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem20KeyPressed
 
     private void btnadjnoitem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem20ActionPerformed
-        // TODO add your handling code here:
+       // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(20);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
+        
     }//GEN-LAST:event_btnadjnoitem20ActionPerformed
-
-    private void btnditem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem20ActionPerformed
 
     private void rbsi201ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi201ActionPerformed
       tr.setV201("");
@@ -4663,12 +5028,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno201ActionPerformed
 
     private void btnmv201ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv201ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(32);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv201ActionPerformed
-
-    private void btnd201ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd201ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd201ActionPerformed
 
     private void rbsi202ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi202ActionPerformed
      tr.setV202("");
@@ -4693,34 +5089,62 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno202ActionPerformed
 
     private void btnmv202ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv202ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(33);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv202ActionPerformed
-
-    private void btnd202ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd202ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd202ActionPerformed
 
     private void noaplicaitem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem21ActionPerformed
     if(noaplicaitem21.isSelected()){
         rbsi211.setEnabled(false);
         rbno211.setEnabled(false);
         btnmv211.setEnabled(false);
-        btnd211.setEnabled(false);
         txtitem21.setEnabled(false);
         btnadjnoitem21.setEnabled(false);
-          btnditem21.setEnabled(false);
-          rbjustiitem21.setEnabled(true);
+         rbjustiitem21.setEnabled(true);
           rbnojustiitem21.setEnabled(true);
+          tr.setI211("");
         
         }else{
           rbsi211.setEnabled(true);
         rbno211.setEnabled(true);
         btnmv211.setEnabled(false);
-        btnd211.setEnabled(false);
         txtitem21.setEnabled(false);
         btnadjnoitem21.setEnabled(false);
-          btnditem21.setEnabled(false);
-          rbjustiitem21.setEnabled(false);
+         rbjustiitem21.setEnabled(false);
           rbnojustiitem21.setEnabled(false);
             
             
@@ -4729,6 +5153,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem21ActionPerformed
        txtitem21.setEnabled(true);
+       tr.setI211("");
     }//GEN-LAST:event_rbjustiitem21ActionPerformed
 
     private void rbnojustiitem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem21ActionPerformed
@@ -4755,6 +5180,7 @@ public class Gestion_integral extends javax.swing.JFrame {
        tr.setA211("");
        tr.setA211("No");
        tr.setV211("");
+        tr.setV211("no aplica");
        tr.setA211("No");
        tr.setJ211("");
        tr.setJ211(txtitem21.getText());
@@ -4763,12 +5189,7 @@ public class Gestion_integral extends javax.swing.JFrame {
    }else{
         tr.setJ211("");
         tr.setI211("");
-        tr.setI211("No");
-        tr.setA211("");
-        tr.setA211("No");
-        tr.setV211("");
-        tr.setV211("No");
-        
+               
         
             lblcum21.setEnabled(false);
             lblnocum21.setEnabled(false);
@@ -4777,12 +5198,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem21KeyPressed
 
     private void btnadjnoitem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem21ActionPerformed
-        // TODO add your handling code here:
+    // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(21);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem21ActionPerformed
-
-    private void btnditem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem21ActionPerformed
 
     private void rbsi211ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi211ActionPerformed
        tr.setV211("");
@@ -4807,34 +5259,62 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno211ActionPerformed
 
     private void btnmv211ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv211ActionPerformed
-        // TODO add your handling code here:
+        // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(34);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv211ActionPerformed
-
-    private void btnd211ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd211ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd211ActionPerformed
 
     private void noaplicaitem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noaplicaitem22ActionPerformed
       if(noaplicaitem22.isSelected()){
         rbsi221.setEnabled(false);
         rbno221.setEnabled(false);
         btnmv221.setEnabled(false);
-        btnd221.setEnabled(false);
         txtitem22.setEnabled(false);
         btnadjnoitem22.setEnabled(false);
-          btnditem22.setEnabled(false);
-          rbjustiitem22.setEnabled(true);
+        rbjustiitem22.setEnabled(true);
           rbnojustiitem22.setEnabled(true);
+           tr.setI221("");
         
         }else{
           rbsi221.setEnabled(true);
         rbno221.setEnabled(true);
         btnmv221.setEnabled(false);
-        btnd221.setEnabled(false);
         txtitem22.setEnabled(false);
         btnadjnoitem22.setEnabled(false);
-          btnditem22.setEnabled(false);
-          rbjustiitem22.setEnabled(false);
+         rbjustiitem22.setEnabled(false);
           rbnojustiitem22.setEnabled(false);
             
             
@@ -4843,6 +5323,7 @@ public class Gestion_integral extends javax.swing.JFrame {
 
     private void rbjustiitem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbjustiitem22ActionPerformed
       txtitem22.setEnabled(true);
+       tr.setI221("");
     }//GEN-LAST:event_rbjustiitem22ActionPerformed
 
     private void rbnojustiitem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnojustiitem22ActionPerformed
@@ -4870,6 +5351,7 @@ public class Gestion_integral extends javax.swing.JFrame {
        tr.setA221("");
        tr.setA221("No");
        tr.setV221("");
+       tr.setV221("no aplica");
        tr.setA221("No");
        tr.setJ221("");
        tr.setJ221(txtitem22.getText());
@@ -4878,12 +5360,7 @@ public class Gestion_integral extends javax.swing.JFrame {
    }else{
         tr.setJ221("");
         tr.setI221("");
-        tr.setI221("No");
-        tr.setA221("");
-        tr.setA221("No");
-        tr.setV221("");
-        tr.setV221("No");
-        
+            
         
             lblcum22.setEnabled(false);
             lblnocum22.setEnabled(false);
@@ -4893,12 +5370,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtitem22KeyPressed
 
     private void btnadjnoitem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadjnoitem22ActionPerformed
-        // TODO add your handling code here:
+        // Objeto para guardar las variables  
+        Mrecursos tr= new Mrecursos();
+       // objeto llamar el metodo (MVC)
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(22);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivos(tr)){
+                         
+               JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+               
+       }
     }//GEN-LAST:event_btnadjnoitem22ActionPerformed
-
-    private void btnditem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnditem22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnditem22ActionPerformed
 
     private void rbsi221ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbsi221ActionPerformed
      tr.setV221("");
@@ -4923,12 +5431,43 @@ public class Gestion_integral extends javax.swing.JFrame {
     }//GEN-LAST:event_rbno221ActionPerformed
 
     private void btnmv221ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmv221ActionPerformed
-        // TODO add your handling code here:
+         // objeto para guardar la informacion de las variables (MVC)
+            Mrecursos tr= new Mrecursos();  
+          // objeto para llamar los metodos 
+        Crecursos func= new Crecursos();
+        // ventanilla de carga
+        JFileChooser se = new JFileChooser();
+        //para que solo acepte archivos
+       se.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       // cuadro dialogo abrir
+       int estado= se.showOpenDialog(null);
+       
+       // Si aprueba el archivo
+       
+       if(estado == JFileChooser.APPROVE_OPTION){
+          
+           try {
+               
+               // mando los datos a las variables
+               
+               tr.setFi1111( new FileInputStream(se.getSelectedFile()));
+               tr.setLongitud((int)se.getSelectedFile().length());
+               tr.setId(35);
+               tr.setNombre("\\" + (se.getSelectedFile().getName()));
+               
+               //llama el metodo
+               if(func.insertarArchivosVeri(tr)){
+                 
+            JOptionPane.showMessageDialog(null,"El archivo ha sido guardado exitosamente");
+           }
+                              
+           }catch(Exception e){
+               
+               
+           }
+           
+       }
     }//GEN-LAST:event_btnmv221ActionPerformed
-
-    private void btnd221ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnd221ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnd221ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Item 12
@@ -4940,10 +5479,15 @@ public class Gestion_integral extends javax.swing.JFrame {
 
         }
         if (rbno121.isSelected() || rbno122.isSelected() || rbno123.isSelected()) {
+            
+            if((!rbno121.isSelected() && !rbsi121.isSelected()) || (!rbno122.isSelected() && !rbsi122.isSelected()) || (!rbno123.isSelected() && !rbsi123.isSelected()) 
+       ){   
+                
+        }else{
             tr.setI121("");
             tr.setI121("no");
             tr.setA121("");
-            tr.setA121("si");
+            tr.setA121("si");}
 
         }
         // Item 13
@@ -5007,10 +5551,15 @@ public class Gestion_integral extends javax.swing.JFrame {
 
         }
         if (rbno161.isSelected() || rbno162.isSelected()) {
+            
+       if((!rbno161.isSelected() && !rbsi161.isSelected()) || (!rbno162.isSelected() && !rbsi162.isSelected())){   
+                
+        }else{       
+            
             tr.setI161("");
             tr.setI161("no");
             tr.setA161("");
-            tr.setA161("si");
+            tr.setA161("si");}
 
         }
 
@@ -5023,10 +5572,16 @@ public class Gestion_integral extends javax.swing.JFrame {
 
         }
         if (rbno171.isSelected() || rbno172.isSelected() || rbno173.isSelected()) {
+           
+             if((!rbno171.isSelected() && !rbsi171.isSelected()) || (!rbno172.isSelected() && !rbsi172.isSelected()) || (!rbno173.isSelected() && !rbsi173.isSelected()) 
+       ){   
+                
+        }else{
+            
             tr.setI171("");
             tr.setI171("no");
             tr.setA171("");
-            tr.setA171("si");
+            tr.setA171("si");}
 
         }
 
@@ -5073,10 +5628,15 @@ public class Gestion_integral extends javax.swing.JFrame {
 
         }
         if (rbno201.isSelected() || rbno202.isSelected()) {
+         
+        if((!rbno201.isSelected() && !rbsi201.isSelected()) || (!rbno202.isSelected() && !rbsi202.isSelected())){   
+                
+        }else{        
+            
             tr.setI201("");
             tr.setI201("So");
             tr.setA201("");
-            tr.setA201("Si");
+            tr.setA201("Si");  }
 
         }
 
@@ -5113,29 +5673,17 @@ public class Gestion_integral extends javax.swing.JFrame {
             tr.setA221("si");
 
         }
+    
+        Validar();
+      
 
-        Cgestion_integral func = new Cgestion_integral();
-
-        func.insertarItem12(tr);
-        func.insertarItem13(tr);
-        func.insertarItem14(tr);
-        func.insertarItem15(tr);
-        func.insertarItem16(tr);
-        func.insertarItem17(tr);
-        func.insertarItem18(tr);
-        func.insertarItem19(tr);
-        func.insertarItem20(tr);
-        func.insertarItem21(tr);
-
-        if (func.insertarItem22(tr)) {
-            JOptionPane.showMessageDialog(rootPane, "Se han registrado los items satisfactoriamente");
-
-        } 
+      
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        dispose();
+ this.dispose();
+ gh.setVisible(true);
+ gh.toFront();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -5166,34 +5714,6 @@ public class Gestion_integral extends javax.swing.JFrame {
     private javax.swing.JButton btnadjnoitem20;
     private javax.swing.JButton btnadjnoitem21;
     private javax.swing.JButton btnadjnoitem22;
-    private javax.swing.JButton btnd121;
-    private javax.swing.JButton btnd122;
-    private javax.swing.JButton btnd123;
-    private javax.swing.JButton btnd131;
-    private javax.swing.JButton btnd141;
-    private javax.swing.JButton btnd151;
-    private javax.swing.JButton btnd161;
-    private javax.swing.JButton btnd162;
-    private javax.swing.JButton btnd171;
-    private javax.swing.JButton btnd172;
-    private javax.swing.JButton btnd173;
-    private javax.swing.JButton btnd181;
-    private javax.swing.JButton btnd191;
-    private javax.swing.JButton btnd201;
-    private javax.swing.JButton btnd202;
-    private javax.swing.JButton btnd211;
-    private javax.swing.JButton btnd221;
-    private javax.swing.JButton btnditem12;
-    private javax.swing.JButton btnditem13;
-    private javax.swing.JButton btnditem14;
-    private javax.swing.JButton btnditem15;
-    private javax.swing.JButton btnditem16;
-    private javax.swing.JButton btnditem17;
-    private javax.swing.JButton btnditem18;
-    private javax.swing.JButton btnditem19;
-    private javax.swing.JButton btnditem20;
-    private javax.swing.JButton btnditem21;
-    private javax.swing.JButton btnditem22;
     private javax.swing.JButton btnmv121;
     private javax.swing.JButton btnmv122;
     private javax.swing.JButton btnmv123;
@@ -5212,7 +5732,18 @@ public class Gestion_integral extends javax.swing.JFrame {
     private javax.swing.JButton btnmv211;
     private javax.swing.JButton btnmv221;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -87,6 +87,7 @@ public class C_SelecEmple implements ActionListener, KeyListener {
         String buscarPor=vista_seleccionEmple.cb_buscarPor.getSelectedItem().toString();
         if(ae.getSource()==vista_seleccionEmple.btn_buscar){
              if(buscarPor.equals("Empleado")){
+               
                //  int filaSele=vista_seleccionEmple.tb_empleados.getSelectedRow();
             
                 // int idPersona=Integer.parseInt(vista_seleccionEmple.tb_empleados.getValueAt(filaSele, 0).toString());
@@ -116,16 +117,16 @@ public class C_SelecEmple implements ActionListener, KeyListener {
      modelo.addRow(fila);
          }
             }
-       
-        
-            }else
+             
+        else
              if(buscarPor.equals("Administrador SGSST")){
+                 JOptionPane.showMessageDialog(null, "Admin SGSST");
            modelo.setRowCount(0); 
             ArrayList<M_SeleccionarEmpleado> arraySeleccion=modelo_seleccionEmple.AdminSGSST();
             Object[] fila =new Object[modelo.getColumnCount()];
             
             for(int i=0; i <arraySeleccion.size(); i++){
-      
+       
     fila[0]=arraySeleccion.get(i).getIdEmpleado();
       
     fila[1]=arraySeleccion.get(i).getNombre();
@@ -182,6 +183,8 @@ public class C_SelecEmple implements ActionListener, KeyListener {
             }        
            }
         
+            }
+    
         
         if(ae.getSource()==vista_seleccionEmple.btn_habilitar){
             
