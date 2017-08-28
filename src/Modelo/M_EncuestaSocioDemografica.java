@@ -130,6 +130,7 @@ Conexion conexion=new Conexion();
             datosEncuesta=new M_EncuestaSocioDemografica();
            datosEncuesta.setNombre(rs.getString(1));
             datosEncuesta.setSucursal(rs.getString(2));
+            
             array.add(datosEncuesta);
             }
         } catch (Exception e) {
@@ -137,8 +138,7 @@ Conexion conexion=new Conexion();
        return array;
     }
     
-
-   /* 
+ /* 
     public ArrayList llamarDatos(){
         ArrayList datosEncuestaEmpresa=new ArrayList();
    

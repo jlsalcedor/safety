@@ -160,7 +160,7 @@ public class SeleccionarEmpleados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_buscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_buscarKeyTyped
-       char c=evt.getKeyChar();
+        char c=evt.getKeyChar();
         if((c<'0' || c>'9')) evt.consume();
     }//GEN-LAST:event_txt_buscarKeyTyped
 
@@ -213,6 +213,6 @@ public class SeleccionarEmpleados extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tb_empleados;
-    private javax.swing.JTextField txt_buscar;
+    public javax.swing.JTextField txt_buscar;
     // End of variables declaration//GEN-END:variables
 }

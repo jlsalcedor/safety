@@ -121,26 +121,6 @@ private Connection connection= new Conexion().getConexion();
         btn_perfil = new javax.swing.JButton();
         btn_acerca = new javax.swing.JButton();
         btn_ayuda = new javax.swing.JButton();
-        label_rol = new javax.swing.JLabel();
-        label_nombreUser = new javax.swing.JLabel();
-        btn_relleno2 = new javax.swing.JLabel();
-        logo = new javax.swing.JLabel();
-        lbl_safetyNom = new javax.swing.JLabel();
-        btn_relleno3 = new javax.swing.JLabel();
-        btn_evaluacion = new javax.swing.JLabel();
-        btn_primero = new javax.swing.JLabel();
-        btn_tercero = new javax.swing.JLabel();
-        btn_segundo = new javax.swing.JLabel();
-        btn_regEmple = new javax.swing.JLabel();
-        btn_cuarto = new javax.swing.JLabel();
-        btn_rencu = new javax.swing.JLabel();
-        btn_quinto = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        label_fondo = new javax.swing.JLabel();
         panel_perfil = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txt_PrimerApellido = new javax.swing.JLabel();
@@ -165,6 +145,26 @@ private Connection connection= new Conexion().getConexion();
         Btn_Cerrar = new javax.swing.JButton();
         txt_nombrePerfil = new javax.swing.JLabel();
         lbl_fondoPerfil = new javax.swing.JLabel();
+        label_rol = new javax.swing.JLabel();
+        label_nombreUser = new javax.swing.JLabel();
+        btn_relleno2 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
+        lbl_safetyNom = new javax.swing.JLabel();
+        btn_relleno3 = new javax.swing.JLabel();
+        btn_evaluacion = new javax.swing.JLabel();
+        btn_primero = new javax.swing.JLabel();
+        btn_tercero = new javax.swing.JLabel();
+        btn_segundo = new javax.swing.JLabel();
+        btn_regEmple = new javax.swing.JLabel();
+        btn_cuarto = new javax.swing.JLabel();
+        btn_rencu = new javax.swing.JLabel();
+        btn_quinto = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        label_fondo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         jm_realizarEvaIni = new javax.swing.JMenu();
         jm_realizarEvaluacion = new javax.swing.JMenuItem();
@@ -173,8 +173,7 @@ private Connection connection= new Conexion().getConexion();
         jMenu5 = new javax.swing.JMenu();
         jm_RealizarEncuesta = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jm_HabEncuTodos = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         me_registrarEmpleado = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
@@ -266,6 +265,144 @@ private Connection connection= new Conexion().getConexion();
         });
         jPanel1.add(btn_ayuda);
         btn_ayuda.setBounds(-175, 150, 229, 61);
+
+        panel_perfil.setLayout(null);
+
+        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel3.setText("Segundo Apellido:");
+        panel_perfil.add(jLabel3);
+        jLabel3.setBounds(312, 187, 153, 21);
+
+        txt_PrimerApellido.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        txt_PrimerApellido.setText("Primer Apellido:");
+        panel_perfil.add(txt_PrimerApellido);
+        txt_PrimerApellido.setBounds(22, 187, 138, 21);
+
+        jLabel5.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel5.setText("Numero de Documento:");
+        panel_perfil.add(jLabel5);
+        jLabel5.setBounds(312, 256, 197, 21);
+
+        jLabel6.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel6.setText("Tipo de Documento:");
+        panel_perfil.add(jLabel6);
+        jLabel6.setBounds(22, 256, 169, 21);
+
+        jLabel9.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel9.setText("Coreo Eectronico:");
+        panel_perfil.add(jLabel9);
+        jLabel9.setBounds(310, 390, 152, 21);
+
+        txt_nombrePri.setEditable(false);
+        txt_nombrePri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nombrePriActionPerformed(evt);
+            }
+        });
+        panel_perfil.add(txt_nombrePri);
+        txt_nombrePri.setBounds(22, 145, 177, 30);
+
+        txt_Nombres.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        txt_Nombres.setText("Nombres:");
+        panel_perfil.add(txt_Nombres);
+        txt_Nombres.setBounds(22, 118, 81, 21);
+
+        jLabel8.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel8.setText("Telefono:");
+        panel_perfil.add(jLabel8);
+        jLabel8.setBounds(312, 325, 79, 21);
+
+        jLabel10.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel10.setText("Area:");
+        panel_perfil.add(jLabel10);
+        jLabel10.setBounds(22, 400, 45, 21);
+
+        jTextField2.setEditable(false);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        panel_perfil.add(jTextField2);
+        jTextField2.setBounds(22, 214, 177, 19);
+
+        jTextField3.setEditable(false);
+        panel_perfil.add(jTextField3);
+        jTextField3.setBounds(22, 283, 177, 19);
+
+        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel2.setText("Genero:");
+        panel_perfil.add(jLabel2);
+        jLabel2.setBounds(22, 325, 66, 21);
+
+        jTextField4.setEditable(false);
+        panel_perfil.add(jTextField4);
+        jTextField4.setBounds(312, 214, 177, 19);
+
+        jTextField5.setEditable(false);
+        panel_perfil.add(jTextField5);
+        jTextField5.setBounds(22, 358, 177, 19);
+
+        jTextField6.setEditable(false);
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        panel_perfil.add(jTextField6);
+        jTextField6.setBounds(312, 358, 177, 19);
+
+        jTextField7.setEditable(false);
+        panel_perfil.add(jTextField7);
+        jTextField7.setBounds(312, 283, 177, 19);
+
+        jTextField8.setEditable(false);
+        panel_perfil.add(jTextField8);
+        jTextField8.setBounds(22, 439, 177, 19);
+
+        jTextField9.setEditable(false);
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+        panel_perfil.add(jTextField9);
+        jTextField9.setBounds(310, 420, 216, 19);
+
+        btnEditar_Perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar.png"))); // NOI18N
+        btnEditar_Perfil.setText("Editar Perfil");
+        btnEditar_Perfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_perfil.add(btnEditar_Perfil);
+        btnEditar_Perfil.setBounds(230, 460, 140, 40);
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_perfil.add(btnGuardar);
+        btnGuardar.setBounds(390, 460, 126, 40);
+
+        Btn_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
+        Btn_Cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_Cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_CerrarActionPerformed(evt);
+            }
+        });
+        panel_perfil.add(Btn_Cerrar);
+        Btn_Cerrar.setBounds(500, 10, 36, 34);
+
+        txt_nombrePerfil.setFont(new java.awt.Font("Lucida Handwriting", 1, 36)); // NOI18N
+        txt_nombrePerfil.setForeground(new java.awt.Color(255, 255, 255));
+        txt_nombrePerfil.setText("PERFIL ");
+        panel_perfil.add(txt_nombrePerfil);
+        txt_nombrePerfil.setBounds(210, 10, 166, 50);
+
+        lbl_fondoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/perfil2.png"))); // NOI18N
+        panel_perfil.add(lbl_fondoPerfil);
+        lbl_fondoPerfil.setBounds(-10, -10, 560, 530);
+
+        jPanel1.add(panel_perfil);
+        panel_perfil.setBounds(60, 10, 550, 520);
 
         label_rol.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jPanel1.add(label_rol);
@@ -417,144 +554,6 @@ private Connection connection= new Conexion().getConexion();
         jPanel1.add(label_fondo);
         label_fondo.setBounds(0, -10, 1370, 690);
 
-        panel_perfil.setLayout(null);
-
-        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel3.setText("Segundo Apellido:");
-        panel_perfil.add(jLabel3);
-        jLabel3.setBounds(312, 187, 153, 21);
-
-        txt_PrimerApellido.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        txt_PrimerApellido.setText("Primer Apellido:");
-        panel_perfil.add(txt_PrimerApellido);
-        txt_PrimerApellido.setBounds(22, 187, 138, 21);
-
-        jLabel5.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel5.setText("Numero de Documento:");
-        panel_perfil.add(jLabel5);
-        jLabel5.setBounds(312, 256, 197, 21);
-
-        jLabel6.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel6.setText("Tipo de Documento:");
-        panel_perfil.add(jLabel6);
-        jLabel6.setBounds(22, 256, 169, 21);
-
-        jLabel9.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel9.setText("Coreo Eectronico:");
-        panel_perfil.add(jLabel9);
-        jLabel9.setBounds(310, 390, 152, 21);
-
-        txt_nombrePri.setEditable(false);
-        txt_nombrePri.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombrePriActionPerformed(evt);
-            }
-        });
-        panel_perfil.add(txt_nombrePri);
-        txt_nombrePri.setBounds(22, 145, 177, 30);
-
-        txt_Nombres.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        txt_Nombres.setText("Nombres:");
-        panel_perfil.add(txt_Nombres);
-        txt_Nombres.setBounds(22, 118, 81, 21);
-
-        jLabel8.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel8.setText("Telefono:");
-        panel_perfil.add(jLabel8);
-        jLabel8.setBounds(312, 325, 79, 21);
-
-        jLabel10.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel10.setText("Area:");
-        panel_perfil.add(jLabel10);
-        jLabel10.setBounds(22, 400, 45, 21);
-
-        jTextField2.setEditable(false);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        panel_perfil.add(jTextField2);
-        jTextField2.setBounds(22, 214, 177, 19);
-
-        jTextField3.setEditable(false);
-        panel_perfil.add(jTextField3);
-        jTextField3.setBounds(22, 283, 177, 19);
-
-        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel2.setText("Genero:");
-        panel_perfil.add(jLabel2);
-        jLabel2.setBounds(22, 325, 66, 21);
-
-        jTextField4.setEditable(false);
-        panel_perfil.add(jTextField4);
-        jTextField4.setBounds(312, 214, 177, 19);
-
-        jTextField5.setEditable(false);
-        panel_perfil.add(jTextField5);
-        jTextField5.setBounds(22, 358, 177, 19);
-
-        jTextField6.setEditable(false);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-        panel_perfil.add(jTextField6);
-        jTextField6.setBounds(312, 358, 177, 19);
-
-        jTextField7.setEditable(false);
-        panel_perfil.add(jTextField7);
-        jTextField7.setBounds(312, 283, 177, 19);
-
-        jTextField8.setEditable(false);
-        panel_perfil.add(jTextField8);
-        jTextField8.setBounds(22, 439, 177, 19);
-
-        jTextField9.setEditable(false);
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-        panel_perfil.add(jTextField9);
-        jTextField9.setBounds(310, 420, 216, 19);
-
-        btnEditar_Perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editar.png"))); // NOI18N
-        btnEditar_Perfil.setText("Editar Perfil");
-        btnEditar_Perfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panel_perfil.add(btnEditar_Perfil);
-        btnEditar_Perfil.setBounds(230, 460, 140, 40);
-
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
-        btnGuardar.setText("Guardar");
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panel_perfil.add(btnGuardar);
-        btnGuardar.setBounds(390, 460, 126, 40);
-
-        Btn_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
-        Btn_Cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn_Cerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_CerrarActionPerformed(evt);
-            }
-        });
-        panel_perfil.add(Btn_Cerrar);
-        Btn_Cerrar.setBounds(500, 10, 36, 34);
-
-        txt_nombrePerfil.setFont(new java.awt.Font("Lucida Handwriting", 1, 36)); // NOI18N
-        txt_nombrePerfil.setForeground(new java.awt.Color(255, 255, 255));
-        txt_nombrePerfil.setText("PERFIL ");
-        panel_perfil.add(txt_nombrePerfil);
-        txt_nombrePerfil.setBounds(210, 10, 166, 50);
-
-        lbl_fondoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/perfil2.png"))); // NOI18N
-        panel_perfil.add(lbl_fondoPerfil);
-        lbl_fondoPerfil.setBounds(-10, -10, 560, 530);
-
-        jPanel1.add(panel_perfil);
-        panel_perfil.setBounds(60, 10, 550, 520);
-
         desktopPane.add(jPanel1);
         jPanel1.setBounds(1, 13, 1370, 683);
 
@@ -600,19 +599,14 @@ private Connection connection= new Conexion().getConexion();
         jMenu4.setText("Administrar Encuestas");
         jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jMenu6.setText("Habilitar Encuesta");
-        jMenu6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-
-        jm_HabEncuTodos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jm_HabEncuTodos.setText("Para Todos");
-        jm_HabEncuTodos.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jMenuItem1.setText("Habilitar Encuesta");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jm_HabEncuTodosActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu6.add(jm_HabEncuTodos);
-
-        jMenu4.add(jMenu6);
+        jMenu4.add(jMenuItem1);
 
         jMenu3.add(jMenu4);
 
@@ -774,7 +768,7 @@ private Connection connection= new Conexion().getConexion();
         
        Encuesta_SocioDemografica realizarEncuesta=new Encuesta_SocioDemografica();
        M_EncuestaSocioDemografica modelo_encuesta=new M_EncuestaSocioDemografica();
-          
+         
        C_RealizarEncuesta controlador_realizarEncuesta=new C_RealizarEncuesta(realizarEncuesta, modelo_encuesta);
         
        realizarEncuesta.setVisible(true);
@@ -826,13 +820,6 @@ panel_perfil.setVisible(false);
       vista_llamadosAtencion=new Llamados_Atencion();
         vista_llamadosAtencion.setVisible(true);
     }//GEN-LAST:event_jm_realizarLlamadoAtencionMouseClicked
-
-    private void jm_HabEncuTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_HabEncuTodosActionPerformed
-        HabEncuestaTodos vista_habEncuTodos=new HabEncuestaTodos();
-        M_HabEncuTodos modelo_habEncuTodos= new M_HabEncuTodos();
-        C_HabEncuTodos controlador_habEncuTodos=new C_HabEncuTodos(vista_habEncuTodos, modelo_habEncuTodos);
-        vista_habEncuTodos.setVisible(true);
-    }//GEN-LAST:event_jm_HabEncuTodosActionPerformed
 
     private void mn_items_cumpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mn_items_cumpleActionPerformed
          Map p= new HashMap();
@@ -989,6 +976,14 @@ btn_evaluacion.setVisible(false);
         
     }//GEN-LAST:event_txt_nombrePriActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        HabEncuestaTodos vista_habEncuTodos=new HabEncuestaTodos();
+        M_HabEncuTodos modelo_habEncuTodos= new M_HabEncuTodos();
+        C_HabEncuTodos controlador_habEncuTodos=new C_HabEncuTodos(vista_habEncuTodos, modelo_habEncuTodos);
+        vista_habEncuTodos.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -1043,7 +1038,7 @@ btn_evaluacion.setVisible(false);
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextField jTextField2;
@@ -1055,7 +1050,6 @@ btn_evaluacion.setVisible(false);
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JMenu jmSalir;
-    public javax.swing.JMenuItem jm_HabEncuTodos;
     private javax.swing.JMenuItem jm_RealizarEncuesta;
     private javax.swing.JMenu jm_evaluacionIni;
     public javax.swing.JMenu jm_realizarEvaIni;

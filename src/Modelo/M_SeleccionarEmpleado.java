@@ -141,6 +141,38 @@ public class M_SeleccionarEmpleado {
    return listarEmpleados;
    }
    
+   public ArrayList<M_SeleccionarEmpleado> empleadosCedula(String cedula){
+   ArrayList<M_SeleccionarEmpleado> listarEmpleados=new ArrayList();
+   M_SeleccionarEmpleado empleados;
+   
+       try {
+           Connection accesoBD=conexion.getConexion();
+           CallableStatement cs=accesoBD.prepareCall("{call sp_listaEmpleEncuCedula(?)}");
+           cs.setString(1, cedula);
+           ResultSet rs=cs.executeQuery();
+           while(rs.next()){
+           empleados= new M_SeleccionarEmpleado();
+           empleados.setIdEmpleado(rs.getInt(1));
+           empleados.setNombre(rs.getString(2));
+           empleados.setApellido_pa(rs.getString(3));
+           empleados.setApellido_ma(rs.getString(4));
+           empleados.setTipoDoc(rs.getString(5));
+           empleados.setNumDoc(rs.getInt(6));
+           empleados.setNombreProceso(rs.getString(7));
+           empleados.setCargo(rs.getString(8));
+           listarEmpleados.add(empleados);
+             
+           }
+       } catch (SQLException e) {
+       }
+   return listarEmpleados;
+   }
+   
+   
+   
+   
+   
+   
       public ArrayList<M_SeleccionarEmpleado> JefeArea(){
    ArrayList<M_SeleccionarEmpleado> listarJefe=new ArrayList();
    M_SeleccionarEmpleado jefe;
@@ -203,7 +235,7 @@ public class M_SeleccionarEmpleado {
        try {
            Connection accesoBD=conexion.getConexion();
            CallableStatement cs=accesoBD.prepareCall("{call sp_listaAdminSGSST()}");
-            JOptionPane.showMessageDialog(null, "Prueba");
+           
            ResultSet rs=cs.executeQuery();
           
            while(rs.next()){

@@ -85,7 +85,6 @@ public class M_Empleado extends M_Persona {
             CallableStatement cs=accesoBD.prepareCall("{call sp_listaEmpleado(?,?)}");
             cs.setString(1, user);
             cs.setString(2, contraseña);
- JOptionPane.showMessageDialog(null, contraseña);
             ResultSet rs=cs.executeQuery();
             
             while(rs.next()){

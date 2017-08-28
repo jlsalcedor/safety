@@ -20,8 +20,9 @@ public class infoEmpEncuesta {
     private static String nombre;
     private static String apellido_materno;
     private static String apellido_paterno;
-    private static String cargo;
+    private static int codigo;
     private static String area;
+    private static int idEncuesta;
     
     
     Conexion conexion=new Conexion();
@@ -29,12 +30,13 @@ public class infoEmpEncuesta {
     public infoEmpEncuesta() {
     }
 
-    public infoEmpEncuesta(String nombre, String apellido_materno, String apellido_paterno, String cargo, String area) {
+    public infoEmpEncuesta(String nombre, String apellido_materno, String apellido_paterno, int codigo, String area, int idEncuesta) {
         infoEmpEncuesta.nombre = nombre;
         infoEmpEncuesta.apellido_materno = apellido_materno;
         infoEmpEncuesta.apellido_paterno = apellido_paterno;
-        infoEmpEncuesta.cargo = cargo;
+        infoEmpEncuesta.codigo = codigo;
         infoEmpEncuesta.area = area;
+        infoEmpEncuesta.idEncuesta=idEncuesta;
     }
 
     public static String getNombre() {
@@ -61,12 +63,12 @@ public class infoEmpEncuesta {
         infoEmpEncuesta.apellido_paterno = apellido_paterno;
     }
 
-    public static String getCargo() {
-        return cargo;
+    public static int getCodigo() {
+        return codigo;
     }
 
-    public void setCargo(String cargo) {
-        infoEmpEncuesta.cargo = cargo;
+    public void setCodigo(int codigo) {
+        infoEmpEncuesta.codigo = codigo;
     }
 
     public static String getArea() {
@@ -76,34 +78,43 @@ public class infoEmpEncuesta {
     public void setArea(String area) {
         infoEmpEncuesta.area = area;
     }
+
+    public static int getIdEncuesta() {
+        return idEncuesta;
+    }
+
+    public  void setIdEncuesta(int idEncuesta) {
+        infoEmpEncuesta.idEncuesta = idEncuesta;
+    }
     
-    public ArrayList<infoEmpEncuesta> datosEmpEncuesta(String user, String contraseña){
-       ArrayList<infoEmpEncuesta> arrayDatos=new ArrayList();
-        infoEmpEncuesta empleadoEncuesta;
-        try {
-            Connection accederBD=conexion.getConexion();
-           CallableStatement cs=accederBD.prepareCall("{call sp_datosEmpleadoEncuesta(?,?)}");
-           cs.setString(1, user);
-           cs.setString(2, contraseña);
-           ResultSet rs=cs.executeQuery();
-          
-             while(rs.next()){
-             empleadoEncuesta=new infoEmpEncuesta();
-             empleadoEncuesta.setNombre(rs.getString(1));
-             empleadoEncuesta.setApellido_paterno(rs.getString(2));
-             empleadoEncuesta.setApellido_materno(rs.getString(3));
-             empleadoEncuesta.setCargo(rs.getString(4));
-             empleadoEncuesta.setArea(rs.getString(5));
-             arrayDatos.add(empleadoEncuesta);
-             
-             }
+ 
             
              
-        } catch (Exception e) {
-        }
-    return arrayDatos;
+      
     
+    public ArrayList datosRealizarEncuesta(int idPersona){
+ArrayList datos=new ArrayList();
+ infoEmpEncuesta datosEncuesta;
+    try {
+        Connection acceso=conexion.getConexion();
+        CallableStatement cs=acceso.prepareCall("{call sp_datosPersonaEncu(?)}");
+        cs.setInt(1, idPersona);
+        ResultSet rs=cs.executeQuery();
+        while(rs.next()){
+         datosEncuesta=new infoEmpEncuesta();
+           datosEncuesta.setNombre(rs.getString(1));
+           datosEncuesta.setApellido_paterno(rs.getString(2));
+           datosEncuesta.setApellido_materno(rs.getString(3));
+           datosEncuesta.setArea(rs.getString(4));
+           datosEncuesta.setCodigo(rs.getInt(5));
+           datosEncuesta.setIdEncuesta(rs.getInt(6));
+           datos.add(datosEncuesta);
+        }
+    } catch (Exception e) {
     }
+return datos;
+}
+  
     
     
 }

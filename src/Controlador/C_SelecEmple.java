@@ -40,6 +40,7 @@ public class C_SelecEmple implements ActionListener, KeyListener {
     //  this.tipoEncuesta=tipoEncuesta;
     this.codigo=codigo;
     this.fechatxt=fecha;
+    this.vista_seleccionEmple.btn_deshabilitar.setVisible(false);
         this.vista_seleccionEmple.btn_buscar.addActionListener(this);
         this.vista_seleccionEmple.btn_deshabilitar.addActionListener(this);
         this.vista_seleccionEmple.btn_habilitar.addActionListener(this);
@@ -84,10 +85,17 @@ public class C_SelecEmple implements ActionListener, KeyListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        
         String buscarPor=vista_seleccionEmple.cb_buscarPor.getSelectedItem().toString();
         if(ae.getSource()==vista_seleccionEmple.btn_buscar){
+            ArrayList<M_SeleccionarEmpleado> arraySeleccion = null ;
+            String cedula=vista_seleccionEmple.txt_buscar.getText();
              if(buscarPor.equals("Empleado")){
-               
+               if(cedula.length()==0){
+               arraySeleccion=modelo_seleccionEmple.empleados();
+               }else{
+               arraySeleccion=modelo_seleccionEmple.empleadosCedula(cedula);
+               }
                //  int filaSele=vista_seleccionEmple.tb_empleados.getSelectedRow();
             
                 // int idPersona=Integer.parseInt(vista_seleccionEmple.tb_empleados.getValueAt(filaSele, 0).toString());
@@ -98,7 +106,7 @@ public class C_SelecEmple implements ActionListener, KeyListener {
                  
                      
                      modelo.setRowCount(0);
-          ArrayList<M_SeleccionarEmpleado> arraySeleccion=modelo_seleccionEmple.empleados();
+          
     
         Object[] fila =new Object[modelo.getColumnCount()];
     
@@ -120,22 +128,22 @@ public class C_SelecEmple implements ActionListener, KeyListener {
              
         else
              if(buscarPor.equals("Administrador SGSST")){
-                 JOptionPane.showMessageDialog(null, "Admin SGSST");
+                
            modelo.setRowCount(0); 
-            ArrayList<M_SeleccionarEmpleado> arraySeleccion=modelo_seleccionEmple.AdminSGSST();
+            ArrayList<M_SeleccionarEmpleado> arraySeleccionAdminSGSST=modelo_seleccionEmple.AdminSGSST();
             Object[] fila =new Object[modelo.getColumnCount()];
             
-            for(int i=0; i <arraySeleccion.size(); i++){
+            for(int i=0; i <arraySeleccionAdminSGSST.size(); i++){
        
-    fila[0]=arraySeleccion.get(i).getIdEmpleado();
+    fila[0]=arraySeleccionAdminSGSST.get(i).getIdEmpleado();
       
-    fila[1]=arraySeleccion.get(i).getNombre();
-    fila[2]=arraySeleccion.get(i).getApellido_pa();
-    fila[3]=arraySeleccion.get(i).getApellido_ma();
-    fila[4]=arraySeleccion.get(i).getTipoDoc();
-    fila[5]=arraySeleccion.get(i).getNumDoc();
-    fila[6]=arraySeleccion.get(i).getNombreProceso();
-    fila[7]=arraySeleccion.get(i).getCargo();
+    fila[1]=arraySeleccionAdminSGSST.get(i).getNombre();
+    fila[2]=arraySeleccionAdminSGSST.get(i).getApellido_pa();
+    fila[3]=arraySeleccionAdminSGSST.get(i).getApellido_ma();
+    fila[4]=arraySeleccionAdminSGSST.get(i).getTipoDoc();
+    fila[5]=arraySeleccionAdminSGSST.get(i).getNumDoc();
+    fila[6]=arraySeleccionAdminSGSST.get(i).getNombreProceso();
+    fila[7]=arraySeleccionAdminSGSST.get(i).getCargo();
   
      modelo.addRow(fila);
             }  
@@ -143,20 +151,20 @@ public class C_SelecEmple implements ActionListener, KeyListener {
                  if(buscarPor.equals("Jefe de Area")){
                  
                   modelo.setRowCount(0); 
-            ArrayList<M_SeleccionarEmpleado> arraySeleccion=modelo_seleccionEmple.JefeArea();
+            ArrayList<M_SeleccionarEmpleado> arraySeleccionJefe=modelo_seleccionEmple.JefeArea();
             Object[] fila =new Object[modelo.getColumnCount()];
             
-            for(int i=0; i <arraySeleccion.size(); i++){
+            for(int i=0; i <arraySeleccionJefe.size(); i++){
       
-    fila[0]=arraySeleccion.get(i).getIdEmpleado();
+    fila[0]=arraySeleccionJefe.get(i).getIdEmpleado();
       
-    fila[1]=arraySeleccion.get(i).getNombre();
-    fila[2]=arraySeleccion.get(i).getApellido_pa();
-    fila[3]=arraySeleccion.get(i).getApellido_ma();
-    fila[4]=arraySeleccion.get(i).getTipoDoc();
-    fila[5]=arraySeleccion.get(i).getNumDoc();
-    fila[6]=arraySeleccion.get(i).getNombreProceso();
-    fila[7]=arraySeleccion.get(i).getCargo();
+    fila[1]=arraySeleccionJefe.get(i).getNombre();
+    fila[2]=arraySeleccionJefe.get(i).getApellido_pa();
+    fila[3]=arraySeleccionJefe.get(i).getApellido_ma();
+    fila[4]=arraySeleccionJefe.get(i).getTipoDoc();
+    fila[5]=arraySeleccionJefe.get(i).getNumDoc();
+    fila[6]=arraySeleccionJefe.get(i).getNombreProceso();
+    fila[7]=arraySeleccionJefe.get(i).getCargo();
   
      modelo.addRow(fila);
             }  
@@ -164,20 +172,20 @@ public class C_SelecEmple implements ActionListener, KeyListener {
                  }else
                      if(buscarPor.equals("Gerente")){
                       modelo.setRowCount(0); 
-            ArrayList<M_SeleccionarEmpleado> arraySeleccion=modelo_seleccionEmple.Gerente();
+            ArrayList<M_SeleccionarEmpleado> arraySeleccionGerente=modelo_seleccionEmple.Gerente();
             Object[] fila =new Object[modelo.getColumnCount()];
             
-            for(int i=0; i <arraySeleccion.size(); i++){
+            for(int i=0; i <arraySeleccionGerente.size(); i++){
       
-    fila[0]=arraySeleccion.get(i).getIdEmpleado();
+    fila[0]=arraySeleccionGerente.get(i).getIdEmpleado();
       
-    fila[1]=arraySeleccion.get(i).getNombre();
-    fila[2]=arraySeleccion.get(i).getApellido_pa();
-    fila[3]=arraySeleccion.get(i).getApellido_ma();
-    fila[4]=arraySeleccion.get(i).getTipoDoc();
-    fila[5]=arraySeleccion.get(i).getNumDoc();
-    fila[6]=arraySeleccion.get(i).getNombreProceso();
-    fila[7]=arraySeleccion.get(i).getCargo();
+    fila[1]=arraySeleccionGerente.get(i).getNombre();
+    fila[2]=arraySeleccionGerente.get(i).getApellido_pa();
+    fila[3]=arraySeleccionGerente.get(i).getApellido_ma();
+    fila[4]=arraySeleccionGerente.get(i).getTipoDoc();
+    fila[5]=arraySeleccionGerente.get(i).getNumDoc();
+    fila[6]=arraySeleccionGerente.get(i).getNombreProceso();
+    fila[7]=arraySeleccionGerente.get(i).getCargo();
   
      modelo.addRow(fila);
             }        
@@ -190,16 +198,14 @@ public class C_SelecEmple implements ActionListener, KeyListener {
             
             String estado="Activa";
         int fil=vista_seleccionEmple.tb_empleados.getSelectedRow();
-           int id=Integer.parseInt(vista_seleccionEmple.tb_empleados.getValueAt(fil, 0).toString());
-        
-      
-
-           
+           int id=Integer.parseInt(vista_seleccionEmple.tb_empleados.getValueAt(fil, 0).toString());  
            // fechaEn=formatoFecha.parse(fecha);
       int resp= modelo_seleccionEmple.habiEncuesta(fechatxt, codigo, estado, id);
       
       if(resp!=0){
+          modelo.removeRow(fil);
       JOptionPane.showMessageDialog(null, "Se Habilito correctamente la Encuesta");
+     
       }else{
       JOptionPane.showMessageDialog(null, "No se pudo ralizar la habilitacion","ERROR",JOptionPane.ERROR_MESSAGE);
       }

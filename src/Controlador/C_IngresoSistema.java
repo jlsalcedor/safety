@@ -38,6 +38,7 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
    public static String contraseñatxt;
    public static String encriptacion;
    public static String nombrecompleto;
+   public static int id;
     public C_IngresoSistema(IngresoUsuario vista_ingreso, M_IngresoSistema modelo_ingreso) {
         this.modelo_ingreso = modelo_ingreso;
         this.vista_ingreso = vista_ingreso;
@@ -111,8 +112,8 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
                         if (modelo.getRowCount() > 0) {
                             Principal principal = new Principal();
                             principal.label_nombreUser.setText(modelo.getValueAt(0, 1).toString() + " " + modelo.getValueAt(0, 2) + " " + modelo.getValueAt(0, 3));
-                            principal.label_rol.setText("Administrado SGSST");
-                            
+                            principal.label_rol.setText("Administrador SGSST");
+                            id=Integer.parseInt(modelo.getValueAt(0, 0).toString());
                           nombrecompleto=(modelo.getValueAt(0, 1).toString()+" "+modelo.getValueAt(0, 2)+" "+modelo.getValueAt(0, 3));
                             principal.setVisible(true);
                             this.vista_ingreso.dispose();
@@ -160,15 +161,14 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
                                 principal.label_rol.setText("Empleado");
                                principal.jm_realizarEvaluacion.setVisible(false);
                                principal.jm_registrarEmpresa.setVisible(false);
-                               principal.jm_HabEncuTodos.setVisible(false);
                                principal.me_registrarEmpleado.setVisible(false);
                                principal.btn_evaluacion.setVisible(false);
                                principal.btn_evaluacion.setEnabled(false);
                                principal.btn_primero.setEnabled(false);
                                
                                principal.txt_nombrePri.setText(modelo.getValueAt(0, 1).toString());
-                               // String nombre=modelo.getValueAt(0, 1).toString();
-                              //  JOptionPane.showMessageDialog(null, nombre);
+                               id=Integer.parseInt(modelo.getValueAt(0, 0).toString());
+                          nombrecompleto=(modelo.getValueAt(0, 1).toString()+" "+modelo.getValueAt(0, 2)+" "+modelo.getValueAt(0, 3));
                                 principal.setVisible(true);
                                 
                                 this.vista_ingreso.dispose();
@@ -213,8 +213,12 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
                                     if (modelo.getRowCount() > 0) {
                                         Principal principal = new Principal();
                                         principal.label_nombreUser.setText(modelo.getValueAt(0, 1).toString() + " " + modelo.getValueAt(0, 2) + " " + modelo.getValueAt(0, 3));
+                                        
                                         principal.label_rol.setText("Gerente");
                                         principal.setVisible(true);
+                                        
+                                          id=Integer.parseInt(modelo.getValueAt(0, 0).toString());
+                          nombrecompleto=(modelo.getValueAt(0, 1).toString()+" "+modelo.getValueAt(0, 2)+" "+modelo.getValueAt(0, 3));
                                         this.vista_ingreso.dispose();
                                     } else {
                                     }
@@ -257,6 +261,9 @@ public class C_IngresoSistema implements ActionListener, KeyListener {
                                         Principal principal = new Principal();
                                         principal.label_nombreUser.setText(modelo.getValueAt(0, 1).toString() + " " + modelo.getValueAt(0, 2) + " " + modelo.getValueAt(0, 3));
                                         principal.label_rol.setText("Jefe de Proceso");
+                                        
+                                          id=Integer.parseInt(modelo.getValueAt(0, 0).toString());
+                          nombrecompleto=(modelo.getValueAt(0, 1).toString()+" "+modelo.getValueAt(0, 2)+" "+modelo.getValueAt(0, 3));
                                         principal.setVisible(true);
                                         this.vista_ingreso.dispose();
                                     }else{

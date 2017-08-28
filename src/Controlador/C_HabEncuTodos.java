@@ -89,9 +89,14 @@ public final class C_HabEncuTodos implements ActionListener, KeyListener {
          if(ae.getSource()==vista_habEncuTodos.rb_todosEm){
          vista_habEncuTodos.lbl_textoSeleccione.setVisible(false);
              vista_habEncuTodos.btn_seleccionarEmpleados.setVisible(false);
+             vista_habEncuTodos.btn_habilitar.setEnabled(true);
          }
          
          if(ae.getSource()==vista_habEncuTodos.btn_seleccionarEmpleados){  
+              if(vista_habEncuTodos.txt_nuevoCodigo.getText().length()==0){
+            JOptionPane.showMessageDialog(null, "Debe Ingresar un Codigo","ERROR",JOptionPane.ERROR_MESSAGE);
+            
+            }else{
              int codigo=Integer.parseInt(vista_habEncuTodos.txt_nuevoCodigo.getText());
            
              String fechatxt=vista_habEncuTodos.txt_fecha.getText();
@@ -100,7 +105,7 @@ public final class C_HabEncuTodos implements ActionListener, KeyListener {
                M_SeleccionarEmpleado modelo=new M_SeleccionarEmpleado();
                C_SelecEmple controlador=new C_SelecEmple(vista, modelo, codigo, fechatxt);
                 vista.setVisible(true);
-         
+              }
          }
       
         if(ae.getSource()==vista_habEncuTodos.btn_habilitar){
@@ -117,6 +122,7 @@ public final class C_HabEncuTodos implements ActionListener, KeyListener {
                  modelo.habiEncuesta(vista_habEncuTodos.txt_fecha.getText(), Integer.parseInt(vista_habEncuTodos.txt_nuevoCodigo.getText()), estado, idPersona);
               }
               JOptionPane.showMessageDialog(null, "Se Habilito Correctamente la Encuesta para "+id.size()+" Personas");
+              vista_habEncuTodos.dispose();
               }
               
         }

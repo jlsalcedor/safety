@@ -14,21 +14,23 @@ import javax.swing.JOptionPane;
  *
  * @author USUARIO
  */
-public class M_EncDatosPer {
-    private String nombre_Dato;
+public class M_EncDatosSalud {
+    private String nombreDato;
     private String respuesta;
+    private String observaciones;
     private int idEncuesta;
-
+    
     Conexion conexion=new Conexion();
-    public M_EncDatosPer() {
+
+    public M_EncDatosSalud() {
     }
 
-    public String getNombre_Dato() {
-        return nombre_Dato;
+    public String getNombreDato() {
+        return nombreDato;
     }
 
-    public void setNombre_Dato(String nombre_Dato) {
-        this.nombre_Dato = nombre_Dato;
+    public void setNombreDato(String nombreDato) {
+        this.nombreDato = nombreDato;
     }
 
     public String getRespuesta() {
@@ -39,23 +41,33 @@ public class M_EncDatosPer {
         this.respuesta = respuesta;
     }
 
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
     public int getIdEncuesta() {
         return idEncuesta;
     }
 
-    public void setIdEncuesta(int idEncuesta){
+    public void setIdEncuesta(int idEncuesta) {
         this.idEncuesta = idEncuesta;
     }
+
     
-    public int Insertardatos(int idDato, String respuesta, int encuestaId){
+     public int InsertardatosSalud(int idDato, String respuesta, String observacion, int encuestaId){
         int resp = 0;
         try {
              Connection accesoBD=conexion.getConexion();
-            CallableStatement cs=accesoBD.prepareCall("{call sp_encuDatosPersonales(?,?,?)}"); 
+            CallableStatement cs=accesoBD.prepareCall("{call sp_encuDatosSalud(?,?,?,?)}"); 
             cs.setInt(1, idDato);
             cs.setString(2, respuesta);
-            cs.setInt(3, encuestaId);
-           
+            cs.setString(3, observacion);
+            cs.setInt(4, encuestaId);
+          
             resp=cs.executeUpdate();
             
         } catch (SQLException e) {
@@ -63,5 +75,4 @@ public class M_EncDatosPer {
   
     return resp;
     }
-    
 }
